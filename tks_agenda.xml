@@ -41,9 +41,9 @@
 	<administration>
 		<!-- Administration Menu Section -->
 		<menu link='index.php?option=com_tks_agenda'>Takties Agenda</menu>
-		<submenu>
+		<!-- <submenu>
 		<menu link='index.php?option=com_tks_agenda'>Items</menu>
-		</submenu>
+		</submenu> -->
 		<!-- Administration Main File Copy Section -->
 		<!-- Note the folder attribute: This attribute describes the folder
 			to copy FROM in the package to install therefore files copied
@@ -61,6 +61,8 @@
 			<folder>models</folder>
 			<!-- views files section -->
 			<folder>views</folder>
+			<folder>helpers</folder>
+			<folder>controllers</folder>
 		</files>
 
 	</administration>

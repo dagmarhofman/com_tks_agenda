@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  0.0.1
  */
-class tks_agendaViewtks_agendaview extends JViewLegacy
+class tks_agendaViewtks_agenda extends JViewLegacy
 {
 	/**
 	 * Display the Hello World view
