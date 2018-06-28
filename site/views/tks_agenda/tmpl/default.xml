@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Dit is de takties agenda.">
+		<message>COM_TKS_EXPERIMENT_TKS_AGENDA_VIEW_DEFAULT_DESC</message>
+	</layout>
+	<fields name="request" addfieldpath="/administrator/components/com_tks_experiment/models/fields">
+		<fieldset name="request">
+				<field
+					name="id"
+					type="tks_experiment" 
+					label=""
+					description="COM_TKS_EXPERIMENT_TKS_AGENDA_FIELD_GREETING_DESC"
+					/>
+		</fieldset>
+	</fields>
+</metadata>
