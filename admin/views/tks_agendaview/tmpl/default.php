@@ -11,5 +11,5 @@
 defined('_JEXEC') or die('Restricted Access');
 ?>
 
-<h1> Begin template voor de tks_agenda </h1>
+<h1> Begin template voor de tks_agenda (admin)</h1>
 

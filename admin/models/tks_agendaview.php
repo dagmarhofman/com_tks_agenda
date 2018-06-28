@@ -24,14 +24,15 @@ class tks_agendaModeltks_agendaview extends JModelList
 	 */
 	protected function getListQuery()
 	{
-		// Initialize variables.
+		/* Initialize variables.
 		$db    = JFactory::getDbo();
 		$query = $db->getQuery(true);
 
-		// Create the base select statement.
+		 Create the base select statement.
 		$query->select('*')
                 ->from($db->quoteName('tks_agenda_data'));
 
 		return $query;
+		*/
 	}
 }

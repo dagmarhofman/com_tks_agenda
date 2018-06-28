@@ -1,6 +1,2 @@
-DROP TABLE IF EXISTS `tks_agenda_data`;
-DROP TABLE IF EXISTS `tks_agenda_select`; 
-
-
-
-
+CREATE TABLE IF EXISTS `tks_agenda_recurring`;
+CREATE TABLE IF EXISTS `tks_agenda_items`;
