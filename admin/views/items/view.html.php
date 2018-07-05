@@ -64,14 +64,11 @@ class tks_agendaViewitems extends JViewLegacy
 		JPluginHelper::importPlugin('content');
 		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.item', &$this->item, &$this->params, ''));
 
-
-		/*
-			DAGMAR		
-		*/	 
 	 
 	   $errors = $this->get('Errors');
+
 		// Check for errors.
-		if (isset($errors))
+		if (count($errors))
 		{
 			throw new Exception(implode("\n", $errors));
 		}

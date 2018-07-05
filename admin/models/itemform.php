@@ -34,7 +34,7 @@ class tks_agendaModelItemForm extends JModelForm
 	 */
 	protected function populateState()
 	{
-		// DAGMAR $app = JFactory::getApplication('com_tks_agenda');
+		$app = JFactory::getApplication('com_tks_agenda');
 
 		// Load state from the request userState on edit or from the passed variable on default
 		if (JFactory::getApplication()->input->get('layout') == 'edit')
@@ -50,10 +50,11 @@ class tks_agendaModelItemForm extends JModelForm
 		$this->setState('item.id', $id);
 
 		
+		
 		$params = JComponentHelper::getParams(JRequest::getVar('option'));
 		
 		// Load the parameters.
-		//$params       = $;
+		// $params       = $app->getParams(); DAGMAR
 		$params_array = $params->toArray();
 
 		if (isset($params_array['item_id']))

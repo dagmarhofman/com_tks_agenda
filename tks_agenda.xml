@@ -37,7 +37,10 @@
 		<folder>views</folder>
 		<folder>models</folder>
 	</files>
-
+	<languages folder="admin/language">
+	    <language tag="en-GB">en-GB/en-GB.com_tks_agenda.ini</language>
+	    <language tag="nl-NL">nl-NL/nl-NL.com_tks_agenda.ini</language>
+	</languages>
 	<administration>
 		<!-- Administration Menu Section -->
 		<menu link='index.php?option=com_tks_agenda'>Takties Agenda</menu>
