@@ -19,7 +19,7 @@ use Joomla\Utilities\ArrayHelper;
  *
  * @since  1.6
  */
-class GckloosterveenModelItem extends JModelItem
+class tks_agendaModelItem extends JModelItem
 {
 	/**
 	 * Method to auto-populate the model state.
@@ -33,17 +33,17 @@ class GckloosterveenModelItem extends JModelItem
 	 */
 	protected function populateState()
 	{
-		$app = JFactory::getApplication('com_gckloosterveen');
+		$app = JFactory::getApplication('com_tks_agenda');
 
 		// Load state from the request userState on edit or from the passed variable on default
 		if (JFactory::getApplication()->input->get('layout') == 'edit')
 		{
-			$id = JFactory::getApplication()->getUserState('com_gckloosterveen.edit.item.id');
+			$id = JFactory::getApplication()->getUserState('com_tks_agenda.edit.item.id');
 		}
 		else
 		{
 			$id = JFactory::getApplication()->input->get('id');
-			JFactory::getApplication()->setUserState('com_gckloosterveen.edit.item.id', $id);
+			JFactory::getApplication()->setUserState('com_tks_agenda.edit.item.id', $id);
 		}
 
 		$this->setState('item.id', $id);
@@ -116,9 +116,9 @@ class GckloosterveenModelItem extends JModelItem
 	 *
 	 * @return  JTable|bool JTable if success, false on failure.
 	 */
-	public function getTable($type = 'Item', $prefix = 'GckloosterveenTable', $config = array())
+	public function getTable($type = 'Item', $prefix = 'tks_agendaTable', $config = array())
 	{
-		$this->addTablePath(JPATH_ADMINISTRATOR . '/components/com_gckloosterveen/tables');
+		$this->addTablePath(JPATH_ADMINISTRATOR . '/components/com_tks_agenda/tables');
 
 		return JTable::getInstance($type, $prefix, $config);
 	}

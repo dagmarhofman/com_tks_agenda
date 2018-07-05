@@ -18,7 +18,7 @@ require_once JPATH_COMPONENT . '/controller.php';
  * @since  1.6
  */
 
-class GckloosterveenControllerItem extends GckloosterveenController {
+class tks_agendaControllerItem extends tks_agendaController {
 	
 	/**
 	 * Method to check out an item for editing and redirect to the edit form.
@@ -32,14 +32,14 @@ class GckloosterveenControllerItem extends GckloosterveenController {
 		$app = JFactory::getApplication();
 
 		// Get the previous edit id (if any) and the current edit id.
-		$previousId = (int) $app->getUserState('com_gckloosterveen.edit.item.id');
+		$previousId = (int) $app->getUserState('com_tks_agenda.edit.item.id');
 		$editId     = $app->input->getInt('id', 0);
 
 		// Set the user id for the user to edit in the session.
-		$app->setUserState('com_gckloosterveen.edit.item.id', $editId);
+		$app->setUserState('com_tks_agenda.edit.item.id', $editId);
 
 		// Get the model.
-		$model = $this->getModel('Item', 'GckloosterveenModel');
+		$model = $this->getModel('Item', 'tks_agendaModel');
 
 		// Check out the item
 		if ($editId)
@@ -54,7 +54,7 @@ class GckloosterveenControllerItem extends GckloosterveenController {
 		}
 
 		// Redirect to the edit screen.
-		$this->setRedirect(JRoute::_('index.php?option=com_gckloosterveen&view=itemform&layout=edit', false));
+		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit', false));
 	}
  
 	/**
@@ -73,9 +73,9 @@ class GckloosterveenControllerItem extends GckloosterveenController {
 		// Checking if the user can remove object
 		$user = JFactory::getUser();
 
-		if ($user->authorise('core.edit', 'com_gckloosterveen') || $user->authorise('core.edit.state', 'com_gckloosterveen'))
+		if ($user->authorise('core.edit', 'com_tks_agenda') || $user->authorise('core.edit.state', 'com_tks_agenda'))
 		{
-			$model = $this->getModel('Item', 'GckloosterveenModel');
+			$model = $this->getModel('Item', 'tks_agendaModel');
 
 			// Get the user data.
 			$id    = $app->input->getInt('id');
@@ -91,20 +91,20 @@ class GckloosterveenControllerItem extends GckloosterveenController {
 			}
 
 			// Clear the profile id from the session.
-			$app->setUserState('com_gckloosterveen.edit.item.id', null);
+			$app->setUserState('com_tks_agenda.edit.item.id', null);
 
 			// Flush the data from the session.
-			$app->setUserState('com_gckloosterveen.edit.item.data', null);
+			$app->setUserState('com_tks_agenda.edit.item.data', null);
 
 			// Redirect to the list screen.
-			$this->setMessage(JText::_('COM_GCKLOOSTERVEEN_ITEM_SAVED_SUCCESSFULLY'));
+			$this->setMessage(JText::_('COM_TKS_AGENDA_ITEM_SAVED_SUCCESSFULLY'));
 			$menu = JFactory::getApplication()->getMenu();
 			$item = $menu->getActive();
 
 			if (!$item)
 			{
 				// If there isn't any menu item active, redirect to list view
-				$this->setRedirect(JRoute::_('index.php?option=com_gckloosterveen&view=items', false));
+				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=items', false));
 			}
 			else
 			{
@@ -132,9 +132,9 @@ class GckloosterveenControllerItem extends GckloosterveenController {
 		// Checking if the user can remove object
 		$user = JFactory::getUser();
 
-		if ($user->authorise('core.delete', 'com_gckloosterveen') || $user->authorise('core.delete.medewerker', 'com_gckloosterveen'))
+		if ($user->authorise('core.delete', 'com_tks_agenda') || $user->authorise('core.delete.medewerker', 'com_tks_agenda'))
 		{
-			$model = $this->getModel('Item', 'GckloosterveenModel');
+			$model = $this->getModel('Item', 'tks_agendaModel');
 
 			// Get the user data.
 			$id = $app->input->getInt('id', 0);
@@ -156,12 +156,12 @@ class GckloosterveenControllerItem extends GckloosterveenController {
 				}
 
 				// Clear the profile id from the session.
-				$app->setUserState('com_gckloosterveen.edit.item.id', null);
+				$app->setUserState('com_tks_agenda.edit.item.id', null);
 
 				// Flush the data from the session.
-				$app->setUserState('com_gckloosterveen.edit.item.data', null);
+				$app->setUserState('com_tks_agenda.edit.item.data', null);
 
-				$this->setMessage(JText::_('COM_GCKLOOSTERVEEN_ITEM_DELETED_SUCCESSFULLY'));
+				$this->setMessage(JText::_('COM_TKS_AGENDA_ITEM_DELETED_SUCCESSFULLY'));
 			}
 
 			// Redirect to the list screen.
@@ -171,7 +171,7 @@ class GckloosterveenControllerItem extends GckloosterveenController {
 			if (!$item)
 			{
 				// If there isn't any menu item active, redirect to list view
-				$this->setRedirect(JRoute::_('index.php?option=com_gckloosterveen&view=items', false));
+				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=items', false));
 			}
 			else
 			{
