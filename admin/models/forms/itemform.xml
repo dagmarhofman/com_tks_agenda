@@ -2,16 +2,16 @@
 <form>
    <fieldset>
      
-              <field name="id" type="text" default="0" label="COM_GCKLOOSTERVEEN_FORM_LBL_ITEM_ID"
+              <field name="id" type="text" default="0" label="COM_TKS_AGENDA_FORM_LBL_ITEM_ID"
             readonly="true" class="readonly"
             description="JGLOBAL_FIELD_ID_DESC" /> 
 
          
 
       <field name="catid" type="category"
-            label="COM_GCKLOOSTERVEEN_FORM_LBL_ITEM_CATID"
-            description="COM_GCKLOOSTERVEEN_FORM_DESC_ITEM_CATID"                 
-            extension="com_gckloosterveen"
+            label="COM_TKS_AGENDA_FORM_LBL_ITEM_CATID"
+            description="COM_TKS_AGENDA_FORM_DESC_ITEM_CATID"                 
+            extension="com_tks_agenda"
             menu_published="0"
             filter="raw"
             directory_stripext="true"
@@ -25,13 +25,13 @@
              default="25"  /> 
    
        <field name="created_by" type="createdby" default="" 
-            label="COM_GCKLOOSTERVEEN_FORM_LBL_ITEM_CREATED_BY"
-            description="COM_GCKLOOSTERVEEN_FORM_DESC_ITEM_CREATED_BY"  /> 
+            label="COM_TKS_AGENDA_FORM_LBL_ITEM_CREATED_BY"
+            description="COM_TKS_AGENDA_FORM_DESC_ITEM_CREATED_BY"  /> 
 
        <field name="title" type="text"
                 
-            label="COM_GCKLOOSTERVEEN_FORM_LBL_ITEM_TITLE"
-            description="COM_GCKLOOSTERVEEN_FORM_DESC_ITEM_TITLE" 
+            label="COM_TKS_AGENDA_FORM_LBL_ITEM_TITLE"
+            description="COM_TKS_AGENDA_FORM_DESC_ITEM_TITLE" 
                 
                 
                    /> 
@@ -40,8 +40,8 @@
          required="true" 
         
          
-            label="COM_GCKLOOSTERVEEN_FORM_LBL_ITEM_START"
-            description="COM_GCKLOOSTERVEEN_FORM_DESC_ITEM_START" 
+            label="COM_TKS_AGENDA_FORM_LBL_ITEM_START"
+            description="COM_TKS_AGENDA_FORM_DESC_ITEM_START" 
         format=" %Y-%m-%d %H:%M:%S"
         filter="safehtml" /> 
 
@@ -50,8 +50,8 @@
         
 
         
-            label="COM_GCKLOOSTERVEEN_FORM_LBL_ITEM_END"
-            description="COM_GCKLOOSTERVEEN_FORM_DESC_ITEM_END" 
+            label="COM_TKS_AGENDA_FORM_LBL_ITEM_END"
+            description="COM_TKS_AGENDA_FORM_DESC_ITEM_END" 
         format=" %Y-%m-%d %H:%M:%S"
         filter="safehtml" /> 
         
@@ -60,8 +60,8 @@
                     type="radio"
                     class="btn-group"
                     default="false"
-                    label="COM_GCKLOOSTERVEEN_FORM_LBL_RECURRING_TITLE"
-                    description="COM_GCKLOOSTERVEEN_FORM_DESC_RECURRING_TITLE">
+                    label="COM_TKS_AGENDA_FORM_LBL_RECURRING_TITLE"
+                    description="COM_TKS_AGENDA_FORM_DESC_RECURRING_TITLE">
                     <option value="true">JYES</option>
                     <option value="false">JNO</option>
                 </field>
@@ -72,8 +72,8 @@
                     type="radio"
                     class="btn-group"
                     default="dag"
-                    label="COM_GCKLOOSTERVEEN_FORM_LBL_RECURRINGTYPE_TITLE"
-                    description="COM_GCKLOOSTERVEEN_FORM_DESC_LBL_RECURRINGTYPE_TITLE">
+                    label="COM_TKS_AGENDA_FORM_LBL_RECURRINGTYPE_TITLE"
+                    description="COM_TKS_AGENDA_FORM_DESC_LBL_RECURRINGTYPE_TITLE">
                     
                     <option value="dag">Dag</option>
                     <option value="week">Week</option>
@@ -85,8 +85,8 @@
        <field name="end_recur" id="end_recur" type="datetime" class="inputbox"
          
          
-            label="COM_GCKLOOSTERVEEN_FORM_LBL_ITEM_END_RECUR"
-            description="COM_GCKLOOSTERVEEN_FORM_DESC_ITEM_START" 
+            label="COM_TKS_AGENDA_FORM_LBL_ITEM_END_RECUR"
+            description="COM_TKS_AGENDA_FORM_DESC_ITEM_START" 
         format=" %Y-%m-%d %H:%M:%S"
         filter="safehtml" /> 
 
@@ -95,8 +95,8 @@
 
        <field name="reason" type="textarea"
                 
-            label="COM_GCKLOOSTERVEEN_FORM_LBL_ITEM_REASON"
-            description="COM_GCKLOOSTERVEEN_FORM_DESC_ITEM_REASON" 
+            label="COM_TKS_AGENDA_FORM_LBL_ITEM_REASON"
+            description="COM_TKS_AGENDA_FORM_DESC_ITEM_REASON" 
                 
                 
                  /> 
@@ -120,6 +120,6 @@
    </fieldset>
    <fieldset name="accesscontrol">
       <field name="asset_id" type="hidden" filter="unset" />
-      <field name="rules" type="rules" label="JFIELD_RULES_LABEL" translate_label="false" filter="rules" validate="rules" class="inputbox" component="com_gckloosterveen" section="item" />
+      <field name="rules" type="rules" label="JFIELD_RULES_LABEL" translate_label="false" filter="rules" validate="rules" class="inputbox" component="com_tks_agenda" section="item" />
    </fieldset>
 </form>
