@@ -16,7 +16,7 @@ use Joomla\Utilities\ArrayHelper;
  *
  * @since  1.6
  */
-class tks_agendaTableitem extends JTable
+class GckloosterveenTableitem extends JTable
 {
 	/**
 	 * Constructor
@@ -25,7 +25,7 @@ class tks_agendaTableitem extends JTable
 	 */
 	public function __construct(&$db)
 	{
-		parent::__construct('#__tks_agenda_items', 'id', $db);
+		parent::__construct('#__gckloosterveen_items', 'id', $db);
 	}
 
 	/**
@@ -76,13 +76,13 @@ class tks_agendaTableitem extends JTable
 				}
 			}
 
-		if (!JFactory::getUser()->authorise('core.admin', 'com_tks_agenda.item.' . $array['id']))
+		if (!JFactory::getUser()->authorise('core.admin', 'com_gckloosterveen.item.' . $array['id']))
 		{
 			$actions = JAccess::getActionsFromFile(
-				JPATH_ADMINISTRATOR . '/components/com_tks_agenda/access.xml',
+				JPATH_ADMINISTRATOR . '/components/com_gckloosterveen/access.xml',
 				"/access/section[@name='item']/"
 			);
-			$default_actions = JAccess::getAssetRules('com_tks_agenda.item.' . $array['id'])->getData();
+			$default_actions = JAccess::getAssetRules('com_gckloosterveen.item.' . $array['id'])->getData();
 			$array_jaccess   = array();
 
 			foreach ($actions as $action)
@@ -237,7 +237,7 @@ class tks_agendaTableitem extends JTable
 	{
 		$k = $this->_tbl_key;
 
-		return 'com_tks_agenda.item.' . (int) $this->$k;
+		return 'com_gckloosterveen.item.' . (int) $this->$k;
 	}
 
 	/**
@@ -259,7 +259,7 @@ class tks_agendaTableitem extends JTable
 		$assetParentId = $assetParent->getRootId();
 
 		// The item has the component as asset-parent
-		$assetParent->loadByName('com_tks_agenda');
+		$assetParent->loadByName('com_gckloosterveen');
 
 		// Return the found asset-parent-id
 		if ($assetParent->id)

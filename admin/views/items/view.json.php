@@ -135,7 +135,7 @@ class tks_agendaViewitems extends JViewLegacy
 			$avatar = $profile->profile5['avatar'];
 			$companycolor = $profile->profile5['companycolor'];
 
-			 if (GckloosterveenFrontendHelper::get_brightness($companycolor) > 130) {
+			 if (tks_agendaFrontendHelper::get_brightness($companycolor) > 130) {
 			       $companytextcolor = "#4d4d4d"; 
 			      } else {
 			       $companytextcolor = "#FFFFFF"; 

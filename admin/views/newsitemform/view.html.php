@@ -2,10 +2,10 @@
 
 /**
  * @version    CVS: 1.0.0
- * @package    com_tks_agenda
+ * @package    Com_Gckloosterveen
  * @author     Stephan Zuidberg <stephan@takties.nl>
- * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
- * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
+ * @copyright  2016 Takties
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 // No direct access
 defined('_JEXEC') or die;
@@ -13,67 +13,59 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.view');
 
 /**
- * View class for a list of Gckloosterveen.
+ * View to edit
  *
  * @since  1.6
  */
-class tks_agendaViewitems extends JViewLegacy
+class tks_agendaViewNewsitemform extends JViewLegacy
 {
-	protected $items;
-
-	protected $pagination;
-
 	protected $state;
 
+	protected $item;
+
+	protected $form;
+
 	protected $params;
+
+	protected $canSave;
 
 	/**
 	 * Display the view
 	 *
 	 * @param   string  $tpl  Template name
 	 *
-	 * @return void	
+	 * @return void
 	 *
 	 * @throws Exception
 	 */
 	public function display($tpl = null)
 	{
-		$app = JFactory::getApplication('admin');
+		$app  = JFactory::getApplication();
+		$user = JFactory::getUser();
 
-		$this->state      = $this->get('State');
-		$this->items = $this->get('Items');
-		$this->pagination = $this->get('Pagination');
-		
-		//$params = JComponentHelper::getParams(JRequest::getVar('option')); // Get parameter helper (corrected 'JRquest' spelling)
-		$this->params     = $app->getParams('com_tks_agenda');
+		$this->state   = $this->get('State');
+		$this->item    = $this->get('Data');
+		$this->params  = $app->getParams('com_tks_agenda');
+		$this->canSave = $this->get('CanSave');
+		$this->form		= $this->get('Form');
 
-		JHtml::_('jquery.framework');	
-		JHtml::_('bootstrap.framework');
-		JHtml::_('bootstrap.popover');
+		// Check for errors.
+		if (count($errors = $this->get('Errors')))
+		{
+			throw new Exception(implode("\n", $errors));
+		}
+$dispatcher = JEventDispatcher::getInstance();
+ 
 
-		$doc = JFactory::getDocument();
- 		$doc->addStylesheet(JURI::root().'components/com_tks_agenda/assets/css/calendar.css');
-		$doc->addScript(JURI::root().'components/com_tks_agenda/assets/js/language/nl-NL.js');
-
-		$doc->addScript(JURI::root().'components/com_tks_agenda/assets/js/vendor/underscore-min.js');
-		$doc->addScript(JURI::root().'components/com_tks_agenda/assets/js/vendor/jstz.min.js');
-		$doc->addScript(JURI::root().'components/com_tks_agenda/assets/js/calendar.js');
-		$doc->addScript(JURI::root().'components/com_tks_agenda/assets/js/app.js');
- 				
-		$dispatcher = JEventDispatcher::getInstance();
 		JPluginHelper::importPlugin('content');
 		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.item', &$this->item, &$this->params, ''));
 
 	 
-	   $errors = $this->get('Errors');
 
-		// Check for errors.
-		if (count($errors))
-		{
-			throw new Exception(implode("\n", $errors));
-		}
- 
+		
+
 		$this->_prepareDocument();
+
 		parent::display($tpl);
 	}
 
@@ -134,17 +126,5 @@ class tks_agendaViewitems extends JViewLegacy
 		{
 			$this->document->setMetadata('robots', $this->params->get('robots'));
 		}
-	}
-
-	/**
-	 * Check if state is set
-	 *
-	 * @param   mixed  $state  State
-	 *
-	 * @return bool
-	 */
-	public function getState($state)
-	{
-		return isset($this->state->{$state}) ? $this->state->{$state} : false;
 	}
 }

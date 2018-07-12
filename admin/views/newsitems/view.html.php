@@ -1,23 +1,15 @@
 <?php
 
-/**
- * @version    CVS: 1.0.0
- * @package    com_tks_agenda
- * @author     Stephan Zuidberg <stephan@takties.nl>
- * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
- * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
- */
 // No direct access
 defined('_JEXEC') or die;
 
 jimport('joomla.application.component.view');
 
 /**
- * View class for a list of Gckloosterveen.
  *
  * @since  1.6
  */
-class tks_agendaViewitems extends JViewLegacy
+class tks_agendaViewNewsitems extends JViewLegacy
 {
 	protected $items;
 
@@ -32,47 +24,40 @@ class tks_agendaViewitems extends JViewLegacy
 	 *
 	 * @param   string  $tpl  Template name
 	 *
-	 * @return void	
+	 * @return void
 	 *
 	 * @throws Exception
 	 */
 	public function display($tpl = null)
 	{
-		$app = JFactory::getApplication('admin');
+		$app = JFactory::getApplication(); DAGMAR
 
 		$this->state      = $this->get('State');
 		$this->items = $this->get('Items');
 		$this->pagination = $this->get('Pagination');
-		
-		//$params = JComponentHelper::getParams(JRequest::getVar('option')); // Get parameter helper (corrected 'JRquest' spelling)
 		$this->params     = $app->getParams('com_tks_agenda');
 
-		JHtml::_('jquery.framework');	
-		JHtml::_('bootstrap.framework');
-		JHtml::_('bootstrap.popover');
+//		$params = JComponentHelper::getParams(JRequest::getVar('option')); // Get parameter helper (corrected 'JRquest' spelling)
+//		$this->params     = $params; // $app->getParams('com_tks_agenda');
 
-		$doc = JFactory::getDocument();
- 		$doc->addStylesheet(JURI::root().'components/com_tks_agenda/assets/css/calendar.css');
-		$doc->addScript(JURI::root().'components/com_tks_agenda/assets/js/language/nl-NL.js');
+		$this->filterForm = $this->get('FilterForm');
+		$this->activeFilters = $this->get('ActiveFilters');
 
-		$doc->addScript(JURI::root().'components/com_tks_agenda/assets/js/vendor/underscore-min.js');
-		$doc->addScript(JURI::root().'components/com_tks_agenda/assets/js/vendor/jstz.min.js');
-		$doc->addScript(JURI::root().'components/com_tks_agenda/assets/js/calendar.js');
-		$doc->addScript(JURI::root().'components/com_tks_agenda/assets/js/app.js');
- 				
-		$dispatcher = JEventDispatcher::getInstance();
-		JPluginHelper::importPlugin('content');
-		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.item', &$this->item, &$this->params, ''));
-
-	 
-	   $errors = $this->get('Errors');
-
-		// Check for errors.
-		if (count($errors))
+/*		// Check for errors.
+		if (count($errors = $this->get('Errors')))
 		{
 			throw new Exception(implode("\n", $errors));
 		}
+*/
+		$dispatcher = JEventDispatcher::getInstance();
  
+
+		JPluginHelper::importPlugin('content');
+		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.newsitems', &$this->item, &$this->params, ''));
+
+	 
+
+
 		$this->_prepareDocument();
 		parent::display($tpl);
 	}

@@ -3,8 +3,8 @@
  * @version    CVS: 1.0.0
  * @package    Com_Gckloosterveen
  * @author     Stephan Zuidberg <stephan@takties.nl>
- * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
- * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
+ * @copyright  2016 Takties
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 // No direct access.
@@ -19,7 +19,7 @@ use Joomla\Utilities\ArrayHelper;
  *
  * @since  1.6
  */
-class tks_agendaModelItemForm extends JModelForm
+class tks_agendaModelNewsitemForm extends JModelForm
 {
 	private $item = null;
 
@@ -39,27 +39,23 @@ class tks_agendaModelItemForm extends JModelForm
 		// Load state from the request userState on edit or from the passed variable on default
 		if (JFactory::getApplication()->input->get('layout') == 'edit')
 		{
-			$id = JFactory::getApplication()->getUserState('com_tks_agenda.edit.item.id');
+			$id = JFactory::getApplication()->getUserState('com_tks_agenda.edit.newsitem.id');
 		}
 		else
 		{
 			$id = JFactory::getApplication()->input->get('id');
-			JFactory::getApplication()->setUserState('com_tks_agenda.edit.item.id', $id);
+			JFactory::getApplication()->setUserState('com_tks_agenda.edit.newsitem.id', $id);
 		}
 
-		$this->setState('item.id', $id);
+		$this->setState('newsitem.id', $id);
 
-		
-		
-		//$params = JComponentHelper::getParams(JRequest::getVar('option'));
-		
 		// Load the parameters.
-		$params       = $app->getParams(); //DAGMAR
+		$params       = $app->getParams();
 		$params_array = $params->toArray();
 
 		if (isset($params_array['item_id']))
 		{
-			$this->setState('item.id', $params_array['item_id']);
+			$this->setState('newsitem.id', $params_array['item_id']);
 		}
 
 		$this->setState('params', $params);
@@ -82,7 +78,7 @@ class tks_agendaModelItemForm extends JModelForm
 
 			if (empty($id))
 			{
-				$id = $this->getState('item.id');
+				$id = $this->getState('newsitem.id');
 			}
 
 			// Get a level row instance.
@@ -93,18 +89,17 @@ class tks_agendaModelItemForm extends JModelForm
 			{
 				$user = JFactory::getUser();
 				$id   = $table->id;
-
-  
+				
 				if ($id)
 				{
-					$canEdit = $user->authorise('core.edit', 'com_tks_agenda. item.' . $id) || $user->authorise('core.create', 'com_tks_agenda. item.' . $id);
+					$canEdit = $user->authorise('core.edit', 'com_tks_agenda. newsitem.' . $id) || $user->authorise('core.create', 'com_tks_agenda. newsitem.' . $id);
 				}
 				else
 				{
 					$canEdit = $user->authorise('core.edit', 'com_tks_agenda') || $user->authorise('core.create', 'com_tks_agenda');
 				}
 
-				if (!$canEdit && $user->authorise('core.edit.own', 'com_tks_agenda.item.' . $id))
+				if (!$canEdit && $user->authorise('core.edit.own', 'com_tks_agenda.newsitem.' . $id))
 				{
 					$canEdit = $user->id == $table->created_by;
 				}
@@ -141,7 +136,7 @@ class tks_agendaModelItemForm extends JModelForm
 	 *
 	 * @return  JTable|boolean JTable if found, boolean false on failure
 	 */
-	public function getTable($type = 'Item', $prefix = 'tks_agendaTable', $config = array())
+	public function getTable($type = 'Newsitem', $prefix = 'tks_agendaTable', $config = array())
 	{
 		$this->addTablePath(JPATH_ADMINISTRATOR . '/components/com_tks_agenda/tables');
 
@@ -176,7 +171,7 @@ class tks_agendaModelItemForm extends JModelForm
 	public function checkin($id = null)
 	{
 		// Get the id.
-		$id = (!empty($id)) ? $id : (int) $this->getState('item.id');
+		$id = (!empty($id)) ? $id : (int) $this->getState('newsitem.id');
 
 		if ($id)
 		{
@@ -208,7 +203,7 @@ class tks_agendaModelItemForm extends JModelForm
 	public function checkout($id = null)
 	{
 		// Get the user id.
-		$id = (!empty($id)) ? $id : (int) $this->getState('item.id');
+		$id = (!empty($id)) ? $id : (int) $this->getState('newsitem.id');
 
 		if ($id)
 		{
@@ -246,7 +241,7 @@ class tks_agendaModelItemForm extends JModelForm
 	public function getForm($data = array(), $loadData = true)
 	{
 		// Get the form.
-		$form = $this->loadForm('com_tks_agenda.item', 'itemform', array(
+		$form = $this->loadForm('com_tks_agenda.newsitem', 'newsitemform', array(
 			'control'   => 'jform',
 			'load_data' => $loadData
 			)
@@ -269,7 +264,7 @@ class tks_agendaModelItemForm extends JModelForm
 	 */
 	protected function loadFormData()
 	{
-		$data = JFactory::getApplication()->getUserState('com_tks_agenda.edit.item.data', array());
+		$data = JFactory::getApplication()->getUserState('com_tks_agenda.edit.newsitem.data', array());
 
 		if (empty($data))
 		{
@@ -293,14 +288,14 @@ class tks_agendaModelItemForm extends JModelForm
 	 */
 	public function save($data)
 	{
-		$id    = (!empty($data['id'])) ? $data['id'] : (int) $this->getState('item.id');
+		$id    = (!empty($data['id'])) ? $data['id'] : (int) $this->getState('newsitem.id');
 		$state = (!empty($data['state'])) ? 1 : 0;
 		$user  = JFactory::getUser();
 
 		if ($id)
 		{
 			// Check the user can edit this item
-			$authorised = $user->authorise('core.edit', 'com_tks_agenda.item.' . $id) || $authorised = $user->authorise('core.edit.own', 'com_tks_agenda.item.' . $id) || $user->authorise('core.edit.medewerker', 'com_tks_agenda.item.' . $id) || $authorised = $user->authorise('core.edit.own.medewerker', 'com_tks_agenda.item.' . $id);
+			$authorised = $user->authorise('core.edit', 'com_tks_agenda.newsitem.' . $id) || $authorised = $user->authorise('core.edit.own', 'com_tks_agenda.newsitem.' . $id);
 		}
 		else
 		{
@@ -336,9 +331,9 @@ class tks_agendaModelItemForm extends JModelForm
 	 */
 	public function delete($data)
 	{
-		$id = (!empty($data['id'])) ? $data['id'] : (int) $this->getState('item.id');
+		$id = (!empty($data['id'])) ? $data['id'] : (int) $this->getState('newsitem.id');
 
-		if (JFactory::getUser()->authorise('core.delete', 'com_tks_agenda.item.' . $id) !== true)
+		if (JFactory::getUser()->authorise('core.delete', 'com_tks_agenda.newsitem.' . $id) !== true)
 		{
 			throw new Exception(403, JText::_('JERROR_ALERTNOAUTHOR'));
 		}
@@ -366,5 +361,14 @@ class tks_agendaModelItemForm extends JModelForm
 
 		return $table !== false;
 	}
-	
+	public function getAliasFieldNameByView($view)
+	{
+		switch ($view)
+		{
+			case 'newsitem':
+			case 'newsitemform':
+				return 'alias';
+			break;
+		}
+	}
 }
