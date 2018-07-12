@@ -5,6 +5,7 @@ defined('_JEXEC') or die;
 
 jimport('joomla.application.component.view');
 
+
 /**
  *
  * @since  1.6
@@ -30,12 +31,12 @@ class tks_agendaViewNewsitems extends JViewLegacy
 	 */
 	public function display($tpl = null)
 	{
-		$app = JFactory::getApplication(); DAGMAR
+		$app = JFactory::getApplication();
 
-		$this->state      = $this->get('State');
+		$this->state = $this->get('State');
 		$this->items = $this->get('Items');
 		$this->pagination = $this->get('Pagination');
-		$this->params     = $app->getParams('com_tks_agenda');
+		$this->params = $app->getParams('com_tks_agenda');
 
 //		$params = JComponentHelper::getParams(JRequest::getVar('option')); // Get parameter helper (corrected 'JRquest' spelling)
 //		$this->params     = $params; // $app->getParams('com_tks_agenda');

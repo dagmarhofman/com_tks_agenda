@@ -1,12 +1,6 @@
 <?php
 
-/**
- * @version    CVS: 1.0.0
- * @package    Com_Gckloosterveen
- * @author     Stephan Zuidberg <stephan@takties.nl>
- * @copyright  2016 Takties
- * @license    GNU General Public License version 2 or later; see LICENSE.txt
- */
+
 // No direct access
 defined('_JEXEC') or die;
 
@@ -17,7 +11,7 @@ jimport('joomla.application.component.view');
  *
  * @since  1.6
  */
-class tks_agendaViewNewsitem extends JViewLegacy
+class tks_agendaViewDownloadform extends JViewLegacy
 {
 	protected $state;
 
@@ -26,6 +20,8 @@ class tks_agendaViewNewsitem extends JViewLegacy
 	protected $form;
 
 	protected $params;
+
+	protected $canSave;
 
 	/**
 	 * Display the view
@@ -41,15 +37,11 @@ class tks_agendaViewNewsitem extends JViewLegacy
 		$app  = JFactory::getApplication();
 		$user = JFactory::getUser();
 
-		$this->state  = $this->get('State');
-		$this->item   = $this->get('Data');
-		$this->params = $app->getParams('com_tks_agenda');
-
-		if (!empty($this->item))
-		{
-			
-		$this->item->newscatid_title = $this->getModel()->getCategoryName($this->item->newscatid)->title;$this->form = $this->get('Form');
-		}
+		$this->state   = $this->get('State');
+		$this->item    = $this->get('Data');
+		$this->params  = $app->getParams('com_tks_agenda');
+		$this->canSave = $this->get('CanSave');
+		$this->form		= $this->get('Form');
 
 		// Check for errors.
 		if (count($errors = $this->get('Errors')))
@@ -58,20 +50,6 @@ class tks_agendaViewNewsitem extends JViewLegacy
 		}
 
 		
-		$dispatcher = JEventDispatcher::getInstance();
-		JPluginHelper::importPlugin('content');
-		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.item', &$this->item, &$this->params, ''));
-
-	 
-		if ($this->_layout == 'edit')
-		{
-			$authorised = $user->authorise('core.create', 'com_tks_agenda');
-
-			if ($authorised !== true)
-			{
-				throw new Exception(JText::_('JERROR_ALERTNOAUTHOR'));
-			}
-		}
 
 		$this->_prepareDocument();
 
@@ -92,7 +70,7 @@ class tks_agendaViewNewsitem extends JViewLegacy
 		$title = null;
 
 		// Because the application sets a default page title,
-		// We need to get it from the menu item itself
+		// we need to get it from the menu item itself
 		$menu = $menus->getActive();
 
 		if ($menu)

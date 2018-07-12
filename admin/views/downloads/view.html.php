@@ -1,29 +1,18 @@
 <?php
 
-/**
- * @version    CVS: 1.0.0
- * @package    Com_Gckloosterveen
- * @author     Stephan Zuidberg <stephan@takties.nl>
- * @copyright  2016 Takties
- * @license    GNU General Public License version 2 or later; see LICENSE.txt
- */
+
 // No direct access
 defined('_JEXEC') or die;
 
 jimport('joomla.application.component.view');
 
-/**
- * View to edit
- *
- * @since  1.6
- */
-class tks_agendaViewNewsitem extends JViewLegacy
+class tks_agendaViewDownloads extends JViewLegacy
 {
+	protected $items;
+
+	protected $pagination;
+
 	protected $state;
-
-	protected $item;
-
-	protected $form;
 
 	protected $params;
 
@@ -38,43 +27,26 @@ class tks_agendaViewNewsitem extends JViewLegacy
 	 */
 	public function display($tpl = null)
 	{
-		$app  = JFactory::getApplication();
-		$user = JFactory::getUser();
+		$app = JFactory::getApplication();
 
-		$this->state  = $this->get('State');
-		$this->item   = $this->get('Data');
-		$this->params = $app->getParams('com_tks_agenda');
-
-		if (!empty($this->item))
-		{
-			
-		$this->item->newscatid_title = $this->getModel()->getCategoryName($this->item->newscatid)->title;$this->form = $this->get('Form');
-		}
+		$this->state      = $this->get('State');
+		$this->items = $this->get('Items');
+		$this->pagination = $this->get('Pagination');
+		$this->params     = $app->getParams('com_tks_agenda');
+		
 
 		// Check for errors.
 		if (count($errors = $this->get('Errors')))
 		{
 			throw new Exception(implode("\n", $errors));
 		}
-
 		
 		$dispatcher = JEventDispatcher::getInstance();
 		JPluginHelper::importPlugin('content');
 		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.item', &$this->item, &$this->params, ''));
 
 	 
-		if ($this->_layout == 'edit')
-		{
-			$authorised = $user->authorise('core.create', 'com_tks_agenda');
-
-			if ($authorised !== true)
-			{
-				throw new Exception(JText::_('JERROR_ALERTNOAUTHOR'));
-			}
-		}
-
 		$this->_prepareDocument();
-
 		parent::display($tpl);
 	}
 
@@ -92,7 +64,7 @@ class tks_agendaViewNewsitem extends JViewLegacy
 		$title = null;
 
 		// Because the application sets a default page title,
-		// We need to get it from the menu item itself
+		// we need to get it from the menu item itself
 		$menu = $menus->getActive();
 
 		if ($menu)
@@ -135,5 +107,17 @@ class tks_agendaViewNewsitem extends JViewLegacy
 		{
 			$this->document->setMetadata('robots', $this->params->get('robots'));
 		}
+	}
+
+	/**
+	 * Check if state is set
+	 *
+	 * @param   mixed  $state  State
+	 *
+	 * @return bool
+	 */
+	public function getState($state)
+	{
+		return isset($this->state->{$state}) ? $this->state->{$state} : false;
 	}
 }
