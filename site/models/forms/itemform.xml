@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+   <fieldset>
+     
+              <field name="id" type="text" default="0" label="COM_TKS_AGENDA_FORM_LBL_ITEM_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+         
+
+      <field name="catid" type="category"
+            label="COM_TKS_AGENDA_FORM_LBL_ITEM_CATID"
+            description="COM_TKS_AGENDA_FORM_DESC_ITEM_CATID"                 
+            extension="com_tks_agenda"
+            menu_published="0"
+            filter="raw"
+            directory_stripext="true"
+            directory_hidenode="true"
+            directory_hidedefault="true"
+            alias_generator="2220991"
+            heading="h4"
+            close="true"
+            option_on="Yes"
+            option_off="Yes"
+             default="25"  /> 
+   
+       <field name="created_by" type="createdby" default="" 
+            label="COM_TKS_AGENDA_FORM_LBL_ITEM_CREATED_BY"
+            description="COM_TKS_AGENDA_FORM_DESC_ITEM_CREATED_BY"  /> 
+
+       <field name="title" type="text"
+                
+            label="COM_TKS_AGENDA_FORM_LBL_ITEM_TITLE"
+            description="COM_TKS_AGENDA_FORM_DESC_ITEM_TITLE" 
+                
+                
+                   /> 
+
+       <field name="start" id="start" type="datetime" class=" "  
+         required="true" 
+        
+         
+            label="COM_TKS_AGENDA_FORM_LBL_ITEM_START"
+            description="COM_TKS_AGENDA_FORM_DESC_ITEM_START" 
+        format=" %Y-%m-%d %H:%M:%S"
+        filter="safehtml" /> 
+
+       <field name="end" id="end" type="datetime" class=" "
+         required="true" 
+        
+
+        
+            label="COM_TKS_AGENDA_FORM_LBL_ITEM_END"
+            description="COM_TKS_AGENDA_FORM_DESC_ITEM_END" 
+        format=" %Y-%m-%d %H:%M:%S"
+        filter="safehtml" /> 
+        
+                  <field
+                    name="recurring"
+                    type="radio"
+                    class="btn-group"
+                    default="false"
+                    label="COM_TKS_AGENDA_FORM_LBL_RECURRING_TITLE"
+                    description="COM_TKS_AGENDA_FORM_DESC_RECURRING_TITLE">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+
+                  <field
+                    name="recur_type"
+                    type="radio"
+                    class="btn-group"
+                    default="dag"
+                    label="COM_TKS_AGENDA_FORM_LBL_RECURRINGTYPE_TITLE"
+                    description="COM_TKS_AGENDA_FORM_DESC_LBL_RECURRINGTYPE_TITLE">
+                    
+                    <option value="dag">Dag</option>
+                    <option value="week">Week</option>
+                    <option value="maand">Maand</option>
+                </field>
+
+
+
+       <field name="end_recur" id="end_recur" type="datetime" class="inputbox"
+         
+         
+            label="COM_TKS_AGENDA_FORM_LBL_ITEM_END_RECUR"
+            description="COM_TKS_AGENDA_FORM_DESC_ITEM_START" 
+        format=" %Y-%m-%d %H:%M:%S"
+        filter="safehtml" /> 
+
+
+
+
+       <field name="reason" type="textarea"
+                
+            label="COM_TKS_AGENDA_FORM_LBL_ITEM_REASON"
+            description="COM_TKS_AGENDA_FORM_DESC_ITEM_REASON" 
+                
+                
+                 /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+        <option value="2">JARCHIVED</option>
+        <option value="-2">JTRASHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" /> 
+   </fieldset>
+   <fieldset name="accesscontrol">
+      <field name="asset_id" type="hidden" filter="unset" />
+      <field name="rules" type="rules" label="JFIELD_RULES_LABEL" translate_label="false" filter="rules" validate="rules" class="inputbox" component="com_tks_agenda" section="item" />
+   </fieldset>
+</form>
