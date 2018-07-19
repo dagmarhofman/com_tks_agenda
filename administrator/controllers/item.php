@@ -39,7 +39,7 @@ class tks_agendaControllerItem extends JControllerForm
 
  
 			$query->select('id,rid')
-			      ->from($db->quoteName('tks_agenda_recurring'))
+			      ->from($db->quoteName('#__tks_agenda_recurring'))
 			      ->where($db->quoteName('rid').'='.$id);
 			$db->setQuery($query);
 			$rows = $db->loadObjectList();
@@ -82,7 +82,7 @@ class tks_agendaControllerItem extends JControllerForm
 					$endRecurring = new DateTime($item->end_recur,new DateTimeZone("Europe/Amsterdam"));
 
 					$columns = array('rid', 'rstart', 'rend');
-					$query->insert($db->quoteName('tks_agenda_recurring'));
+					$query->insert($db->quoteName('#__tks_agenda_recurring'));
 					$query->columns($db->quoteName($columns));
 				
 					do {

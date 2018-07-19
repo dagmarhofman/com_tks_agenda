@@ -199,7 +199,7 @@ class tks_agendaModelDownload extends JModelAdmin
 			if (@$table->ordering === '')
 			{
 				$db = JFactory::getDbo();
-				$db->setQuery('SELECT MAX(ordering) FROM tks_agenda_download');
+				$db->setQuery('SELECT MAX(ordering) FROM #__tks_agenda_download');
 				$max             = $db->loadResult();
 				$table->ordering = $max + 1;
 			}

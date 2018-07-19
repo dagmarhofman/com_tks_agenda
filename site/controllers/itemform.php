@@ -166,9 +166,9 @@ class tks_agendaControllerItemForm extends tks_agendaController
 	 		*/
 			$query = $db->getQuery(true);
 			$query->select($db->quoteName(array('a.id','a.start', 'a.end','b.rstart','b.rend')));
-			$query->from($db->quoteName('tks_agenda_items','a'));
+			$query->from($db->quoteName('#__tks_agenda_items','a'));
 			
-			$query->join('LEFT', $db->quoteName('tks_agenda_recurring', 'b') . ' ON (' . $db->quoteName('a.id') . ' = ' . $db->quoteName('b.rid') . ')') ;
+			$query->join('LEFT', $db->quoteName('#__tks_agenda_recurring', 'b') . ' ON (' . $db->quoteName('a.id') . ' = ' . $db->quoteName('b.rid') . ')') ;
 			$query->where($db->quoteName('a.state') ." = 1");
 			$query->andWhere($db->quoteName('a.start') ." >= NOW()");
 			$query->andWhere($db->quoteName('a.end'). " > ".$db->quote($data['start'])." AND ".$db->quoteName('a.end'). " < ".$db->quote($data['end']));
@@ -237,7 +237,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
 
 			$query = $db->getQuery(true);
 			$columns = array('rid', 'rstart', 'rend');
-			$query->insert($db->quoteName('tks_agenda_recurring'));
+			$query->insert($db->quoteName('#__tks_agenda_recurring'));
 			$query->columns($db->quoteName($columns));
 			$query->values(implode('), (', $datesArray));
 		    $db->setQuery($query);

@@ -206,7 +206,7 @@ if (empty($list['direction']))
 				)
 		);
 
-		$query->from('`tks_agenda_items` AS a');
+		$query->from('`#__tks_agenda_items` AS a');
 		
 		// Join over the users for the checked out user.
 		$query->select('uc.name AS editor');

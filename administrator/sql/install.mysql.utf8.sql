@@ -1,4 +1,4 @@
-CREATE TABLE `tks_agenda_download` (
+CREATE TABLE `#__tks_agenda_download` (
   `id` int(11) UNSIGNED NOT NULL,
   `ordering` int(11) NOT NULL,
   `state` tinyint(1) NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE `tks_agenda_download` (
   `description` varchar(5000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `tks_agenda_newsitems` (
+CREATE TABLE `#__tks_agenda_newsitems` (
   `id` int(11) UNSIGNED NOT NULL,
   `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `ordering` int(11) NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE `tks_agenda_newsitems` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
-CREATE TABLE IF NOT EXISTS `tks_agenda_recurring` (
+CREATE TABLE IF NOT EXISTS `#__tks_agenda_recurring` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `rid` int(11) NOT NULL,
   `rstart` datetime NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `tks_agenda_recurring` (
 
 
 
-CREATE TABLE IF NOT EXISTS `tks_agenda_items` (
+CREATE TABLE IF NOT EXISTS `#__tks_agenda_items` (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `alias` varchar(255) NOT NULL,
   `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `tks_agenda_items` (
   `end_recur` datetime NOT NULL,
   `reason` varchar(1000) NOT NULL,
   `recurring_id` int NOT NULL,
-  CONSTRAINT `fk_agenda_recur` FOREIGN KEY (recurring_id) REFERENCES `tks_agenda_recurring`(id),
+  CONSTRAINT `fk_agenda_recur` FOREIGN KEY (recurring_id) REFERENCES `#__tks_agenda_recurring`(id),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

@@ -197,7 +197,7 @@ if (empty($list['direction']))
 				)
 			);
 
-		$query->from('tks_agenda_download` AS a');
+		$query->from('#__tks_agenda_download` AS a');
 		
 		// Join over the users for the checked out user.
 		$query->select('uc.name AS editor');

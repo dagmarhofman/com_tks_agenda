@@ -192,7 +192,7 @@ class tks_agendaModelItem extends JModelAdmin
 			if (@$table->ordering === '')
 			{
 				$db = JFactory::getDbo();
-				$db->setQuery('SELECT MAX(ordering) FROM tks_agenda_items');
+				$db->setQuery('SELECT MAX(ordering) FROM #__tks_agenda_items');
 				$max             = $db->loadResult();
 				$table->ordering = $max + 1;
 			}

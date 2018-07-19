@@ -103,7 +103,7 @@ class tks_agendaModelDownloads extends JModelList
 				'list.select', 'DISTINCT a.*'
 			)
 		);
-		$query->from('`tks_agenda_download` AS a');
+		$query->from('`#__tks_agenda_download` AS a');
 
 		// Join over the users for the checked out user
 		$query->select("uc.name AS editor");

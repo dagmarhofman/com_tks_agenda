@@ -48,7 +48,7 @@ class JFormFieldListFiles extends JFormField
  		// Select all records from the user profile table where key begins with "custom.".
 		// Order it by the ordering field.
 		$query->select($db->quoteName(array('id', 'title', 'file')));
-		$query->from($db->quoteName('tks_agenda_download'));
+		$query->from($db->quoteName('#__tks_agenda_download'));
 		$query->where($db->quoteName('id') . ' = '. $db->quote($id));
 		$query->order('ordering ASC');
 		 
