@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `#__tks_agenda_items` (
   `end_recur` datetime NOT NULL,
   `reason` varchar(1000) NOT NULL,
   `recurring_id` int NOT NULL,
-  /*CONSTRAINT `fk_agenda_recur` FOREIGN KEY (recurring_id) REFERENCES `#__tks_agenda_recurring`(id),*/
+  CONSTRAINT `fk_agenda_recur` FOREIGN KEY (recurring_id) REFERENCES `#__tks_agenda_recurring`(id),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

@@ -40,7 +40,7 @@ class tks_agendaViewItemform extends JViewLegacy
 	 */
 	public function display($tpl = null)
 	{
-//		$app  = JFactory::getApplication(); DAGMAR
+		$app  = JFactory::getApplication(); 
 		$user = JFactory::getUser();
 		JHtml::_('bootstrap.framework');
 		$this->state   = $this->get('State');

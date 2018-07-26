@@ -1,0 +1,15 @@
+.icon-48-items {
+      background-image: url(../images/l_items.png);
+      padding-left:60px!important;
+}
+
+.icon-48-item {
+      background-image: url(../images/l_items.png);
+      padding-left:60px!important;
+}
+
+
+
+.other-filters{
+    padding: 0 14px;
+}
