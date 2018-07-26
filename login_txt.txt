@@ -1,0 +1,10 @@
+
+Username:       gckvtest
+phpmyadmin: an5WOCTEUC
+Password:       eidQft0OU
+
+Domain:         gckvtest.nl
+
+To log in immediately, follow this link, using your username and password:
+http://185.116.165.38:2222 	
+
