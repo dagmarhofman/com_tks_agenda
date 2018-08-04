@@ -2,20 +2,21 @@
 
 /**
  * @version    CVS: 1.0.0
+ * @package    Com_Gckloosterveen
  * @author     Stephan Zuidberg <stephan@takties.nl>
- * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
- * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
+ * @copyright  2016 Takties
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 // No direct access
 defined('_JEXEC') or die;
 
 use Joomla\Utilities\ArrayHelper;
 /**
- * download Table class
+ * newsitem Table class
  *
  * @since  1.6
  */
-class tks_agendaTabledownload extends JTable
+class tks_agendaTablenewsitem extends JTable
 {
 	/**
 	 * Check if a field is unique
@@ -48,8 +49,8 @@ class tks_agendaTabledownload extends JTable
 	 */
 	public function __construct(&$db)
 	{
-		JObserverMapper::addObserverClassToClass('JTableObserverContenthistory', 'tks_agendaTabledownload', array('typeAlias' => 'com_tks_agenda.download'));
-		parent::__construct('#__tks_agenda_download', 'id', $db);
+		JObserverMapper::addObserverClassToClass('JTableObserverContenthistory', 'tks_agendaTableNewsitem', array('typeAlias' => 'com_tks_agenda.newsitem'));
+		parent::__construct('#__tks_agenda_newsitems', 'id', $db);
 	}
 
 	/**
@@ -71,26 +72,9 @@ class tks_agendaTabledownload extends JTable
 		if ($array['id'] == 0)
 		{
 			$array['created_by'] = JFactory::getUser()->id;
+			$array['modified_by'] = JFactory::getUser()->id;
+			$array['time_created'] = JFactory::getDate()->toSql();
 		}
-		//var_dump($array);
-		//exit();
-		// Support for multi file field: file
-		if (!empty($array['file']))
-		{
-			if (is_array($array['file']))
-			{
-				$array['file'] = implode(',', $array['file']);
-			}
-			elseif (strpos($array['file'], ',') != false)
-			{
-				$array['file'] = explode(',', $array['file']);
-			}
-		}
-		else
-		{
-			$array['file'] = '';
-		}
-
 
 			// Support for alias field: alias
 			if (empty($array['alias']))
@@ -120,17 +104,22 @@ class tks_agendaTabledownload extends JTable
 			$array['metadata'] = (string) $registry;
 		}
 
-		if (!JFactory::getUser()->authorise('core.admin', 'com_tks_agenda.download.' . $array['id']))
+		if (!JFactory::getUser()->authorise('core.admin', 'com_tks_agenda.newsitem.' . $array['id']))
 		{
-			$actions         = JAccess::getActionsFromFile(
-				JPATH_ADMINISTRATOR . '/components/com_tks_agenda/access.xml',"/access/section[@name='download']/"
+			$actions = JAccess::getActionsFromFile(JPATH_ADMINISTRATOR . '/components/com_tks_agenda/access.xml', "/access/section[@name='newsitem']/"
 			);
-			$default_actions = JAccess::getAssetRules('com_tks_agenda.download.' . $array['id'])->getData();
+			$default_actions = JAccess::getAssetRules('com_tks_agenda.newsitem.' . $array['id'])->getData();
 			$array_jaccess   = array();
 
 			foreach ($actions as $action)
 			{
-				$array_jaccess[$action->name] = $default_actions[$action->name];
+
+				/* 
+					TODO: check nieuws item acl
+				*/
+
+ 
+			//	$array_jaccess[$action->name] = $default_actions[$action->name];
 			}
 
 			$array['rules'] = $this->JAccessRulestoArray($array_jaccess);
@@ -184,113 +173,17 @@ class tks_agendaTabledownload extends JTable
 			$this->ordering = self::getNextOrder();
 		}
 		
-		// Check if file is unique
-		if (!$this->isUnique('file'))
+		// Check if title is unique
+		if (!$this->isUnique('title'))
 		{
-			throw new Exception('Your <b>file</b> item "<b>' . $this->file . '</b>" already exists');
+			throw new Exception('Your <b>title</b> item "<b>' . $this->title . '</b>" already exists');
 		}
 		// Check if alias is unique
 		if (!$this->isUnique('alias'))
 		{
-			throw new Exception('Your <b>alias</b> item "<b>' . $this->alias . '</b>" already exists');
+			$this->alias .= '-' . JFilterOutput::stringURLSafe(date('Y-m-d-H:i:s'));
 		}
 		
-		// Support multi file field: file
-		$app = JFactory::getApplication();
-		$files = $app->input->files->get('jform', array(), 'raw');
-		$array = $app->input->get('jform', array(), 'ARRAY');
-
-		if (!empty($files['file']))
-		{
-			$this->file = "";
-
-			foreach ($files['file'] as $singleFile )
-			{
-				jimport('joomla.filesystem.file');
-
-				// Check if the server found any error.
-				$fileError = $singleFile['error'];
-				$message = '';
-
-		 
-
-				if ($fileError > 0 && $fileError != 4)
-				{
-					switch ($fileError)
-					{
-						case 1:
-							$message = JText::_('File size exceeds allowed by the server');
-							break;
-						case 2:
-							$message = JText::_('File size exceeds allowed by the html form');
-							break;
-						case 3:
-							$message = JText::_('Partial upload error');
-							break;
-					}
-
-					if ($message != '')
-					{
-						$app->enqueueMessage($message, 'warning');
-
-						return false;
-					}
-				}
-				elseif ($fileError == 4)
-				{
-					if (isset($array['file']))
-					{
-						$this->file = $array['file'];
-					}
-				}
-				else
-				{
-					// Check for filesize
-					$fileSize = $singleFile['size'];
-
-					if ($fileSize > 10485760)
-					{
-						$app->enqueueMessage('File bigger than 10MB', 'warning');
-
-						return false;
-					}
-
-					// Check for filetype
-					$okMIMETypes = 'application/pdf,image/jpeg,application/vnd.openxmlformats-officedocument.wordprocessingml.document';
-					$validMIMEArray = explode(',', $okMIMETypes);
-					$fileMime = $singleFile['type'];
-
-					if (!in_array($fileMime, $validMIMEArray))
-					{
-						$app->enqueueMessage('This filetype is not allowed', 'warning');
-
-						return false;
-					}
-
-					// Replace any special characters in the filename
-					jimport('joomla.filesystem.file');
-					$filename = JFile::stripExt($singleFile['name']);
-					$extension = JFile::getExt($singleFile['name']);
-					$filename = preg_replace("/[^A-Za-z0-9]/i", "-", $filename);
-					$filename = $filename . '.' . $extension;
-					$uploadPath = JPATH_ROOT . '/downloads/' . $filename;
-					$fileTemp = $singleFile['tmp_name'];
-
-					if (!JFile::exists($uploadPath))
-					{
-						if (!JFile::upload($fileTemp, $uploadPath))
-						{
-							$app->enqueueMessage('Error moving file', 'warning');
-
-							return false;
-						}
-					}
-
-					$this->file .= (!empty($this->file)) ? "," : "";
-					$this->file .= $filename;
-				}
-			}
-		}
 
 		return parent::check();
 	}
@@ -387,7 +280,7 @@ class tks_agendaTabledownload extends JTable
 	{
 		$k = $this->_tbl_key;
 
-		return 'com_tks_agenda.download.' . (int) $this->$k;
+		return 'com_tks_agenda.newsitem.' . (int) $this->$k;
 	}
 
 	/**
@@ -432,16 +325,6 @@ class tks_agendaTabledownload extends JTable
 		$this->load($pk);
 		$result = parent::delete($pk);
 		
-		if ($result)
-		{
-			jimport('joomla.filesystem.file');
-
-			foreach ($this->file as $fileFile)
-			{
-				JFile::delete(JPATH_ROOT . '/downloads/' . $fileFile);
-			}
-		}
-
 		return $result;
 	}
 }

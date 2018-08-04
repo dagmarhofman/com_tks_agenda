@@ -36,7 +36,7 @@ class tks_agendaModelNewsitem extends JModelAdmin
 	 *
 	 * @since    1.6
 	 */
-	public function getTable($type = 'Newsitem', $prefix = 'GckloosterveenTable', $config = array())
+	public function getTable($type = 'Newsitem', $prefix = 'tks_agendaTable', $config = array())
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}

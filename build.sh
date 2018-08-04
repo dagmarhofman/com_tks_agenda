@@ -1,7 +1,7 @@
 #archiveer het project
-#git archive -o ../../zipped/com_tks_experiment.zip HEAD
 
-zip -r ../../zipped/com_tks_agenda.zip .
+zip -r ../zipped/com_tks_agenda.zip .
+
 #upload de update server xml
 
 #de tks_template_update.xml gaat naar http://takties.alt.guestbox.nl/tks_template_update.xml

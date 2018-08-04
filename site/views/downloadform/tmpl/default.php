@@ -16,7 +16,7 @@ $doc = JFactory::getDocument();
 $doc->addScript(JUri::base() . '/media/com_tks_agenda/js/form.js');
 
 $user    = JFactory::getUser();
-$canEdit = tks_agendaFrontendHelper::canUserEdit($this->item, $user);
+$canEdit = tks_agendaSiteFrontendHelper::canUserEdit($this->item, $user);
 
 
 ?>

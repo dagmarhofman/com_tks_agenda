@@ -4,6 +4,7 @@
 // No direct access
 defined('_JEXEC') or die;
 
+
 class tks_agendaHelper
 {
 	public static function addSubmenu($vName = '')
@@ -69,7 +70,7 @@ class tks_agendaHelper
 
 
 
-class tks_agendaFrontendHelper
+class tks_agendaSiteFrontendHelper
 {
 
 

@@ -4,19 +4,21 @@
  * @version    CVS: 1.0.0
  * @package    Com_Gckloosterveen
  * @author     Stephan Zuidberg <stephan@takties.nl>
- * @copyright  2016 Takties
- * @license    GNU General Public License version 2 or later; see LICENSE.txt
+ * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
+ * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
  */
 defined('_JEXEC') or die;
 
 jimport('joomla.application.component.modellist');
+
+JLoader::register('tks_agendaFrontendHelper', JPATH_COMPONENT . '/helpers/tks_agenda.php');
 
 /**
  * Methods supporting a list of Gckloosterveen records.
  *
  * @since  1.6
  */
-class tks_agendaModelNewsitems extends JModelList
+class tks_agendaModelItems extends JModelList
 {
 	/**
 	 * Constructor.
@@ -32,15 +34,13 @@ class tks_agendaModelNewsitems extends JModelList
 		{
 			$config['filter_fields'] = array(
 				'id', 'a.id',
+				'catid', 'a.catid',
 				'ordering', 'a.ordering',
 				'state', 'a.state',
 				'created_by', 'a.created_by',
-				'modified_by', 'a.modified_by',
-				'title', 'a.title',
-				'alias', 'a.alias',
-				'newscatid', 'a.newscatid',
-				'description', 'a.description',
-			);
+ 				'start', 'a.start',
+				'end', 'a.end',
+ 			);
 		}
 
 		parent::__construct($config);
@@ -66,11 +66,11 @@ class tks_agendaModelNewsitems extends JModelList
 		$app = JFactory::getApplication();
 
 		// List state information
-		$limit = $app->getUserStateFromRequest('global.list.limit', 'limit', $app->get('list_limit'));
-		$this->setState('list.limit', $limit);
+		//$limit = $app->getUserStateFromRequest('global.list.limit', 'limit', $app->get('list_limit'));
+		//$this->setState('list.limit', $limit);
 
-		$limitstart = $app->getUserStateFromRequest('limitstart', 'limitstart', 0);
-		$this->setState('list.start', $limitstart);
+		//$limitstart = $app->getUserStateFromRequest('limitstart', 'limitstart', 0);
+		//$this->setState('list.start', $limitstart);
 
 		if ($list = $app->getUserStateFromRequest($this->context . '.list', 'list', array(), 'array'))
 		{
@@ -206,28 +206,24 @@ if (empty($list['direction']))
 				$this->getState(
 					'list.select', 'DISTINCT a.*'
 				)
-			);
+		);
 
-		$query->from('`#__tks_agenda_newsitems` AS a');
+		$query->from('`#__tks_agenda_items` AS a');
 		
 		// Join over the users for the checked out user.
 		$query->select('uc.name AS editor');
 		$query->join('LEFT', '#__users AS uc ON uc.id=a.checked_out');
+		// Join over the category 'catid'
+		$query->select('catid.title AS catid_title');
+		$query->join('LEFT', '#__categories AS catid ON catid.id = a.catid');
 
 		// Join over the created by field 'created_by'
 		$query->join('LEFT', '#__users AS created_by ON created_by.id = a.created_by');
-
-		// Join over the created by field 'modified_by'
-		$query->join('LEFT', '#__users AS modified_by ON modified_by.id = a.modified_by');
-		// Join over the category 'newscatid'
-		$query->select('categoriesnews.title AS newscatidtitle');
-		$query->join('LEFT', '#__categories AS categoriesnews ON categoriesnews.id = a.newscatid');
 		
 		if (!JFactory::getUser()->authorise('core.edit', 'com_tks_agenda'))
 		{
 			$query->where('a.state = 1');
 		}
-
 		// Filter by search in title
 		$search = $this->getState('filter.search');
 
@@ -240,18 +236,9 @@ if (empty($list['direction']))
 			else
 			{
 				$search = $db->Quote('%' . $db->escape($search, true) . '%');
-				$query->where('( a.title LIKE ' . $search . ' )');
+				$query->where('( a.title LIKE '.$search.' )');
 			}
 		}
-		
-
-		// Filtering newscatid
-		$filter_newscatid = $this->state->get("filter.newscatid");
-		if ($filter_newscatid)
-		{
-			$query->where("a.newscatid = '".$db->escape($filter_newscatid)."'");
-		}
-
 		// Add the list ordering clause.
 		$orderCol  = $this->state->get('list.ordering');
 		$orderDirn = $this->state->get('list.direction');
@@ -272,26 +259,18 @@ if (empty($list['direction']))
 	public function getItems()
 	{
 		$items = parent::getItems();
-		
 		foreach ($items as $item)
 		{
-
-
-			if (isset($item->newscatid))
+			if (isset($item->catid))
 			{
-
- 
 				// Get the title of that particular template
-					$title = tks_agendaSiteFrontendHelper::getCategoryNameByCategoryId($item->newscatid);
-
+					$title = tks_agendaFrontendHelper::getCategoryNameByCategoryId($item->catid);
 					// Finally replace the data object with proper information
-					$item->newscatid = !empty($title) ? $title : $item->newscatid;
+					$item->catid = !empty($title) ? $title : $item->catid;
 				}
 		}
-
 		return $items;
 	}
-
 	/**
 	 * Overrides the default function to check Date fields format, identified by
 	 * "_dateformat" suffix, and erases the field if it's not correct.

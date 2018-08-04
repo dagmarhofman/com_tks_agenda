@@ -68,7 +68,7 @@ class tks_agendaHelper
 }
 
 
-
+/*
 class tks_agendaFrontendHelper
 {
 
@@ -160,3 +160,4 @@ class tks_agendaFrontendHelper
         return $permission;
     }
 }
+*/

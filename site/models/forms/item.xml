@@ -56,7 +56,7 @@
                     name="recurring"
                     type="radio"
                     class="btn-group"
-                    default="false"
+                    default="No"
                     label="COM_TKS_AGENDA_FORM_LBL_RECURRING_TITLE"
                     description="COM_TKS_AGENDA_FORM_DESC_RECURRING_TITLE">
                     <option value="true">JYES</option>

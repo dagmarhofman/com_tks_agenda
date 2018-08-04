@@ -4,7 +4,7 @@
 // No direct access
 defined('_JEXEC') or die;
 
-JLoader::register('tks_agendaFrontendHelper', JPATH_BASE . '/components/com_tks_agenda/helpers/tks_agenda.php');
+JLoader::register('tks_agendaSiteFrontendHelper', JPATH_BASE . '/components/com_tks_agenda/helpers/tks_agenda.php');
 
 class tks_agendaRouter extends JComponentRouterBase
 {
@@ -37,7 +37,7 @@ class tks_agendaRouter extends JComponentRouterBase
 				$segments[] = $query['id'];
 				if ($view == 'newsitem') {
 
-				$model      = tks_agendaFrontendHelper::getModel($view);
+				$model      = tks_agendaSiteFrontendHelper::getModel($view);
  				if($model !== null){		
 					$item       = $model->getData($query['id']);		
 					$alias      = $model->getAliasFieldNameByView($view);		
@@ -76,7 +76,7 @@ class tks_agendaRouter extends JComponentRouterBase
 
 		// View is always the first element of the array
 		$vars['view'] = array_shift($segments);
-		$model = tks_agendaFrontendHelper::getModel($vars['view']);
+		$model = tks_agendaSiteFrontendHelper::getModel($vars['view']);
 
 		while (!empty($segments))
 		{

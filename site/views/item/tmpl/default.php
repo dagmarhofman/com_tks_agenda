@@ -36,7 +36,7 @@ $enddate = explode(' ',date('d-m-Y H:i',strtotime($this->item->end)));
 <div class="start-tijd"><?php echo $startdate[0];?> - <strong><?php echo $startdate[1];?></strong></div>
 <div class="end-tijd"><?php echo $enddate[0];?> - <strong><?php echo $enddate[1];?></strong></div>
  
- <?php if($this->item->recurring == true && isset($this->item->recur_type)): ?>
+ <?php if($this->item->recurring == true  && isset($this->item->recur_type)): ?>
     <?php switch ($this->item->recur_type) {
                 case "dag":
                 $date_calculation = "een dagelijks";
@@ -47,12 +47,18 @@ $enddate = explode(' ',date('d-m-Y H:i',strtotime($this->item->end)));
             case "maand":
                 $date_calculation = "een maandelijks";
                 break;
-            default:
-                $date_calculation = "geen";
             }
+            if( $this->item->recurring == "No" ) {
+					$date_calculation = "geen";            
+            }
+            
             ?>
             <p>Dit is <?php echo $date_calculation;?> terugkomende reservering.</p>
     <?php endif; ?>
+
+
+
+
 
     <?php if(!empty($this->item->reason)) : ?>
            <?php echo '<p>'.$this->item->reason.'</p>'; ?>
@@ -93,5 +99,7 @@ else:
     echo JText::_('COM_TKS_AGENDA_ITEM_NOT_LOADED');
 endif;
 
-	 
+
+
+
 		 

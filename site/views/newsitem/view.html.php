@@ -47,8 +47,9 @@ class tks_agendaViewNewsitem extends JViewLegacy
 
 		if (!empty($this->item))
 		{
-			
-		$this->item->newscatid_title = $this->getModel()->getCategoryName($this->item->newscatid)->title;$this->form = $this->get('Form');
+				 	
+		$this->item->newscatid_title = $this->getModel()->getCategoryName( $this->item->newscatid )->title;
+		$this->form = $this->get('Form');
 		}
 
 		// Check for errors.

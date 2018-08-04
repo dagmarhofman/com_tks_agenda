@@ -225,6 +225,8 @@ class tks_agendaModelNewsitem extends JModelItem
 		$query->where( $db->quoteName('id') . ' = ' . $id);
 		
 		$db->setQuery($query);
+
+		echo 'DAGMAR --> ' . $query;
 		
 		return $db->loadObject();
 	}

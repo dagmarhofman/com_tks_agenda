@@ -49,8 +49,8 @@ class tks_agendaTablenewsitem extends JTable
 	 */
 	public function __construct(&$db)
 	{
-		JObserverMapper::addObserverClassToClass('JTableObserverContenthistory', 'GckloosterveenTablenewsitem', array('typeAlias' => 'com_tks_agenda.newsitem'));
-		parent::__construct('#__gckloosterveen_newsitems', 'id', $db);
+		JObserverMapper::addObserverClassToClass('JTableObserverContenthistory', 'tks_agendaTablenewsitem', array('typeAlias' => 'com_tks_agenda.newsitem'));
+		parent::__construct('#__tks_agenda_newsitems', 'id', $db);
 	}
 
 	/**

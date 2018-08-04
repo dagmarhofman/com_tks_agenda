@@ -92,10 +92,14 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		{
 			throw new Exception($model->getError(), 500);
 		}
+
 		// Validate the posted data.
 		$data = $model->validate($form, $data);
 		$input = $app->input;
 		$jform = $input->get('jform', array(), 'ARRAY');
+
+  		
+
 		// Check for errors.
 			if ($data === false)
 			{
@@ -135,7 +139,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
 
 			}
 
-			if (isset($jform['recurring']) && $jform['recurring'] == true) {
+			if (isset($jform['recurring']) && $jform['recurring'] == "Yes") {
 				$values = '';
 				do {
 						switch ($data['recur_type']) {
@@ -174,7 +178,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
 			$query->andWhere($db->quoteName('a.end'). " > ".$db->quote($data['start'])." AND ".$db->quoteName('a.end'). " < ".$db->quote($data['end']));
 			$query->orWhere($db->quoteName('a.start'). " > ".$db->quote($data['start'])." AND ".$db->quoteName('a.start'). " < ".$db->quote($data['end']));
 			
-	 		if(isset($jform['recurring']) && $jform['recurring'] == true) {
+	 		if(isset($jform['recurring']) && $jform['recurring'] == "Yes") {
 	  			
 				$query->orWhere($db->quoteName('b.rend'). " > ".$db->quote($data['start'])." AND ".$db->quoteName('b.rend'). " < ".$db->quote($data['end']));
 				$query->orWhere($db->quoteName('b.rstart'). " > ".$db->quote($data['start'])." AND ".$db->quoteName('b.rstart'). " < ".$db->quote($data['end']));
@@ -209,8 +213,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
 				$this->setMessage(JText::sprintf('Save failed', $model->getError()), 'warning');
 				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
 			}
-
-		if (isset($jform['recurring']) && $jform['recurring'] == true) {
+		if (isset($jform['recurring']) && $jform['recurring'] == "Yes" ) {
 
 			$startDate = new DateTime($jform['start'],new DateTimeZone("Europe/Amsterdam"));
 			$endDate = new DateTime($jform['end'],new DateTimeZone("Europe/Amsterdam"));

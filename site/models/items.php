@@ -262,7 +262,7 @@ if (empty($list['direction']))
 			if (isset($item->catid))
 			{
 				// Get the title of that particular template
-					$title = tks_agendaFrontendHelper::getCategoryNameByCategoryId($item->catid);
+					$title = tks_agendaSiteFrontendHelper::getCategoryNameByCategoryId($item->catid);
 					// Finally replace the data object with proper information
 					$item->catid = !empty($title) ? $title : $item->catid;
 				}
