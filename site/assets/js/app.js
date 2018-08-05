@@ -2,7 +2,7 @@
 
  $(document).ready(function() {
 
- 
+
         $('.radio.btn-group label').addClass('btn');
         $(".btn-group label:not(.active)").click(function()
             {

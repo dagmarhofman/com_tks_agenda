@@ -53,6 +53,7 @@ endif;
 	}
 
 
+	
 
 </script>
 
@@ -103,7 +104,7 @@ endif;
 				</div>
 			</div>
 
-			
+			<div id="recurring_attrib">			
 						
 			<div class="g-block size-25">
 				<div class="control-group">
@@ -121,7 +122,7 @@ endif;
 				</div>
 			</div>
 
-
+			</div>
 			
 	 		<div class="g-block size-100">
 	 		<div class="control-group">

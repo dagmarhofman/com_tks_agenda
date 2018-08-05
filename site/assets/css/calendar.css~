@@ -606,7 +606,7 @@ div.modal {
  
       z-index: 100000!important;
  }
-.com_tks_agenda .bootstrap-datetimepicker-widget table td span {
+.com_gckloosterveen .bootstrap-datetimepicker-widget table td span {
     display: inline-block;
     width: 40px;
     height: 30px;
@@ -616,15 +616,15 @@ div.modal {
     border-radius: 4px;
 }
 
-.com_tks_agenda .picker-switch {
+.com_gckloosterveen .picker-switch {
   margin-top: 26px;
 }
 
 
-.com_tks_agenda .dateinput {position: relative;}
+.com_gckloosterveen .dateinput {position: relative;}
 
 
 
-.com_tks_agenda #system-message-container {
+.com_gckloosterveen #system-message-container {
   margin: 0 25px 0;
 }

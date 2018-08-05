@@ -53,6 +53,7 @@ endif;
 	}
 
 
+	
 
 </script>
 
@@ -103,8 +104,7 @@ endif;
 				</div>
 			</div>
 
-			
-			
+						
 			<div class="g-block size-25">
 				<div class="control-group">
 					<div class="control-label"><?php echo $this->form->getLabel('recur_type'); ?></div>
@@ -120,6 +120,7 @@ endif;
 					<div class="controls"><?php echo $this->form->getInput('end_recur'); ?></div>
 				</div>
 			</div>
+
 			
 	 		<div class="g-block size-100">
 	 		<div class="control-group">

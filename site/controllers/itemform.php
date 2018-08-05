@@ -128,17 +128,41 @@ class tks_agendaControllerItemForm extends tks_agendaController
 			$startDate = new DateTime($data['start'],new DateTimeZone("Europe/Amsterdam"));
 			$endDate = new DateTime($data['end'],new DateTimeZone("Europe/Amsterdam"));
 			$endRecurring = new DateTime($data['end_recur'],new DateTimeZone("Europe/Amsterdam"));
+
+
+
+			$firstDate = $startDate->format('Y-m-d');
+			$secondDate = $endDate->format('Y-m-d');
+
+			if( $firstDate != $secondDate ) {
+				$this->setMessage(JText::sprintf('Afspraak duurt langer dan tot de volgende dag! dit is niet toegestaan.', $model->getError()), 'warning');
+				$menu = JFactory::getApplication()->getMenu();
+				$item = $menu->getActive();
+				$url  = (empty($item->link) ? 'index.php?option=com_tks_agenda&view=items' : $item->link);
+				$this->setRedirect(JRoute::_($url, false));
+ 				return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
+
+			}
 			
 			$interval = $startDate->diff($endRecurring);
 			// check if if recurring less than a year
 			if ($interval->days >= 365) {
 					$app->setUserState('com_tks_agenda.edit.item.data', $data);
 					$id = (int) $app->getUserState('com_tks_agenda.edit.item.id');
-					$this->setMessage(JText::sprintf('De herhaling is meer dan een jaar! Dit is niet toegestaan.', $model->getError()), 'warning');
+					$this->setMessage(JText::sprintf('De herhaling is meer dan een jaar! Dit is niet toegestaan.', $model->getError()), 'error');
 					return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
 
 			}
 
+			if( $endRecurring < $startDate && isset($jform['recurring']) && $jform['recurring'] == "Yes") {
+				$this->setMessage(JText::sprintf('De herhaalafspraak tijd is eerder dan de starttijd! Dit is niet toegestaan.', $model->getError()), 'warning');
+				$menu = JFactory::getApplication()->getMenu();
+				$item = $menu->getActive();
+				$url  = (empty($item->link) ? 'index.php?option=com_tks_agenda&view=items' : $item->link);
+				$this->setRedirect(JRoute::_($url, false));
+				return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
+			}
+			
 			if (isset($jform['recurring']) && $jform['recurring'] == "Yes") {
 				$values = '';
 				do {
@@ -199,6 +223,18 @@ class tks_agendaControllerItemForm extends tks_agendaController
 				$this->setMessage(JText::sprintf('Deze datum en tijd is al geboekt', $model->getError()), 'warning');
 				return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
 			}
+			
+
+			if( $endDate < $startDate ) {
+				$this->setMessage(JText::sprintf('De eindtijd is eerder dan de starttijd! Dit is niet toegestaan.', $model->getError()), 'warning');
+				$menu = JFactory::getApplication()->getMenu();
+				$item = $menu->getActive();
+				$url  = (empty($item->link) ? 'index.php?option=com_tks_agenda&view=items' : $item->link);
+				$this->setRedirect(JRoute::_($url, false));
+				return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
+			}
+			
+			
 			// Attempt to save the data.
 			$return = $model->save($data);
 

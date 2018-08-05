@@ -1,5 +1,13 @@
-	;(function($) {
+;(function($) {
     $(document).ready(function() {
+
+	document.getElementById('jform_recurring0').onclick = function () { 
+	    document.getElementById('recurring_attrib').style.visibility = "visible";
+	};
+	document.getElementById('jform_recurring1').onclick = function () {
+	    document.getElementById('recurring_attrib').style.visibility = "hidden";
+	};
+
         // Turn radios into btn-group
         $('.radio.btn-group label').addClass('btn');
         $(".btn-group label:not(.active)").click(function()
@@ -29,5 +37,11 @@
                     $("label[for=" + $(this).attr('id') + "]").addClass('active btn-success');
                 }
         });
+
+    document.getElementById('jform_recurring1').click();
+
     })
+
+
 })(jQuery);
+

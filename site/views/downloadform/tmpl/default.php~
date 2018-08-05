@@ -16,6 +16,7 @@ $doc = JFactory::getDocument();
 $doc->addScript(JUri::base() . '/media/com_tks_agenda/js/form.js');
 
 $user    = JFactory::getUser();
+$canSave = true;
 $canEdit = tks_agendaSiteFrontendHelper::canUserEdit($this->item, $user);
 
 
@@ -69,9 +70,11 @@ $canEdit = tks_agendaSiteFrontendHelper::canUserEdit($this->item, $user);
 			<div class="control-group">
 				<div class="controls">
 
+					<?php if ($this->canSave): ?>
 						<button type="submit" class="validate btn btn-primary">
 							<?php echo JText::_('JSUBMIT'); ?>
 						</button>
+					<?php endif; ?>
 					<a class="btn"
 					   href="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=downloadform.cancel'); ?>"
 					   title="<?php echo JText::_('JCANCEL'); ?>">
