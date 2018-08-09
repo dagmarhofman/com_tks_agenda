@@ -125,7 +125,7 @@ class tks_agendaModelDownloadForm extends JModelForm
 	 *
 	 * @return  JTable|boolean JTable if found, boolean false on failure
 	 */
-	public function getTable($type = 'Download', $prefix = 'tks_agendaTable', $config = array())
+	public function getTable($type = 'Download', $prefix = 'GckloosterveenTable', $config = array())
 	{
 		$this->addTablePath(JPATH_ADMINISTRATOR . '/components/com_tks_agenda/tables');
 

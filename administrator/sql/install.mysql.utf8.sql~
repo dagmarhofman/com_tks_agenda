@@ -26,7 +26,8 @@ CREATE TABLE `#__tks_agenda_newsitems` (
   `title` varchar(100) NOT NULL,
   `alias` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `newscatid` int(11) NOT NULL,
-  `description` text NOT NULL
+  `description` text NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 

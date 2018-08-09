@@ -109,6 +109,8 @@ class tks_agendaControllerDownloadForm extends JControllerForm
 			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=downloadform&layout=edit&id=' . $id, false));
 		}
 
+		var_dump($model);
+		return;
 		// Attempt to save the data.
 		 $return = $model->save($data);
 

@@ -1,6 +1,6 @@
 
 CREATE TABLE `#__tks_agenda_download` (
-  `id` int(11) UNSIGNED NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `ordering` int(11) NOT NULL,
   `state` tinyint(1) NOT NULL,
   `checked_out` int(11) NOT NULL,
@@ -10,7 +10,8 @@ CREATE TABLE `#__tks_agenda_download` (
   `title` varchar(255) NOT NULL,
   `alias` varchar(255) NOT NULL,
   `file` text NOT NULL,
-  `description` varchar(5000) NOT NULL
+  `description` varchar(5000) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `#__tks_agenda_newsitems` (
