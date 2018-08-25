@@ -18,7 +18,8 @@ require_once JPATH_COMPONENT . '/controller.php';
  * @since  1.6
  */
 
-class tks_agendaControllerItem extends tks_agendaController {
+class tks_agendaControllerItem extends tks_agendaController 
+{
 	
 	/**
 	 * Method to check out an item for editing and redirect to the edit form.
@@ -34,6 +35,11 @@ class tks_agendaControllerItem extends tks_agendaController {
 		// Get the previous edit id (if any) and the current edit id.
 		$previousId = (int) $app->getUserState('com_tks_agenda.edit.item.id');
 		$editId     = $app->input->getInt('id', 0);
+
+
+		JFactory::getApplication()->setUserState('com_tks_agenda.edit.item.mode', 'update');
+
+
 
 		// Set the user id for the user to edit in the session.
 		$app->setUserState('com_tks_agenda.edit.item.id', $editId);

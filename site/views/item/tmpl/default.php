@@ -67,7 +67,7 @@ $enddate = explode(' ',date('d-m-Y H:i',strtotime($this->item->end)));
     <?php 
 
      if($userId == $this->item->created_by): ?>
-        <a class="btn" href="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.edit&id='.$this->item->id); ?>"><?php echo JText::_("Bewerk"); ?></a>
+        <a class="btn" href="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.edit&id='. $this->item->id . '&mode=update' ); ?>"><?php echo JText::_("Bewerk"); ?></a>
     <?php endif; ?>
 
 

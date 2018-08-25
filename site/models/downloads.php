@@ -5,6 +5,13 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.modellist');
 
 
+/**
+ *	Downloads model class
+ * 
+ * @author Dagmar Hofman, Stephan Zuidberg 
+ *
+ */
+
 class tks_agendaModelDownloads extends JModelList
 {
 	/**
@@ -13,7 +20,6 @@ class tks_agendaModelDownloads extends JModelList
 	 * @param   array  $config  An optional associative array of configuration settings.
 	 *
 	 * @see        JController
-	 * @since      1.6
 	 */
 	public function __construct($config = array())
 	{
@@ -47,7 +53,6 @@ class tks_agendaModelDownloads extends JModelList
 	 *
 	 * @throws Exception
 	 *
-	 * @since    1.6
 	 */
 	protected function populateState($ordering = null, $direction = null)
 	{
@@ -181,7 +186,6 @@ if (empty($list['direction']))
 	 *
 	 * @return   JDatabaseQuery
 	 *
-	 * @since    1.6
 	 */
 	protected function getListQuery()
 	{

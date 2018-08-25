@@ -14,10 +14,10 @@ jimport('joomla.application.component.modelitem');
 jimport('joomla.event.dispatcher');
 
 use Joomla\Utilities\ArrayHelper;
+
 /**
- * Gckloosterveen model.
+ * tks_agenda model.
  *
- * @since  1.6
  */
 class tks_agendaModelItem extends JModelItem
 {
@@ -27,8 +27,6 @@ class tks_agendaModelItem extends JModelItem
 	 * Note. Calling getState in this method will result in recursion.
 	 *
 	 * @return void
-	 *
-	 * @since    1.6
 	 *
 	 */
 	protected function populateState()
@@ -146,7 +144,6 @@ class tks_agendaModelItem extends JModelItem
 	 *
 	 * @return  boolean True on success, false on failure.
 	 *
-	 * @since    1.6
 	 */
 	public function checkin($id = null)
 	{
@@ -178,7 +175,6 @@ class tks_agendaModelItem extends JModelItem
 	 *
 	 * @return  boolean True on success, false on failure.
 	 *
-	 * @since    1.6
 	 */
 	public function checkout($id = null)
 	{

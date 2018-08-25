@@ -2,8 +2,7 @@
 
 /**
  * @version    CVS: 1.0.0
- * @package    com_tks_agenda
- * @author     Stephan Zuidberg <stephan@takties.nl>
+ * @author     Dagmar Hofman <dhofman@initfour.nl>
  * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
  * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
  */
@@ -13,7 +12,7 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.view');
 
 /**
- * View class for a list of Gckloosterveen.
+ * View class for a list of com_tks_agenda.
  *
  * @since  1.6
  */

@@ -19,6 +19,17 @@ require_once JPATH_COMPONENT . '/controller.php';
  */
 class tks_agendaControllerItemForm extends tks_agendaController
 {
+	
+	var $jform = NULL;
+	//array voor herhaalafspraken die uitvallen
+	var $uitval = NULL;	
+	var $startDate = NULL;
+	var $endDate = NULL;
+	var $endRecurring = NULL;
+	var $model = NULL;
+	var $db = NULL;
+	var $data = NULL;	
+	var $last_error = NULL;
 	/**
 	 * Method to check out an item for editing and redirect to the edit form.
 	 *
@@ -37,19 +48,22 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		// Set the user id for the user to edit in the session.
 		$app->setUserState('com_tks_agenda.edit.item.id', $editId);
 
+		JFactory::getApplication()->setUserState('com_tks_agenda.edit.item.mode', 'create');
+		
+		
 		// Get the model.
-		$model = $this->getModel('ItemForm', 'tks_agendaModel');
+		$this->model = $this->getModel('ItemForm', 'tks_agendaModel');
 
 		// Check out the item
 		if ($editId)
 		{
-			$model->checkout($editId);
+			$this->model->checkout($editId);
 		}
 
 		// Check in the previous user.
 		if ($previousId)
 		{
-			$model->checkin($previousId);
+			$this->model->checkin($previousId);
 		}
 
 		// Redirect to the edit screen.
@@ -65,6 +79,194 @@ class tks_agendaControllerItemForm extends tks_agendaController
 	 * @since  1.6
 	 */
 	
+	public function overlap_check( $is_update = NULL, $id)
+	{
+
+		//eerst check ik de item overlap
+		$query = $this->db->getQuery(true);
+	
+		$query->select($this->db->quoteName(array('a.id','a.start', 'a.end')));
+		$query->from($this->db->quoteName('#__tks_agenda_items','a'));
+		if( $is_update ) {
+			$query->where( $this->db->quotename('a.id') . ' != ' . (int)$id );
+		}		
+		$this->db->setQuery($query);
+		$this->db->execute();
+		$result_a = $this->db->loadObjectList();
+		
+		/* misschien de  ( (int) $row->id !=  (int) $id  ) in de WHERE clausile afvlaggen? */
+		foreach( $result_a as $row ) {
+			if( ( $this->startDate->format("Y-m-d H:i:s") > $row->start &&  $this->startDate->format("Y-m-d H:i:s") < $row->end  ) 
+				|| ( $this->endDate->format("Y-m-d H:i:s") > $row->start  &&  $this->endDate->format("Y-m-d H:i:s") < $row->end ) 
+				|| ( $this->startDate->format("Y-m-d H:i:s") <= $row->start  &&  $this->endDate->format("Y-m-d H:i:s") >= $row->end ) ) {
+					$this->setMessage(JText::sprintf( 'Deze vergaderruimte is al geboekt.' . $row->id .   ' - ' . $id, $this->model->getError()), 'warning');								
+					return false;			
+				} 			
+		}
+
+		$query = $this->db->getQuery(true);
+
+		$query->select($this->db->quoteName(array('b.id', 'b.rid','b.rstart', 'b.rend')));
+		$query->from($this->db->quoteName('#__tks_agenda_recurring','b'));
+	
+		$this->db->setQuery($query);
+		$this->db->execute();
+		$result_b = $this->db->loadObjectList();
+		
+		foreach( $result_b as $row ) {
+			if( ( $this->startDate->format("Y-m-d H:i:s") > $row->rstart &&  $this->startDate->format("Y-m-d H:i:s") < $row->rend  ) 
+				|| ( $this->endDate->format("Y-m-d H:i:s") > $row->rstart  &&  $this->endDate->format("Y-m-d H:i:s") < $row->rend ) 
+				|| ( $this->startDate->format("Y-m-d H:i:s") <= $row->rstart  &&  $this->endDate->format("Y-m-d H:i:s") >= $row->rend ) ) {
+					$this->setMessage(JText::sprintf( 'Deze vergaderruimte is al geboekt.' . $row->id .   ' - ' . $id, $this->model->getError()), 'warning');								
+					return false;			
+					}			
+		}		
+
+
+		//----check nu of de herhaalafspraken ergen overlappen, (zet de overlappende herhaalafspraken in een array, en vraag of die geschapt moeten worden)
+
+		$datearr = $this->get_recur_array();
+
+		$flag = true;
+		$i = 0;		
+		$j = 0;
+		
+		$overlaparr[][] = null;
+		$overlaparr[0] = null;
+		$overlaparr[1] = null;
+		
+		while( $datearr[0][$i] != NULL ) {
+			
+			foreach( $result_a as $row ) {
+				if( ( $datearr[0][$i] > $row->start && $datearr[0][$i] < $row->end  ) 
+					|| ( $datearr[1][$i] > $row->start  &&  $datearr[1][$i] < $row->end ) 
+					|| ( $datearr[0][$i] <= $row->start  &&  $datearr[1][$i] >= $row->end ) ) {
+						$overlaparr[0][$j] = $datearr[0][$i];
+						$overlaparr[1][$j] = $datearr[1][$i];
+						$j++;			
+						$flag = false;			
+					} 			
+			}
+	
+	
+			foreach( $result_b as $row ) {
+				if( ( $datearr[0][$i] > $row->rstart && $datearr[0][$i] < $row->rend  ) 
+					|| ( $datearr[1][$i] > $row->rstart  &&  $datearr[1][$i] < $row->rend ) 
+					|| ( $datearr[0][$i] <= $row->rstart  &&  $datearr[1][$i] >= $row->rend ) ) {
+						$overlaparr[0][$j] = $datearr[0][$i];
+						$overlaparr[1][$j] = $datearr[1][$i];
+						$j++;			
+						$flag = false;			
+					}			
+			}		
+	
+			$i++;
+		}		
+
+
+		//debug the overlap array first
+		$msg = '';
+		
+		for( $k = 0; $k < $j; $k++ )	{
+			$msg = $msg . $overlaparr[0][$k] . ' - ';		
+			$msg = $msg . $overlaparr[1][$k] . ' <br/> ';		
+		}	
+		if( !$flag ) {
+			$this->setMessage(JText::sprintf( 'De volgende herhaalafspraken overlappen: <br/> ' . $msg , $this->model->getError()), 'warning');	
+			return false;							
+		}
+		
+		return true;
+	}
+	public function check_for_date_errors()
+	{
+			$firstDate = $this->startDate->format('Y-m-d');
+			$secondDate = $this->endDate->format('Y-m-d');
+
+			if( $firstDate != $secondDate ) {
+				$this->setMessage(JText::sprintf('Afspraak duurt langer dan tot de volgende dag! dit is niet toegestaan.', $this->model->getError()), 'error');
+				return true;			
+			}
+			
+			if( $this->startDate == $this->endDate ) {
+				$this->setMessage(JText::sprintf('Afspraak starttijd is dezelfde als de eindtijd, dit is niet toegestaan.', $this->model->getError()), 'error');
+				return true;			
+			}
+			
+									
+			$interval = $this->startDate->diff($this->endRecurring);
+	
+			// check if if recurring less than a year
+			if ($interval->days >= 365) {
+					$this->setMessage(JText::sprintf('De herhaling is meer dan een jaar! Dit is niet toegestaan.', $this->model->getError()), 'error');
+					return true;			
+
+			}
+
+			if( $this->endRecurring < $this->startDate && isset($this->jform['recurring']) && $this->jform['recurring'] == "Yes") {
+				$this->setMessage(JText::sprintf('De herhaalafspraak tijd is eerder dan de starttijd! Dit is niet toegestaan.', $this->model->getError()), 'error');
+				return true;			
+			}
+			return false;
+	}
+
+
+	public function get_recur_array() 
+	{
+		
+		$datesArray[][] = null;
+		$datesArray[0][] = null;
+		$datesArray[1][] = null;
+		
+		$i = 0;
+		$this->startDate = new DateTime($this->jform['start'],new DateTimeZone("Europe/Amsterdam"));
+		$this->endDate = new DateTime($this->jform['end'],new DateTimeZone("Europe/Amsterdam"));
+		$this->endRecurring = new DateTime($this->jform['end_recur'],new DateTimeZone("Europe/Amsterdam"));
+		while ($this->startDate <= $this->endRecurring) {
+			switch ($this->jform['recur_type']) {
+				case 'dag':
+					$this->startDate->modify("+1 day");
+					$this->endDate->modify("+1 day");
+				break;
+				case 'week':
+					$this->startDate->modify("+1 week");
+					$this->endDate->modify("+1 week");
+				break;
+				case 'maand':
+					$this->startDate->modify("+1 month");
+					$this->endDate->modify("+1 month");
+				break;					 
+			}
+ 				$datesArray[0][$i] = $this->startDate->format("Y-m-d H:i:s");	
+ 				$datesArray[1][$i] = $this->endDate->format("Y-m-d H:i:s");	
+			$i++;
+		};
+		return $datesArray;
+ 	}
+
+	
+	public function save_recurring_items( $id ) 
+	{
+			$datesArray = $this->get_recur_array();
+
+			$i = 0;
+			do {
+				$datesArrayFlat[$i] = $this->db->quote($id).', '. $this->db->quote($datesArray[0][$i]) .', ' . $this->db->quote($datesArray[1][$i]) ;
+				$i++;			
+			} while( $datesArray[0][$i] != NULL );			
+			
+			
+			$query = $this->db->getQuery(true);
+			$columns = array('rid', 'rstart', 'rend');
+			$query->insert($this->db->quoteName('#__tks_agenda_recurring'));
+			$query->columns($this->db->quoteName($columns));
+			$query->values(implode('), (', $datesArrayFlat));
+		   $this->db->setQuery($query);
+		   $this->db->execute();
+			//DAGMAR (check hier voor fouten ?	
+	}
+	
+	
 	/**
 	 * Method to save a user's profile data.
 	 *
@@ -75,36 +277,44 @@ class tks_agendaControllerItemForm extends tks_agendaController
 	 */
 	public function save($key = NULL, $urlVar = NULL)
 	{
+		/*
+			
+			
+ 
+		*/
+		
 		// Check for request forgeries.
 		JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
 
 		// Initialise variables.
 		$app   = JFactory::getApplication();
-		$db = JFactory::getDBO();
+		$this->db = JFactory::getDBO();
 
-		$model = $this->getModel('ItemForm', 'tks_agendaModel');
+		$this->model = $this->getModel('ItemForm', 'tks_agendaModel');
+ 		
  		// Get the user data.
-		$data = JFactory::getApplication()->input->get('jform', array(), 'array');
+		$this->data = JFactory::getApplication()->input->get('jform', array(), 'array');
+		
 		// Validate the posted data.
-		$form = $model->getForm();
+		$form = $this->model->getForm();
 
 		if (!$form)
 		{
-			throw new Exception($model->getError(), 500);
+			throw new Exception($this->model->getError(), 500);
 		}
 
 		// Validate the posted data.
-		$data = $model->validate($form, $data);
+		$this->data = $this->model->validate($form, $this->data);
 		$input = $app->input;
-		$jform = $input->get('jform', array(), 'ARRAY');
+		$this->jform = $input->get('jform', array(), 'ARRAY');
 
   		
 
 		// Check for errors.
-			if ($data === false)
+			if ($this->data === false)
 			{
 				// Get the validation messages.
-				$errors = $model->getErrors();
+				$errors = $this->model->getErrors();
 
 				// Push up to three validation messages out to the user.
 				for ($i = 0, $n = count($errors); $i < $n && $i < 3; $i++)
@@ -119,181 +329,73 @@ class tks_agendaControllerItemForm extends tks_agendaController
 					}
 				}
 				// Save the data in the session.
-				$app->setUserState('com_tks_agenda.edit.item.data', $jform);
+				$app->setUserState('com_tks_agenda.edit.item.data', $this->jform);
 				// Redirect back to the edit screen.
 				$id = (int) $app->getUserState('com_tks_agenda.edit.item.id');
 				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
 			}
-
-			$startDate = new DateTime($data['start'],new DateTimeZone("Europe/Amsterdam"));
-			$endDate = new DateTime($data['end'],new DateTimeZone("Europe/Amsterdam"));
-			$endRecurring = new DateTime($data['end_recur'],new DateTimeZone("Europe/Amsterdam"));
-
-
-
-			$firstDate = $startDate->format('Y-m-d');
-			$secondDate = $endDate->format('Y-m-d');
-
-			if( $firstDate != $secondDate ) {
-				$this->setMessage(JText::sprintf('Afspraak duurt langer dan tot de volgende dag! dit is niet toegestaan.', $model->getError()), 'warning');
-				$menu = JFactory::getApplication()->getMenu();
-				$item = $menu->getActive();
-				$url  = (empty($item->link) ? 'index.php?option=com_tks_agenda&view=items' : $item->link);
-				$this->setRedirect(JRoute::_($url, false));
- 				return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
-
-			}
 			
-			$interval = $startDate->diff($endRecurring);
-			// check if if recurring less than a year
-			if ($interval->days >= 365) {
-					$app->setUserState('com_tks_agenda.edit.item.data', $data);
-					$id = (int) $app->getUserState('com_tks_agenda.edit.item.id');
-					$this->setMessage(JText::sprintf('De herhaling is meer dan een jaar! Dit is niet toegestaan.', $model->getError()), 'error');
-					return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
+		$this->startDate = new DateTime($this->data['start'],new DateTimeZone("Europe/Amsterdam"));
+		$this->endDate = new DateTime($this->data['end'],new DateTimeZone("Europe/Amsterdam"));
+		$this->endRecurring = new DateTime($this->data['end_recur'],new DateTimeZone("Europe/Amsterdam"));
 
-			}
 
-			if( $endRecurring < $startDate && isset($jform['recurring']) && $jform['recurring'] == "Yes") {
-				$this->setMessage(JText::sprintf('De herhaalafspraak tijd is eerder dan de starttijd! Dit is niet toegestaan.', $model->getError()), 'warning');
-				$menu = JFactory::getApplication()->getMenu();
-				$item = $menu->getActive();
-				$url  = (empty($item->link) ? 'index.php?option=com_tks_agenda&view=items' : $item->link);
-				$this->setRedirect(JRoute::_($url, false));
-				return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
-			}
+		$mode = $app->getUserState('com_tks_agenda.edit.item.mode');
+		$id = (int) $app->getUserState('com_tks_agenda.edit.item.id');
+		/* !!!!
+		
+			Deze vult het formulier niet terug met de vorige gegevens, wat niet gebruikersvriendelijk is.
 			
-			if (isset($jform['recurring']) && $jform['recurring'] == "Yes") {
-				$values = '';
-				do {
-						switch ($data['recur_type']) {
-						case 'dag':
-							$startDate->modify("+1 day");
-							$endDate->modify("+1 day");
-							break;
-						case 'week':
-							$startDate->modify("+1 week");
-							$endDate->modify("+1 week");
-							break;
-						case 'maand':
-							$startDate->modify("+1 month");
-							$endDate->modify("+1 month");
-							break;
-						default:
-							$startDate->modify("");
-							$endDate->modify("");
-						break;
-					}
-
-					$values[] = array('rstart' => $startDate->format("Y-m-d H:i:s"), 'rend' => $endDate->format("Y-m-d H:i:s"));					
-					} while ($startDate <= $endRecurring);
-
-			}
-	 		/*
-	 		http://stackoverflow.com/questions/25549765/find-booking-overlaps-to-check-dates-availability
-	 		*/
-			$query = $db->getQuery(true);
-			$query->select($db->quoteName(array('a.id','a.start', 'a.end','b.rstart','b.rend')));
-			$query->from($db->quoteName('#__tks_agenda_items','a'));
+		*/				
+		
+		//date error
+		if( $this->check_for_date_errors() ) {
+				return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));					
+		}
 			
-			$query->join('LEFT', $db->quoteName('#__tks_agenda_recurring', 'b') . ' ON (' . $db->quoteName('a.id') . ' = ' . $db->quoteName('b.rid') . ')') ;
-			$query->where($db->quoteName('a.state') ." = 1");
-			$query->andWhere($db->quoteName('a.start') ." >= NOW()");
-			$query->andWhere($db->quoteName('a.end'). " > ".$db->quote($data['start'])." AND ".$db->quoteName('a.end'). " < ".$db->quote($data['end']));
-			$query->orWhere($db->quoteName('a.start'). " > ".$db->quote($data['start'])." AND ".$db->quoteName('a.start'). " < ".$db->quote($data['end']));
-			
-	 		if(isset($jform['recurring']) && $jform['recurring'] == "Yes") {
-	  			
-				$query->orWhere($db->quoteName('b.rend'). " > ".$db->quote($data['start'])." AND ".$db->quoteName('b.rend'). " < ".$db->quote($data['end']));
-				$query->orWhere($db->quoteName('b.rstart'). " > ".$db->quote($data['start'])." AND ".$db->quoteName('b.rstart'). " < ".$db->quote($data['end']));
+		if($mode == 'create' ) {
+			if( !$this->overlap_check( false, $id ) )	{
+				$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
+				return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));			
+			}		
+		} else if ($mode == 'update') {
+			if( !$this->overlap_check( true, $id ) )	{
+				$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
+				return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));			
+			}		
+		} else { //this should not happen
+				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));				
+		}
 
-	  		}	  	 
-		  //echo $query->dump();
-		  //exit();
- 			$db->setQuery($query);
-	 
-   			$result = $db->loadObjectList();
-		 
-			// CHECK: Als de reservatie overlapt return naar de edit screen en of de huidige berwerking niet hetzelfde is
-   			//if ($result && $result[0]->start != $data['start'] && $result[0]->end != $data['end']) {
-   			if ($result ) {
+
+		// Attempt to save the data.
+		$return = $this->model->save($this->data);
+
+		// Check for errors.
+		if ($return === false)
+		{
+			// Save the data in the session.
+			$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
+
+			// Redirect back to the edit screen.
+			$id = (int) $app->getUserState('com_tks_agenda.edit.item.id');
+			$this->setMessage(JText::sprintf('Save failed', $this->model->getError()), 'warning');
+			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
+		}
+			
+		if (isset($this->jform['recurring']) && $this->jform['recurring'] == "Yes" ) {
+			$this->save_recurring_items( $return );
+		}
 				
-				$app->setUserState('com_tks_agenda.edit.item.data', $data);
-				$id = (int) $app->getUserState('com_tks_agenda.edit.item.id');
-				$this->setMessage(JText::sprintf('Deze datum en tijd is al geboekt', $model->getError()), 'warning');
-				return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
-			}
-			
-
-			if( $endDate < $startDate ) {
-				$this->setMessage(JText::sprintf('De eindtijd is eerder dan de starttijd! Dit is niet toegestaan.', $model->getError()), 'warning');
-				$menu = JFactory::getApplication()->getMenu();
-				$item = $menu->getActive();
-				$url  = (empty($item->link) ? 'index.php?option=com_tks_agenda&view=items' : $item->link);
-				$this->setRedirect(JRoute::_($url, false));
-				return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
-			}
-			
-			
-			// Attempt to save the data.
-			$return = $model->save($data);
-
-			// Check for errors.
-			if ($return === false)
-			{
-				// Save the data in the session.
-				$app->setUserState('com_tks_agenda.edit.item.data', $data);
-
-				// Redirect back to the edit screen.
-				$id = (int) $app->getUserState('com_tks_agenda.edit.item.id');
-				$this->setMessage(JText::sprintf('Save failed', $model->getError()), 'warning');
-				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
-			}
-		if (isset($jform['recurring']) && $jform['recurring'] == "Yes" ) {
-
-			$startDate = new DateTime($jform['start'],new DateTimeZone("Europe/Amsterdam"));
-			$endDate = new DateTime($jform['end'],new DateTimeZone("Europe/Amsterdam"));
-			$endRecurring = new DateTime($jform['end_recur'],new DateTimeZone("Europe/Amsterdam"));
-			do {
-				switch ($jform['recur_type']) {
-					case 'dag':
-						$startDate->modify("+1 day");
-						$endDate->modify("+1 day");
-					break;
-					case 'week':
-						$startDate->modify("+1 week");
-						$endDate->modify("+1 week");
-					break;
-					case 'maand':
-						$startDate->modify("+1 month");
-						$endDate->modify("+1 month");
-					break;					 
-				}
- 				$datesArray[] = $db->quote($return).', '.$db->quote($startDate->format("Y-m-d H:i:s")).', '.$db->quote($endDate->format("Y-m-d H:i:s"));	
-
-			} while ($startDate <= $endRecurring);
- 
-
-			$query = $db->getQuery(true);
-			$columns = array('rid', 'rstart', 'rend');
-			$query->insert($db->quoteName('#__tks_agenda_recurring'));
-			$query->columns($db->quoteName($columns));
-			$query->values(implode('), (', $datesArray));
-		    $db->setQuery($query);
-		    $db->execute();
- 
- 
-		}   		
-
-	
-
 		// Check in the profile.
 		if ($return)
 		{
-			$model->checkin($return);
+			$this->model->checkin($return);
 		}
+
 		// Clear the profile id from the session.
 		$app->setUserState('com_tks_agenda.edit.item.id', null);
+
 		// Redirect to the list screen.
 		$this->setMessage(JText::_('COM_TKS_AGENDA_SAVE_SUCCESS'));
 		$menu = JFactory::getApplication()->getMenu();
@@ -301,8 +403,10 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		$url  = (empty($item->link) ? 'index.php?option=com_tks_agenda&view=items' : $item->link);
 		$this->setRedirect(JRoute::_($url, false));
 
-		// Flush the data from the session.
+		// Flush the data and mode from the session.
 		$app->setUserState('com_tks_agenda.edit.item.data', null);
+		$app->setUserState('com_tks_agenda.edit.item.mode', null);
+ 		
 	}
 
 	/**
@@ -320,12 +424,12 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		$editId = (int) $app->getUserState('com_tks_agenda.edit.item.id');
 
 		// Get the model.
-		$model = $this->getModel('ItemForm', 'tks_agendaModel');
+		$this->model = $this->getModel('ItemForm', 'tks_agendaModel');
 
 		// Check in the item
 		if ($editId)
 		{
-			$model->checkin($editId);
+			$this->model->checkin($editId);
 		}
 
 		$menu = JFactory::getApplication()->getMenu();
@@ -345,17 +449,17 @@ class tks_agendaControllerItemForm extends tks_agendaController
 	{
 		// Initialise variables.
 		$app   = JFactory::getApplication();
-		$model = $this->getModel('ItemForm', 'tks_agendaModel');
+		$this->model = $this->getModel('ItemForm', 'tks_agendaModel');
 
 		// Get the user data.
-		$data       = array();
-		$data['id'] = $app->input->getInt('id');
+		$this->data       = array();
+		$this->data['id'] = $app->input->getInt('id');
 
 		// Check for errors.
-		if (empty($data['id']))
+		if (empty($this->data['id']))
 		{
 			// Get the validation messages.
-			$errors = $model->getErrors();
+			$errors = $this->model->getErrors();
 
 			// Push up to three validation messages out to the user.
 			for ($i = 0, $n = count($errors); $i < $n && $i < 3; $i++)
@@ -371,7 +475,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
 			}
 
 			// Save the data in the session.
-			$app->setUserState('com_tks_agenda.edit.item.data', $data);
+			$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
 
 			// Redirect back to the edit screen.
 			$id = (int) $app->getUserState('com_tks_agenda.edit.item.id');
@@ -379,24 +483,24 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		}
 
 		// Attempt to save the data.
-		$return = $model->delete($data);
+		$return = $this->model->delete($this->data);
 
 		// Check for errors.
 		if ($return === false)
 		{
 			// Save the data in the session.
-			$app->setUserState('com_tks_agenda.edit.item.data', $data);
+			$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
 
 			// Redirect back to the edit screen.
 			$id = (int) $app->getUserState('com_tks_agenda.edit.item.id');
-			$this->setMessage(JText::sprintf('Delete failed', $model->getError()), 'warning');
+			$this->setMessage(JText::sprintf('Delete failed', $this->model->getError()), 'warning');
 			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=item&layout=edit&id=' . $id, false));
 		}
 
 		// Check in the profile.
 		if ($return)
 		{
-			$model->checkin($return);
+			$this->model->checkin($return);
 		}
 
 		// Clear the profile id from the session.

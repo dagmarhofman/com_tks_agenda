@@ -1,9 +1,8 @@
 <?php
 
 /**
- * @version    CVS: 1.0.0
- * @package    Com_Gckloosterveen
- * @author     Stephan Zuidberg <stephan@takties.nl>
+ * @package    tks_agenda
+ * @author     Dagmar Hofman, Stephan Zuidberg
  * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
  * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
  */
@@ -12,9 +11,8 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.modellist');
 
 /**
- * Methods supporting a list of Gckloosterveen records.
+ * Methods supporting a list of tks_agenda records.
  *
- * @since  1.6
  */
 class tks_agendaModelItems extends JModelList
 {
@@ -24,7 +22,6 @@ class tks_agendaModelItems extends JModelList
 	 * @param   array  $config  An optional associative array of configuration settings.
 	 *
 	 * @see        JController
-	 * @since      1.6
 	 */
 	public function __construct($config = array())
 	{
@@ -56,7 +53,6 @@ class tks_agendaModelItems extends JModelList
 	 *
 	 * @throws Exception
 	 *
-	 * @since    1.6
 	 */
 	protected function populateState($ordering = null, $direction = null)
 	{
@@ -190,7 +186,6 @@ if (empty($list['direction']))
 	 *
 	 * @return   JDatabaseQuery
 	 *
-	 * @since    1.6
 	 */
 	protected function getListQuery()
 	{

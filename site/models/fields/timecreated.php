@@ -1,8 +1,7 @@
 <?php
 /**
- * @version    CVS: 1.0.0
- * @package    Com_Gckloosterveen
- * @author     Stephan Zuidberg <stephan@takties.nl>
+ * @package    com_tks_agenda
+ * @author     Dagmar Hofman, Stephan Zuidberg 
  * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
  * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
  */
@@ -14,7 +13,6 @@ jimport('joomla.form.formfield');
 /**
  * Supports an HTML select list of categories
  *
- * @since  1.6
  */
 class JFormFieldTimecreated extends JFormField
 {
@@ -22,7 +20,6 @@ class JFormFieldTimecreated extends JFormField
 	 * The form field type.
 	 *
 	 * @var        string
-	 * @since    1.6
 	 */
 	protected $type = 'timecreated';
 
@@ -31,7 +28,6 @@ class JFormFieldTimecreated extends JFormField
 	 *
 	 * @return   string  The field input markup.
 	 *
-	 * @since    1.6
 	 */
 	protected function getInput()
 	{

@@ -1,10 +1,9 @@
 <?php
 
 /**
- * @version    CVS: 1.0.0
- * @package    Com_Gckloosterveen
- * @author     Stephan Zuidberg <stephan@takties.nl>
- * @copyright  2016 Takties
+ * @package    com_tks_agenda
+ * @author     Dagmar Hofman, Stephan Zuidberg
+ * @copyright  2018 Takties
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 // No direct access.
@@ -15,7 +14,7 @@ jimport('joomla.event.dispatcher');
 
 use Joomla\Utilities\ArrayHelper;
 /**
- * Gckloosterveen model.
+ * tks_agenda news item model.
  *
  * @since  1.6
  */
@@ -27,8 +26,6 @@ class tks_agendaModelNewsitem extends JModelItem
 	 * Note. Calling getState in this method will result in recursion.
 	 *
 	 * @return void
-	 *
-	 * @since    1.6
 	 *
 	 */
 	protected function populateState()
@@ -181,7 +178,6 @@ class tks_agendaModelNewsitem extends JModelItem
 	 *
 	 * @return  boolean True on success, false on failure.
 	 *
-	 * @since    1.6
 	 */
 	public function checkout($id = null)
 	{
@@ -260,6 +256,13 @@ class tks_agendaModelNewsitem extends JModelItem
 		return $table->delete($id);
 	}
 
+	/**
+	 * Method to determine alias field, by view
+	 *
+	 * @param   string  $view  viewname
+	 *
+	 * @return  string
+	 */
 	public function getAliasFieldNameByView($view)
 	{
 		switch ($view)

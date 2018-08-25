@@ -2,9 +2,9 @@
 
 /**
  * @version    CVS: 1.0.0
- * @package    Com_Gckloosterveen
- * @author     Stephan Zuidberg <stephan@takties.nl>
- * @copyright  2016 Takties
+ * @package    com_tks_agenda
+ * @author     Dagmar Hofman, Stephan Zuidberg
+ * @copyright  2018 Takties
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 // No direct access
@@ -62,7 +62,6 @@ class tks_agendaTablenewsitem extends JTable
 	 * @return  null|string  null is operation was satisfactory, otherwise returns an error
 	 *
 	 * @see     JTable:bind
-	 * @since   1.5
 	 */
 	public function bind($array, $ignore = '')
 	{
@@ -200,7 +199,6 @@ class tks_agendaTablenewsitem extends JTable
 	 *
 	 * @return   boolean  True on success.
 	 *
-	 * @since    1.0.4
 	 *
 	 * @throws Exception
 	 */

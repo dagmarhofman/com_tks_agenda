@@ -1,9 +1,9 @@
 <?php
 /**
  * @version    CVS: 1.0.0
- * @package    Com_Gckloosterveen
- * @author     Stephan Zuidberg <stephan@takties.nl>
- * @copyright  2016 Takties
+ * @package    com_tks_agenda
+ * @author     Dagmar Hofman, Stephan Zuidberg
+ * @copyright  2018 Takties
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -15,9 +15,8 @@ jimport('joomla.event.dispatcher');
 
 use Joomla\Utilities\ArrayHelper;
 /**
- * Gckloosterveen model.
+ * tks_agenda news item form model.
  *
- * @since  1.6
  */
 class tks_agendaModelNewsitemForm extends JModelForm
 {
@@ -30,7 +29,6 @@ class tks_agendaModelNewsitemForm extends JModelForm
 	 *
 	 * @return void
 	 *
-	 * @since  1.6
 	 */
 	protected function populateState()
 	{
@@ -62,7 +60,7 @@ class tks_agendaModelNewsitemForm extends JModelForm
 	}
 
 	/**
-	 * Method to get an ojbect.
+	 * Method to get an object.
 	 *
 	 * @param   integer  $id  The id of the object to get.
 	 *
@@ -236,7 +234,6 @@ class tks_agendaModelNewsitemForm extends JModelForm
 	 *
 	 * @return    JForm    A JForm object on success, false on failure
 	 *
-	 * @since    1.6
 	 */
 	public function getForm($data = array(), $loadData = true)
 	{
@@ -260,7 +257,6 @@ class tks_agendaModelNewsitemForm extends JModelForm
 	 *
 	 * @return    mixed    The data for the form.
 	 *
-	 * @since    1.6
 	 */
 	protected function loadFormData()
 	{
@@ -270,8 +266,6 @@ class tks_agendaModelNewsitemForm extends JModelForm
 		{
 			$data = $this->getData();
 		}
-
-		
 
 		return $data;
 	}

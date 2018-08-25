@@ -130,17 +130,23 @@ class tks_agendaViewitems extends JViewLegacy
 		$profile = JUserHelper::getProfile($row->created_by);
 		//each plugin adds its own object  loaded with an array so you can access your fields like this
 	
+
 		if(!empty($profile->profile5['company']) && !empty($profile->profile5['avatar'])){
 			$company = $profile->profile5['company'];
 			$avatar = $profile->profile5['avatar'];
-			$companycolor = $profile->profile5['companycolor'];
-
+			
 			 if (tks_agendaSiteFrontendHelper::get_brightness($companycolor) > 130) {
 			       $companytextcolor = "#4d4d4d"; 
 			      } else {
 			       $companytextcolor = "#FFFFFF"; 
 			      }
 			}
+
+
+
+			$companycolor = $profile->profile5['companycolor'];
+
+			// $companycolor = "#FF0000";
 
 
 			$start_time = date("H:i",strtotime($row->start));

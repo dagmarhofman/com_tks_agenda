@@ -1,0 +1,9 @@
+JComponentRouterBase
+JControllerForm
+JControllerLegacy
+JModelForm
+JModelItem
+JModelList
+JTable
+JViewLegacy
+tks_agendaController

@@ -62,7 +62,7 @@ $canDelete  = $user->authorise('core.delete', 'com_tks_agenda');
 
 	
 	<?php if ($canCreate) : ?>
-		<a href="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=itemform.edit&id=0', false, 2); ?>"
+		<a href="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=itemform.edit&id=0&mode=create', false, 2); ?>"
 		   class="btn btn-success btn-small"><i
 				class="fa fa-add"></i>
 			<?php echo JText::_('Reserveer vergaderruimte'); ?></a>

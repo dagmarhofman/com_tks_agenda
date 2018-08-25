@@ -1,9 +1,8 @@
 <?php
 
 /**
- * @version    CVS: 1.0.0
- * @package    Com_Gckloosterveen
- * @author     Stephan Zuidberg <stephan@takties.nl>
+ * @package    tks_agenda
+ * @author     Dagmar Hofman, Stephan Zuidberg
  * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
  * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
  */
@@ -12,9 +11,8 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.modellist');
 
 /**
- * Methods supporting a list of Gckloosterveen records.
+ * Methods supporting a list of tks_agenda records.
  *
- * @since  1.6
  */
 class tks_agendaModelItems extends JModelList
 {
@@ -206,7 +204,7 @@ if (empty($list['direction']))
 				)
 		);
 
-		$query->from('`tks_agenda_items` AS a');
+		$query->from('`#__tks_agenda_items` AS a');
 		
 		// Join over the users for the checked out user.
 		$query->select('uc.name AS editor');
@@ -262,7 +260,7 @@ if (empty($list['direction']))
 			if (isset($item->catid))
 			{
 				// Get the title of that particular template
-					$title = tks_agendaFrontendHelper::getCategoryNameByCategoryId($item->catid);
+					$title = tks_agendaSiteFrontendHelper::getCategoryNameByCategoryId($item->catid);
 					// Finally replace the data object with proper information
 					$item->catid = !empty($title) ? $title : $item->catid;
 				}

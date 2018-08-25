@@ -4,9 +4,27 @@ defined('_JEXEC') or die('Restricted access');
 
 jimport('joomla.form.formfield');
 
+ /**
+  * Class for date/time form field
+  *
+  *
+ */
 class JFormFieldDateTime extends JFormField {
 
+	/**
+	 * The form field type.
+	 *
+	 * @var        datetime
+	 */
+
     protected $type = 'DateTime';
+
+	/**
+	 * Method to get the field input markup.
+	 *
+	 * @return    string    The field input markup.
+	 *
+	 */
 
     public function getInput() {
          $doc = JFactory::getDocument();

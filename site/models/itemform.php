@@ -49,8 +49,7 @@ class tks_agendaModelItemForm extends JModelForm
 
 		$this->setState('item.id', $id);
 
-		
-		
+
 		//$params = JComponentHelper::getParams(JRequest::getVar('option'));
 		
 		// Load the parameters.

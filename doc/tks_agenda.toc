@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}inleiding}{3}
+\contentsline {section}{\numberline {2}over het component}{5}
+\contentsline {subsection}{\numberline {2.1}Het Model-View-Controller design pattern}{6}
+\contentsline {subsection}{\numberline {2.2}De logische opbouw van het component}{7}
+\contentsline {section}{\numberline {3}gegevensananalyse en ontwerp}{8}
+\contentsline {section}{\numberline {4}functioneel ontwerp}{9}
+\contentsline {subsection}{\numberline {4.1}Klassenhierarchie}{10}
+\contentsline {subsection}{\numberline {4.2}Klassendiagram}{12}
+\contentsline {subsection}{\numberline {4.3}Dialoogstructuur}{12}
+\contentsline {section}{\numberline {5}technisch ontwerp}{13}
+\contentsline {section}{\numberline {6}implementatie en testen}{14}
+\contentsline {section}{\numberline {7}status van het project}{14}

@@ -99,8 +99,6 @@ else:
     echo JText::_('COM_TKS_AGENDA_ITEM_NOT_LOADED');
 endif;
 
-var_dump( $this->item );
-
 
 
 

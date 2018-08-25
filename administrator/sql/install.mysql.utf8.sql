@@ -55,8 +55,6 @@ CREATE TABLE IF NOT EXISTS `#__tks_agenda_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-
-
 CREATE TABLE IF NOT EXISTS `#__tks_agenda_recurring` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `rid` int(11) NOT NULL,
@@ -64,8 +62,6 @@ CREATE TABLE IF NOT EXISTS `#__tks_agenda_recurring` (
   `rend` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2419 DEFAULT CHARSET=latin1;
-
-
 
 
 ALTER TABLE `#__tks_agenda_recurring`

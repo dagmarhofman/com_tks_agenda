@@ -6,9 +6,22 @@ defined('_JEXEC') or die;
 
 JLoader::register('tks_agendaSiteFrontendHelper', JPATH_BASE . '/components/com_tks_agenda/helpers/tks_agenda.php');
 
+/**
+ * router Table class
+ *
+ */
 class tks_agendaRouter extends JComponentRouterBase
 {
 
+	/**
+	 * Build method for queries
+	 * 
+	 *
+	 * @param  &$segments  The query
+	 *
+	 * @return  array  The query segments
+	 *
+	 */
 	public function build(&$query)
 	{
 		$segments = array();
@@ -44,9 +57,7 @@ class tks_agendaRouter extends JComponentRouterBase
 					$segments[] = (isset($alias)) ? $item->alias : $query['alias'];	
 					unset($query['id']);	
 				}
-
-						}
-
+				}
 			}
 			else
 			{
@@ -68,7 +79,6 @@ class tks_agendaRouter extends JComponentRouterBase
 	 *
 	 * @return  array  The URL attributes to be used by the application.
 	 *
-	 * @since   3.3
 	 */
 	public function parse(&$segments)
 	{
