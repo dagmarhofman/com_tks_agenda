@@ -99,7 +99,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
 			if( ( $this->startDate->format("Y-m-d H:i:s") > $row->start &&  $this->startDate->format("Y-m-d H:i:s") < $row->end  ) 
 				|| ( $this->endDate->format("Y-m-d H:i:s") > $row->start  &&  $this->endDate->format("Y-m-d H:i:s") < $row->end ) 
 				|| ( $this->startDate->format("Y-m-d H:i:s") <= $row->start  &&  $this->endDate->format("Y-m-d H:i:s") >= $row->end ) ) {
-					$this->setMessage(JText::sprintf( 'Deze vergaderruimte is al geboekt.' . $row->id .   ' - ' . $id, $this->model->getError()), 'warning');								
+					$this->setMessage(JText::sprintf( 'Deze vergaderruimte is al geboekt.' . $row->id .   ' - ' . $id, $this->model->getError()), 'error');								
 					return false;			
 				} 			
 		}
@@ -117,7 +117,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
 			if( ( $this->startDate->format("Y-m-d H:i:s") > $row->rstart &&  $this->startDate->format("Y-m-d H:i:s") < $row->rend  ) 
 				|| ( $this->endDate->format("Y-m-d H:i:s") > $row->rstart  &&  $this->endDate->format("Y-m-d H:i:s") < $row->rend ) 
 				|| ( $this->startDate->format("Y-m-d H:i:s") <= $row->rstart  &&  $this->endDate->format("Y-m-d H:i:s") >= $row->rend ) ) {
-					$this->setMessage(JText::sprintf( 'Deze vergaderruimte is al geboekt.' . $row->rid .   ' - ' . $id, $this->model->getError()), 'warning');								
+					$this->setMessage(JText::sprintf( 'Deze vergaderruimte is al geboekt.' . $row->rid .   ' - ' . $id, $this->model->getError()), 'error');								
 					return false;			
 					}			
 		}		
@@ -163,19 +163,14 @@ class tks_agendaControllerItemForm extends tks_agendaController
 			$i++;
 		}		
 
-
-		//debug the overlap array first
-		$msg = '';
-		
-		for( $k = 0; $k < $j; $k++ )	{
-			$msg = $msg . $overlaparr[0][$k] . ' - ';		
-			$msg = $msg . $overlaparr[1][$k] . ' <br/> ';		
-		}	
+	
 		if( !$flag ) {
-			$this->setMessage(JText::sprintf( 'De volgende herhaalafspraken overlappen: <br/> ' . $msg , $this->model->getError()), 'warning');	
+			$app = JFactory::getApplication();
+			$app->setUserState('com_tks_agenda.edit.item.overlap', $overlaparr);
+			$app->setUserState('com_tks_agenda.edit.item.recurring', $datearr);
 			return false;							
 		}
-		
+				
 		return true;
 	}
 	public function check_for_date_errors()
@@ -213,7 +208,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
 
 	public function get_recur_array() 
 	{
-		
+		$app   = JFactory::getApplication();
 		$datesArray[][] = null;
 		$datesArray[0][] = null;
 		$datesArray[1][] = null;
@@ -222,7 +217,13 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		$this->startDate = new DateTime($this->jform['start'],new DateTimeZone("Europe/Amsterdam"));
 		$this->endDate = new DateTime($this->jform['end'],new DateTimeZone("Europe/Amsterdam"));
 		$this->endRecurring = new DateTime($this->jform['end_recur'],new DateTimeZone("Europe/Amsterdam"));
+
+		$startDateOld = $this->startDate;
+		$endDateOld = $this->endDate;
+		
+
 		while ($this->startDate <= $this->endRecurring) {
+
 			switch ($this->jform['recur_type']) {
 				case 'dag':
 					$this->startDate->modify("+1 day");
@@ -241,6 +242,10 @@ class tks_agendaControllerItemForm extends tks_agendaController
  				$datesArray[1][$i] = $this->endDate->format("Y-m-d H:i:s");	
 			$i++;
 		};
+		
+		$this->startDate = $startDateOld;
+		$this->endDate = $endDateOld;
+		
 		return $datesArray;
  	}
 
@@ -321,11 +326,11 @@ class tks_agendaControllerItemForm extends tks_agendaController
 				{
 					if ($errors[$i] instanceof Exception)
 					{
-						$app->enqueueMessage($errors[$i]->getMessage(), 'warning');
+						$app->enqueueMessage($errors[$i]->getMessage(), 'error');
 					}
 					else
 					{
-						$app->enqueueMessage($errors[$i], 'warning');
+						$app->enqueueMessage($errors[$i], 'error');
 					}
 				}
 				// Save the data in the session.
@@ -355,18 +360,21 @@ class tks_agendaControllerItemForm extends tks_agendaController
 			
 		if($mode == 'create' ) {
 			if( !$this->overlap_check( false, $id ) )	{
+				$app->setUserState('com_tks_agenda.edit.item.id', $id);
 				$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
-				return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));			
+				return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemscrapform', false));			
 			}		
 		} else if ($mode == 'update') {
 			if( !$this->overlap_check( true, $id ) )	{
+				$app->setUserState('com_tks_agenda.edit.item.id', $id);
 				$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
-				return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));			
+				return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemscrapform', false));			
 			}		
 		} else { //this should not happen
 				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));				
 		}
 
+		
 
 		// Attempt to save the data.
 		$return = $this->model->save($this->data);
@@ -379,7 +387,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
 
 			// Redirect back to the edit screen.
 			$id = (int) $app->getUserState('com_tks_agenda.edit.item.id');
-			$this->setMessage(JText::sprintf('Save failed', $this->model->getError()), 'warning');
+			$this->setMessage(JText::sprintf('Save failed', $this->model->getError()), 'error');
 			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
 		}
 			
@@ -466,11 +474,11 @@ class tks_agendaControllerItemForm extends tks_agendaController
 			{
 				if ($errors[$i] instanceof Exception)
 				{
-					$app->enqueueMessage($errors[$i]->getMessage(), 'warning');
+					$app->enqueueMessage($errors[$i]->getMessage(), 'error');
 				}
 				else
 				{
-					$app->enqueueMessage($errors[$i], 'warning');
+					$app->enqueueMessage($errors[$i], 'error');
 				}
 			}
 
@@ -493,7 +501,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
 
 			// Redirect back to the edit screen.
 			$id = (int) $app->getUserState('com_tks_agenda.edit.item.id');
-			$this->setMessage(JText::sprintf('Delete failed', $this->model->getError()), 'warning');
+			$this->setMessage(JText::sprintf('Delete failed', $this->model->getError()), 'error');
 			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=item&layout=edit&id=' . $id, false));
 		}
 
