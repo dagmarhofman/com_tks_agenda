@@ -231,7 +231,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		$endRecurringIt = $this->endRecurring;
 		
 
-		while ($endDateIt <= $endRecurringIt ) {
+		while ($startDateIt <= $endRecurringIt ) {
 
 			switch ($this->jform['recur_type']) {
 				case 'dag':

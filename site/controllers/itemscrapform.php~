@@ -28,7 +28,7 @@ class tks_agendaControllerItemScrapForm extends JControllerForm
 			$recurArray = 	$app->getUserState('com_tks_agenda.edit.item.recurring');
 			$overlapArray = 	$app->getUserState('com_tks_agenda.edit.item.overlap');
 
-			//deze plant 1 afspraak te veel over een loze datum ???
+
 			$i = 0;
 			while( $recurArray[0][$i] != NULL ) {
 				$recurArrayFlat[$i] = $db->quote($id).', '. $db->quote($recurArray[0][$i]) .', ' . $db->quote($recurArray[1][$i]) ;
