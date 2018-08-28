@@ -197,7 +197,7 @@ if (empty($list['direction']))
 		$query
 			->select(
 				$this->getState(
-					'list.select', 'DISTINCT a.*'
+					'list.select', 'DISTINCT a.* '
 				)
 		);
 
@@ -252,6 +252,20 @@ if (empty($list['direction']))
 	public function getItems()
 	{
 		$items = parent::getItems();
+		
+		
+		$db    = $this->getDbo();
+
+		$search = $this->getState('filter.search');
+		
+		$query = $db->getQuery(true);
+		$query->select('rid, rstart, rend');
+		$query->from('#__tks_agenda_recurring');
+	//	$query->where('rid = ' .  (int) substr($search, 3) );
+		$db->setQuery($query);
+		$results = $db->loadObjectList();
+				
+		$i = 0; 
 		foreach ($items as $item)
 		{
 			if (isset($item->catid))
@@ -260,8 +274,19 @@ if (empty($list['direction']))
 					$title = tks_agendaSiteFrontendHelper::getCategoryNameByCategoryId($item->catid);
 					// Finally replace the data object with proper information
 					$item->catid = !empty($title) ? $title : $item->catid;
-				}
+			}
+			foreach( $results as $result ) {
+				if( $result->rid == $item->id ) {
+					$start_dates[$i] = $result->rstart;
+					$end_dates[$i] = $result->rend;
+					$i++; 				
+				}			
+			}
+			$item->recur_events_start = $start_dates;
+			$item->recur_events_end = $end_dates;
+			
 		}
+				
 		return $items;
 	}
 	/**

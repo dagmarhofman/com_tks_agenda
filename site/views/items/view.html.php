@@ -41,6 +41,11 @@ class tks_agendaViewitems extends JViewLegacy
 
 		$this->state      = $this->get('State');
 		$this->items = $this->get('Items');
+		
+		echo '!!!!!!!!!!!!!!!!!!!!!!!!<br/>' ;		
+		echo var_export( $this->items, true);
+		echo '!!!!!!!!!!!!!!!!!!!!!!!!<br/>' ;		
+		
 		$this->pagination = $this->get('Pagination');
 		
 		//$params = JComponentHelper::getParams(JRequest::getVar('option')); // Get parameter helper (corrected 'JRquest' spelling)
@@ -61,6 +66,9 @@ class tks_agendaViewitems extends JViewLegacy
  				
 		$dispatcher = JEventDispatcher::getInstance();
 		JPluginHelper::importPlugin('content');
+		
+		
+		
 		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.item', &$this->item, &$this->params, ''));
 
 	 
@@ -73,6 +81,8 @@ class tks_agendaViewitems extends JViewLegacy
 		}
  
 		$this->_prepareDocument();
+	
+
 		parent::display($tpl);
 	}
 
