@@ -40,11 +40,7 @@ class tks_agendaViewitems extends JViewLegacy
 		$app = JFactory::getApplication();
 
 		$this->state      = $this->get('State');
-		$this->items = $this->get('Items');
-		
-		echo '!!!!!!!!!!!!!!!!!!!!!!!!<br/>' ;		
-		echo var_export( $this->items, true);
-		echo '!!!!!!!!!!!!!!!!!!!!!!!!<br/>' ;		
+		$this->items = $this->get('Items');	
 		
 		$this->pagination = $this->get('Pagination');
 		

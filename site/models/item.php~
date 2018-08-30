@@ -101,23 +101,6 @@ class tks_agendaModelItem extends JModelItem
 		{
 			$this->_item->created_by_name = JFactory::getUser($this->_item->created_by)->name;
 		}
-	
-		$db    = $this->getDbo();
-
-		$query = $db->getQuery(true);
-		$query->select('rid, rstart, rend');
-		$query->from('#__tks_agenda_recurring');
-		$db->setQuery($query);
-		$results = $db->loadObjectList();
-		
-		foreach( $results as $result ) {
-			$items[] = array( $result->rid, 
-									$result->rstart,
-									$result->rend,
-									);	
-		}
-			
-		$this->_item->recur_events = $items;
 
 		return $this->_item;
 	}

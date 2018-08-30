@@ -26,78 +26,70 @@ $canEdit = JFactory::getUser()->authorise('core.edit', 'com_tks_agenda.' . $this
 if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda' . $this->item->id)) {
     $canEdit = JFactory::getUser()->id == $this->item->created_by;
 }
+?>
 
-$startdate = explode(' ',date('d-m-Y H:i',strtotime($this->item->start)));
 
-$enddate = explode(' ',date('d-m-Y H:i',strtotime($this->item->end)));
-   ?>
-<?php if ($this->item) : ?>
-<h4><?php echo $this->item->created_by_name;?></h4>
-<div class="start-tijd"><?php echo $startdate[0];?> - <strong><?php echo $startdate[1];?></strong></div>
-<div class="end-tijd"><?php echo $enddate[0];?> - <strong><?php echo $enddate[1];?></strong></div>
- 
- <?php if($this->item->recurring == true  && isset($this->item->recur_type)): ?>
-    <?php switch ($this->item->recur_type) {
-                case "dag":
-                $date_calculation = "een dagelijks";
-                break;
-            case "week":
-                $date_calculation = "een weekelijks";
-                break;
-            case "maand":
-                $date_calculation = "een maandelijks";
-                break;
+<?php 
+	var_export( $this->item );
+	if( $this->item ) {
+		if( $this->item->recurring == "Yes" ) {
+			echo "<h1> Herhaalde afspraak (" . $this->item->recur_type . "): </h1>";		
+				$start_date = strtotime($this->item->start);
+				$end_date =	strtotime($this->item->end);		    		
+		} else {
+			echo "<h1> Afspraak: </h1>";
+				$start_date = strtotime($this->item->start);
+				$end_date =	strtotime($this->item->end);		    		
+		}
+		
+		if($userId == $this->item->created_by):	
+
+			$start_date_out = date('j F Y H:i', $start_date );
+			$end_date_out = date('j F Y H:i', $end_date );
+			
+?>
+	<div class="start-tijd"><strong><?php echo $start_date_out;?></strong> - <strong><?php echo $end_date_out;?></strong></div>
+
+<?php
+			
+			
+			echo '<br/>';
+			foreach( $this->item->recur_events as $event ) {
+				echo $event[1] . ' - ' . $event[2] . '<br/>';
+			}
+
+?>
+		<a class="btn" href="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.edit&id='. $this->item->id . '&mode=update' ); ?>"><?php echo JText::_("Bewerk"); ?></a>
+<?php 
+
+		endif; 
+?>
+<?php
+		if($userId == $this->item->created_by):
+?>
+		<a class="btn delete-button" href="#"><?php echo JText::_("Verwijder"); ?></a>
+<script type="text/javascript">
+      	jQuery(document).ready(function () {
+         	jQuery('.delete-button').click(deleteItem);
+         });
+			function deleteItem() {
+         	var item_id = jQuery(this).attr('data-item-id');
+            if (confirm("<?php echo JText::_('COM_TKS_AGENDA_DELETE_MESSAGE'); ?>")) {
+            	window.location.href = '<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.remove&id='.$this->item->id, false, 2) ?>';
             }
-            if( $this->item->recurring == "No" ) {
-					$date_calculation = "geen";            
-            }
-            
-            ?>
-            <p>Dit is <?php echo $date_calculation;?> terugkomende reservering.</p>
-    <?php endif; ?>
-
-
-
-
-
-    <?php if(!empty($this->item->reason)) : ?>
-           <?php echo '<p>'.$this->item->reason.'</p>'; ?>
-    <?php endif; ?>
-
-    <?php 
-
-     if($userId == $this->item->created_by): ?>
-        <a class="btn" href="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.edit&id='. $this->item->id . '&mode=update' ); ?>"><?php echo JText::_("Bewerk"); ?></a>
-    <?php endif; ?>
-
-
-    <?php 
-
-    if($userId == $this->item->created_by):?>
-        <a class="btn delete-button" href="#"><?php echo JText::_("Verwijder"); ?></a>
-         <script type="text/javascript">
-
-            jQuery(document).ready(function () {
-                jQuery('.delete-button').click(deleteItem);
-            });
-
-            function deleteItem() {
-                var item_id = jQuery(this).attr('data-item-id');
-                 if (confirm("<?php echo JText::_('COM_TKS_AGENDA_DELETE_MESSAGE'); ?>")) {
-                    window.location.href = '<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.remove&id='.$this->item->id, false, 2) ?>';
-                }
-     }
+     		}
 </script>
-        <?php endif; ?>
 
-       
-
-
-
-    <?php
-else:
-    echo JText::_('COM_TKS_AGENDA_ITEM_NOT_LOADED');
-endif;
+<?php 
+		endif; 
+?>
+        
+<?php		
+			
+	} else {
+		echo JText::_('COM_TKS_AGENDA_ITEM_NOT_LOADED');
+	}
+?>
 
 
 
