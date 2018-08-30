@@ -57,61 +57,60 @@ class tks_agendaViewitems extends JViewLegacy
 
 		foreach($this->items as $row) {
 			if ($row->state == 1) {
-
 				$profile = JUserHelper::getProfile($row->created_by);
 				if(!empty($profile->profile5['company']) && !empty($profile->profile5['avatar'])) {
-					
 					$company = $profile->profile5['company'];
 					$avatar = $profile->profile5['avatar'];
-			
 					if (tks_agendaSiteFrontendHelper::get_brightness($companycolor) > 130) {
-			      } else {
+					} else {
 			      	$companytextcolor = "#4d4d4d"; 
 			      	$companytextcolor = "#FFFFFF"; 
 			      }
-			}
-			$companycolor = $profile->profile5['companycolor'];
+				}
+				$companycolor = $profile->profile5['companycolor'];
+				$start_time = date("H:i",strtotime($row->start));
+				$end_time = date("H:i",strtotime($row->end));
 
-			$start_time = date("H:i",strtotime($row->start));
-			$end_time = date("H:i",strtotime($row->end));
-		    $out[] = array(
-		        'id' => $row->id,
- 		        'user' => $avatar,
-		        'company' => $company,
-		     	'companycolor' => strtoupper($companycolor),
-		     	'companytextcolor' => $companytextcolor,
-		        'start' => strtotime($row->start) . '000',
-		        'end' => strtotime($row->end) .'000',
-		        'start_time' => $start_time,
-		        'end_time' => $end_time,
-				"url" => "index.php?option=com_tks_agenda&view=item&id=".$row->id."&format=raw",
-		    );
-		    if( $row->recurring == 'Yes' ) {
-		    	for( $i = 0; $row->recur_events_start[$i] != null; $i++) {
-		    		
-			$start_time = date("H:i",strtotime($row->recur_events_start[$i]));
-			$end_time = date("H:i",strtotime($row->recur_events_end[$i]));
-
-		    $out[] = array(
-		        'id' => $row->id,
- 		        'user' => $avatar,
-		        'company' => $company,
-		     	'companycolor' => strtoupper($companycolor),
-		     	'companytextcolor' => $companytextcolor,
-		        'start' => strtotime($row->recur_events_start[$i]) . '000',
-		        'end' => strtotime($row->recur_events_end[$i]) .'000',
-		        'start_time' => $start_time,
-		        'end_time' => $end_time,
-				"url" => "index.php?option=com_tks_agenda&view=item&id=".$row->id."&format=raw",
-		    );
+				$start_date = date( "Y-m-d", strtotime($row->start));
+				$end_date =	date( "Y-m-d", strtotime($row->end) );
+				
+		    	$out[] = array(
+		    		'id' => $row->id,
+ 		      	'user' => $avatar,
+		      	'company' => $company,
+		     		'companycolor' => strtoupper($companycolor),
+		     		'companytextcolor' => $companytextcolor,
+		       	'start' => strtotime($start_date) . '000',
+		       	'end' => strtotime($end_date) .'000',
+		       	'start_time' => $start_time,
+		      	'end_time' => $end_time,
+					"url" => "index.php?option=com_tks_agenda&view=item&id=".$row->id."&format=raw",
+		    		);
 		    	
-		    	
-		    	}
-			 }
- 		}
+		    	if( $row->recurring == 'Yes') {
+		    		for( $i = 0; $row->recur_events_start[$i] != null; $i++) {		    		
+						$start_time = date("H:i",strtotime($row->recur_events_start[$i]));
+						$end_time = date("H:i",strtotime($row->recur_events_end[$i]));
 
-		}
-		
+						$start_date = date( "Y-m-d", strtotime($row->recur_events_start[$i] ) );
+						$end_date =	date( "Y-m-d", strtotime($row->recur_events_start[$i]) );
+				
+			    		$out[] = array(
+			        		'id' => $row->id,
+	 		        		'user' => $avatar,
+			        		'company' => $company,
+			     			'companycolor' => strtoupper($companycolor),
+			     			'companytextcolor' => $companytextcolor,
+				       	'start' => strtotime($start_date) . '000',
+				       	'end' => strtotime($end_date) .'000',
+			        		'start_time' => $start_time,
+			        		'end_time' => $end_time,
+							"url" => "index.php?option=com_tks_agenda&view=item&id=".$row->id."&format=raw",
+				    			);
+		    		}
+		    	} // $row->recurring == 'Yes'
+		   } // $row->state == 1
+		} //foreach
 				
 			
 		echo json_encode(array('success' => 1, 'result' => $out),JSON_PRETTY_PRINT);

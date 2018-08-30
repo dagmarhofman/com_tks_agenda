@@ -265,7 +265,6 @@ if (empty($list['direction']))
 		$db->setQuery($query);
 		$results = $db->loadObjectList();
 				
-
 		$i = 0; 
 		foreach ($items as $item)
 		{
@@ -276,9 +275,6 @@ if (empty($list['direction']))
 					// Finally replace the data object with proper information
 					$item->catid = !empty($title) ? $title : $item->catid;
 			}
-
-			$start_dates = array();
-			$end_dates = array();
 			foreach( $results as $result ) {
 				if( $result->rid == $item->id ) {
 					$start_dates[$i] = $result->rstart;
@@ -289,8 +285,6 @@ if (empty($list['direction']))
 			$item->recur_events_start = $start_dates;
 			$item->recur_events_end = $end_dates;
 			$i = 0;
-			unset($start_dates);
-			unset($end_dates);
 		}
 				
 		return $items;
