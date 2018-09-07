@@ -434,6 +434,8 @@ class tks_agendaControllerItemForm extends tks_agendaController
  		
 	}
 
+
+
 	/**
 	 * Method to abort current operation
 	 *

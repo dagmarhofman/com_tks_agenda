@@ -41,9 +41,13 @@ class tks_agendaViewItem extends JViewLegacy
 		$app  = JFactory::getApplication();
 		$user = JFactory::getUser();
 
+		$s['start_stamp'] = date('Y-m-d H:i:s',  JFactory::getApplication()->input->get('start_stamp') );
+		$s['end_stamp'] = date('Y-m-d H:i:s',  JFactory::getApplication()->input->get('end_stamp') );
+
 		$this->state  = $this->get('State');
 		$this->item   = $this->get('Data');
 		$this->items   = $this->getItems();
+		
 
 		$this->params = $app->getParams('com_tks_agenda');
 
@@ -169,6 +173,7 @@ class tks_agendaViewItem extends JViewLegacy
 
 	protected $params;
 
+
 	/**
 	 * Display the view
 	 *
@@ -187,6 +192,7 @@ class tks_agendaViewItem extends JViewLegacy
 		$this->item   = $this->get('Data');
 		$this->items  = $this->get('Items');
 		
+		var_export($this->item);
 		$this->params = $app->getParams('com_tks_agenda');
 
 		if (!empty($this->item))

@@ -73,6 +73,8 @@ class tks_agendaViewitems extends JViewLegacy
 
 				$start_date = date( "Y-m-d", strtotime($row->start));
 				$end_date =	date( "Y-m-d", strtotime($row->end) );
+				$start_stamp = strtotime($row->start);
+				$end_stamp = strtotime($row->end);
 				
 		    	$out[] = array(
 		    		'id' => $row->id,
@@ -84,7 +86,7 @@ class tks_agendaViewitems extends JViewLegacy
 		       	'end' => strtotime($end_date) .'000',
 		       	'start_time' => $start_time,
 		      	'end_time' => $end_time,
-					"url" => "index.php?option=com_tks_agenda&view=item&id=".$row->id."&format=raw",
+					"url" => "index.php?option=com_tks_agenda&view=item&id=".$row->id."&format=raw&start_stamp=" . $start_stamp . "&end_stamp=" . $end_stamp,
 		    		);
 		    	
 		    	if( $row->recurring == 'Yes') {
@@ -93,8 +95,9 @@ class tks_agendaViewitems extends JViewLegacy
 						$end_time = date("H:i",strtotime($row->recur_events_end[$i]));
 
 						$start_date = date( "Y-m-d", strtotime($row->recur_events_start[$i] ) );
-						$end_date =	date( "Y-m-d", strtotime($row->recur_events_start[$i]) );
-				
+						$end_date =	date( "Y-m-d", strtotime($row->recur_events_end[$i]) );
+						$start_stamp = strtotime($row->recur_events_start[$i]);
+						$end_stamp = strtotime($row->recur_events_end[$i]);
 			    		$out[] = array(
 			        		'id' => $row->id,
 	 		        		'user' => $avatar,
@@ -105,7 +108,7 @@ class tks_agendaViewitems extends JViewLegacy
 				       	'end' => strtotime($end_date) .'000',
 			        		'start_time' => $start_time,
 			        		'end_time' => $end_time,
-							"url" => "index.php?option=com_tks_agenda&view=item&id=".$row->id."&format=raw",
+							"url" => "index.php?option=com_tks_agenda&view=item&id=".$row->id."&format=raw&start_stamp=" . $start_stamp . "&end_stamp=" . $end_stamp,
 				    			);
 		    		}
 		    	} // $row->recurring == 'Yes'

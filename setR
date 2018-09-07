@@ -1,0 +1,1669 @@
+administrator/models/fields/filemultiple.php:		$html = '<input type="file" name="' . $this->name . '[]" multiple>';
+administrator/models/fields/createdby.php:		$user_id = $this->value;
+administrator/models/fields/createdby.php:			$html[] = '<input type="hidden" name="' . $this->name . '" value="' . $user->id . '" />';
+administrator/models/fields/timeupdated.php:		$old_time_updated = $this->value;
+administrator/models/fields/timeupdated.php:		$hidden           = (boolean) $this->element['hidden'];
+administrator/models/fields/timeupdated.php:		$html[]       = '<input type="hidden" name="' . $this->name . '" value="' . $time_updated . '" />';
+administrator/models/fields/modifiedby.php:		$html[] = '<input type="hidden" name="' . $this->name . '" value="' . $user->id . '" />';
+administrator/models/fields/foreignkey.php:		$this->input_type = $this->getAttribute('input_type');
+administrator/models/fields/foreignkey.php:		$this->table = $this->getAttribute('table');
+administrator/models/fields/foreignkey.php:		$this->key_field = (string) $this->getAttribute('key_field');
+administrator/models/fields/foreignkey.php:		$this->value_field = (string) $this->getAttribute('value_field');
+administrator/models/fields/foreignkey.php:					$db->quoteName($this->key_field),
+administrator/models/fields/foreignkey.php:					$db->quoteName($this->value_field)
+administrator/models/fields/foreignkey.php:			->from($this->table);
+administrator/models/fields/foreignkey.php:		$input_options = 'class="' . $this->getAttribute('class') . '"';
+administrator/models/fields/foreignkey.php:		switch ($this->input_type)
+administrator/models/fields/foreignkey.php:					$options[] = JHtml::_('select.option', $result->{$this->key_field}, $result->{$this->value_field});
+administrator/models/fields/foreignkey.php:				$value = $this->value;
+administrator/models/fields/foreignkey.php:				if ($this->multiple)
+administrator/models/fields/foreignkey.php:				$html = JHtml::_('select.genericlist', $options, $this->name, $input_options, 'value', 'text', $value, $this->id);
+administrator/models/fields/foreignkey.php:		if (!empty($this->element[$attr_name]))
+administrator/models/fields/foreignkey.php:			return $this->element[$attr_name];
+administrator/models/fields/timecreated.php:		$time_created = $this->value;
+administrator/models/fields/timecreated.php:			$html[]       = '<input type="hidden" name="' . $this->name . '" value="' . $time_created . '" />';
+administrator/models/fields/timecreated.php:		$hidden = (boolean) $this->element['hidden'];
+administrator/models/download.php:		$form = $this->loadForm(
+administrator/models/download.php:			if ($this->item === null)
+administrator/models/download.php:				$this->item = $this->getItem();
+administrator/models/download.php:			$data = $this->item;
+administrator/models/download.php:		$context    = $this->option . '.' . $this->name;
+administrator/models/download.php:		JPluginHelper::importPlugin($this->events_map['save']);
+administrator/models/download.php:		$table = $this->getTable();
+administrator/models/download.php:				$result = $dispatcher->trigger($this->event_before_save, array($context, &$table, true));
+administrator/models/download.php:				$dispatcher->trigger($this->event_after_save, array($context, &$table, true));
+administrator/models/download.php:		$this->cleanCache();
+administrator/models/items.php:		//$this->setState('list.limit', $limit);
+administrator/models/items.php:		//$this->setState('list.start', $limitstart);
+administrator/models/items.php:		if ($list = $app->getUserStateFromRequest($this->context . '.list', 'list', array(), 'array'))
+administrator/models/items.php:								$this->setState('list.direction', $fullDirection);
+administrator/models/items.php:							if (in_array($fullOrdering, $this->filter_fields))
+administrator/models/items.php:								$this->setState('list.ordering', $fullOrdering);
+administrator/models/items.php:							$this->setState('list.ordering', $ordering);
+administrator/models/items.php:							$this->setState('list.direction', $direction);
+administrator/models/items.php:						if (!in_array($value, $this->filter_fields))
+administrator/models/items.php:				$this->setState('list.' . $name, $value);
+administrator/models/items.php:		if ($filters = $app->getUserStateFromRequest($this->context . '.filter', 'filter', array(), 'array'))
+administrator/models/items.php:				$this->setState('filter.' . $name, $value);
+administrator/models/items.php:			$list             = $app->getUserState($this->context . '.list');
+administrator/models/items.php:			$app->setUserState($this->context . '.list', $list);
+administrator/models/items.php:			$list              = $app->getUserState($this->context . '.list');
+administrator/models/items.php:			$app->setUserState($this->context . '.list', $list);
+administrator/models/items.php:		$list = $app->getUserState($this->context . '.list');
+administrator/models/items.php:			$this->setState('list.ordering', $list['ordering']);
+administrator/models/items.php:			$this->setState('list.direction', $list['direction']);
+administrator/models/items.php:		$db    = $this->getDbo();
+administrator/models/items.php:				$this->getState(
+administrator/models/items.php:		$search = $this->getState('filter.search');
+administrator/models/items.php:		$orderCol  = $this->state->get('list.ordering');
+administrator/models/items.php:		$orderDirn = $this->state->get('list.direction');
+administrator/models/items.php:		$filters          = $app->getUserState($this->context . '.filter', array());
+administrator/models/items.php:			if (strpos($key, '_dateformat') && !empty($value) && $this->isValidDate($value) == null)
+administrator/models/items.php:			$app->setUserState($this->context . '.filter', $filters);
+administrator/models/newsitem.php:		$form = $this->loadForm(
+administrator/models/newsitem.php:			if ($this->item === null)
+administrator/models/newsitem.php:				$this->item = $this->getItem();
+administrator/models/newsitem.php:			$data = $this->item;
+administrator/models/newsitem.php:		$context    = $this->option . '.' . $this->name;
+administrator/models/newsitem.php:		JPluginHelper::importPlugin($this->events_map['save']);
+administrator/models/newsitem.php:		$table = $this->getTable();
+administrator/models/newsitem.php:				$result = $dispatcher->trigger($this->event_before_save, array($context, &$table, true));
+administrator/models/newsitem.php:				$dispatcher->trigger($this->event_after_save, array($context, &$table, true));
+administrator/models/newsitem.php:		$this->cleanCache();
+administrator/models/item.php:		$form = $this->loadForm(
+administrator/models/item.php:			if ($this->item === null)
+administrator/models/item.php:				$this->item = $this->getItem();
+administrator/models/item.php:			$data = $this->item;
+administrator/models/item.php:		$context    = $this->option . '.' . $this->name;
+administrator/models/item.php:		JPluginHelper::importPlugin($this->events_map['save']);
+administrator/models/item.php:		$table = $this->getTable();
+administrator/models/item.php:				$result = $dispatcher->trigger($this->event_before_save, array($context, &$table, true));
+administrator/models/item.php:				$dispatcher->trigger($this->event_after_save, array($context, &$table, true));
+administrator/models/item.php:		$this->cleanCache();
+administrator/models/tks_agenda.php:		if (!is_array($this->messages))
+administrator/models/tks_agenda.php:			$this->messages = array();
+administrator/models/tks_agenda.php:		if (!isset($this->messages[$id]))
+administrator/models/tks_agenda.php:			$table = $this->getTable();
+administrator/models/tks_agenda.php:			$this->messages[$id] = $table->item;
+administrator/models/tks_agenda.php:		return $this->messages[$id];
+administrator/models/downloads.php:		$search = $app->getUserStateFromRequest($this->context . '.filter.search', 'filter_search');
+administrator/models/downloads.php:		$this->setState('filter.search', $search);
+administrator/models/downloads.php:		$published = $app->getUserStateFromRequest($this->context . '.filter.state', 'filter_published', '', 'string');
+administrator/models/downloads.php:		$this->setState('filter.state', $published);
+administrator/models/downloads.php:		$this->setState('params', $params);
+administrator/models/downloads.php:		$id .= ':' . $this->getState('filter.search');
+administrator/models/downloads.php:		$id .= ':' . $this->getState('filter.state');
+administrator/models/downloads.php:		$db    = $this->getDbo();
+administrator/models/downloads.php:			$this->getState(
+administrator/models/downloads.php:		$published = $this->getState('filter.state');
+administrator/models/downloads.php:		$search = $this->getState('filter.search');
+administrator/models/downloads.php:		$orderCol  = $this->state->get('list.ordering');
+administrator/models/downloads.php:		$orderDirn = $this->state->get('list.direction');
+administrator/models/newsitems.php:		$search = $app->getUserStateFromRequest($this->context . '.filter.search', 'filter_search');
+administrator/models/newsitems.php:		$this->setState('filter.search', $search);
+administrator/models/newsitems.php:		$published = $app->getUserStateFromRequest($this->context . '.filter.state', 'filter_published', '', 'string');
+administrator/models/newsitems.php:		$this->setState('filter.state', $published);
+administrator/models/newsitems.php:		$this->setState('filter.newscatid', $app->getUserStateFromRequest($this->context.'.filter.newscatid', 'filter_newscatid', '', 'string'));
+administrator/models/newsitems.php:		$this->setState('params', $params);
+administrator/models/newsitems.php:		$id .= ':' . $this->getState('filter.search');
+administrator/models/newsitems.php:		$id .= ':' . $this->getState('filter.state');
+administrator/models/newsitems.php:		$db    = $this->getDbo();
+administrator/models/newsitems.php:			$this->getState(
+administrator/models/newsitems.php:		$published = $this->getState('filter.state');
+administrator/models/newsitems.php:		$search = $this->getState('filter.search');
+administrator/models/newsitems.php:		$filter_newscatid = $this->state->get("filter.newscatid");
+administrator/models/newsitems.php:		$orderCol  = $this->state->get('list.ordering');
+administrator/models/newsitems.php:		$orderDirn = $this->state->get('list.direction');
+administrator/models/items.php.old:		$pks = $this->input->post->get('cid', array(), 'array');
+administrator/models/items.php.old:			$model = $this->getModel();
+administrator/models/items.php.old:			$this->setMessage(Jtext::_('COM_TKS_AGENDA_ITEMS_SUCCESS_DUPLICATED'));
+administrator/models/items.php.old:		$this->setRedirect('index.php?option=com_tks_agenda&view=items');
+administrator/models/items.php.old:		$model = $this->getModel();
+administrator/views/items/view.html.php.old:		$this->state = $this->get('State');
+administrator/views/items/view.html.php.old:		$this->items = $this->get('Items');
+administrator/views/items/view.html.php.old:		$this->pagination = $this->get('Pagination');
+administrator/views/items/view.html.php.old:		if (count($errors = $this->get('Errors')))
+administrator/views/items/view.html.php.old:		$this->addToolbar();
+administrator/views/items/view.html.php.old:		$this->sidebar = JHtmlSidebar::render();
+administrator/views/items/view.html.php.old:		$state = $this->get('State');
+administrator/views/items/view.html.php.old:			if ($canDo->get('core.edit') && isset($this->items[0]))
+administrator/views/items/view.html.php.old:			if (isset($this->items[0]->state))
+administrator/views/items/view.html.php.old:			elseif (isset($this->items[0]))
+administrator/views/items/view.html.php.old:			if (isset($this->items[0]->state))
+administrator/views/items/view.html.php.old:			if (isset($this->items[0]->checked_out))
+administrator/views/items/view.html.php.old:		if (isset($this->items[0]->state))
+administrator/views/items/view.html.php.old:		$this->extra_sidebar = '';
+administrator/views/items/view.html.php.old:			JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), "value", "text", /* $this->state->get('filter.state')*/ false , true)
+administrator/views/items/view.html.php:		$this->state = $this->get('State');
+administrator/views/items/view.html.php:		$this->items = $this->get('Items');
+administrator/views/items/view.html.php:		$this->pagination = $this->get('Pagination');
+administrator/views/items/view.html.php:		if (count($errors = $this->get('Errors')))
+administrator/views/items/view.html.php:		$this->addToolbar();
+administrator/views/items/view.html.php:		$this->sidebar = JHtmlSidebar::render();
+administrator/views/items/view.html.php:		$state = $this->get('State');
+administrator/views/items/view.html.php:			if ($canDo->get('core.edit') && isset($this->items[0]))
+administrator/views/items/view.html.php:			if (isset($this->items[0]->state))
+administrator/views/items/view.html.php:			elseif (isset($this->items[0]))
+administrator/views/items/view.html.php:			if (isset($this->items[0]->state))
+administrator/views/items/view.html.php:			if (isset($this->items[0]->checked_out))
+administrator/views/items/view.html.php:		if (isset($this->items[0]->state))
+administrator/views/items/view.html.php:		$this->extra_sidebar = '';
+administrator/views/items/view.html.php:			JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), "value", "text", $this->state->get('filter.state'), true)
+administrator/views/items/tmpl/default.php:$listOrder = $this->state->get('list.ordering');
+administrator/views/items/tmpl/default.php:$listDirn  = $this->state->get('list.direction');
+administrator/views/items/tmpl/default.php:$sortFields = $this->getSortFields();
+administrator/views/items/tmpl/default.php:if (!empty($this->extra_sidebar))
+administrator/views/items/tmpl/default.php:	$this->sidebar .= $this->extra_sidebar;
+administrator/views/items/tmpl/default.php:	<?php if (!empty($this->sidebar)): ?>
+administrator/views/items/tmpl/default.php:		<?php echo $this->sidebar; ?>
+administrator/views/items/tmpl/default.php:						   value="<?php echo $this->escape($this->state->get('filter.search')); ?>"
+administrator/views/items/tmpl/default.php:					<?php echo $this->pagination->getLimitBox(); ?>
+administrator/views/items/tmpl/default.php:					<?php if (isset($this->items[0]->ordering)): ?>
+administrator/views/items/tmpl/default.php:					<?php if (isset($this->items[0]->state)): ?>
+administrator/views/items/tmpl/default.php:					<td colspan="<?php echo isset($this->items[0]) ? count(get_object_vars($this->items[0])) : 10; ?>">
+administrator/views/items/tmpl/default.php:						<?php echo $this->pagination->getListFooter(); ?>
+administrator/views/items/tmpl/default.php:				<?php foreach ($this->items as $i => $item) :
+administrator/views/items/tmpl/default.php:						<?php if (isset($this->items[0]->ordering)) : ?>
+administrator/views/items/tmpl/default.php:						<?php if (isset($this->items[0]->state)): ?>
+administrator/views/items/tmpl/default.php:					<?php echo $this->escape($item->created_by); ?></a>
+administrator/views/items/tmpl/default.php:					<?php echo $this->escape($item->created_by); ?>
+administrator/views/items/tmpl/default.php.old://$listOrder = $this->state->get('list.ordering');
+administrator/views/items/tmpl/default.php.old://$listDirn  = $this->state->get('list.direction');
+administrator/views/items/tmpl/default.php.old:$sortFields = $this->getSortFields();
+administrator/views/items/tmpl/default.php.old:if (!empty($this->extra_sidebar))
+administrator/views/items/tmpl/default.php.old:	$this->sidebar .= $this->extra_sidebar;
+administrator/views/items/tmpl/default.php.old:	<?php if (!empty($this->sidebar)): ?>
+administrator/views/items/tmpl/default.php.old:		<?php echo $this->sidebar; ?>
+administrator/views/items/tmpl/default.php.old:						    php echo $this->escape($this->state->get('filter.search')); ?> --> 
+administrator/views/items/tmpl/default.php.old:					<?php /* dagmar echo $this->pagination->getLimitBox(); */ ?>
+administrator/views/items/tmpl/default.php.old:					<?php if (isset($this->items[0]->ordering)): ?>
+administrator/views/items/tmpl/default.php.old:					<?php if (isset($this->items[0]->state)): ?>
+administrator/views/items/tmpl/default.php.old:					<td colspan="<?php echo isset($this->items[0]) ? count(get_object_vars($this->items[0])) : 10; ?>">
+administrator/views/items/tmpl/default.php.old:						<?php /* echo $this->pagination->getListFooter(); */?>
+administrator/views/items/tmpl/default.php.old:				<?php foreach ($this->items as $i => $item) :
+administrator/views/items/tmpl/default.php.old:						<?php if (isset($this->items[0]->ordering)) : ?>
+administrator/views/items/tmpl/default.php.old:						<?php if (isset($this->items[0]->state)): ?>
+administrator/views/items/tmpl/default.php.old:					<?php echo $this->escape($item->created_by); ?></a>
+administrator/views/items/tmpl/default.php.old:					<?php echo $this->escape($item->created_by); ?>
+administrator/views/newsitems/view.html.php:		$this->state = $this->get('State');
+administrator/views/newsitems/view.html.php:		$this->items = $this->get('Items');
+administrator/views/newsitems/view.html.php:		$this->pagination = $this->get('Pagination');
+administrator/views/newsitems/view.html.php:		if (count($errors = $this->get('Errors')))
+administrator/views/newsitems/view.html.php:		$this->addToolbar();
+administrator/views/newsitems/view.html.php:		$this->sidebar = JHtmlSidebar::render();
+administrator/views/newsitems/view.html.php:		$state = $this->get('State');
+administrator/views/newsitems/view.html.php:			if ($canDo->get('core.edit') && isset($this->items[0]))
+administrator/views/newsitems/view.html.php:			if (isset($this->items[0]->state))
+administrator/views/newsitems/view.html.php:			elseif (isset($this->items[0]))
+administrator/views/newsitems/view.html.php:			if (isset($this->items[0]->state))
+administrator/views/newsitems/view.html.php:			if (isset($this->items[0]->checked_out))
+administrator/views/newsitems/view.html.php:		if (isset($this->items[0]->state))
+administrator/views/newsitems/view.html.php:		$this->extra_sidebar = '';
+administrator/views/newsitems/view.html.php:			JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), "value", "text", $this->state->get('filter.state'), true)
+administrator/views/newsitems/view.html.php:			JHtml::_('select.options', JHtml::_('category.options', 'com_tks_agenda.newscatid'), "value", "text", $this->state->get('filter.newscatid'))
+administrator/views/newsitems/tmpl/default.php:$listOrder = $this->state->get('list.ordering');
+administrator/views/newsitems/tmpl/default.php:$listDirn  = $this->state->get('list.direction');
+administrator/views/newsitems/tmpl/default.php:$sortFields = $this->getSortFields();
+administrator/views/newsitems/tmpl/default.php:if (!empty($this->extra_sidebar))
+administrator/views/newsitems/tmpl/default.php:	$this->sidebar .= $this->extra_sidebar;
+administrator/views/newsitems/tmpl/default.php:	<?php if (!empty($this->sidebar)): ?>
+administrator/views/newsitems/tmpl/default.php:		<?php echo $this->sidebar; ?>
+administrator/views/newsitems/tmpl/default.php:						   value="<?php echo $this->escape($this->state->get('filter.search')); ?>"
+administrator/views/newsitems/tmpl/default.php:					<?php echo $this->pagination->getLimitBox(); ?>
+administrator/views/newsitems/tmpl/default.php:					<?php if (isset($this->items[0]->ordering)): ?>
+administrator/views/newsitems/tmpl/default.php:					<?php if (isset($this->items[0]->state)): ?>
+administrator/views/newsitems/tmpl/default.php:					<td colspan="<?php echo isset($this->items[0]) ? count(get_object_vars($this->items[0])) : 10; ?>">
+administrator/views/newsitems/tmpl/default.php:						<?php echo $this->pagination->getListFooter(); ?>
+administrator/views/newsitems/tmpl/default.php:				<?php foreach ($this->items as $i => $item) :
+administrator/views/newsitems/tmpl/default.php:						<?php if (isset($this->items[0]->ordering)) : ?>
+administrator/views/newsitems/tmpl/default.php:						<?php if (isset($this->items[0]->state)): ?>
+administrator/views/newsitems/tmpl/default.php:					<?php echo $this->escape($item->title); ?></a>
+administrator/views/newsitems/tmpl/default.php:					<?php echo $this->escape($item->title); ?>
+administrator/views/download/view.html.php:		$this->state = $this->get('State');
+administrator/views/download/view.html.php:		$this->item  = $this->get('Item');
+administrator/views/download/view.html.php:		$this->form  = $this->get('Form');
+administrator/views/download/view.html.php:		if (count($errors = $this->get('Errors')))
+administrator/views/download/view.html.php:		$this->addToolbar();
+administrator/views/download/view.html.php:		$isNew = ($this->item->id == 0);
+administrator/views/download/view.html.php:		if (isset($this->item->checked_out))
+administrator/views/download/view.html.php:			$checkedOut = !($this->item->checked_out == 0 || $this->item->checked_out == $user->get('id'));
+administrator/views/download/view.html.php:		if ($this->state->params->get('save_history', 1) && $user->authorise('core.edit')) {
+administrator/views/download/view.html.php:			JToolbarHelper::versions('com_tks_agenda.download', $this->item->id);
+administrator/views/download/view.html.php:		if (empty($this->item->id))
+administrator/views/download/tmpl/edit.php:				alert('<?php echo $this->escape(JText::_('JGLOBAL_VALIDATION_FORM_FAILED')); ?>');
+administrator/views/download/tmpl/edit.php:	action="<?php echo JRoute::_('index.php?option=com_tks_agenda&layout=edit&id=' . (int) $this->item->id); ?>"
+administrator/views/download/tmpl/edit.php:						<?php echo $this->form->renderField('id'); ?>
+administrator/views/download/tmpl/edit.php:						<?php echo $this->form->renderField('state'); ?>
+administrator/views/download/tmpl/edit.php:						<?php echo $this->form->renderField('created_by'); ?>
+administrator/views/download/tmpl/edit.php:						<?php echo $this->form->renderField('file'); ?>
+administrator/views/download/tmpl/edit.php:						<?php echo $this->form->renderField('listfiles'); ?>
+administrator/views/download/tmpl/edit.php:						<?php echo $this->form->renderField('description'); ?>
+administrator/views/download/tmpl/edit.php:					<?php if ($this->state->params->get('save_history', 1)) : ?>
+administrator/views/download/tmpl/edit.php:						<div class="control-label"><?php echo $this->form->getLabel('version_note'); ?></div>
+administrator/views/download/tmpl/edit.php:						<div class="controls"><?php echo $this->form->getInput('version_note'); ?></div>
+administrator/views/item/view.html.php:		$this->state = $this->get('State');
+administrator/views/item/view.html.php:		$this->item  = $this->get('Item');
+administrator/views/item/view.html.php:		$this->form  = $this->get('Form');
+administrator/views/item/view.html.php:		if (count($errors = $this->get('Errors')))
+administrator/views/item/view.html.php:		$this->addToolbar();
+administrator/views/item/view.html.php:		$isNew = ($this->item->id == 0);
+administrator/views/item/view.html.php:		if (isset($this->item->checked_out))
+administrator/views/item/view.html.php:			$checkedOut = !($this->item->checked_out == 0 || $this->item->checked_out == $user->get('id'));
+administrator/views/item/view.html.php:		if (empty($this->item->id))
+administrator/views/item/tmpl/edit.php:				alert('<?php echo $this->escape(JText::_('JGLOBAL_VALIDATION_FORM_FAILED')); ?>');
+administrator/views/item/tmpl/edit.php:	action="<?php echo JRoute::_('index.php?option=com_tks_agenda&layout=edit&id=' . (int) $this->item->id); ?>"
+administrator/views/item/tmpl/edit.php:		<?php if(empty($this->item->created_by)){ 
+administrator/views/item/tmpl/edit.php:								$profile = JUserHelper::getProfile($this->item->created_by);
+administrator/views/item/tmpl/edit.php:			<input type="hidden" name="jform[id]" value="<?php echo $this->item->id; ?>" />
+administrator/views/item/tmpl/edit.php:				<div class="control-label"><?php echo $this->form->getLabel('catid'); ?></div>
+administrator/views/item/tmpl/edit.php:				<div class="controls"><?php echo $this->form->getInput('catid'); ?></div>
+administrator/views/item/tmpl/edit.php:				<input type="hidden" name="jform[ordering]" value="<?php echo $this->item->ordering; ?>" />
+administrator/views/item/tmpl/edit.php:				<input type="hidden" name="jform[state]" value="<?php echo $this->item->state; ?>" />
+administrator/views/item/tmpl/edit.php:				<input type="hidden" name="jform[checked_out]" value="<?php echo $this->item->checked_out; ?>" />
+administrator/views/item/tmpl/edit.php:				<input type="hidden" name="jform[checked_out_time]" value="<?php echo $this->item->checked_out_time; ?>" />
+administrator/views/item/tmpl/edit.php:				<?php if(empty($this->item->created_by)){ ?>
+administrator/views/item/tmpl/edit.php:					<input type="hidden" name="jform[created_by]" value="<?php echo $this->item->created_by; ?>" />
+administrator/views/item/tmpl/edit.php:				<div class="control-label"><?php echo $this->form->getLabel('start'); ?></div>
+administrator/views/item/tmpl/edit.php:				<div class="controls"><?php echo $this->form->getInput('start'); ?></div>
+administrator/views/item/tmpl/edit.php:				<div class="control-label"><?php echo $this->form->getLabel('end'); ?></div>
+administrator/views/item/tmpl/edit.php:				<div class="controls"><?php echo $this->form->getInput('end'); ?></div>
+administrator/views/item/tmpl/edit.php:				<div class="control-label"><?php echo $this->form->getLabel('recurring'); ?></div>
+administrator/views/item/tmpl/edit.php:				<div class="controls"><?php echo $this->form->getInput('recurring'); ?></div>
+administrator/views/item/tmpl/edit.php:				<div class="control-label"><?php echo $this->form->getLabel('recur_type'); ?></div>
+administrator/views/item/tmpl/edit.php:				<div class="controls"><?php echo $this->form->getInput('recur_type'); ?></div>
+administrator/views/item/tmpl/edit.php:				<div class="control-label"><?php echo $this->form->getLabel('end_recur'); ?></div>
+administrator/views/item/tmpl/edit.php:				<div class="controls"><?php echo $this->form->getInput('end_recur'); ?></div>
+administrator/views/item/tmpl/edit.php:				<div class="control-label"><?php echo $this->form->getLabel('reason'); ?></div>
+administrator/views/item/tmpl/edit.php:				<div class="controls"><?php echo $this->form->getInput('reason'); ?></div>
+administrator/views/item/tmpl/edit.php:		<?php echo $this->form->getInput('rules'); ?>
+administrator/views/newsitem/view.html.php:		$this->state = $this->get('State');
+administrator/views/newsitem/view.html.php:		$this->item  = $this->get('Item');
+administrator/views/newsitem/view.html.php:		$this->form  = $this->get('Form');
+administrator/views/newsitem/view.html.php:		if (count($errors = $this->get('Errors')))
+administrator/views/newsitem/view.html.php:		$this->addToolbar();
+administrator/views/newsitem/view.html.php:		$isNew = ($this->item->id == 0);
+administrator/views/newsitem/view.html.php:		if (isset($this->item->checked_out))
+administrator/views/newsitem/view.html.php:			$checkedOut = !($this->item->checked_out == 0 || $this->item->checked_out == $user->get('id'));
+administrator/views/newsitem/view.html.php:		if ($this->state->params->get('save_history', 1) && $user->authorise('core.edit')) {
+administrator/views/newsitem/view.html.php:			JToolbarHelper::versions('com_tks_agenda.newsitem', $this->item->id);
+administrator/views/newsitem/view.html.php:		if (empty($this->item->id))
+administrator/views/newsitem/tmpl/edit.php:				alert('<?php echo $this->escape(JText::_('JGLOBAL_VALIDATION_FORM_FAILED')); ?>');
+administrator/views/newsitem/tmpl/edit.php:	action="<?php echo JRoute::_('index.php?option=com_tks_agenda&layout=edit&id=' . (int) $this->item->id); ?>"
+administrator/views/newsitem/tmpl/edit.php:									<input type="hidden" name="jform[id]" value="<?php echo $this->item->id; ?>" />
+administrator/views/newsitem/tmpl/edit.php:				<input type="hidden" name="jform[ordering]" value="<?php echo $this->item->ordering; ?>" />
+administrator/views/newsitem/tmpl/edit.php:				<input type="hidden" name="jform[state]" value="<?php echo $this->item->state; ?>" />
+administrator/views/newsitem/tmpl/edit.php:				<input type="hidden" name="jform[checked_out]" value="<?php echo $this->item->checked_out; ?>" />
+administrator/views/newsitem/tmpl/edit.php:				<input type="hidden" name="jform[checked_out_time]" value="<?php echo $this->item->checked_out_time; ?>" />
+administrator/views/newsitem/tmpl/edit.php:				<?php if(empty($this->item->created_by)){ ?>
+administrator/views/newsitem/tmpl/edit.php:					<input type="hidden" name="jform[created_by]" value="<?php echo $this->item->created_by; ?>" />
+administrator/views/newsitem/tmpl/edit.php:				<?php if(empty($this->item->modified_by)){ ?>
+administrator/views/newsitem/tmpl/edit.php:					<input type="hidden" name="jform[modified_by]" value="<?php echo $this->item->modified_by; ?>" />
+administrator/views/newsitem/tmpl/edit.php:						<div class="control-label"><?php echo $this->form->getLabel('created_by'); ?></div>
+administrator/views/newsitem/tmpl/edit.php:						<div class="controls"><?php echo $this->form->getInput('created_by'); ?></div>
+administrator/views/newsitem/tmpl/edit.php: 				<?php echo $this->form->renderField('title'); ?>
+administrator/views/newsitem/tmpl/edit.php:				<?php echo $this->form->renderField('alias'); ?>
+administrator/views/newsitem/tmpl/edit.php:				<?php echo $this->form->renderField('newscatid'); ?>
+administrator/views/newsitem/tmpl/edit.php:				<?php echo $this->form->renderField('description'); ?>
+administrator/views/newsitem/tmpl/edit.php:					<?php if ($this->state->params->get('save_history', 1)) : ?>
+administrator/views/newsitem/tmpl/edit.php:						<div class="control-label"><?php echo $this->form->getLabel('version_note'); ?></div>
+administrator/views/newsitem/tmpl/edit.php:						<div class="controls"><?php echo $this->form->getInput('version_note'); ?></div>
+administrator/views/newsitem/tmpl/edit.php:		<?php echo $this->form->getInput('rules'); ?>
+administrator/views/tks_agenda/view.html.php.old:		$this->msg = $this->get('Msg');
+administrator/views/tks_agenda/view.html.php.old:		if (count($errors = $this->get('Errors')))
+administrator/views/tks_agenda/tmpl/default.php.old:<h1><?php echo $this->msg; ?></h1>
+administrator/views/downloads/view.html.php:		$this->state = $this->get('State');
+administrator/views/downloads/view.html.php:		$this->items = $this->get('Items');
+administrator/views/downloads/view.html.php:		$this->pagination = $this->get('Pagination');
+administrator/views/downloads/view.html.php:		if (count($errors = $this->get('Errors')))
+administrator/views/downloads/view.html.php:		$this->addToolbar();
+administrator/views/downloads/view.html.php:		$this->sidebar = JHtmlSidebar::render();
+administrator/views/downloads/view.html.php:		$state = $this->get('State');
+administrator/views/downloads/view.html.php:			if ($canDo->get('core.edit') && isset($this->items[0]))
+administrator/views/downloads/view.html.php:			if (isset($this->items[0]->state))
+administrator/views/downloads/view.html.php:			elseif (isset($this->items[0]))
+administrator/views/downloads/view.html.php:			if (isset($this->items[0]->state))
+administrator/views/downloads/view.html.php:			if (isset($this->items[0]->checked_out))
+administrator/views/downloads/view.html.php:		if (isset($this->items[0]->state))
+administrator/views/downloads/view.html.php:		$this->extra_sidebar = '';
+administrator/views/downloads/view.html.php:			JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), "value", "text", $this->state->get('filter.state'), true)
+administrator/views/downloads/tmpl/default.php:$listOrder = $this->state->get('list.ordering');
+administrator/views/downloads/tmpl/default.php:$listDirn  = $this->state->get('list.direction');
+administrator/views/downloads/tmpl/default.php:$sortFields = $this->getSortFields();
+administrator/views/downloads/tmpl/default.php:if (!empty($this->extra_sidebar))
+administrator/views/downloads/tmpl/default.php:	$this->sidebar .= $this->extra_sidebar;
+administrator/views/downloads/tmpl/default.php:	<?php if (!empty($this->sidebar)): ?>
+administrator/views/downloads/tmpl/default.php:		<?php echo $this->sidebar; ?>
+administrator/views/downloads/tmpl/default.php:						   value="<?php echo $this->escape($this->state->get('filter.search')); ?>"
+administrator/views/downloads/tmpl/default.php:					<?php echo $this->pagination->getLimitBox(); ?>
+administrator/views/downloads/tmpl/default.php:					<?php if (isset($this->items[0]->ordering)): ?>
+administrator/views/downloads/tmpl/default.php:					<?php if (isset($this->items[0]->state)): ?>
+administrator/views/downloads/tmpl/default.php:					<td colspan="<?php echo isset($this->items[0]) ? count(get_object_vars($this->items[0])) : 10; ?>">
+administrator/views/downloads/tmpl/default.php:						<?php echo $this->pagination->getListFooter(); ?>
+administrator/views/downloads/tmpl/default.php:				<?php foreach ($this->items as $i => $item) :
+administrator/views/downloads/tmpl/default.php:						<?php if (isset($this->items[0]->ordering)) : ?>
+administrator/views/downloads/tmpl/default.php:						<?php if (isset($this->items[0]->state)): ?>
+administrator/views/downloads/tmpl/default.php:					<?php echo $this->escape($item->title); ?></a>
+administrator/views/downloads/tmpl/default.php:					<?php echo $this->escape($item->title); ?>
+administrator/tables/download.php:			->from($db->quoteName($this->_tbl))
+administrator/tables/download.php:			->where($db->quoteName($field) . ' = ' . $db->quote($this->$field))
+administrator/tables/download.php:			->where($db->quoteName('id') . ' <> ' . (int) $this->{$this->_tbl_key});
+administrator/tables/download.php:			$array['rules'] = $this->JAccessRulestoArray($array_jaccess);
+administrator/tables/download.php:			$this->setRules($array['rules']);
+administrator/tables/download.php:		if (property_exists($this, 'ordering') && $this->id == 0)
+administrator/tables/download.php:			$this->ordering = self::getNextOrder();
+administrator/tables/download.php:		if (!$this->isUnique('file'))
+administrator/tables/download.php:			throw new Exception('Your <b>file</b> item "<b>' . $this->file . '</b>" already exists');
+administrator/tables/download.php:		if (!$this->isUnique('alias'))
+administrator/tables/download.php:			throw new Exception('Your <b>alias</b> item "<b>' . $this->alias . '</b>" already exists');
+administrator/tables/download.php:			$this->file = "";
+administrator/tables/download.php:						$this->file = $array['file'];
+administrator/tables/download.php:					$this->file .= (!empty($this->file)) ? "," : "";
+administrator/tables/download.php:					$this->file .= $filename;
+administrator/tables/download.php:		$k = $this->_tbl_key;
+administrator/tables/download.php:			if ($this->$k)
+administrator/tables/download.php:				$pks = array($this->$k);
+administrator/tables/download.php:		$this->_db->setQuery(
+administrator/tables/download.php:			'UPDATE `' . $this->_tbl . '`' .
+administrator/tables/download.php:		$this->_db->execute();
+administrator/tables/download.php:		if ($checkin && (count($pks) == $this->_db->getAffectedRows()))
+administrator/tables/download.php:				$this->checkin($pk);
+administrator/tables/download.php:		if (in_array($this->$k, $pks))
+administrator/tables/download.php:			$this->state = $state;
+administrator/tables/download.php:		$k = $this->_tbl_key;
+administrator/tables/download.php:		return 'com_tks_agenda.download.' . (int) $this->$k;
+administrator/tables/download.php:		$this->load($pk);
+administrator/tables/download.php:			foreach ($this->file as $fileFile)
+administrator/tables/newsitem.php:			->from($db->quoteName($this->_tbl))
+administrator/tables/newsitem.php:			->where($db->quoteName($field) . ' = ' . $db->quote($this->$field))
+administrator/tables/newsitem.php:			->where($db->quoteName('id') . ' <> ' . (int) $this->{$this->_tbl_key});
+administrator/tables/newsitem.php:			$array['rules'] = $this->JAccessRulestoArray($array_jaccess);
+administrator/tables/newsitem.php:			$this->setRules($array['rules']);
+administrator/tables/newsitem.php:		if (property_exists($this, 'ordering') && $this->id == 0)
+administrator/tables/newsitem.php:			$this->ordering = self::getNextOrder();
+administrator/tables/newsitem.php:		if (!$this->isUnique('title'))
+administrator/tables/newsitem.php:			throw new Exception('Your <b>title</b> item "<b>' . $this->title . '</b>" already exists');
+administrator/tables/newsitem.php:		if (!$this->isUnique('alias'))
+administrator/tables/newsitem.php:			$this->alias .= '-' . JFilterOutput::stringURLSafe(date('Y-m-d-H:i:s'));
+administrator/tables/newsitem.php:		$k = $this->_tbl_key;
+administrator/tables/newsitem.php:			if ($this->$k)
+administrator/tables/newsitem.php:				$pks = array($this->$k);
+administrator/tables/newsitem.php:		$this->_db->setQuery(
+administrator/tables/newsitem.php:			'UPDATE `' . $this->_tbl . '`' .
+administrator/tables/newsitem.php:		$this->_db->execute();
+administrator/tables/newsitem.php:		if ($checkin && (count($pks) == $this->_db->getAffectedRows()))
+administrator/tables/newsitem.php:				$this->checkin($pk);
+administrator/tables/newsitem.php:		if (in_array($this->$k, $pks))
+administrator/tables/newsitem.php:			$this->state = $state;
+administrator/tables/newsitem.php:		$k = $this->_tbl_key;
+administrator/tables/newsitem.php:		return 'com_tks_agenda.newsitem.' . (int) $this->$k;
+administrator/tables/newsitem.php:		$this->load($pk);
+administrator/tables/item.php:			$array['rules'] = $this->JAccessRulestoArray($array_jaccess);
+administrator/tables/item.php:			$this->setRules($array['rules']);
+administrator/tables/item.php:		if (property_exists($this, 'ordering') && $this->id == 0)
+administrator/tables/item.php:			$this->ordering = self::getNextOrder();
+administrator/tables/item.php:		$k = $this->_tbl_key;
+administrator/tables/item.php:			if ($this->$k)
+administrator/tables/item.php:				$pks = array($this->$k);
+administrator/tables/item.php:		$this->_db->setQuery(
+administrator/tables/item.php:			'UPDATE `' . $this->_tbl . '`' .
+administrator/tables/item.php:		$this->_db->execute();
+administrator/tables/item.php:		if ($checkin && (count($pks) == $this->_db->getAffectedRows()))
+administrator/tables/item.php:				$this->checkin($pk);
+administrator/tables/item.php:		if (in_array($this->$k, $pks))
+administrator/tables/item.php:			$this->state = $state;
+administrator/tables/item.php:		$k = $this->_tbl_key;
+administrator/tables/item.php:		return 'com_tks_agenda.item.' . (int) $this->$k;
+administrator/tables/item.php:		$this->load($pk);
+administrator/controllers/download.php:		$this->view_list = 'downloads';
+administrator/controllers/items.php:		$pks = $this->input->post->get('cid', array(), 'array');
+administrator/controllers/items.php:			$model = $this->getModel();
+administrator/controllers/items.php:			$this->setMessage(Jtext::_('COM_TKS_AGENDA_ITEMS_SUCCESS_DUPLICATED'));
+administrator/controllers/items.php:		$this->setRedirect('index.php?option=com_tks_agenda&view=items');
+administrator/controllers/items.php:		$model = $this->getModel();
+administrator/controllers/newsitem.php:		$this->view_list = 'newsitems';
+administrator/controllers/item.php:		$this->view_list = 'items';
+administrator/controllers/item.php:		$task = $this->getTask();
+administrator/controllers/downloads.php:		$pks = $this->input->post->get('cid', array(), 'array');
+administrator/controllers/downloads.php:			$model = $this->getModel();
+administrator/controllers/downloads.php:			$this->setMessage(Jtext::_('COM_TKS_AGENDA_ITEMS_SUCCESS_DUPLICATED'));
+administrator/controllers/downloads.php:		$this->setRedirect('index.php?option=com_tks_agenda&view=downloads');
+administrator/controllers/downloads.php:		$model = $this->getModel();
+administrator/controllers/newsitems.php:		$pks = $this->input->post->get('cid', array(), 'array');
+administrator/controllers/newsitems.php:			$model = $this->getModel();
+administrator/controllers/newsitems.php:			$this->setMessage(Jtext::_('COM_TKS_AGENDA_ITEMS_SUCCESS_DUPLICATED'));
+administrator/controllers/newsitems.php:		$this->setRedirect('index.php?option=com_tks_agenda&view=newsitems');
+administrator/controllers/newsitems.php:		$model = $this->getModel();
+site/models/newsitemform.php:		$this->setState('newsitem.id', $id);
+site/models/newsitemform.php:			$this->setState('newsitem.id', $params_array['item_id']);
+site/models/newsitemform.php:		$this->setState('params', $params);
+site/models/newsitemform.php:		if ($this->item === null)
+site/models/newsitemform.php:			$this->item = false;
+site/models/newsitemform.php:				$id = $this->getState('newsitem.id');
+site/models/newsitemform.php:			$table = $this->getTable();
+site/models/newsitemform.php:				if ($published = $this->getState('filter.published'))
+site/models/newsitemform.php:						return $this->item;
+site/models/newsitemform.php:				$this->item = ArrayHelper::toObject($properties, 'JObject');
+site/models/newsitemform.php:		return $this->item;
+site/models/newsitemform.php:		$this->addTablePath(JPATH_ADMINISTRATOR . '/components/com_tks_agenda/tables');
+site/models/newsitemform.php:		$table = $this->getTable();
+site/models/newsitemform.php:		$id = (!empty($id)) ? $id : (int) $this->getState('newsitem.id');
+site/models/newsitemform.php:			$table = $this->getTable();
+site/models/newsitemform.php:		$id = (!empty($id)) ? $id : (int) $this->getState('newsitem.id');
+site/models/newsitemform.php:			$table = $this->getTable();
+site/models/newsitemform.php:		$form = $this->loadForm('com_tks_agenda.newsitem', 'newsitemform', array(
+site/models/newsitemform.php:			$data = $this->getData();
+site/models/newsitemform.php:		$id    = (!empty($data['id'])) ? $data['id'] : (int) $this->getState('newsitem.id');
+site/models/newsitemform.php:		$table = $this->getTable();
+site/models/newsitemform.php:		$id = (!empty($data['id'])) ? $data['id'] : (int) $this->getState('newsitem.id');
+site/models/newsitemform.php:		$table = $this->getTable();
+site/models/newsitemform.php:		$table = $this->getTable();
+site/models/item.php~:		$this->setState('item.id', $id);
+site/models/item.php~:			$this->setState('item.id', $params_array['item_id']);
+site/models/item.php~:		$this->setState('params', $params);
+site/models/item.php~:		if ($this->_item === null)
+site/models/item.php~:			$this->_item = false;
+site/models/item.php~:				$id = $this->getState('item.id');
+site/models/item.php~:			$table = $this->getTable();
+site/models/item.php~:				if ($published = $this->getState('filter.published'))
+site/models/item.php~:						return $this->_item;
+site/models/item.php~:				$this->_item = ArrayHelper::toObject($properties, 'JObject');
+site/models/item.php~:		if (isset($this->_item->created_by) )
+site/models/item.php~:			$this->_item->created_by_name = JFactory::getUser($this->_item->created_by)->name;
+site/models/item.php~:		$db    = $this->getDbo();
+site/models/item.php~:		$this->_item->recur_events = $items;
+site/models/item.php~:		return $this->_item;
+site/models/item.php~:		$this->addTablePath(JPATH_ADMINISTRATOR . '/components/com_tks_agenda/tables');
+site/models/item.php~:		$table = $this->getTable();
+site/models/item.php~:		$id = (!empty($id)) ? $id : (int) $this->getState('item.id');
+site/models/item.php~:			$table = $this->getTable();
+site/models/item.php~:		$id = (!empty($id)) ? $id : (int) $this->getState('item.id');
+site/models/item.php~:			$table = $this->getTable();
+site/models/item.php~:		$table = $this->getTable();
+site/models/item.php~:		$table = $this->getTable();
+site/models/fields/submit.php:		$this->value = $this->getAttribute('value');
+site/models/fields/submit.php:		return '<button id="' . $this->id . '"'
+site/models/fields/submit.php:		. ' name="submit_' . $this->for . '"'
+site/models/fields/submit.php:		. ' value="' . $this->value . '"'
+site/models/fields/filemultiple.php:		$html = '<input type="file" name="' . $this->name . '[]" multiple >';
+site/models/fields/datetime.php:              $javascript .= '$("#'.$this->id.'").datetimepicker({  format:"Y-m-d H:i:00",minDate:0,step:15});'."\n";
+site/models/fields/datetime.php:             $html .= '<input id="'.$this->id.'" name="'.$this->name.'" class="dateinput" type="text" value="'.$this->value.'" >';
+site/models/fields/createdby.php:		$user_id = $this->value;
+site/models/fields/createdby.php:			$html[] = '<input type="hidden" name="' . $this->name . '" value="' . $user->id . '" />';
+site/models/fields/timeupdated.php:		$old_time_updated = $this->value;
+site/models/fields/timeupdated.php:		$hidden           = (boolean) $this->element['hidden'];
+site/models/fields/timeupdated.php:		$html[]       = '<input type="hidden" name="' . $this->name . '" value="' . $time_updated . '" />';
+site/models/fields/modifiedby.php:		$html[] = '<input type="hidden" name="' . $this->name . '" value="' . $user->id . '" />';
+site/models/fields/foreignkey.php:		$this->input_type = $this->getAttribute('input_type');
+site/models/fields/foreignkey.php:		$this->table = $this->getAttribute('table');
+site/models/fields/foreignkey.php:		$this->key_field = (string) $this->getAttribute('key_field');
+site/models/fields/foreignkey.php:		$this->value_field = (string) $this->getAttribute('value_field');
+site/models/fields/foreignkey.php:					$db->quoteName($this->key_field),
+site/models/fields/foreignkey.php:					$db->quoteName($this->value_field)
+site/models/fields/foreignkey.php:			->from($this->table);
+site/models/fields/foreignkey.php:		$input_options = 'class="' . $this->getAttribute('class') . '"';
+site/models/fields/foreignkey.php:		switch ($this->input_type)
+site/models/fields/foreignkey.php:					$options[] = JHtml::_('select.option', $result->{$this->key_field}, $result->{$this->value_field});
+site/models/fields/foreignkey.php:				$value = $this->value;
+site/models/fields/foreignkey.php:				if ($this->multiple)
+site/models/fields/foreignkey.php:				$html = JHtml::_('select.genericlist', $options, $this->name, $input_options, 'value', 'text', $value, $this->id);
+site/models/fields/foreignkey.php:		if (!empty($this->element[$attr_name]))
+site/models/fields/foreignkey.php:			return $this->element[$attr_name];
+site/models/fields/timecreated.php:		$time_created = $this->value;
+site/models/fields/timecreated.php:			$html[]       = '<input type="hidden" name="' . $this->name . '" value="' . $time_created . '" />';
+site/models/fields/timecreated.php:		$hidden = (boolean) $this->element['hidden'];
+site/models/download.php:            $this->setState('filter.published', 1);
+site/models/download.php:            $this->setState('fileter.archived', 2);
+site/models/download.php:		$this->setState('download.id', $id);
+site/models/download.php:			$this->setState('download.id', $params_array['item_id']);
+site/models/download.php:		$this->setState('params', $params);
+site/models/download.php:		if ($this->_item === null)
+site/models/download.php:			$this->_item = false;
+site/models/download.php:				$id = $this->getState('download.id');
+site/models/download.php:			$table = $this->getTable();
+site/models/download.php:				if ($published = $this->getState('filter.published'))
+site/models/download.php:				$this->_item = ArrayHelper::toObject($properties, 'JObject');
+site/models/download.php:		if (isset($this->_item->created_by) )
+site/models/download.php:			$this->_item->created_by_name = JFactory::getUser($this->_item->created_by)->name;
+site/models/download.php:		}if (isset($this->_item->modified_by) )
+site/models/download.php:			$this->_item->modified_by_name = JFactory::getUser($this->_item->modified_by)->name;
+site/models/download.php:		return $this->_item;
+site/models/download.php:		$this->addTablePath(JPATH_ADMINISTRATOR . '/components/com_tks_agenda/tables');
+site/models/download.php:		$table = $this->getTable();
+site/models/download.php:		$id = (!empty($id)) ? $id : (int) $this->getState('download.id');
+site/models/download.php:			$table = $this->getTable();
+site/models/download.php:		$id = (!empty($id)) ? $id : (int) $this->getState('download.id');
+site/models/download.php:			$table = $this->getTable();
+site/models/download.php:		$table = $this->getTable();
+site/models/download.php:		$table = $this->getTable();
+site/models/items.php:		//$this->setState('list.limit', $limit);
+site/models/items.php:		//$this->setState('list.start', $limitstart);
+site/models/items.php:		if ($list = $app->getUserStateFromRequest($this->context . '.list', 'list', array(), 'array'))
+site/models/items.php:								$this->setState('list.direction', $fullDirection);
+site/models/items.php:							if (in_array($fullOrdering, $this->filter_fields))
+site/models/items.php:								$this->setState('list.ordering', $fullOrdering);
+site/models/items.php:							$this->setState('list.ordering', $ordering);
+site/models/items.php:							$this->setState('list.direction', $direction);
+site/models/items.php:						if (!in_array($value, $this->filter_fields))
+site/models/items.php:				$this->setState('list.' . $name, $value);
+site/models/items.php:		if ($filters = $app->getUserStateFromRequest($this->context . '.filter', 'filter', array(), 'array'))
+site/models/items.php:				$this->setState('filter.' . $name, $value);
+site/models/items.php:			$list             = $app->getUserState($this->context . '.list');
+site/models/items.php:			$app->setUserState($this->context . '.list', $list);
+site/models/items.php:			$list              = $app->getUserState($this->context . '.list');
+site/models/items.php:			$app->setUserState($this->context . '.list', $list);
+site/models/items.php:		$list = $app->getUserState($this->context . '.list');
+site/models/items.php:			$this->setState('list.ordering', $list['ordering']);
+site/models/items.php:			$this->setState('list.direction', $list['direction']);
+site/models/items.php:		$db    = $this->getDbo();
+site/models/items.php:				$this->getState(
+site/models/items.php:		$search = $this->getState('filter.search');
+site/models/items.php:		$orderCol  = $this->state->get('list.ordering');
+site/models/items.php:		$orderDirn = $this->state->get('list.direction');
+site/models/items.php:		$db    = $this->getDbo();
+site/models/items.php:		$search = $this->getState('filter.search');
+site/models/items.php:		$filters          = $app->getUserState($this->context . '.filter', array());
+site/models/items.php:			if (strpos($key, '_dateformat') && !empty($value) && $this->isValidDate($value) == null)
+site/models/items.php:			$app->setUserState($this->context . '.filter', $filters);
+site/models/newsitem.php:		$this->setState('newsitem.id', $id);
+site/models/newsitem.php:			$this->setState('newsitem.id', $params_array['item_id']);
+site/models/newsitem.php:		$this->setState('params', $params);
+site/models/newsitem.php:		if ($this->_item === null)
+site/models/newsitem.php:			$this->_item = false;
+site/models/newsitem.php:				$id = $this->getState('newsitem.id');
+site/models/newsitem.php:			$table = $this->getTable();
+site/models/newsitem.php:				if ($published = $this->getState('filter.published'))
+site/models/newsitem.php:						return $this->_item;
+site/models/newsitem.php:				$this->_item = ArrayHelper::toObject($properties, 'JObject');
+site/models/newsitem.php:		if (isset($this->_item->created_by) )
+site/models/newsitem.php:			$this->_item->created_by_name = JFactory::getUser($this->_item->created_by)->name;
+site/models/newsitem.php:		}if (isset($this->_item->modified_by) )
+site/models/newsitem.php:			$this->_item->modified_by_name = JFactory::getUser($this->_item->modified_by)->name;
+site/models/newsitem.php:		return $this->_item;
+site/models/newsitem.php:		$this->addTablePath(JPATH_ADMINISTRATOR . '/components/com_tks_agenda/tables');
+site/models/newsitem.php:		$table = $this->getTable();
+site/models/newsitem.php:		$id = (!empty($id)) ? $id : (int) $this->getState('newsitem.id');
+site/models/newsitem.php:			$table = $this->getTable();
+site/models/newsitem.php:		$id = (!empty($id)) ? $id : (int) $this->getState('newsitem.id');
+site/models/newsitem.php:			$table = $this->getTable();
+site/models/newsitem.php:		$table = $this->getTable();
+site/models/newsitem.php:		$table = $this->getTable();
+site/models/item.php:		$this->setState('item.id', $id);
+site/models/item.php:			$this->setState('item.id', $params_array['item_id']);
+site/models/item.php:		$this->setState('params', $params);
+site/models/item.php:		if ($this->_item === null)
+site/models/item.php:			$this->_item = false;
+site/models/item.php:				$id = $this->getState('item.id');
+site/models/item.php:			$table = $this->getTable();
+site/models/item.php:				if ($published = $this->getState('filter.published'))
+site/models/item.php:						return $this->_item;
+site/models/item.php:				$this->_item = ArrayHelper::toObject($properties, 'JObject');
+site/models/item.php:		if (isset($this->_item->created_by) )
+site/models/item.php:			$this->_item->created_by_name = JFactory::getUser($this->_item->created_by)->name;
+site/models/item.php:		$db    = $this->getDbo();
+site/models/item.php:		$this->_item->recur_events = $items;
+site/models/item.php:		$this->_item->stamp = $s ;
+site/models/item.php:		return $this->_item;
+site/models/item.php:		$this->addTablePath(JPATH_ADMINISTRATOR . '/components/com_tks_agenda/tables');
+site/models/item.php:		$table = $this->getTable();
+site/models/item.php:		$id = (!empty($id)) ? $id : (int) $this->getState('item.id');
+site/models/item.php:			$table = $this->getTable();
+site/models/item.php:		$id = (!empty($id)) ? $id : (int) $this->getState('item.id');
+site/models/item.php:			$table = $this->getTable();
+site/models/item.php:		$table = $this->getTable();
+site/models/item.php:		$table = $this->getTable();
+site/models/itemscrapform.php:		$this->setState('item.id', $id);
+site/models/itemscrapform.php:			$this->setState('item.id', $params_array['item_id']);
+site/models/itemscrapform.php:		$this->setState('params', $params);
+site/models/itemscrapform.php:		if ($this->item === null)
+site/models/itemscrapform.php:			$this->item = false;
+site/models/itemscrapform.php:				$id = $this->getState('item.id');
+site/models/itemscrapform.php:			$table = $this->getTable();
+site/models/itemscrapform.php:				if ($published = $this->getState('filter.published'))
+site/models/itemscrapform.php:						return $this->item;
+site/models/itemscrapform.php:				$this->item = ArrayHelper::toObject($properties, 'JObject');
+site/models/itemscrapform.php:		return $this->item;
+site/models/itemscrapform.php:		$this->addTablePath(JPATH_ADMINISTRATOR . '/components/com_tks_agenda/tables');
+site/models/itemscrapform.php:		$table = $this->getTable();
+site/models/itemscrapform.php:		$id = (!empty($id)) ? $id : (int) $this->getState('item.id');
+site/models/itemscrapform.php:			$table = $this->getTable();
+site/models/itemscrapform.php:		$id = (!empty($id)) ? $id : (int) $this->getState('item.id');
+site/models/itemscrapform.php:			$table = $this->getTable();
+site/models/itemscrapform.php:		$form = $this->loadForm('com_tks_agenda.item', 'itemform', array(
+site/models/itemscrapform.php:			$data = $this->getData();
+site/models/itemscrapform.php:		$id    = (!empty($data['id'])) ? $data['id'] : (int) $this->getState('item.id');
+site/models/itemscrapform.php:		$table = $this->getTable();
+site/models/itemscrapform.php:		$id = (!empty($data['id'])) ? $data['id'] : (int) $this->getState('item.id');
+site/models/itemscrapform.php:		$table = $this->getTable();
+site/models/itemscrapform.php:		$table = $this->getTable();
+site/models/items.php~:		//$this->setState('list.limit', $limit);
+site/models/items.php~:		//$this->setState('list.start', $limitstart);
+site/models/items.php~:		if ($list = $app->getUserStateFromRequest($this->context . '.list', 'list', array(), 'array'))
+site/models/items.php~:								$this->setState('list.direction', $fullDirection);
+site/models/items.php~:							if (in_array($fullOrdering, $this->filter_fields))
+site/models/items.php~:								$this->setState('list.ordering', $fullOrdering);
+site/models/items.php~:							$this->setState('list.ordering', $ordering);
+site/models/items.php~:							$this->setState('list.direction', $direction);
+site/models/items.php~:						if (!in_array($value, $this->filter_fields))
+site/models/items.php~:				$this->setState('list.' . $name, $value);
+site/models/items.php~:		if ($filters = $app->getUserStateFromRequest($this->context . '.filter', 'filter', array(), 'array'))
+site/models/items.php~:				$this->setState('filter.' . $name, $value);
+site/models/items.php~:			$list             = $app->getUserState($this->context . '.list');
+site/models/items.php~:			$app->setUserState($this->context . '.list', $list);
+site/models/items.php~:			$list              = $app->getUserState($this->context . '.list');
+site/models/items.php~:			$app->setUserState($this->context . '.list', $list);
+site/models/items.php~:		$list = $app->getUserState($this->context . '.list');
+site/models/items.php~:			$this->setState('list.ordering', $list['ordering']);
+site/models/items.php~:			$this->setState('list.direction', $list['direction']);
+site/models/items.php~:		$db    = $this->getDbo();
+site/models/items.php~:				$this->getState(
+site/models/items.php~:		$search = $this->getState('filter.search');
+site/models/items.php~:		$orderCol  = $this->state->get('list.ordering');
+site/models/items.php~:		$orderDirn = $this->state->get('list.direction');
+site/models/items.php~:		$db    = $this->getDbo();
+site/models/items.php~:		$search = $this->getState('filter.search');
+site/models/items.php~:		$filters          = $app->getUserState($this->context . '.filter', array());
+site/models/items.php~:			if (strpos($key, '_dateformat') && !empty($value) && $this->isValidDate($value) == null)
+site/models/items.php~:			$app->setUserState($this->context . '.filter', $filters);
+site/models/downloads.php:		$this->setState('list.limit', $limit);
+site/models/downloads.php:		$this->setState('list.start', $limitstart);
+site/models/downloads.php:		if ($list = $app->getUserStateFromRequest($this->context . '.list', 'list', array(), 'array'))
+site/models/downloads.php:								$this->setState('list.direction', $fullDirection);
+site/models/downloads.php:							if (in_array($fullOrdering, $this->filter_fields))
+site/models/downloads.php:								$this->setState('list.ordering', $fullOrdering);
+site/models/downloads.php:							$this->setState('list.ordering', $ordering);
+site/models/downloads.php:							$this->setState('list.direction', $direction);
+site/models/downloads.php:						if (!in_array($value, $this->filter_fields))
+site/models/downloads.php:				$this->setState('list.' . $name, $value);
+site/models/downloads.php:		if ($filters = $app->getUserStateFromRequest($this->context . '.filter', 'filter', array(), 'array'))
+site/models/downloads.php:				$this->setState('filter.' . $name, $value);
+site/models/downloads.php:			$list             = $app->getUserState($this->context . '.list');
+site/models/downloads.php:			$app->setUserState($this->context . '.list', $list);
+site/models/downloads.php:			$list              = $app->getUserState($this->context . '.list');
+site/models/downloads.php:			$app->setUserState($this->context . '.list', $list);
+site/models/downloads.php:		$list = $app->getUserState($this->context . '.list');
+site/models/downloads.php:			$this->setState('list.ordering', $list['ordering']);
+site/models/downloads.php:			$this->setState('list.direction', $list['direction']);
+site/models/downloads.php:		$db    = $this->getDbo();
+site/models/downloads.php:				$this->getState(
+site/models/downloads.php:		$search = $this->getState('filter.search');
+site/models/downloads.php:		$orderCol  = $this->state->get('list.ordering');
+site/models/downloads.php:		$orderDirn = $this->state->get('list.direction');
+site/models/downloads.php:		$filters          = $app->getUserState($this->context . '.filter', array());
+site/models/downloads.php:			if (strpos($key, '_dateformat') && !empty($value) && $this->isValidDate($value) == null)
+site/models/downloads.php:			$app->setUserState($this->context . '.filter', $filters);
+site/models/newsitems.php:		$this->setState('list.limit', $limit);
+site/models/newsitems.php:		$this->setState('list.start', $limitstart);
+site/models/newsitems.php:		if ($list = $app->getUserStateFromRequest($this->context . '.list', 'list', array(), 'array'))
+site/models/newsitems.php:								$this->setState('list.direction', $fullDirection);
+site/models/newsitems.php:							if (in_array($fullOrdering, $this->filter_fields))
+site/models/newsitems.php:								$this->setState('list.ordering', $fullOrdering);
+site/models/newsitems.php:							$this->setState('list.ordering', $ordering);
+site/models/newsitems.php:							$this->setState('list.direction', $direction);
+site/models/newsitems.php:						if (!in_array($value, $this->filter_fields))
+site/models/newsitems.php:				$this->setState('list.' . $name, $value);
+site/models/newsitems.php:		if ($filters = $app->getUserStateFromRequest($this->context . '.filter', 'filter', array(), 'array'))
+site/models/newsitems.php:				$this->setState('filter.' . $name, $value);
+site/models/newsitems.php:			$list             = $app->getUserState($this->context . '.list');
+site/models/newsitems.php:			$app->setUserState($this->context . '.list', $list);
+site/models/newsitems.php:			$list              = $app->getUserState($this->context . '.list');
+site/models/newsitems.php:			$app->setUserState($this->context . '.list', $list);
+site/models/newsitems.php:		$list = $app->getUserState($this->context . '.list');
+site/models/newsitems.php:			$this->setState('list.ordering', $list['ordering']);
+site/models/newsitems.php:			$this->setState('list.direction', $list['direction']);
+site/models/newsitems.php:		$db    = $this->getDbo();
+site/models/newsitems.php:				$this->getState(
+site/models/newsitems.php:		$search = $this->getState('filter.search');
+site/models/newsitems.php:		$filter_newscatid = $this->state->get("filter.newscatid");
+site/models/newsitems.php:		$orderCol  = $this->state->get('list.ordering');
+site/models/newsitems.php:		$orderDirn = $this->state->get('list.direction');
+site/models/newsitems.php:		$filters          = $app->getUserState($this->context . '.filter', array());
+site/models/newsitems.php:			if (strpos($key, '_dateformat') && !empty($value) && $this->isValidDate($value) == null)
+site/models/newsitems.php:			$app->setUserState($this->context . '.filter', $filters);
+site/models/itemform.php:		$this->setState('item.id', $id);
+site/models/itemform.php:			$this->setState('item.id', $params_array['item_id']);
+site/models/itemform.php:		$this->setState('params', $params);
+site/models/itemform.php:		if ($this->item === null)
+site/models/itemform.php:			$this->item = false;
+site/models/itemform.php:				$id = $this->getState('item.id');
+site/models/itemform.php:			$table = $this->getTable();
+site/models/itemform.php:				if ($published = $this->getState('filter.published'))
+site/models/itemform.php:						return $this->item;
+site/models/itemform.php:				$this->item = ArrayHelper::toObject($properties, 'JObject');
+site/models/itemform.php:		return $this->item;
+site/models/itemform.php:		$this->addTablePath(JPATH_ADMINISTRATOR . '/components/com_tks_agenda/tables');
+site/models/itemform.php:		$table = $this->getTable();
+site/models/itemform.php:		$id = (!empty($id)) ? $id : (int) $this->getState('item.id');
+site/models/itemform.php:			$table = $this->getTable();
+site/models/itemform.php:		$id = (!empty($id)) ? $id : (int) $this->getState('item.id');
+site/models/itemform.php:			$table = $this->getTable();
+site/models/itemform.php:		$form = $this->loadForm('com_tks_agenda.item', 'itemform', array(
+site/models/itemform.php:			$data = $this->getData();
+site/models/itemform.php:		$id    = (!empty($data['id'])) ? $data['id'] : (int) $this->getState('item.id');
+site/models/itemform.php:		$table = $this->getTable();
+site/models/itemform.php:		$id = (!empty($data['id'])) ? $data['id'] : (int) $this->getState('item.id');
+site/models/itemform.php:		$table = $this->getTable();
+site/models/itemform.php:		$table = $this->getTable();
+site/models/downloadform.php:		$this->setState('download.id', $id);
+site/models/downloadform.php:			$this->setState('download.id', $params_array['item_id']);
+site/models/downloadform.php:		$this->setState('params', $params);
+site/models/downloadform.php:		if ($this->item === null)
+site/models/downloadform.php:			$this->item = false;
+site/models/downloadform.php:				$id = $this->getState('download.id');
+site/models/downloadform.php:			$table = $this->getTable();
+site/models/downloadform.php:				if ($published = $this->getState('filter.published'))
+site/models/downloadform.php:						return $this->item;
+site/models/downloadform.php:				$this->item = ArrayHelper::toObject($properties, 'JObject');
+site/models/downloadform.php:		return $this->item;
+site/models/downloadform.php:		$this->addTablePath(JPATH_ADMINISTRATOR . '/components/com_tks_agenda/tables');
+site/models/downloadform.php:		$table = $this->getTable();
+site/models/downloadform.php:		$id = (!empty($id)) ? $id : (int) $this->getState('download.id');
+site/models/downloadform.php:			$table = $this->getTable();
+site/models/downloadform.php:		$id = (!empty($id)) ? $id : (int) $this->getState('download.id');
+site/models/downloadform.php:			$table = $this->getTable();
+site/models/downloadform.php:		$form = $this->loadForm('com_tks_agenda.download', 'downloadform', array(
+site/models/downloadform.php:			$data = $this->getData();
+site/models/downloadform.php:		$id    = (!empty($data['id'])) ? $data['id'] : (int) $this->getState('download.id');
+site/models/downloadform.php:		$table = $this->getTable();
+site/models/downloadform.php:            $pk = (int) $this->getState('download.id');
+site/models/downloadform.php:        if ($pk == 0 || $this->getData($pk) == null)
+site/models/downloadform.php:		$table = $this->getTable();
+site/models/downloadform.php:		$table = $this->getTable();
+site/views/items/view.json.php~:		$this->state      = $this->get('State');
+site/views/items/view.json.php~:		$this->items = $this->get('Items');
+site/views/items/view.json.php~:		$this->pagination = $this->get('Pagination');
+site/views/items/view.json.php~:		$this->params     = $app->getParams('com_tks_agenda');
+site/views/items/view.json.php~:		if (count($errors = $this->get('Errors')))
+site/views/items/view.json.php~:		foreach($this->items as $row) {
+site/views/items/view.json.php:		$this->state      = $this->get('State');
+site/views/items/view.json.php:		$this->items = $this->get('Items');
+site/views/items/view.json.php:		$this->pagination = $this->get('Pagination');
+site/views/items/view.json.php:		$this->params     = $app->getParams('com_tks_agenda');
+site/views/items/view.json.php:		if (count($errors = $this->get('Errors')))
+site/views/items/view.json.php:		foreach($this->items as $row) {
+site/views/items/view.html.php:		$this->state      = $this->get('State');
+site/views/items/view.html.php:		$this->items = $this->get('Items');	
+site/views/items/view.html.php:		$this->pagination = $this->get('Pagination');
+site/views/items/view.html.php:		var_export($this->items);
+site/views/items/view.html.php:		$this->params     = $app->getParams('com_tks_agenda');
+site/views/items/view.html.php:		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.item', &$this->item, &$this->params, ''));
+site/views/items/view.html.php:	   $errors = $this->get('Errors');
+site/views/items/view.html.php:		$this->_prepareDocument();
+site/views/items/view.html.php:			$this->params->def('page_heading', $this->params->get('page_title', $menu->title));
+site/views/items/view.html.php:			$this->params->def('page_heading', JText::_('COM_TKS_AGENDA_DEFAULT_PAGE_TITLE'));
+site/views/items/view.html.php:		$title = $this->params->get('page_title', '');
+site/views/items/view.html.php:		$this->document->setTitle($title);
+site/views/items/view.html.php:		if ($this->params->get('menu-meta_description'))
+site/views/items/view.html.php:			$this->document->setDescription($this->params->get('menu-meta_description'));
+site/views/items/view.html.php:		if ($this->params->get('menu-meta_keywords'))
+site/views/items/view.html.php:			$this->document->setMetadata('keywords', $this->params->get('menu-meta_keywords'));
+site/views/items/view.html.php:		if ($this->params->get('robots'))
+site/views/items/view.html.php:			$this->document->setMetadata('robots', $this->params->get('robots'));
+site/views/items/view.html.php:		$this->items = array( 'aap', 'konijn', 'olifant' );	
+site/views/items/view.html.php:		return isset($this->state->{$state}) ? $this->state->{$state} : false;
+site/views/items/view.html.php~:		$this->state      = $this->get('State');
+site/views/items/view.html.php~:		$this->items = $this->get('Items');	
+site/views/items/view.html.php~:		$this->pagination = $this->get('Pagination');
+site/views/items/view.html.php~:		var_export($this->items);
+site/views/items/view.html.php~:		$this->params     = $app->getParams('com_tks_agenda');
+site/views/items/view.html.php~:		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.item', &$this->item, &$this->params, ''));
+site/views/items/view.html.php~:	   $errors = $this->get('Errors');
+site/views/items/view.html.php~:		$this->_prepareDocument();
+site/views/items/view.html.php~:			$this->params->def('page_heading', $this->params->get('page_title', $menu->title));
+site/views/items/view.html.php~:			$this->params->def('page_heading', JText::_('COM_TKS_AGENDA_DEFAULT_PAGE_TITLE'));
+site/views/items/view.html.php~:		$title = $this->params->get('page_title', '');
+site/views/items/view.html.php~:		$this->document->setTitle($title);
+site/views/items/view.html.php~:		if ($this->params->get('menu-meta_description'))
+site/views/items/view.html.php~:			$this->document->setDescription($this->params->get('menu-meta_description'));
+site/views/items/view.html.php~:		if ($this->params->get('menu-meta_keywords'))
+site/views/items/view.html.php~:			$this->document->setMetadata('keywords', $this->params->get('menu-meta_keywords'));
+site/views/items/view.html.php~:		if ($this->params->get('robots'))
+site/views/items/view.html.php~:			$this->document->setMetadata('robots', $this->params->get('robots'));
+site/views/items/view.html.php~:		$this->items = Array( 'aap', 'konijn', 'olifant' );	
+site/views/items/view.html.php~:		return isset($this->state->{$state}) ? $this->state->{$state} : false;
+site/views/items/tmpl/default.php~:$listOrder  = $this->state->get('list.ordering');
+site/views/items/tmpl/default.php~:$listDirn   = $this->state->get('list.direction');
+site/views/items/tmpl/default.old.php:$listOrder  = $this->state->get('list.ordering');
+site/views/items/tmpl/default.old.php:$listDirn   = $this->state->get('list.direction');
+site/views/items/tmpl/default.php:$listOrder  = $this->state->get('list.ordering');
+site/views/items/tmpl/default.php:$listDirn   = $this->state->get('list.direction');
+site/views/newsitems/view.html.php:		$this->state = $this->get('State');
+site/views/newsitems/view.html.php:		$this->items = $this->get('Items');
+site/views/newsitems/view.html.php:		$this->pagination = $this->get('Pagination');
+site/views/newsitems/view.html.php:		$this->params = $app->getParams('com_tks_agenda');
+site/views/newsitems/view.html.php://		$this->params     = $params; // $app->getParams('com_tks_agenda');
+site/views/newsitems/view.html.php:		$this->filterForm = $this->get('FilterForm');
+site/views/newsitems/view.html.php:		$this->activeFilters = $this->get('ActiveFilters');
+site/views/newsitems/view.html.php:		if (count($errors = $this->get('Errors')))
+site/views/newsitems/view.html.php:		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.newsitems', &$this->item, &$this->params, ''));
+site/views/newsitems/view.html.php:		$this->_prepareDocument();
+site/views/newsitems/view.html.php:			$this->params->def('page_heading', $this->params->get('page_title', $menu->title));
+site/views/newsitems/view.html.php:			$this->params->def('page_heading', JText::_('COM_TKS_AGENDA_DEFAULT_PAGE_TITLE'));
+site/views/newsitems/view.html.php:		$title = $this->params->get('page_title', '');
+site/views/newsitems/view.html.php:		$this->document->setTitle($title);
+site/views/newsitems/view.html.php:		if ($this->params->get('menu-meta_description'))
+site/views/newsitems/view.html.php:			$this->document->setDescription($this->params->get('menu-meta_description'));
+site/views/newsitems/view.html.php:		if ($this->params->get('menu-meta_keywords'))
+site/views/newsitems/view.html.php:			$this->document->setMetadata('keywords', $this->params->get('menu-meta_keywords'));
+site/views/newsitems/view.html.php:		if ($this->params->get('robots'))
+site/views/newsitems/view.html.php:			$this->document->setMetadata('robots', $this->params->get('robots'));
+site/views/newsitems/view.html.php:		return isset($this->state->{$state}) ? $this->state->{$state} : false;
+site/views/newsitems/tmpl/default.php:$listOrder  = $this->state->get('list.ordering');
+site/views/newsitems/tmpl/default.php:$listDirn   = $this->state->get('list.direction');
+site/views/newsitems/tmpl/default.php:		<?php foreach ($this->items as $i => $item) : ?>
+site/views/newsitems/tmpl/default.php:				<?php /*if (isset($this->items[0]->state)) : ?>
+site/views/newsitems/tmpl/default.php:				<?php echo $this->escape($item->title); ?></a>
+site/views/newsitems/tmpl/default.php:				<?php echo $this->pagination->getListFooter(); ;
+site/views/itemform/view.html.php:		$this->state   = $this->get('State');
+site/views/itemform/view.html.php:		$this->item    = $this->get('Data');
+site/views/itemform/view.html.php:		$this->params  = $params;
+site/views/itemform/view.html.php:		$this->canSave = $this->get('CanSave');
+site/views/itemform/view.html.php:		$this->form		= $this->get('Form');
+site/views/itemform/view.html.php:		if (count($errors = $this->get('Errors')))
+site/views/itemform/view.html.php:		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.item', &$this->item, &$this->params, ''));
+site/views/itemform/view.html.php:		$this->_prepareDocument();
+site/views/itemform/view.html.php:			$this->params->def('page_heading', $this->params->get('page_title', $menu->title));
+site/views/itemform/view.html.php:			$this->params->def('page_heading', JText::_('COM_TKS_AGENDA_DEFAULT_PAGE_TITLE'));
+site/views/itemform/view.html.php:		$title = $this->params->get('page_title', '');
+site/views/itemform/view.html.php:		$this->document->setTitle($title);
+site/views/itemform/view.html.php:		if ($this->params->get('menu-meta_description'))
+site/views/itemform/view.html.php:			$this->document->setDescription($this->params->get('menu-meta_description'));
+site/views/itemform/view.html.php:		if ($this->params->get('menu-meta_keywords'))
+site/views/itemform/view.html.php:			$this->document->setMetadata('keywords', $this->params->get('menu-meta_keywords'));
+site/views/itemform/view.html.php:		if ($this->params->get('robots'))
+site/views/itemform/view.html.php:			$this->document->setMetadata('robots', $this->params->get('robots'));
+site/views/itemform/tmpl/default.php~: if (!empty($this->item->id)): 
+site/views/itemform/tmpl/default.php~:	$profile = JUserHelper::getProfile($this->item->created_by);
+site/views/itemform/tmpl/default.php~:	$username = JFactory::getUser($this->item->created_by)->name;
+site/views/itemform/tmpl/default.php~:	<?php if (!empty($this->item->id)): ?>
+site/views/itemform/tmpl/default.php~:					<div class="control-label"><?php echo $this->form->getLabel('start'); ?></div>
+site/views/itemform/tmpl/default.php~:					<div class="controls"><?php echo $this->form->getInput('start'); ?></div>
+site/views/itemform/tmpl/default.php~:					<div class="controls"><?php echo $this->form->getInput('end'); ?></div>
+site/views/itemform/tmpl/default.php~:					<div class="control-label"><?php echo $this->form->getLabel('recurring'); ?></div>
+site/views/itemform/tmpl/default.php~:					<div class="controls"><?php echo $this->form->getInput('recurring'); ?></div>
+site/views/itemform/tmpl/default.php~:					<div class="control-label"><?php echo $this->form->getLabel('recur_type'); ?></div>
+site/views/itemform/tmpl/default.php~:					<div class="controls"><?php echo $this->form->getInput('recur_type'); ?></div>
+site/views/itemform/tmpl/default.php~:					<div class="control-label"><?php echo $this->form->getLabel('end_recur'); ?></div>
+site/views/itemform/tmpl/default.php~:					<div class="controls"><?php echo $this->form->getInput('end_recur'); ?></div>
+site/views/itemform/tmpl/default.php~:					<div class="control-label"><?php echo $this->form->getLabel('reason'); ?></div>
+site/views/itemform/tmpl/default.php~:					<div class="controls"><?php echo $this->form->getInput('reason'); ?></div>
+site/views/itemform/tmpl/default.php~:                <?php echo JHtml::_('sliders.start', 'permissions-sliders-'.$this->item->id, array('useCookie'=>1)); ?>
+site/views/itemform/tmpl/default.php~:                    <?php echo $this->form->getLabel('rules'); ?>
+site/views/itemform/tmpl/default.php~:                    <?php echo $this->form->getInput('rules'); ?>
+site/views/itemform/tmpl/default.php~:				<?php if ($this->canSave): ?>
+site/views/itemform/tmpl/default.php~:	<?php if(empty($this->item->created_by)): ?>
+site/views/itemform/tmpl/default.php~:		<input type="hidden" name="jform[created_by]" value="<?php echo $this->item->created_by; ?>" />
+site/views/itemform/tmpl/default.php~:	<input type="hidden" name="jform[id]" value="<?php echo $this->item->id; ?>" />
+site/views/itemform/tmpl/default.php~:		<?php echo $this->form->getInput('catid'); ?>
+site/views/itemform/tmpl/default.php~: 	<input type="hidden" name="jform[catid]" value="<?php echo $this->item->catid; ?>" />
+site/views/itemform/tmpl/default.php~:	<input type="hidden" name="jform[ordering]" value="<?php echo $this->item->ordering; ?>" />
+site/views/itemform/tmpl/default.php~:	<input type="hidden" name="jform[state]" value="<?php echo $this->item->state; ?>" />
+site/views/itemform/tmpl/default.php~:	<input type="hidden" name="jform[checked_out]" value="<?php echo $this->item->checked_out; ?>" />
+site/views/itemform/tmpl/default.php~:	<input type="hidden" name="jform[checked_out_time]" value="<?php echo $this->item->checked_out_time; ?>" />
+site/views/itemform/tmpl/default.php: if (!empty($this->item->id)): 
+site/views/itemform/tmpl/default.php:	$profile = JUserHelper::getProfile($this->item->created_by);
+site/views/itemform/tmpl/default.php:	$username = JFactory::getUser($this->item->created_by)->name;
+site/views/itemform/tmpl/default.php:	<?php if (!empty($this->item->id)): ?>
+site/views/itemform/tmpl/default.php:					<div class="control-label"><?php echo $this->form->getLabel('start'); ?></div>
+site/views/itemform/tmpl/default.php:					<div class="controls"><?php echo $this->form->getInput('start'); ?></div>
+site/views/itemform/tmpl/default.php:					<div class="controls"><?php echo $this->form->getInput('end'); ?></div>
+site/views/itemform/tmpl/default.php:					<div class="control-label"><?php echo $this->form->getLabel('recurring'); ?></div>
+site/views/itemform/tmpl/default.php:					<div class="controls"><?php echo $this->form->getInput('recurring'); ?></div>
+site/views/itemform/tmpl/default.php:					<div class="control-label"><?php echo $this->form->getLabel('recur_type'); ?></div>
+site/views/itemform/tmpl/default.php:					<div class="controls"><?php echo $this->form->getInput('recur_type'); ?></div>
+site/views/itemform/tmpl/default.php:					<div class="control-label"><?php echo $this->form->getLabel('end_recur'); ?></div>
+site/views/itemform/tmpl/default.php:					<div class="controls"><?php echo $this->form->getInput('end_recur'); ?></div>
+site/views/itemform/tmpl/default.php:					<div class="control-label"><?php echo $this->form->getLabel('reason'); ?></div>
+site/views/itemform/tmpl/default.php:					<div class="controls"><?php echo $this->form->getInput('reason'); ?></div>
+site/views/itemform/tmpl/default.php:                <?php echo JHtml::_('sliders.start', 'permissions-sliders-'.$this->item->id, array('useCookie'=>1)); ?>
+site/views/itemform/tmpl/default.php:                    <?php echo $this->form->getLabel('rules'); ?>
+site/views/itemform/tmpl/default.php:                    <?php echo $this->form->getInput('rules'); ?>
+site/views/itemform/tmpl/default.php:				<?php if ($this->canSave): ?>
+site/views/itemform/tmpl/default.php:	<?php if(empty($this->item->created_by)): ?>
+site/views/itemform/tmpl/default.php:		<input type="hidden" name="jform[created_by]" value="<?php echo $this->item->created_by; ?>" />
+site/views/itemform/tmpl/default.php:	<input type="hidden" name="jform[id]" value="<?php echo $this->item->id; ?>" />
+site/views/itemform/tmpl/default.php:		<?php echo $this->form->getInput('catid'); ?>
+site/views/itemform/tmpl/default.php: 	<input type="hidden" name="jform[catid]" value="<?php echo $this->item->catid; ?>" />
+site/views/itemform/tmpl/default.php:	<input type="hidden" name="jform[ordering]" value="<?php echo $this->item->ordering; ?>" />
+site/views/itemform/tmpl/default.php:	<input type="hidden" name="jform[state]" value="<?php echo $this->item->state; ?>" />
+site/views/itemform/tmpl/default.php:	<input type="hidden" name="jform[checked_out]" value="<?php echo $this->item->checked_out; ?>" />
+site/views/itemform/tmpl/default.php:	<input type="hidden" name="jform[checked_out_time]" value="<?php echo $this->item->checked_out_time; ?>" />
+site/views/download/view.html.php:		$this->state = $this->get('State');
+site/views/download/view.html.php:		$this->item  = $this->get('Item');
+site/views/download/view.html.php:		$this->form  = $this->get('Form');
+site/views/download/view.html.php:		if (count($errors = $this->get('Errors')))
+site/views/download/view.html.php:		$this->addToolbar();
+site/views/download/view.html.php:		$isNew = ($this->item->id == 0);
+site/views/download/view.html.php:		if (isset($this->item->checked_out))
+site/views/download/view.html.php:			$checkedOut = !($this->item->checked_out == 0 || $this->item->checked_out == $user->get('id'));
+site/views/download/view.html.php:		if ($this->state->params->get('save_history', 1) && $user->authorise('core.edit')) {
+site/views/download/view.html.php:			JToolbarHelper::versions('com_tks_agenda.download', $this->item->id);
+site/views/download/view.html.php:		if (empty($this->item->id))
+site/views/download/tmpl/edit.php:				alert('<?php echo $this->escape(JText::_('JGLOBAL_VALIDATION_FORM_FAILED')); ?>');
+site/views/download/tmpl/edit.php:	action="<?php echo JRoute::_('index.php?option=com_tks_agenda&layout=edit&id=' . (int) $this->item->id); ?>"
+site/views/download/tmpl/edit.php:						<?php echo $this->form->renderField('id'); ?>
+site/views/download/tmpl/edit.php:						<?php echo $this->form->renderField('state'); ?>
+site/views/download/tmpl/edit.php:						<?php echo $this->form->renderField('created_by'); ?>
+site/views/download/tmpl/edit.php:						<?php echo $this->form->renderField('file'); ?>
+site/views/download/tmpl/edit.php:						<?php echo $this->form->renderField('listfiles'); ?>
+site/views/download/tmpl/edit.php:						<?php echo $this->form->renderField('description'); ?>
+site/views/download/tmpl/edit.php:					<?php if ($this->state->params->get('save_history', 1)) : ?>
+site/views/download/tmpl/edit.php:						<div class="control-label"><?php echo $this->form->getLabel('version_note'); ?></div>
+site/views/download/tmpl/edit.php:						<div class="controls"><?php echo $this->form->getInput('version_note'); ?></div>
+site/views/newsitemform/view.html.php:		$this->state   = $this->get('State');
+site/views/newsitemform/view.html.php:		$this->item    = $this->get('Data');
+site/views/newsitemform/view.html.php:		$this->params  = $app->getParams('com_tks_agenda');
+site/views/newsitemform/view.html.php:		$this->canSave = $this->get('CanSave');
+site/views/newsitemform/view.html.php:		$this->form		= $this->get('Form');
+site/views/newsitemform/view.html.php:		if (count($errors = $this->get('Errors')))
+site/views/newsitemform/view.html.php:		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.item', &$this->item, &$this->params, ''));
+site/views/newsitemform/view.html.php:		$this->_prepareDocument();
+site/views/newsitemform/view.html.php:			$this->params->def('page_heading', $this->params->get('page_title', $menu->title));
+site/views/newsitemform/view.html.php:			$this->params->def('page_heading', JText::_('COM_TKS_AGENDA_DEFAULT_PAGE_TITLE'));
+site/views/newsitemform/view.html.php:		$title = $this->params->get('page_title', '');
+site/views/newsitemform/view.html.php:		$this->document->setTitle($title);
+site/views/newsitemform/view.html.php:		if ($this->params->get('menu-meta_description'))
+site/views/newsitemform/view.html.php:			$this->document->setDescription($this->params->get('menu-meta_description'));
+site/views/newsitemform/view.html.php:		if ($this->params->get('menu-meta_keywords'))
+site/views/newsitemform/view.html.php:			$this->document->setMetadata('keywords', $this->params->get('menu-meta_keywords'));
+site/views/newsitemform/view.html.php:		if ($this->params->get('robots'))
+site/views/newsitemform/view.html.php:			$this->document->setMetadata('robots', $this->params->get('robots'));
+site/views/newsitemform/tmpl/default.php:	<?php if (!empty($this->item->id)): ?>
+site/views/newsitemform/tmpl/default.php:		<h1>Bewerk artikel <?php echo $this->item->title; ?></h1>
+site/views/newsitemform/tmpl/default.php:	<input type="hidden" name="jform[id]" value="<?php echo $this->item->id; ?>" />
+site/views/newsitemform/tmpl/default.php:	<input type="hidden" name="jform[ordering]" value="<?php echo $this->item->ordering; ?>" />
+site/views/newsitemform/tmpl/default.php:	<input type="hidden" name="jform[state]" value="<?php echo $this->item->state; ?>" />
+site/views/newsitemform/tmpl/default.php:	<input type="hidden" name="jform[checked_out]" value="<?php echo $this->item->checked_out; ?>" />
+site/views/newsitemform/tmpl/default.php:	<input type="hidden" name="jform[checked_out_time]" value="<?php echo $this->item->checked_out_time; ?>" />
+site/views/newsitemform/tmpl/default.php:	<?php if(empty($this->item->created_by)): ?>
+site/views/newsitemform/tmpl/default.php:		<input type="hidden" name="jform[created_by]" value="<?php echo $this->item->created_by; ?>" />
+site/views/newsitemform/tmpl/default.php:	<?php if(empty($this->item->modified_by)): ?>
+site/views/newsitemform/tmpl/default.php:		<input type="hidden" name="jform[modified_by]" value="<?php echo $this->item->modified_by; ?>" />
+site/views/newsitemform/tmpl/default.php:	<?php echo $this->form->renderField('title'); ?>
+site/views/newsitemform/tmpl/default.php:	<?php echo $this->form->renderField('alias'); ?>
+site/views/newsitemform/tmpl/default.php:	<?php echo $this->form->renderField('newscatid'); ?>
+site/views/newsitemform/tmpl/default.php:	<?php echo $this->form->renderField('description'); ?>
+site/views/newsitemform/tmpl/default.php:				<?php if ($this->canSave): ?>
+site/views/item/view.raw.php:		$this->state  = $this->get('State');
+site/views/item/view.raw.php:		$this->item   = $this->get('Data');
+site/views/item/view.raw.php:		$this->params = $app->getParams('com_tks_agenda');
+site/views/item/view.raw.php:		//$this->_prepareDocument();
+site/views/item/view.html.php:		$this->state  = $this->get('State');
+site/views/item/view.html.php:		$this->item   = $this->get('Data');
+site/views/item/view.html.php:		$this->items   = $this->getItems();
+site/views/item/view.html.php:		$this->params = $app->getParams('com_tks_agenda');
+site/views/item/view.html.php:		if (!empty($this->item))
+site/views/item/view.html.php:		$this->item->catid_title = $this->getModel()->getCategoryName($this->item->catid)->title;$this->form = $this->get('Form');
+site/views/item/view.html.php:		if (count($errors = $this->get('Errors')))
+site/views/item/view.html.php:		if ($this->_layout == 'edit')
+site/views/item/view.html.php:		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.item', &$this->item, &$this->params, ''));
+site/views/item/view.html.php:		$this->_prepareDocument();
+site/views/item/view.html.php:			$this->params->def('page_heading', $this->params->get('page_title', $menu->title));
+site/views/item/view.html.php:			$this->params->def('page_heading', JText::_('COM_TKS_AGENDA_DEFAULT_PAGE_TITLE'));
+site/views/item/view.html.php:		$title = $this->params->get('page_title', '');
+site/views/item/view.html.php:		$this->document->setTitle($title);
+site/views/item/view.html.php:		if ($this->params->get('menu-meta_description'))
+site/views/item/view.html.php:			$this->document->setDescription($this->params->get('menu-meta_description'));
+site/views/item/view.html.php:		if ($this->params->get('menu-meta_keywords'))
+site/views/item/view.html.php:			$this->document->setMetadata('keywords', $this->params->get('menu-meta_keywords'));
+site/views/item/view.html.php:		if ($this->params->get('robots'))
+site/views/item/view.html.php:			$this->document->setMetadata('robots', $this->params->get('robots'));
+site/views/item/view.html.php:		$this->state  = $this->get('State');
+site/views/item/view.html.php:		$this->item   = $this->get('Data');
+site/views/item/view.html.php:		$this->items  = $this->get('Items');
+site/views/item/view.html.php:		var_export($this->item);
+site/views/item/view.html.php:		$this->params = $app->getParams('com_tks_agenda');
+site/views/item/view.html.php:		if (!empty($this->item))
+site/views/item/view.html.php:		$this->item->catid_title = $this->getModel()->getCategoryName($this->item->catid)->title;$this->form = $this->get('Form');
+site/views/item/view.html.php:		if (count($errors = $this->get('Errors')))
+site/views/item/view.html.php:		if ($this->_layout == 'edit')
+site/views/item/view.html.php:		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.item', &$this->item, &$this->params, ''));
+site/views/item/view.html.php:		$this->_prepareDocument();
+site/views/item/view.html.php:			$this->params->def('page_heading', $this->params->get('page_title', $menu->title));
+site/views/item/view.html.php:			$this->params->def('page_heading', JText::_('COM_TKS_AGENDA_DEFAULT_PAGE_TITLE'));
+site/views/item/view.html.php:		$title = $this->params->get('page_title', '');
+site/views/item/view.html.php:		$this->document->setTitle($title);
+site/views/item/view.html.php:		if ($this->params->get('menu-meta_description'))
+site/views/item/view.html.php:			$this->document->setDescription($this->params->get('menu-meta_description'));
+site/views/item/view.html.php:		if ($this->params->get('menu-meta_keywords'))
+site/views/item/view.html.php:			$this->document->setMetadata('keywords', $this->params->get('menu-meta_keywords'));
+site/views/item/view.html.php:		if ($this->params->get('robots'))
+site/views/item/view.html.php:			$this->document->setMetadata('robots', $this->params->get('robots'));
+site/views/item/view.html.php~:		$this->state  = $this->get('State');
+site/views/item/view.html.php~:		$this->item   = $this->get('Data');
+site/views/item/view.html.php~:		$this->items   = $this->getItems();
+site/views/item/view.html.php~:		array_push($this->item, $s );
+site/views/item/view.html.php~:		$this->params = $app->getParams('com_tks_agenda');
+site/views/item/view.html.php~:		if (!empty($this->item))
+site/views/item/view.html.php~:		$this->item->catid_title = $this->getModel()->getCategoryName($this->item->catid)->title;$this->form = $this->get('Form');
+site/views/item/view.html.php~:		if (count($errors = $this->get('Errors')))
+site/views/item/view.html.php~:		if ($this->_layout == 'edit')
+site/views/item/view.html.php~:		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.item', &$this->item, &$this->params, ''));
+site/views/item/view.html.php~:		$this->_prepareDocument();
+site/views/item/view.html.php~:			$this->params->def('page_heading', $this->params->get('page_title', $menu->title));
+site/views/item/view.html.php~:			$this->params->def('page_heading', JText::_('COM_TKS_AGENDA_DEFAULT_PAGE_TITLE'));
+site/views/item/view.html.php~:		$title = $this->params->get('page_title', '');
+site/views/item/view.html.php~:		$this->document->setTitle($title);
+site/views/item/view.html.php~:		if ($this->params->get('menu-meta_description'))
+site/views/item/view.html.php~:			$this->document->setDescription($this->params->get('menu-meta_description'));
+site/views/item/view.html.php~:		if ($this->params->get('menu-meta_keywords'))
+site/views/item/view.html.php~:			$this->document->setMetadata('keywords', $this->params->get('menu-meta_keywords'));
+site/views/item/view.html.php~:		if ($this->params->get('robots'))
+site/views/item/view.html.php~:			$this->document->setMetadata('robots', $this->params->get('robots'));
+site/views/item/view.html.php~:		$this->state  = $this->get('State');
+site/views/item/view.html.php~:		$this->item   = $this->get('Data');
+site/views/item/view.html.php~:		$this->items  = $this->get('Items');
+site/views/item/view.html.php~:		var_export($this->item);
+site/views/item/view.html.php~:		$this->params = $app->getParams('com_tks_agenda');
+site/views/item/view.html.php~:		if (!empty($this->item))
+site/views/item/view.html.php~:		$this->item->catid_title = $this->getModel()->getCategoryName($this->item->catid)->title;$this->form = $this->get('Form');
+site/views/item/view.html.php~:		if (count($errors = $this->get('Errors')))
+site/views/item/view.html.php~:		if ($this->_layout == 'edit')
+site/views/item/view.html.php~:		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.item', &$this->item, &$this->params, ''));
+site/views/item/view.html.php~:		$this->_prepareDocument();
+site/views/item/view.html.php~:			$this->params->def('page_heading', $this->params->get('page_title', $menu->title));
+site/views/item/view.html.php~:			$this->params->def('page_heading', JText::_('COM_TKS_AGENDA_DEFAULT_PAGE_TITLE'));
+site/views/item/view.html.php~:		$title = $this->params->get('page_title', '');
+site/views/item/view.html.php~:		$this->document->setTitle($title);
+site/views/item/view.html.php~:		if ($this->params->get('menu-meta_description'))
+site/views/item/view.html.php~:			$this->document->setDescription($this->params->get('menu-meta_description'));
+site/views/item/view.html.php~:		if ($this->params->get('menu-meta_keywords'))
+site/views/item/view.html.php~:			$this->document->setMetadata('keywords', $this->params->get('menu-meta_keywords'));
+site/views/item/view.html.php~:		if ($this->params->get('robots'))
+site/views/item/view.html.php~:			$this->document->setMetadata('robots', $this->params->get('robots'));
+site/views/item/tmpl/default.php~:$canEditOwn = $user->authorise('core.edit.own', 'com_tks_agenda.item.'.$this->item->id);
+site/views/item/tmpl/default.php~:$canDeleteMedewerker  = $user->authorise('core.delete.medewerker', 'com_tks_agenda.item.'.$this->item->id);
+site/views/item/tmpl/default.php~:$canEditMedewerker    = $user->authorise('core.edit.medewerker', 'com_tks_agenda.item.'.$this->item->id);
+site/views/item/tmpl/default.php~:$canEditOwnMedewerker    = $user->authorise('core.edit.own.medewerker','com_tks_agenda.item.'.$this->item->id);
+site/views/item/tmpl/default.php~:$canEdit = JFactory::getUser()->authorise('core.edit', 'com_tks_agenda.' . $this->item->id);
+site/views/item/tmpl/default.php~:if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda' . $this->item->id)) {
+site/views/item/tmpl/default.php~:    $canEdit = JFactory::getUser()->id == $this->item->created_by;
+site/views/item/tmpl/default.php~:	 $s = $this->item->stamp;
+site/views/item/tmpl/default.php~:	  var_export( $this->item);
+site/views/item/tmpl/default.php~:	if( $this->item ) {
+site/views/item/tmpl/default.php~:		if( $this->item->recurring == "Yes" ) {
+site/views/item/tmpl/default.php~:			echo "<h1> Herhaalde afspraak (" . $this->item->recur_type . "): </h1>";		
+site/views/item/tmpl/default.php~:				$start_date = strtotime($this->item->start);
+site/views/item/tmpl/default.php~:				$end_date =	strtotime($this->item->end);		    		
+site/views/item/tmpl/default.php~:				$start_date = strtotime($this->item->start);
+site/views/item/tmpl/default.php~:				$end_date =	strtotime($this->item->end);		    		
+site/views/item/tmpl/default.php~:		if($userId == $this->item->created_by):	
+site/views/item/tmpl/default.php~:			foreach( $this->item->recur_events as $event ) {
+site/views/item/tmpl/default.php~:				if( $event[0] == $this->item->id ) {
+site/views/item/tmpl/default.php~:		<a class="btn" href="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.edit&id='. $this->item->id . '&mode=update' ); ?>"><?php echo JText::_("Bewerk"); ?></a>
+site/views/item/tmpl/default.php~:		if($userId == $this->item->created_by):
+site/views/item/tmpl/default.php~:            	window.location.href = '<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.remove&id='.$this->item->id, false, 2) ?>';
+site/views/item/tmpl/default.php:$canEditOwn = $user->authorise('core.edit.own', 'com_tks_agenda.item.'.$this->item->id);
+site/views/item/tmpl/default.php:$canDeleteMedewerker  = $user->authorise('core.delete.medewerker', 'com_tks_agenda.item.'.$this->item->id);
+site/views/item/tmpl/default.php:$canEditMedewerker    = $user->authorise('core.edit.medewerker', 'com_tks_agenda.item.'.$this->item->id);
+site/views/item/tmpl/default.php:$canEditOwnMedewerker    = $user->authorise('core.edit.own.medewerker','com_tks_agenda.item.'.$this->item->id);
+site/views/item/tmpl/default.php:$canEdit = JFactory::getUser()->authorise('core.edit', 'com_tks_agenda.' . $this->item->id);
+site/views/item/tmpl/default.php:if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda' . $this->item->id)) {
+site/views/item/tmpl/default.php:    $canEdit = JFactory::getUser()->id == $this->item->created_by;
+site/views/item/tmpl/default.php:	 $s = $this->item->stamp;
+site/views/item/tmpl/default.php:	  var_export( $this->item);
+site/views/item/tmpl/default.php:	if( $this->item ) {
+site/views/item/tmpl/default.php:		if( $this->item->recurring == "Yes" ) {
+site/views/item/tmpl/default.php:			echo "<h1> Herhaalde afspraak (" . $this->item->recur_type . "): </h1>";		
+site/views/item/tmpl/default.php:				$start_date = strtotime($this->item->start);
+site/views/item/tmpl/default.php:				$end_date =	strtotime($this->item->end);		    		
+site/views/item/tmpl/default.php:				$start_date = strtotime($this->item->start);
+site/views/item/tmpl/default.php:				$end_date =	strtotime($this->item->end);		    		
+site/views/item/tmpl/default.php:		if($userId == $this->item->created_by):	
+site/views/item/tmpl/default.php:			foreach( $this->item->recur_events as $event ) {
+site/views/item/tmpl/default.php:				if( $event[0] == $this->item->id ) {
+site/views/item/tmpl/default.php:		<a class="btn" href="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.edit&id='. $this->item->id . '&mode=update' ); ?>"><?php echo JText::_("Bewerk"); ?></a>
+site/views/item/tmpl/default.php:		if($userId == $this->item->created_by):
+site/views/item/tmpl/default.php:            	window.location.href = '<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.remove&id='.$this->item->id, false, 2) ?>';
+site/views/item/tmpl/edit.php:				alert('<?php echo $this->escape(JText::_('JGLOBAL_VALIDATION_FORM_FAILED')); ?>');
+site/views/item/tmpl/edit.php:	action="<?php echo JRoute::_('index.php?option=com_tks_agenda&layout=edit&id=' . (int) $this->item->id); ?>"
+site/views/item/tmpl/edit.php:		<?php if(empty($this->item->created_by)){ 
+site/views/item/tmpl/edit.php:								$profile = JUserHelper::getProfile($this->item->created_by);
+site/views/item/tmpl/edit.php:			<input type="hidden" name="jform[id]" value="<?php echo $this->item->id; ?>" />
+site/views/item/tmpl/edit.php:				<div class="control-label"><?php echo $this->form->getLabel('catid'); ?></div>
+site/views/item/tmpl/edit.php:				<div class="controls"><?php echo $this->form->getInput('catid'); ?></div>
+site/views/item/tmpl/edit.php:				<input type="hidden" name="jform[ordering]" value="<?php echo $this->item->ordering; ?>" />
+site/views/item/tmpl/edit.php:				<input type="hidden" name="jform[state]" value="<?php echo $this->item->state; ?>" />
+site/views/item/tmpl/edit.php:				<input type="hidden" name="jform[checked_out]" value="<?php echo $this->item->checked_out; ?>" />
+site/views/item/tmpl/edit.php:				<input type="hidden" name="jform[checked_out_time]" value="<?php echo $this->item->checked_out_time; ?>" />
+site/views/item/tmpl/edit.php:				<?php if(empty($this->item->created_by)){ ?>
+site/views/item/tmpl/edit.php:					<input type="hidden" name="jform[created_by]" value="<?php echo $this->item->created_by; ?>" />
+site/views/item/tmpl/edit.php:				<div class="control-label"><?php echo $this->form->getLabel('start'); ?></div>
+site/views/item/tmpl/edit.php:				<div class="controls"><?php echo $this->form->getInput('start'); ?></div>
+site/views/item/tmpl/edit.php:				<div class="control-label"><?php echo $this->form->getLabel('end'); ?></div>
+site/views/item/tmpl/edit.php:				<div class="controls"><?php echo $this->form->getInput('end'); ?></div>
+site/views/item/tmpl/edit.php:				<div class="control-label"><?php echo $this->form->getLabel('recurring'); ?></div>
+site/views/item/tmpl/edit.php:				<div class="controls"><?php echo $this->form->getInput('recurring'); ?></div>
+site/views/item/tmpl/edit.php:				<div class="control-label"><?php echo $this->form->getLabel('recur_type'); ?></div>
+site/views/item/tmpl/edit.php:				<div class="controls"><?php echo $this->form->getInput('recur_type'); ?></div>
+site/views/item/tmpl/edit.php:				<div class="control-label"><?php echo $this->form->getLabel('end_recur'); ?></div>
+site/views/item/tmpl/edit.php:				<div class="controls"><?php echo $this->form->getInput('end_recur'); ?></div>
+site/views/item/tmpl/edit.php:				<div class="control-label"><?php echo $this->form->getLabel('reason'); ?></div>
+site/views/item/tmpl/edit.php:				<div class="controls"><?php echo $this->form->getInput('reason'); ?></div>
+site/views/item/tmpl/edit.php:		<?php echo $this->form->getInput('rules'); ?>
+site/views/itemscrapform/view.html.php:		$this->state   = $this->get('State');
+site/views/itemscrapform/view.html.php:		$this->item    = $this->get('Data');
+site/views/itemscrapform/view.html.php:		$this->params  = $app->getParams('com_tks_agenda');
+site/views/itemscrapform/view.html.php:		$this->canSave = $this->get('CanSave');
+site/views/itemscrapform/view.html.php:		$this->form		= $this->get('Form');
+site/views/itemscrapform/view.html.php:		if (count($errors = $this->get('Errors')))
+site/views/itemscrapform/view.html.php:		$this->_prepareDocument();
+site/views/itemscrapform/view.html.php:			$this->params->def('page_heading', $this->params->get('page_title', $menu->title));
+site/views/itemscrapform/view.html.php:			$this->params->def('page_heading', JText::_('COM_TKS_AGENDA_DEFAULT_PAGE_TITLE'));
+site/views/itemscrapform/view.html.php:		$title = $this->params->get('page_title', '');
+site/views/itemscrapform/view.html.php:		$this->document->setTitle($title);
+site/views/itemscrapform/view.html.php:		if ($this->params->get('menu-meta_description'))
+site/views/itemscrapform/view.html.php:			$this->document->setDescription($this->params->get('menu-meta_description'));
+site/views/itemscrapform/view.html.php:		if ($this->params->get('menu-meta_keywords'))
+site/views/itemscrapform/view.html.php:			$this->document->setMetadata('keywords', $this->params->get('menu-meta_keywords'));
+site/views/itemscrapform/view.html.php:		if ($this->params->get('robots'))
+site/views/itemscrapform/view.html.php:			$this->document->setMetadata('robots', $this->params->get('robots'));
+site/views/itemscrapform/tmpl/default.php~:$canEdit = tks_agendaSiteFrontendHelper::canUserEdit($this->item, $user);
+site/views/itemscrapform/tmpl/default.php:$canEdit = tks_agendaSiteFrontendHelper::canUserEdit($this->item, $user);
+site/views/newsitem/view.html.php:		$this->state  = $this->get('State');
+site/views/newsitem/view.html.php:		$this->item   = $this->get('Data');
+site/views/newsitem/view.html.php:		$this->params = $app->getParams('com_tks_agenda');
+site/views/newsitem/view.html.php:		if (!empty($this->item))
+site/views/newsitem/view.html.php:		$this->item->newscatid_title = $this->getModel()->getCategoryName( $this->item->newscatid )->title;
+site/views/newsitem/view.html.php:		$this->form = $this->get('Form');
+site/views/newsitem/view.html.php:		if (count($errors = $this->get('Errors')))
+site/views/newsitem/view.html.php:		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.item', &$this->item, &$this->params, ''));
+site/views/newsitem/view.html.php:		if ($this->_layout == 'edit')
+site/views/newsitem/view.html.php:		$this->_prepareDocument();
+site/views/newsitem/view.html.php:			$this->params->def('page_heading', $this->params->get('page_title', $menu->title));
+site/views/newsitem/view.html.php:			$this->params->def('page_heading', JText::_('COM_TKS_AGENDA_DEFAULT_PAGE_TITLE'));
+site/views/newsitem/view.html.php:		$title = $this->params->get('page_title', '');
+site/views/newsitem/view.html.php:		$this->document->setTitle($title);
+site/views/newsitem/view.html.php:		if ($this->params->get('menu-meta_description'))
+site/views/newsitem/view.html.php:			$this->document->setDescription($this->params->get('menu-meta_description'));
+site/views/newsitem/view.html.php:		if ($this->params->get('menu-meta_keywords'))
+site/views/newsitem/view.html.php:			$this->document->setMetadata('keywords', $this->params->get('menu-meta_keywords'));
+site/views/newsitem/view.html.php:		if ($this->params->get('robots'))
+site/views/newsitem/view.html.php:			$this->document->setMetadata('robots', $this->params->get('robots'));
+site/views/newsitem/tmpl/default.php:$suer =  JFactory::getUser($this->item->created_by);
+site/views/newsitem/tmpl/default.php:JRequest::setVar('newscatid',$this->item->newscatid);
+site/views/newsitem/tmpl/default.php:$canEdit = JFactory::getUser()->authorise('core.edit', 'com_tks_agenda.' . $this->item->id);
+site/views/newsitem/tmpl/default.php:if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda' . $this->item->id)) {
+site/views/newsitem/tmpl/default.php:	$canEdit = JFactory::getUser()->id == $this->item->created_by;
+site/views/newsitem/tmpl/default.php:<?php if ($this->item) : ?>
+site/views/newsitem/tmpl/default.php:<h2><?php echo $this->item->title; ?></h2>
+site/views/newsitem/tmpl/default.php:	<dt>Categorie:</dt><dd><?php echo $this->item->newscatid_title; ?></dd>
+site/views/newsitem/tmpl/default.php:	<dt>Geplaatst door:</dt><dd><?php echo $this->item->created_by_name; ?></dd>
+site/views/newsitem/tmpl/default.php:<div><?php echo $this->item->description; ?></div>
+site/views/newsitem/tmpl/default.php:<?php if($canEdit && $this->item->checked_out == 0): ?>
+site/views/newsitem/tmpl/default.php:<a class="btn" href="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=newsitem.edit&id='.$this->item->id); ?>"><?php echo JText::_("COM_TKS_AGENDA_EDIT_ITEM"); ?></a>
+site/views/newsitem/tmpl/default.php:<?php if(JFactory::getUser()->authorise('core.delete','com_tks_agenda.newsitem.'.$this->item->id) && $user->id == $this->item->created_by):?>
+site/views/newsitem/tmpl/default.php:<a class="btn" href="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=newsitem.remove&id=' . $this->item->id, false, 2); ?>"><?php echo JText::_("COM_TKS_AGENDA_DELETE_ITEM"); ?></a>
+site/views/newsitem/tmpl/edit.php:				alert('<?php echo $this->escape(JText::_('JGLOBAL_VALIDATION_FORM_FAILED')); ?>');
+site/views/newsitem/tmpl/edit.php:	action="<?php echo JRoute::_('index.php?option=com_tks_agenda&layout=edit&id=' . (int) $this->item->id); ?>"
+site/views/newsitem/tmpl/edit.php:									<input type="hidden" name="jform[id]" value="<?php echo $this->item->id; ?>" />
+site/views/newsitem/tmpl/edit.php:				<input type="hidden" name="jform[ordering]" value="<?php echo $this->item->ordering; ?>" />
+site/views/newsitem/tmpl/edit.php:				<input type="hidden" name="jform[state]" value="<?php echo $this->item->state; ?>" />
+site/views/newsitem/tmpl/edit.php:				<input type="hidden" name="jform[checked_out]" value="<?php echo $this->item->checked_out; ?>" />
+site/views/newsitem/tmpl/edit.php:				<input type="hidden" name="jform[checked_out_time]" value="<?php echo $this->item->checked_out_time; ?>" />
+site/views/newsitem/tmpl/edit.php:				<?php if(empty($this->item->created_by)){ ?>
+site/views/newsitem/tmpl/edit.php:					<input type="hidden" name="jform[created_by]" value="<?php echo $this->item->created_by; ?>" />
+site/views/newsitem/tmpl/edit.php:				<?php if(empty($this->item->modified_by)){ ?>
+site/views/newsitem/tmpl/edit.php:					<input type="hidden" name="jform[modified_by]" value="<?php echo $this->item->modified_by; ?>" />
+site/views/newsitem/tmpl/edit.php:						<div class="control-label"><?php echo $this->form->getLabel('created_by'); ?></div>
+site/views/newsitem/tmpl/edit.php:						<div class="controls"><?php echo $this->form->getInput('created_by'); ?></div>
+site/views/newsitem/tmpl/edit.php: 				<?php echo $this->form->renderField('title'); ?>
+site/views/newsitem/tmpl/edit.php:				<?php echo $this->form->renderField('alias'); ?>
+site/views/newsitem/tmpl/edit.php:				<?php echo $this->form->renderField('newscatid'); ?>
+site/views/newsitem/tmpl/edit.php:				<?php echo $this->form->renderField('description'); ?>
+site/views/newsitem/tmpl/edit.php:					<?php if ($this->state->params->get('save_history', 1)) : ?>
+site/views/newsitem/tmpl/edit.php:						<div class="control-label"><?php echo $this->form->getLabel('version_note'); ?></div>
+site/views/newsitem/tmpl/edit.php:						<div class="controls"><?php echo $this->form->getInput('version_note'); ?></div>
+site/views/newsitem/tmpl/edit.php:		<?php echo $this->form->getInput('rules'); ?>
+site/views/tks_agenda/view.html.php:		$this->msg = $this->get('Msg');
+site/views/tks_agenda/view.html.php:		if (count($errors = $this->get('Errors')))
+site/views/tks_agenda/tmpl/default.php:<h1><?php echo $this->msg; ?></h1>
+site/views/portal/view.html.php:		$this->state  = $this->get('State');
+site/views/portal/view.html.php:		$this->item   = $this->get('Data');
+site/views/portal/view.html.php:		$this->params = $app->getParams('com_tks_agenda');
+site/views/portal/view.html.php:		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.portal', &$this->item, &$this->params, ''));
+site/views/downloads/view.html.php:		$this->state      = $this->get('State');
+site/views/downloads/view.html.php:		$this->items = $this->get('Items');
+site/views/downloads/view.html.php:		$this->pagination = $this->get('Pagination');
+site/views/downloads/view.html.php:		$this->params     = $app->getParams('com_tks_agenda');
+site/views/downloads/view.html.php:		if (count($errors = $this->get('Errors')))
+site/views/downloads/view.html.php:		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.item', &$this->item, &$this->params, ''));
+site/views/downloads/view.html.php:		$this->_prepareDocument();
+site/views/downloads/view.html.php:			$this->params->def('page_heading', $this->params->get('page_title', $menu->title));
+site/views/downloads/view.html.php:			$this->params->def('page_heading', JText::_('COM_TKS_AGENDA_DEFAULT_PAGE_TITLE'));
+site/views/downloads/view.html.php:		$title = $this->params->get('page_title', '');
+site/views/downloads/view.html.php:		$this->document->setTitle($title);
+site/views/downloads/view.html.php:		if ($this->params->get('menu-meta_description'))
+site/views/downloads/view.html.php:			$this->document->setDescription($this->params->get('menu-meta_description'));
+site/views/downloads/view.html.php:		if ($this->params->get('menu-meta_keywords'))
+site/views/downloads/view.html.php:			$this->document->setMetadata('keywords', $this->params->get('menu-meta_keywords'));
+site/views/downloads/view.html.php:		if ($this->params->get('robots'))
+site/views/downloads/view.html.php:			$this->document->setMetadata('robots', $this->params->get('robots'));
+site/views/downloads/view.html.php:		return isset($this->state->{$state}) ? $this->state->{$state} : false;
+site/views/downloads/tmpl/default.php:$listOrder  = $this->state->get('list.ordering');
+site/views/downloads/tmpl/default.php:$listDirn   = $this->state->get('list.direction');
+site/views/downloads/tmpl/default.php:if (!$this->items) :
+site/views/downloads/tmpl/default.php:			<td colspan="<?php echo isset($this->items[0]) ? count(get_object_vars($this->items[0])) : 10; ?>">
+site/views/downloads/tmpl/default.php:				<?php echo $this->pagination->getListFooter(); ?>
+site/views/downloads/tmpl/default.php:			<?php foreach ($this->items as $i => $item) : ?>
+site/views/downloads/tmpl/default.php:			<?php if ($this->escape($item->state) == 1): ?>
+site/views/downloads/tmpl/default.php:					<?php echo $this->escape($item->title); ?>
+site/views/downloadform/view.html.php:		$this->state   = $this->get('State');
+site/views/downloadform/view.html.php:		$this->item    = $this->get('Data');
+site/views/downloadform/view.html.php:		$this->params  = $app->getParams('com_tks_agenda');
+site/views/downloadform/view.html.php:		$this->canSave = $this->get('CanSave');
+site/views/downloadform/view.html.php:		$this->form		= $this->get('Form');
+site/views/downloadform/view.html.php:		if (count($errors = $this->get('Errors')))
+site/views/downloadform/view.html.php:		$this->_prepareDocument();
+site/views/downloadform/view.html.php:			$this->params->def('page_heading', $this->params->get('page_title', $menu->title));
+site/views/downloadform/view.html.php:			$this->params->def('page_heading', JText::_('COM_TKS_AGENDA_DEFAULT_PAGE_TITLE'));
+site/views/downloadform/view.html.php:		$title = $this->params->get('page_title', '');
+site/views/downloadform/view.html.php:		$this->document->setTitle($title);
+site/views/downloadform/view.html.php:		if ($this->params->get('menu-meta_description'))
+site/views/downloadform/view.html.php:			$this->document->setDescription($this->params->get('menu-meta_description'));
+site/views/downloadform/view.html.php:		if ($this->params->get('menu-meta_keywords'))
+site/views/downloadform/view.html.php:			$this->document->setMetadata('keywords', $this->params->get('menu-meta_keywords'));
+site/views/downloadform/view.html.php:		if ($this->params->get('robots'))
+site/views/downloadform/view.html.php:			$this->document->setMetadata('robots', $this->params->get('robots'));
+site/views/downloadform/tmpl/default.php:$canEdit = tks_agendaSiteFrontendHelper::canUserEdit($this->item, $user);
+site/views/downloadform/tmpl/default.php:		<?php if (!empty($this->item->id)): ?>
+site/views/downloadform/tmpl/default.php:			<h1><?php echo JText::sprintf('COM_TKS_AGENDA_EDIT_ITEM_TITLE', $this->item->id); ?></h1>
+site/views/downloadform/tmpl/default.php:				<input type="hidden" name="jform[id]" value="<?php echo $this->item->id; ?>" />
+site/views/downloadform/tmpl/default.php:				<input type="hidden" name="jform[ordering]" value="<?php echo $this->item->ordering; ?>" />
+site/views/downloadform/tmpl/default.php:				<input type="hidden" name="jform[checked_out]" value="<?php echo $this->item->checked_out; ?>" />
+site/views/downloadform/tmpl/default.php:				<input type="hidden" name="jform[checked_out_time]" value="<?php echo $this->item->checked_out_time; ?>" />
+site/views/downloadform/tmpl/default.php:				<?php echo $this->form->getInput('created_by'); ?>
+site/views/downloadform/tmpl/default.php:				<?php echo $this->form->getInput('modified_by'); ?>
+site/views/downloadform/tmpl/default.php:	<?php //echo $this->form->renderField('time_created'); ?>
+site/views/downloadform/tmpl/default.php:	<?php echo $this->form->renderField('title'); ?>
+site/views/downloadform/tmpl/default.php:	<?php echo $this->form->renderField('alias'); ?>
+site/views/downloadform/tmpl/default.php:	<?php echo $this->form->renderField('file'); ?>
+site/views/downloadform/tmpl/default.php:	<?php if (!empty($this->item->file)) :
+site/views/downloadform/tmpl/default.php:		foreach ((array) $this->item->file as $singleFile) : 
+site/views/downloadform/tmpl/default.php:	<input type="hidden" name="jform[file_hidden]" id="jform_file_hidden" value="<?php echo str_replace('Array,', '', implode(',', (array) $this->item->file)); ?>" />
+site/views/downloadform/tmpl/default.php:	<?php echo $this->form->renderField('description'); ?>
+site/tables/download.php:			->from($db->quoteName($this->_tbl))
+site/tables/download.php:			->where($db->quoteName($field) . ' = ' . $db->quote($this->$field))
+site/tables/download.php:			->where($db->quoteName('id') . ' <> ' . (int) $this->{$this->_tbl_key});
+site/tables/download.php:			$array['rules'] = $this->JAccessRulestoArray($array_jaccess);
+site/tables/download.php:			$this->setRules($array['rules']);
+site/tables/download.php:		if (property_exists($this, 'ordering') && $this->id == 0)
+site/tables/download.php:			$this->ordering = self::getNextOrder();
+site/tables/download.php:		if (!$this->isUnique('file'))
+site/tables/download.php:			throw new Exception('Your <b>file</b> item "<b>' . $this->file . '</b>" already exists');
+site/tables/download.php:		if (!$this->isUnique('alias'))
+site/tables/download.php:			throw new Exception('Your <b>alias</b> item "<b>' . $this->alias . '</b>" already exists');
+site/tables/download.php:			$this->file = "";
+site/tables/download.php:						$this->file = $array['file'];
+site/tables/download.php:					$this->file .= (!empty($this->file)) ? "," : "";
+site/tables/download.php:					$this->file .= $filename;
+site/tables/download.php:		$k = $this->_tbl_key;
+site/tables/download.php:			if ($this->$k)
+site/tables/download.php:				$pks = array($this->$k);
+site/tables/download.php:		$this->_db->setQuery(
+site/tables/download.php:			'UPDATE `' . $this->_tbl . '`' .
+site/tables/download.php:		$this->_db->execute();
+site/tables/download.php:		if ($checkin && (count($pks) == $this->_db->getAffectedRows()))
+site/tables/download.php:				$this->checkin($pk);
+site/tables/download.php:		if (in_array($this->$k, $pks))
+site/tables/download.php:			$this->state = $state;
+site/tables/download.php:		$k = $this->_tbl_key;
+site/tables/download.php:		return 'com_tks_agenda.download.' . (int) $this->$k;
+site/tables/download.php:		$this->load($pk);
+site/tables/download.php:			foreach ($this->file as $fileFile)
+site/tables/newsitem.php:			->from($db->quoteName($this->_tbl))
+site/tables/newsitem.php:			->where($db->quoteName($field) . ' = ' . $db->quote($this->$field))
+site/tables/newsitem.php:			->where($db->quoteName('id') . ' <> ' . (int) $this->{$this->_tbl_key});
+site/tables/newsitem.php:			$array['rules'] = $this->JAccessRulestoArray($array_jaccess);
+site/tables/newsitem.php:			$this->setRules($array['rules']);
+site/tables/newsitem.php:		if (property_exists($this, 'ordering') && $this->id == 0)
+site/tables/newsitem.php:			$this->ordering = self::getNextOrder();
+site/tables/newsitem.php:		if (!$this->isUnique('title'))
+site/tables/newsitem.php:			throw new Exception('Your <b>title</b> item "<b>' . $this->title . '</b>" already exists');
+site/tables/newsitem.php:		if (!$this->isUnique('alias'))
+site/tables/newsitem.php:			$this->alias .= '-' . JFilterOutput::stringURLSafe(date('Y-m-d-H:i:s'));
+site/tables/newsitem.php:		$k = $this->_tbl_key;
+site/tables/newsitem.php:			if ($this->$k)
+site/tables/newsitem.php:				$pks = array($this->$k);
+site/tables/newsitem.php:		$this->_db->setQuery(
+site/tables/newsitem.php:			'UPDATE `' . $this->_tbl . '`' .
+site/tables/newsitem.php:		$this->_db->execute();
+site/tables/newsitem.php:		if ($checkin && (count($pks) == $this->_db->getAffectedRows()))
+site/tables/newsitem.php:				$this->checkin($pk);
+site/tables/newsitem.php:		if (in_array($this->$k, $pks))
+site/tables/newsitem.php:			$this->state = $state;
+site/tables/newsitem.php:		$k = $this->_tbl_key;
+site/tables/newsitem.php:		return 'com_tks_agenda.newsitem.' . (int) $this->$k;
+site/tables/newsitem.php:		$this->load($pk);
+site/tables/item.php:			$array['rules'] = $this->JAccessRulestoArray($array_jaccess);
+site/tables/item.php:			$this->setRules($array['rules']);
+site/tables/item.php:		if (property_exists($this, 'ordering') && $this->id == 0)
+site/tables/item.php:			$this->ordering = self::getNextOrder();
+site/tables/item.php:		$k = $this->_tbl_key;
+site/tables/item.php:			if ($this->$k)
+site/tables/item.php:				$pks = array($this->$k);
+site/tables/item.php:		$this->_db->setQuery(
+site/tables/item.php:			'UPDATE `' . $this->_tbl . '`' .
+site/tables/item.php:		$this->_db->execute();
+site/tables/item.php:		if ($checkin && (count($pks) == $this->_db->getAffectedRows()))
+site/tables/item.php:				$this->checkin($pk);
+site/tables/item.php:		if (in_array($this->$k, $pks))
+site/tables/item.php:			$this->state = $state;
+site/tables/item.php:		$k = $this->_tbl_key;
+site/tables/item.php:		return 'com_tks_agenda.item.' . (int) $this->$k;
+site/tables/item.php:		$this->load($pk);
+site/controllers/newsitemform.php:		$model = $this->getModel('NewsitemForm', 'tks_agendaModel');
+site/controllers/newsitemform.php:		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=newsitemform&layout=edit', false));
+site/controllers/newsitemform.php:		$model = $this->getModel('NewsitemForm', 'tks_agendaModel');
+site/controllers/newsitemform.php:			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=newsitemform&layout=edit&id=' . $id, false));
+site/controllers/newsitemform.php:			$this->setMessage(JText::sprintf('Save failed', $model->getError()), 'warning');
+site/controllers/newsitemform.php:			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=newsitemform&layout=edit&id=' . $id, false));
+site/controllers/newsitemform.php:		$this->setMessage(JText::_('COM_TKS_AGENDA_ITEM_SAVED_SUCCESSFULLY'));
+site/controllers/newsitemform.php:		$this->setRedirect(JRoute::_($url, false));
+site/controllers/newsitemform.php:		$model = $this->getModel('NewsitemForm', 'tks_agendaModel');
+site/controllers/newsitemform.php:		$this->setRedirect(JRoute::_($url, false));
+site/controllers/newsitemform.php:		$model = $this->getModel('NewsitemForm', 'tks_agendaModel');
+site/controllers/newsitemform.php:			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=newsitem&layout=edit&id=' . $id, false));
+site/controllers/newsitemform.php:			$this->setMessage(JText::sprintf('Delete failed', $model->getError()), 'warning');
+site/controllers/newsitemform.php:			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=newsitem&layout=edit&id=' . $id, false));
+site/controllers/newsitemform.php:		$this->setMessage(JText::_('COM_TKS_AGENDA_ITEM_DELETED_SUCCESSFULLY'));
+site/controllers/newsitemform.php:		$this->setRedirect(JRoute::_($url, false));
+site/controllers/item.php~:		$model = $this->getModel('Item', 'tks_agendaModel');
+site/controllers/item.php~:		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit', false));
+site/controllers/item.php~:			$model = $this->getModel('Item', 'tks_agendaModel');
+site/controllers/item.php~:				$this->setMessage(JText::sprintf('Save failed: %s', $model->getError()), 'warning');
+site/controllers/item.php~:			$this->setMessage(JText::_('COM_TKS_AGENDA_ITEM_SAVED_SUCCESSFULLY'));
+site/controllers/item.php~:				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=items', false));
+site/controllers/item.php~:				$this->setRedirect(JRoute::_($item->link . $menuitemid, false));
+site/controllers/item.php~:			$model = $this->getModel('Item', 'tks_agendaModel');
+site/controllers/item.php~:				$this->setMessage(JText::sprintf('Delete failed', $model->getError()), 'warning');
+site/controllers/item.php~:				$this->setMessage(JText::_('COM_TKS_AGENDA_ITEM_DELETED_SUCCESSFULLY'));
+site/controllers/item.php~:				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=items', false));
+site/controllers/item.php~:				$this->setRedirect(JRoute::_($item->link . $menuitemid, false));
+site/controllers/download.php:		$model = $this->getModel('Download', 'tks_agendaModel');
+site/controllers/download.php:		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=downloadform&layout=edit', false));
+site/controllers/download.php:			$model = $this->getModel('Download', 'tks_agendaModel');
+site/controllers/download.php:				$this->setMessage(JText::sprintf('Save failed: %s', $model->getError()), 'warning');
+site/controllers/download.php:			$this->setMessage(JText::_('COM_TKS_AGENDA_ITEM_SAVED_SUCCESSFULLY'));
+site/controllers/download.php:				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=downloads', false));
+site/controllers/download.php:				$this->setRedirect(JRoute::_($item->link . $menuitemid, false));
+site/controllers/download.php:			$model = $this->getModel('Download', 'tks_agendaModel');
+site/controllers/download.php:				$this->setMessage(JText::sprintf('Delete failed', $model->getError()), 'warning');
+site/controllers/download.php:			$this->setRedirect(JRoute::_($item->link, false));
+site/controllers/items.php:		$model = $this->getView();
+site/controllers/newsitem.php:		$model = $this->getModel('Newsitem', 'tks_agendaModel');
+site/controllers/newsitem.php:		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=newsitemform&layout=edit', false));
+site/controllers/newsitem.php:			$model = $this->getModel('Newsitem', 'tks_agendaModel');
+site/controllers/newsitem.php:				$this->setMessage(JText::sprintf('Save failed: %s', $model->getError()), 'warning');
+site/controllers/newsitem.php:			$this->setMessage(JText::_('COM_TKS_AGENDA_ITEM_SAVED_SUCCESSFULLY'));
+site/controllers/newsitem.php:				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=newsitems', false));
+site/controllers/newsitem.php:				$this->setRedirect(JRoute::_($item->link . $menuitemid, false));
+site/controllers/newsitem.php:			$model = $this->getModel('Newsitem', 'tks_agendaModel');
+site/controllers/newsitem.php:				$this->setMessage(JText::sprintf('Delete failed', $model->getError()), 'warning');
+site/controllers/newsitem.php:				$this->setMessage(JText::_('COM_TKS_AGENDA_ITEM_DELETED_SUCCESSFULLY'));
+site/controllers/newsitem.php:			$this->setRedirect(JRoute::_($item->link, false));
+site/controllers/item.php:		$model = $this->getModel('Item', 'tks_agendaModel');
+site/controllers/item.php:		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit', false));
+site/controllers/item.php:			$model = $this->getModel('Item', 'tks_agendaModel');
+site/controllers/item.php:				$this->setMessage(JText::sprintf('Save failed: %s', $model->getError()), 'warning');
+site/controllers/item.php:			$this->setMessage(JText::_('COM_TKS_AGENDA_ITEM_SAVED_SUCCESSFULLY'));
+site/controllers/item.php:				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=items', false));
+site/controllers/item.php:				$this->setRedirect(JRoute::_($item->link . $menuitemid, false));
+site/controllers/item.php:			$model = $this->getModel('Item', 'tks_agendaModel');
+site/controllers/item.php:				$this->setMessage(JText::sprintf('Delete failed', $model->getError()), 'warning');
+site/controllers/item.php:				$this->setMessage(JText::_('COM_TKS_AGENDA_ITEM_DELETED_SUCCESSFULLY'));
+site/controllers/item.php:				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=items', false));
+site/controllers/item.php:				$this->setRedirect(JRoute::_($item->link . $menuitemid, false));
+site/controllers/itemscrapform.php:			$this->setMessage(JText::sprintf( 'De afspraken zijn ingevoerd.'  ,  $this->model->getError()), 'notice');
+site/controllers/itemscrapform.php:		$this->model = $this->getModel('ItemScrapForm', 'tks_agendaModel');
+site/controllers/itemscrapform.php:		$this->data = $app->getUserState('com_tks_agenda.edit.item.data');
+site/controllers/itemscrapform.php:		if ($this->data === false)
+site/controllers/itemscrapform.php:			$errors = $this->model->getErrors();
+site/controllers/itemscrapform.php:			$app->setUserState('com_tks_agenda.edit.item.data', $this->jform);
+site/controllers/itemscrapform.php:			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
+site/controllers/itemscrapform.php:		$return = $this->model->save($this->data);
+site/controllers/itemscrapform.php:		$this->save_recurring_items($return);
+site/controllers/itemscrapform.php:		//$this->setMessage(JText::sprintf( 'De afspraken zijn ingevoerd.',  $this->model->getError()), 'warning');								
+site/controllers/itemscrapform.php:		$this->setRedirect(JRoute::_($url, false));
+site/controllers/itemscrapform.php:		$this->model = $this->getModel('ItemForm', 'tks_agendaModel');
+site/controllers/itemscrapform.php:		$this->setMessage(JText::sprintf( 'Op basis van deze planning kunnen de herhaalafspraken niet worden ingevoerd. ' . $id, $this->model->getError()), 'warning');								
+site/controllers/itemscrapform.php:		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
+site/controllers/items.php~:		$model = $this->getView('items');
+site/controllers/itemform.php~:		$this->model = $this->getModel('ItemForm', 'tks_agendaModel');
+site/controllers/itemform.php~:			$this->model->checkout($editId);
+site/controllers/itemform.php~:			$this->model->checkin($previousId);
+site/controllers/itemform.php~:		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit', false));
+site/controllers/itemform.php~:		$this->overlapfail = false;
+site/controllers/itemform.php~:		$query = $this->db->getQuery(true);
+site/controllers/itemform.php~:		$query->select($this->db->quoteName(array('a.id','a.start', 'a.end')));
+site/controllers/itemform.php~:		$query->from($this->db->quoteName('#__tks_agenda_items','a'));
+site/controllers/itemform.php~:			$query->where( $this->db->quotename('a.id') . ' != ' . (int)$id );
+site/controllers/itemform.php~:		$this->db->setQuery($query);
+site/controllers/itemform.php~:		$this->db->execute();
+site/controllers/itemform.php~:		$result_a = $this->db->loadObjectList();
+site/controllers/itemform.php~:			if( ( $this->startDate->format("Y-m-d H:i:s") > $row->start &&  $this->startDate->format("Y-m-d H:i:s") < $row->end  ) 
+site/controllers/itemform.php~:				|| ( $this->endDate->format("Y-m-d H:i:s") > $row->start  &&  $this->endDate->format("Y-m-d H:i:s") < $row->end ) 
+site/controllers/itemform.php~:				|| ( $this->startDate->format("Y-m-d H:i:s") <= $row->start  &&  $this->endDate->format("Y-m-d H:i:s") >= $row->end ) ) {
+site/controllers/itemform.php~:					$this->setMessage(JText::sprintf( 'Deze vergaderruimte is al geboekt.', $this->model->getError()), 'error');								
+site/controllers/itemform.php~:					$this->overlapfail = true;
+site/controllers/itemform.php~:		$query = $this->db->getQuery(true);
+site/controllers/itemform.php~:		$query->select($this->db->quoteName(array('b.id', 'b.rid','b.rstart', 'b.rend')));
+site/controllers/itemform.php~:		$query->from($this->db->quoteName('#__tks_agenda_recurring','b'));
+site/controllers/itemform.php~:		$this->db->setQuery($query);
+site/controllers/itemform.php~:		$this->db->execute();
+site/controllers/itemform.php~:		$result_b = $this->db->loadObjectList();
+site/controllers/itemform.php~:			if( ( $this->startDate->format("Y-m-d H:i:s") > $row->rstart &&  $this->startDate->format("Y-m-d H:i:s") < $row->rend  ) 
+site/controllers/itemform.php~:				|| ( $this->endDate->format("Y-m-d H:i:s") > $row->rstart  &&  $this->endDate->format("Y-m-d H:i:s") < $row->rend ) 
+site/controllers/itemform.php~:				|| ( $this->startDate->format("Y-m-d H:i:s") <= $row->rstart  &&  $this->endDate->format("Y-m-d H:i:s") >= $row->rend ) ) {
+site/controllers/itemform.php~:					$this->overlapfail = true;
+site/controllers/itemform.php~:					$this->setMessage(JText::sprintf( 'Deze vergaderruimte is al geboekt.', $this->model->getError()), 'error');								
+site/controllers/itemform.php~:		$datearr = $this->get_recur_array();
+site/controllers/itemform.php~:			$firstDate = $this->startDate->format('Y-m-d');
+site/controllers/itemform.php~:			$secondDate = $this->endDate->format('Y-m-d');
+site/controllers/itemform.php~:				$this->setMessage(JText::sprintf('Afspraak duurt langer dan tot de volgende dag! dit is niet toegestaan.', $this->model->getError()), 'error');
+site/controllers/itemform.php~:			if( $this->startDate == $this->endDate ) {
+site/controllers/itemform.php~:				$this->setMessage(JText::sprintf('Afspraak starttijd is dezelfde als de eindtijd, dit is niet toegestaan.', $this->model->getError()), 'error');
+site/controllers/itemform.php~:			$interval = $this->startDate->diff($this->endRecurring);
+site/controllers/itemform.php~:					$this->setMessage(JText::sprintf('De herhaling is meer dan een jaar! Dit is niet toegestaan.', $this->model->getError()), 'error');
+site/controllers/itemform.php~:			if( $this->endRecurring < $this->startDate && isset($this->jform['recurring']) && $this->jform['recurring'] == "Yes") {
+site/controllers/itemform.php~:				$this->setMessage(JText::sprintf('De herhaalafspraak tijd is eerder dan de starttijd! Dit is niet toegestaan.', $this->model->getError()), 'error');
+site/controllers/itemform.php~:		$this->startDate = new DateTime($this->jform['start'],new DateTimeZone("Europe/Amsterdam"));
+site/controllers/itemform.php~:		$this->endDate = new DateTime($this->jform['end'],new DateTimeZone("Europe/Amsterdam"));
+site/controllers/itemform.php~:		$this->endRecurring = new DateTime($this->jform['end_recur'],new DateTimeZone("Europe/Amsterdam"));
+site/controllers/itemform.php~:		$startDateIt = $this->startDate;
+site/controllers/itemform.php~:		$endDateIt = $this->endDate;
+site/controllers/itemform.php~:		$endRecurringIt = $this->endRecurring;
+site/controllers/itemform.php~:			switch ($this->jform['recur_type']) {
+site/controllers/itemform.php~:			$datesArray = $this->get_recur_array();
+site/controllers/itemform.php~:				$datesArrayFlat[$i] = $this->db->quote($id).', '. $this->db->quote($datesArray[0][$i]) .', ' . $this->db->quote($datesArray[1][$i]) ;
+site/controllers/itemform.php~:			$query = $this->db->getQuery(true);
+site/controllers/itemform.php~:			$query->insert($this->db->quoteName('#__tks_agenda_recurring'));
+site/controllers/itemform.php~:			$query->columns($this->db->quoteName($columns));
+site/controllers/itemform.php~:		   $this->db->setQuery($query);
+site/controllers/itemform.php~:		   $this->db->execute();
+site/controllers/itemform.php~:		$this->db = JFactory::getDBO();
+site/controllers/itemform.php~:		$this->model = $this->getModel('ItemForm', 'tks_agendaModel');
+site/controllers/itemform.php~:		$this->data = JFactory::getApplication()->input->get('jform', array(), 'array');
+site/controllers/itemform.php~:		$form = $this->model->getForm();
+site/controllers/itemform.php~:			throw new Exception($this->model->getError(), 500);
+site/controllers/itemform.php~:		$this->data = $this->model->validate($form, $this->data);
+site/controllers/itemform.php~:		$this->jform = $input->get('jform', array(), 'ARRAY');
+site/controllers/itemform.php~:			if ($this->data === false)
+site/controllers/itemform.php~:				$errors = $this->model->getErrors();
+site/controllers/itemform.php~:				$app->setUserState('com_tks_agenda.edit.item.data', $this->jform);
+site/controllers/itemform.php~:				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
+site/controllers/itemform.php~:		$this->startDate = new DateTime($this->data['start'],new DateTimeZone("Europe/Amsterdam"));
+site/controllers/itemform.php~:		$this->endDate = new DateTime($this->data['end'],new DateTimeZone("Europe/Amsterdam"));
+site/controllers/itemform.php~:		$this->endRecurring = new DateTime($this->data['end_recur'],new DateTimeZone("Europe/Amsterdam"));
+site/controllers/itemform.php~:		if( $this->check_for_date_errors() ) {
+site/controllers/itemform.php~:				return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));					
+site/controllers/itemform.php~:			if( !$this->overlap_check( false, $id ) )	{
+site/controllers/itemform.php~:				$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
+site/controllers/itemform.php~:				if( $this->overlapfail) {
+site/controllers/itemform.php~:					return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));				
+site/controllers/itemform.php~:					return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemscrapform', false));
+site/controllers/itemform.php~:			if( !$this->overlap_check( true, $id ) )	{
+site/controllers/itemform.php~:				$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
+site/controllers/itemform.php~:				if( $this->overlapfail) {
+site/controllers/itemform.php~:					return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));				
+site/controllers/itemform.php~:					return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemscrapform', false));
+site/controllers/itemform.php~:				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));				
+site/controllers/itemform.php~:		$return = $this->model->save($this->data);
+site/controllers/itemform.php~:			$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
+site/controllers/itemform.php~:			$this->setMessage(JText::sprintf('Save failed', $this->model->getError()), 'error');
+site/controllers/itemform.php~:			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
+site/controllers/itemform.php~:		if (isset($this->jform['recurring']) && $this->jform['recurring'] == "Yes" ) {
+site/controllers/itemform.php~:			$this->save_recurring_items( $return );
+site/controllers/itemform.php~:			$this->model->checkin($return);
+site/controllers/itemform.php~:		$this->setMessage(JText::_('COM_TKS_AGENDA_SAVE_SUCCESS'));
+site/controllers/itemform.php~:		$this->setRedirect(JRoute::_($url, false));
+site/controllers/itemform.php~:		$this->model = $this->getModel('ItemForm', 'tks_agendaModel');
+site/controllers/itemform.php~:			$this->model->checkin($editId);
+site/controllers/itemform.php~:		$this->setRedirect(JRoute::_($url, false));
+site/controllers/itemform.php~:		$this->model = $this->getModel('ItemForm', 'tks_agendaModel');
+site/controllers/itemform.php~:		$this->data       = array();
+site/controllers/itemform.php~:		$this->data['id'] = $app->input->getInt('id');
+site/controllers/itemform.php~:		if (empty($this->data['id']))
+site/controllers/itemform.php~:			$errors = $this->model->getErrors();
+site/controllers/itemform.php~:			$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
+site/controllers/itemform.php~:			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=item&layout=edit&id=' . $id, false));
+site/controllers/itemform.php~:		$return = $this->model->delete($this->data);
+site/controllers/itemform.php~:			$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
+site/controllers/itemform.php~:			$this->setMessage(JText::sprintf('Delete failed', $this->model->getError()), 'error');
+site/controllers/itemform.php~:			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=item&layout=edit&id=' . $id, false));
+site/controllers/itemform.php~:			$this->model->checkin($return);
+site/controllers/itemform.php~:		$this->setMessage(JText::_('COM_TKS_AGENDA_ITEM_DELETED_SUCCESSFULLY'));
+site/controllers/itemform.php~:		$this->setRedirect(JRoute::_($url, false));
+site/controllers/itemform.php:		$this->model = $this->getModel('ItemForm', 'tks_agendaModel');
+site/controllers/itemform.php:			$this->model->checkout($editId);
+site/controllers/itemform.php:			$this->model->checkin($previousId);
+site/controllers/itemform.php:		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit', false));
+site/controllers/itemform.php:		$this->overlapfail = false;
+site/controllers/itemform.php:		$query = $this->db->getQuery(true);
+site/controllers/itemform.php:		$query->select($this->db->quoteName(array('a.id','a.start', 'a.end')));
+site/controllers/itemform.php:		$query->from($this->db->quoteName('#__tks_agenda_items','a'));
+site/controllers/itemform.php:			$query->where( $this->db->quotename('a.id') . ' != ' . (int)$id );
+site/controllers/itemform.php:		$this->db->setQuery($query);
+site/controllers/itemform.php:		$this->db->execute();
+site/controllers/itemform.php:		$result_a = $this->db->loadObjectList();
+site/controllers/itemform.php:			if( ( $this->startDate->format("Y-m-d H:i:s") > $row->start &&  $this->startDate->format("Y-m-d H:i:s") < $row->end  ) 
+site/controllers/itemform.php:				|| ( $this->endDate->format("Y-m-d H:i:s") > $row->start  &&  $this->endDate->format("Y-m-d H:i:s") < $row->end ) 
+site/controllers/itemform.php:				|| ( $this->startDate->format("Y-m-d H:i:s") <= $row->start  &&  $this->endDate->format("Y-m-d H:i:s") >= $row->end ) ) {
+site/controllers/itemform.php:					$this->setMessage(JText::sprintf( 'Deze vergaderruimte is al geboekt.', $this->model->getError()), 'error');								
+site/controllers/itemform.php:					$this->overlapfail = true;
+site/controllers/itemform.php:		$query = $this->db->getQuery(true);
+site/controllers/itemform.php:		$query->select($this->db->quoteName(array('b.id', 'b.rid','b.rstart', 'b.rend')));
+site/controllers/itemform.php:		$query->from($this->db->quoteName('#__tks_agenda_recurring','b'));
+site/controllers/itemform.php:		$this->db->setQuery($query);
+site/controllers/itemform.php:		$this->db->execute();
+site/controllers/itemform.php:		$result_b = $this->db->loadObjectList();
+site/controllers/itemform.php:			if( ( $this->startDate->format("Y-m-d H:i:s") > $row->rstart &&  $this->startDate->format("Y-m-d H:i:s") < $row->rend  ) 
+site/controllers/itemform.php:				|| ( $this->endDate->format("Y-m-d H:i:s") > $row->rstart  &&  $this->endDate->format("Y-m-d H:i:s") < $row->rend ) 
+site/controllers/itemform.php:				|| ( $this->startDate->format("Y-m-d H:i:s") <= $row->rstart  &&  $this->endDate->format("Y-m-d H:i:s") >= $row->rend ) ) {
+site/controllers/itemform.php:					$this->overlapfail = true;
+site/controllers/itemform.php:					$this->setMessage(JText::sprintf( 'Deze vergaderruimte is al geboekt.', $this->model->getError()), 'error');								
+site/controllers/itemform.php:		$datearr = $this->get_recur_array();
+site/controllers/itemform.php:			$firstDate = $this->startDate->format('Y-m-d');
+site/controllers/itemform.php:			$secondDate = $this->endDate->format('Y-m-d');
+site/controllers/itemform.php:				$this->setMessage(JText::sprintf('Afspraak duurt langer dan tot de volgende dag! dit is niet toegestaan.', $this->model->getError()), 'error');
+site/controllers/itemform.php:			if( $this->startDate == $this->endDate ) {
+site/controllers/itemform.php:				$this->setMessage(JText::sprintf('Afspraak starttijd is dezelfde als de eindtijd, dit is niet toegestaan.', $this->model->getError()), 'error');
+site/controllers/itemform.php:			$interval = $this->startDate->diff($this->endRecurring);
+site/controllers/itemform.php:					$this->setMessage(JText::sprintf('De herhaling is meer dan een jaar! Dit is niet toegestaan.', $this->model->getError()), 'error');
+site/controllers/itemform.php:			if( $this->endRecurring < $this->startDate && isset($this->jform['recurring']) && $this->jform['recurring'] == "Yes") {
+site/controllers/itemform.php:				$this->setMessage(JText::sprintf('De herhaalafspraak tijd is eerder dan de starttijd! Dit is niet toegestaan.', $this->model->getError()), 'error');
+site/controllers/itemform.php:		$this->startDate = new DateTime($this->jform['start'],new DateTimeZone("Europe/Amsterdam"));
+site/controllers/itemform.php:		$this->endDate = new DateTime($this->jform['end'],new DateTimeZone("Europe/Amsterdam"));
+site/controllers/itemform.php:		$this->endRecurring = new DateTime($this->jform['end_recur'],new DateTimeZone("Europe/Amsterdam"));
+site/controllers/itemform.php:		$startDateIt = $this->startDate;
+site/controllers/itemform.php:		$endDateIt = $this->endDate;
+site/controllers/itemform.php:		$endRecurringIt = $this->endRecurring;
+site/controllers/itemform.php:			switch ($this->jform['recur_type']) {
+site/controllers/itemform.php:			$datesArray = $this->get_recur_array();
+site/controllers/itemform.php:				$datesArrayFlat[$i] = $this->db->quote($id).', '. $this->db->quote($datesArray[0][$i]) .', ' . $this->db->quote($datesArray[1][$i]) ;
+site/controllers/itemform.php:			$query = $this->db->getQuery(true);
+site/controllers/itemform.php:			$query->insert($this->db->quoteName('#__tks_agenda_recurring'));
+site/controllers/itemform.php:			$query->columns($this->db->quoteName($columns));
+site/controllers/itemform.php:		   $this->db->setQuery($query);
+site/controllers/itemform.php:		   $this->db->execute();
+site/controllers/itemform.php:		$this->db = JFactory::getDBO();
+site/controllers/itemform.php:		$this->model = $this->getModel('ItemForm', 'tks_agendaModel');
+site/controllers/itemform.php:		$this->data = JFactory::getApplication()->input->get('jform', array(), 'array');
+site/controllers/itemform.php:		$form = $this->model->getForm();
+site/controllers/itemform.php:			throw new Exception($this->model->getError(), 500);
+site/controllers/itemform.php:		$this->data = $this->model->validate($form, $this->data);
+site/controllers/itemform.php:		$this->jform = $input->get('jform', array(), 'ARRAY');
+site/controllers/itemform.php:			if ($this->data === false)
+site/controllers/itemform.php:				$errors = $this->model->getErrors();
+site/controllers/itemform.php:				$app->setUserState('com_tks_agenda.edit.item.data', $this->jform);
+site/controllers/itemform.php:				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
+site/controllers/itemform.php:		$this->startDate = new DateTime($this->data['start'],new DateTimeZone("Europe/Amsterdam"));
+site/controllers/itemform.php:		$this->endDate = new DateTime($this->data['end'],new DateTimeZone("Europe/Amsterdam"));
+site/controllers/itemform.php:		$this->endRecurring = new DateTime($this->data['end_recur'],new DateTimeZone("Europe/Amsterdam"));
+site/controllers/itemform.php:		if( $this->check_for_date_errors() ) {
+site/controllers/itemform.php:				return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));					
+site/controllers/itemform.php:			if( !$this->overlap_check( false, $id ) )	{
+site/controllers/itemform.php:				$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
+site/controllers/itemform.php:				if( $this->overlapfail) {
+site/controllers/itemform.php:					return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));				
+site/controllers/itemform.php:					return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemscrapform', false));
+site/controllers/itemform.php:			if( !$this->overlap_check( true, $id ) )	{
+site/controllers/itemform.php:				$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
+site/controllers/itemform.php:				if( $this->overlapfail) {
+site/controllers/itemform.php:					return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));				
+site/controllers/itemform.php:					return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemscrapform', false));
+site/controllers/itemform.php:				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));				
+site/controllers/itemform.php:		$return = $this->model->save($this->data);
+site/controllers/itemform.php:			$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
+site/controllers/itemform.php:			$this->setMessage(JText::sprintf('Save failed', $this->model->getError()), 'error');
+site/controllers/itemform.php:			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
+site/controllers/itemform.php:		if (isset($this->jform['recurring']) && $this->jform['recurring'] == "Yes" ) {
+site/controllers/itemform.php:			$this->save_recurring_items( $return );
+site/controllers/itemform.php:			$this->model->checkin($return);
+site/controllers/itemform.php:		$this->setMessage(JText::_('COM_TKS_AGENDA_SAVE_SUCCESS'));
+site/controllers/itemform.php:		$this->setRedirect(JRoute::_($url, false));
+site/controllers/itemform.php:		$this->model = $this->getModel('ItemForm', 'tks_agendaModel');
+site/controllers/itemform.php:			$this->model->checkin($editId);
+site/controllers/itemform.php:		$this->setRedirect(JRoute::_($url, false));
+site/controllers/itemform.php:		$this->model = $this->getModel('ItemForm', 'tks_agendaModel');
+site/controllers/itemform.php:		$this->data       = array();
+site/controllers/itemform.php:		$this->data['id'] = $app->input->getInt('id');
+site/controllers/itemform.php:		if (empty($this->data['id']))
+site/controllers/itemform.php:			$errors = $this->model->getErrors();
+site/controllers/itemform.php:			$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
+site/controllers/itemform.php:			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=item&layout=edit&id=' . $id, false));
+site/controllers/itemform.php:		$return = $this->model->delete($this->data);
+site/controllers/itemform.php:			$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
+site/controllers/itemform.php:			$this->setMessage(JText::sprintf('Delete failed', $this->model->getError()), 'error');
+site/controllers/itemform.php:			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=item&layout=edit&id=' . $id, false));
+site/controllers/itemform.php:			$this->model->checkin($return);
+site/controllers/itemform.php:		$this->setMessage(JText::_('COM_TKS_AGENDA_ITEM_DELETED_SUCCESSFULLY'));
+site/controllers/itemform.php:		$this->setRedirect(JRoute::_($url, false));
+site/controllers/itemscrapform.php~:			$this->setMessage(JText::sprintf( 'De afspraken zijn ingevoerd.'  ,  $this->model->getError()), 'notice');
+site/controllers/itemscrapform.php~:		$this->model = $this->getModel('ItemScrapForm', 'tks_agendaModel');
+site/controllers/itemscrapform.php~:		$this->data = $app->getUserState('com_tks_agenda.edit.item.data');
+site/controllers/itemscrapform.php~:		if ($this->data === false)
+site/controllers/itemscrapform.php~:			$errors = $this->model->getErrors();
+site/controllers/itemscrapform.php~:			$app->setUserState('com_tks_agenda.edit.item.data', $this->jform);
+site/controllers/itemscrapform.php~:			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
+site/controllers/itemscrapform.php~:		$return = $this->model->save($this->data);
+site/controllers/itemscrapform.php~:		$this->save_recurring_items($return);
+site/controllers/itemscrapform.php~:		//$this->setMessage(JText::sprintf( 'De afspraken zijn ingevoerd.',  $this->model->getError()), 'warning');								
+site/controllers/itemscrapform.php~:		$this->setRedirect(JRoute::_($url, false));
+site/controllers/itemscrapform.php~:		$this->model = $this->getModel('ItemForm', 'tks_agendaModel');
+site/controllers/itemscrapform.php~:		$this->setMessage(JText::sprintf( 'Op basis van deze planning kunnen de herhaalafspraken niet worden ingevoerd. ' . $id, $this->model->getError()), 'warning');								
+site/controllers/itemscrapform.php~:		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
+site/controllers/downloadform.php:		$model = $this->getModel('DownloadForm', 'tks_agendaModel');
+site/controllers/downloadform.php:		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=downloadform&layout=edit', false));
+site/controllers/downloadform.php:		$model = $this->getModel('DownloadForm', 'tks_agendaModel');
+site/controllers/downloadform.php:			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=downloadform&layout=edit&id=' . $id, false));
+site/controllers/downloadform.php:			$this->setMessage(JText::sprintf('Save failed', $model->getError()), 'warning');
+site/controllers/downloadform.php:			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=downloadform&layout=edit&id=' . $id, false));
+site/controllers/downloadform.php:		$this->setMessage(JText::_('COM_TKS_AGENDA_ITEM_SAVED_SUCCESSFULLY'));
+site/controllers/downloadform.php:		$this->setRedirect(JRoute::_($url, false));
+site/controllers/downloadform.php:		$model = $this->getModel('DownloadForm', 'tks_agendaModel');
+site/controllers/downloadform.php:		$this->setRedirect(JRoute::_($url, false));
+site/controllers/downloadform.php:        $model = $this->getModel('DownloadForm', 'tks_agendaModel');
+site/controllers/downloadform.php:            $this->setMessage(JText::_('COM_EXAMPLE_ITEM_DELETED_SUCCESSFULLY'));
+site/controllers/downloadform.php:            $this->setRedirect(JRoute::_($url, false));
+site/controllers/downloadform.php:            $this->setMessage($e->getMessage(), $errorType);
+site/controllers/downloadform.php:            $this->setRedirect('index.php?option=com_tks_agenda&view=downloads');

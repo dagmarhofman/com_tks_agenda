@@ -21,16 +21,24 @@ $canEditOwn = $user->authorise('core.edit.own', 'com_tks_agenda.item.'.$this->it
 $canDeleteMedewerker  = $user->authorise('core.delete.medewerker', 'com_tks_agenda.item.'.$this->item->id);
 $canEditMedewerker    = $user->authorise('core.edit.medewerker', 'com_tks_agenda.item.'.$this->item->id);
 $canEditOwnMedewerker    = $user->authorise('core.edit.own.medewerker','com_tks_agenda.item.'.$this->item->id);
-         
+
+
 $canEdit = JFactory::getUser()->authorise('core.edit', 'com_tks_agenda.' . $this->item->id);
 if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda' . $this->item->id)) {
     $canEdit = JFactory::getUser()->id == $this->item->created_by;
 }
+
+
+
 ?>
 
 
 <?php 
-	var_export( $this->item );
+
+	 $s = $this->item->stamp;
+	
+	  var_export( $this->item);
+	
 	if( $this->item ) {
 		if( $this->item->recurring == "Yes" ) {
 			echo "<h1> Herhaalde afspraak (" . $this->item->recur_type . "): </h1>";		
@@ -47,16 +55,36 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
 			$start_date_out = date('j F Y H:i', $start_date );
 			$end_date_out = date('j F Y H:i', $end_date );
 			
+			$start_date_outf = date('Y-m-d H:i:s', $start_date );
+			$end_date_outf = date('Y-m-d H:i:s', $end_date );
+
+			if( $start_date_outf == $s['start_stamp'] && $end_date_outf == $s['end_stamp'] ) {
 ?>
-	<div class="start-tijd"><strong><?php echo $start_date_out;?></strong> - <strong><?php echo $end_date_out;?></strong></div>
+	<div class="start-tijd">
+	<strong style="color:blue;"><?php echo $start_date_out;?> - <?php echo $end_date_out;?></strong>
+	</div>
 
 <?php
+
+			} else {
+?>
+	<div class="start-tijd">
+	<strong><?php echo $start_date_out;?> - <?php echo $end_date_out;?></strong>
+	</div>
+
+<?php			
 			
+			}
+
 			
 			echo '<br/>';
 			foreach( $this->item->recur_events as $event ) {
 				if( $event[0] == $this->item->id ) {
-					echo $event[1] . ' - ' . $event[2] . '<br/>';
+					if( $s['start_stamp'] == $event[1] && $s['end_stamp'] == $event[2] ) {
+						echo '<span style="color:blue;"> <strong> ' . $event[1] . ' - ' . $event[2] . ' </strong> </span><br/>';
+					} else {
+						echo '<span style="color:black;">' . $event[1] . ' - ' . $event[2] . '</span><br/>';
+					}
 				}
 			}
 
@@ -69,6 +97,8 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
 <?php
 		if($userId == $this->item->created_by):
 ?>
+
+
 		<a class="btn delete-button" href="#"><?php echo JText::_("Verwijder"); ?></a>
 <script type="text/javascript">
       	jQuery(document).ready(function () {
@@ -85,12 +115,28 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
 <?php 
 		endif; 
 ?>
-        
+
+   
+    <div class="modal-footer">
+        <a class="btn sluit-button" href="#"> <?php echo JText::_("Sluit venster"); ?> </a>
+    </div>
+    
+<script type="text/javascript">
+      	jQuery(document).ready(function () {
+         	jQuery('.sluit-button').click(sluitItem);
+         });
+			function sluitItem() {
+            window.location.href = '<?php echo JRoute::_('index.php?option=com_tks_agenda&view=items', false, 2) ?>';
+     		}
+</script>
+    
+ 
 <?php		
 			
 	} else {
 		echo JText::_('COM_TKS_AGENDA_ITEM_NOT_LOADED');
 	}
+	
 ?>
 
 

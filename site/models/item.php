@@ -119,6 +119,14 @@ class tks_agendaModelItem extends JModelItem
 			
 		$this->_item->recur_events = $items;
 
+
+		//JFactory::getApplication()->input->get('id');
+
+		$s['start_stamp'] = date('Y-m-d H:i:s',  JFactory::getApplication()->input->get('start_stamp') );
+		$s['end_stamp'] = date('Y-m-d H:i:s',  JFactory::getApplication()->input->get('end_stamp') );
+
+		$this->_item->stamp = $s ;
+
 		return $this->_item;
 	}
 

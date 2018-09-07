@@ -192,5 +192,9 @@ class tks_agendaControllerItem extends tks_agendaController
 		}
 	}
 
+	public function test()
+	{
+			throw new Exception(500);
+	}
 
 }

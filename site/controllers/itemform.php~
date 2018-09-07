@@ -231,7 +231,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		$endRecurringIt = $this->endRecurring;
 		
 
-		while ($startDateIt <= $endRecurringIt ) {
+		while ($endDateIt <= $endRecurringIt ) {
 
 			switch ($this->jform['recur_type']) {
 				case 'dag':
@@ -433,6 +433,40 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		$app->setUserState('com_tks_agenda.edit.item.mode', null);
  		
 	}
+
+	public function test() 
+	{
+		$app = JFactory::getApplication();
+
+		// Get the previous edit id (if any) and the current edit id.
+		$previousId = (int) $app->getUserState('com_tks_agenda.edit.item.id');
+		$editId     = $app->input->getInt('id', 0);
+
+		// Set the user id for the user to edit in the session.
+		$app->setUserState('com_tks_agenda.edit.item.id', $editId);
+
+		JFactory::getApplication()->setUserState('com_tks_agenda.edit.item.mode', 'create');
+		
+		
+		// Get the model.
+		$this->model = $this->getModel('ItemForm', 'tks_agendaModel');
+
+		// Check out the item
+		if ($editId)
+		{
+			$this->model->checkout($editId);
+		}
+
+		// Check in the previous user.
+		if ($previousId)
+		{
+			$this->model->checkin($previousId);
+		}
+
+		// Redirect to the edit screen.
+		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit', false));	
+	}
+	
 
 	/**
 	 * Method to abort current operation
