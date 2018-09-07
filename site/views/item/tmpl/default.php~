@@ -21,8 +21,7 @@ $canEditOwn = $user->authorise('core.edit.own', 'com_tks_agenda.item.'.$this->it
 $canDeleteMedewerker  = $user->authorise('core.delete.medewerker', 'com_tks_agenda.item.'.$this->item->id);
 $canEditMedewerker    = $user->authorise('core.edit.medewerker', 'com_tks_agenda.item.'.$this->item->id);
 $canEditOwnMedewerker    = $user->authorise('core.edit.own.medewerker','com_tks_agenda.item.'.$this->item->id);
-
-
+$recurring_id = -1;
 $canEdit = JFactory::getUser()->authorise('core.edit', 'com_tks_agenda.' . $this->item->id);
 if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda' . $this->item->id)) {
     $canEdit = JFactory::getUser()->id == $this->item->created_by;
@@ -48,8 +47,12 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
 			echo "<h1> Afspraak: </h1>";
 				$start_date = strtotime($this->item->start);
 				$end_date =	strtotime($this->item->end);		    		
-		}
-		
+?>
+<div class="start-tijd">
+<strong style="color:blue;"><?php echo $start_date_out;?> - <?php echo $end_date_out;?></strong>
+</div>
+<?php		
+}		
 		if($userId == $this->item->created_by):	
 
 			$start_date_out = date('j F Y H:i', $start_date );
@@ -63,9 +66,7 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
 	<div class="start-tijd">
 	<strong style="color:blue;"><?php echo $start_date_out;?> - <?php echo $end_date_out;?></strong>
 	</div>
-
 <?php
-
 			} else {
 ?>
 	<div class="start-tijd">
@@ -79,11 +80,12 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
 			
 			echo '<br/>';
 			foreach( $this->item->recur_events as $event ) {
-				if( $event[0] == $this->item->id ) {
-					if( $s['start_stamp'] == $event[1] && $s['end_stamp'] == $event[2] ) {
-						echo '<span style="color:blue;"> <strong> ' . $event[1] . ' - ' . $event[2] . ' </strong> </span><br/>';
+				if( $event[1] == $this->item->id ) {
+					if( $s['start_stamp'] == $event[3] && $s['end_stamp'] == $event[4] ) {
+						echo '<span style="color:blue;"> <strong> ' . $event[3] . ' - ' . $event[4] . ' </strong> </span><br/>';
+						$recurring_id = $event[0];
 					} else {
-						echo '<span style="color:black;">' . $event[1] . ' - ' . $event[2] . '</span><br/>';
+						echo '<span style="color:black;">' . $event[3] . ' - ' . $event[4] . '</span><br/>';
 					}
 				}
 			}
@@ -107,7 +109,7 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
 			function deleteItem() {
          	var item_id = jQuery(this).attr('data-item-id');
             if (confirm("<?php echo JText::_('COM_TKS_AGENDA_DELETE_MESSAGE'); ?>")) {
-            	window.location.href = '<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.remove&id='.$this->item->id, false, 2) ?>';
+            	window.location.href = '<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.remove&id=' . $this->item->id  . '&recur_id=' . $recurring_id , false, 2) ?>';
             }
      		}
 </script>
@@ -126,7 +128,7 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
          	jQuery('.sluit-button').click(sluitItem);
          });
 			function sluitItem() {
-            window.location.href = '<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.remove&id='.$this->item->id, false, 2) ?>';
+            window.location.href = '<?php echo JRoute::_('index.php?option=com_tks_agenda&view=items', false, 2) ?>';
      		}
 </script>
     

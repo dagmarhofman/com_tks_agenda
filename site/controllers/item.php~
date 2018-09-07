@@ -144,12 +144,15 @@ class tks_agendaControllerItem extends tks_agendaController
 		{
 			$model = $this->getModel('Item', 'tks_agendaModel');
 
-			// Get the user data.
+			$recurring_id = $app->input->getInt('recur_id', -1);			
 			$id = $app->input->getInt('id', 0);
-		 
-			// Attempt to save the data.
-			$return = $model->delete($id);
-
+			
+			if( $recurring_id == -1 ) {
+		 		$return = $model->delete($id);
+			} else {
+		 		$return = $model->deleterecur($recurring_id);
+			}
+			
 			// Check for errors.
 			if ($return === false)
 			{
@@ -192,9 +195,5 @@ class tks_agendaControllerItem extends tks_agendaController
 		}
 	}
 
-	public function test()
-	{
-			throw new Exception(500);
-	}
 
 }

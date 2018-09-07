@@ -105,13 +105,15 @@ class tks_agendaModelItem extends JModelItem
 		$db    = $this->getDbo();
 
 		$query = $db->getQuery(true);
-		$query->select('rid, rstart, rend');
+		$query->select( * );
 		$query->from('#__tks_agenda_recurring');
 		$db->setQuery($query);
 		$results = $db->loadObjectList();
 		
 		foreach( $results as $result ) {
-			$items[] = array( $result->rid, 
+			$items[] = array( 
+									$result->id,
+									$result->rid, 
 									$result->rstart,
 									$result->rend,
 									);	
@@ -122,6 +124,10 @@ class tks_agendaModelItem extends JModelItem
 
 		//JFactory::getApplication()->input->get('id');
 
+		$s['start_stamp'] = date('Y-m-d H:i:s',  JFactory::getApplication()->input->get('start_stamp') );
+		$s['end_stamp'] = date('Y-m-d H:i:s',  JFactory::getApplication()->input->get('end_stamp') );
+
+		$this->_item->stamp = $s ;
 
 		return $this->_item;
 	}
@@ -276,6 +282,20 @@ class tks_agendaModelItem extends JModelItem
 		$table = $this->getTable();
 
 		return $table->delete($id);
+	}
+
+	public function deleterecur($id)
+	{
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+
+
+		$query->delete($db->quoteName('#__tks_agenda_recurring'));
+		$query->where(  $db->quoteName('id') . ' = ' . $id );
+	
+		$db->setQuery($query);
+		$db->execute();
+
 	}
 
 	
