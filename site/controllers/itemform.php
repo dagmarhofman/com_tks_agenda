@@ -289,11 +289,6 @@ class tks_agendaControllerItemForm extends tks_agendaController
 	 */
 	public function save($key = NULL, $urlVar = NULL)
 	{
-		/*
-			
-			
- 
-		*/
 		
 		// Check for request forgeries.
 		JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
@@ -354,12 +349,10 @@ class tks_agendaControllerItemForm extends tks_agendaController
 
 		$mode = $app->getUserState('com_tks_agenda.edit.item.mode');
 		$id = (int) $app->getUserState('com_tks_agenda.edit.item.id');
+		
 		/* !!!!
-		
 			Deze vult het formulier niet terug met de vorige gegevens, wat niet gebruikersvriendelijk is.
-			
-		*/				
-		
+		*/						
 		//date error
 		if( $this->check_for_date_errors() ) {
 				return $this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));					
@@ -391,38 +384,75 @@ class tks_agendaControllerItemForm extends tks_agendaController
 				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));				
 		}
 
-		
 
-		// Attempt to save the data.
-		$return = $this->model->save($this->data);
+		$recurring_id = $app->getUserState( 'com_tks_agenda.edit.item.recurid' );
 
-		// Check for errors.
-		if ($return === false)
-		{
-			// Save the data in the session.
-			$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
 
-			// Redirect back to the edit screen.
-			$id = (int) $app->getUserState('com_tks_agenda.edit.item.id');
-			$this->setMessage(JText::sprintf('Save failed', $this->model->getError()), 'error');
-			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
-		}
-			
-		if (isset($this->jform['recurring']) && $this->jform['recurring'] == "Yes" ) {
-			$this->save_recurring_items( $return );
-		}
+		if( $mode == 'create' || $recurring_id == -1 ) {
+	
+			// Attempt to save the data.
+			$return = $this->model->save($this->data);
+	
+			// Check for errors.
+			if ($return === false)
+			{
+				// Save the data in the session.
+				$app->setUserState('com_tks_agenda.edit.item.data', $this->data);
+	
+				// Redirect back to the edit screen.
+				$id = (int) $app->getUserState('com_tks_agenda.edit.item.id');
+				$this->setMessage(JText::sprintf('Save failed', $this->model->getError()), 'error');
+				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
+			}
 				
-		// Check in the profile.
-		if ($return)
-		{
-			$this->model->checkin($return);
+			if (isset($this->jform['recurring']) && $this->jform['recurring'] == "Yes" ) {
+				$this->save_recurring_items( $return );
+			}
+					
+			// Check in the profile.
+			if ($return)
+			{
+				$this->model->checkin($return);
+			}
+	
+			// Clear the profile id from the session.
+			$app->setUserState('com_tks_agenda.edit.item.id', null);
+		} 
+		else if( $mode == 'update' && $recurring_id != -1 ) {
+
+			$db = JFactory::getDbo();			
+			
+			$query = $db->getQuery(true);
+
+			// UPDATE recurring set( rstart, rend ) where id = $recurring_id
+
+			
+			// Fields to update.
+			$fields = array(
+    			$db->quoteName('rstart') . ' = ' . $db->quote( $this->jform['start'] ),
+    			$db->quoteName('rend') . ' = ' . $db->quote($this->jform['end']  )
+			);
+
+			$conditions = array(
+ 				$db->quoteName('id') . ' = ' . $db->quote( $recurring_id )
+			);
+
+			$query->update($db->quoteName('#__tks_agenda_recurring'))->set($fields)->where($conditions);
+			
+			
+			
+
+
+		   $db->setQuery($query);
+		   $db->execute();
+
+
+
 		}
-
-		// Clear the profile id from the session.
-		$app->setUserState('com_tks_agenda.edit.item.id', null);
-
+		
+		
 		// Redirect to the list screen.
-		$this->setMessage(JText::_('COM_TKS_AGENDA_SAVE_SUCCESS'));
+		$this->setMessage(JText::_('COM_TKS_AGENDA_SAVE_SUCCESS ' . $str ));
 		$menu = JFactory::getApplication()->getMenu();
 		$item = $menu->getActive();
 		$url  = (empty($item->link) ? 'index.php?option=com_tks_agenda&view=items' : $item->link);

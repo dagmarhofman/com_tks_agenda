@@ -192,7 +192,6 @@ class tks_agendaViewItem extends JViewLegacy
 		$this->item   = $this->get('Data');
 		$this->items  = $this->get('Items');
 		
-		var_export($this->item);
 		$this->params = $app->getParams('com_tks_agenda');
 
 		if (!empty($this->item))

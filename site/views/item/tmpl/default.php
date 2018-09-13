@@ -36,7 +36,6 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
 
 	 $s = $this->item->stamp;
 	
-	  var_export( $this->item);
 	
 	if( $this->item ) {
 		if( $this->item->recurring == "Yes" ) {
@@ -81,9 +80,11 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
 			echo '<br/>';
 			foreach( $this->item->recur_events as $event ) {
 				if( $event[1] == $this->item->id ) {
+
 					if( $s['start_stamp'] == $event[2] && $s['end_stamp'] == $event[3] ) {
 						echo '<span style="color:blue;"> <strong> ' . $event[2] . ' - ' . $event[3] . ' </strong> </span><br/>';
 						$recurring_id = $event[0];
+						$this->item->recur_id = $event[0];
 					} else {
 						echo '<span style="color:black;">' . $event[2] . ' - ' . $event[3] . '</span><br/>';
 					}
@@ -91,7 +92,9 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
 			}
 
 ?>
-		<a class="btn" href="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.edit&id='. $this->item->id . '&mode=update' ); ?>"><?php echo JText::_("Bewerk"); ?></a>
+
+
+		<a class="btn" href="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.edit&id='. $this->item->id . '&mode=update' . '&recur_id=' . $recurring_id   ); ?>"><?php echo JText::_("Bewerk"); ?></a>
 <?php 
 
 		endif; 

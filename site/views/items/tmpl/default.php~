@@ -76,11 +76,7 @@ $canDelete  = $user->authorise('core.delete', 'com_tks_agenda');
     </div>
     <div class="modal-body" style="height: 400px">
     </div>
-    <div class="modal-footer">
-        <a href="#"
-        data-dismiss="modal"
-        class="btn">Sluit venster</a>
-    </div>
+ 
 </div>
 	<input type="hidden" name="task" value=""/>
 	<input type="hidden" name="boxchecked" value="0"/>

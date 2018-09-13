@@ -97,6 +97,12 @@ endif;
 			<div class="g-block size-33">
 				 
 			</div>
+
+<?php
+		
+		if (empty($this->item->id)):
+?>			
+			
 			<div class="g-block size-15">
 					<div class="control-group">
 					<div class="control-label"><?php echo $this->form->getLabel('recurring'); ?></div>
@@ -131,8 +137,9 @@ endif;
 				</div>
 	 		</div>
 		</div>
-			
-			
+<?php		
+	endif;
+?>			
 			<div class="fltlft" style="display:none;" >
                 <?php echo JHtml::_('sliders.start', 'permissions-sliders-'.$this->item->id, array('useCookie'=>1)); ?>
                 <?php echo JHtml::_('sliders.panel', JText::_('ACL Configuration'), 'access-rules'); ?>

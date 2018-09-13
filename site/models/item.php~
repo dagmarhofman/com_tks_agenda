@@ -105,7 +105,7 @@ class tks_agendaModelItem extends JModelItem
 		$db    = $this->getDbo();
 
 		$query = $db->getQuery(true);
-		$query->select( * );
+		$query->select( '*' );
 		$query->from('#__tks_agenda_recurring');
 		$db->setQuery($query);
 		$results = $db->loadObjectList();

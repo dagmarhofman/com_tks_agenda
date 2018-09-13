@@ -44,7 +44,6 @@ class tks_agendaViewitems extends JViewLegacy
 		
 		$this->pagination = $this->get('Pagination');
 		
-		var_export($this->items);
 		
 		//$params = JComponentHelper::getParams(JRequest::getVar('option')); // Get parameter helper (corrected 'JRquest' spelling)
 		$this->params     = $app->getParams('com_tks_agenda');

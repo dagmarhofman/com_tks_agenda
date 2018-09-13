@@ -61,8 +61,13 @@ class tks_agendaControllerItem extends tks_agendaController
 			$model->checkin($previousId);
 		}
 
+		$recurring_id = $app->input->get('recur_id', -1); 
+		
+		
+		$app->setUserState( 'com_tks_agenda.edit.item.recurid', $recurring_id );
+
 		// Redirect to the edit screen.
-		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit', false));
+		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit'  , false));
 	}
  
 	/**

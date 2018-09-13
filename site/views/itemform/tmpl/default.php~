@@ -160,7 +160,7 @@ endif;
 			<div class="controls">
 
 				<?php if ($this->canSave): ?>
-					<button type="submit" class="validate btn btn-primary">
+					<button type="submit" name="itemFormSubmit" class="validate btn btn-primary">
 						<?php echo JText::_('Opslaan'); ?>
 					</button>
 				<?php endif; ?>
