@@ -4,7 +4,8 @@
 defined('_JEXEC') or die;
 
 jimport('joomla.application.component.view');
-class tks_agendaViewItems extends JViewLegacy
+
+class tks_agendaViewRecurItems extends JViewLegacy
 {
 	protected $items;
 
@@ -149,9 +150,6 @@ class tks_agendaViewItems extends JViewLegacy
 			'a.`created_by`' => JText::_('COM_TKS_AGENDA_ITEMS_CREATED_BY'),
  			'a.`start`' => JText::_('COM_TKS_AGENDA_ITEMS_START'),
 			'a.`end`' => JText::_('COM_TKS_AGENDA_ITEMS_END'),
-			'a.`recur_id`' => JText::_('JGRID_HEADING_RECUR_ID'),
-			'a.`rstart`' => JText::_('JGRID_HEADING_RECUR_RSTART'),
-			'a.`rend`' => JText::_('JGRID_HEADING_RECUR_REND'),
  		);
 	}
 }

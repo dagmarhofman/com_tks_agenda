@@ -203,7 +203,7 @@ if (empty($list['direction']))
 		$query
 			->select(
 				$this->getState(
-					'list.select', 'DISTINCT a.*, b.id as recur_id, b.rstart, b.rend'
+					'list.select', 'DISTINCT a.*, b.id, b.rstart, b.rend'
 				)
 		);
 

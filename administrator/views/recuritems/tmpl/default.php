@@ -12,20 +12,6 @@ JHtml::_('formbehavior.chosen', 'select');
 $document = JFactory::getDocument();
 $document->addStyleSheet(JUri::root() . 'media/com_tks_agenda/css/list.css');
 
-$user      = JFactory::getUser();
-$userId    = $user->get('id');
-$listOrder = $this->state->get('list.ordering');
-$listDirn  = $this->state->get('list.direction');
-$canOrder  = $user->authorise('core.edit.state', 'com_tks_agenda');
-$saveOrder = $listOrder == 'a.`ordering`';
-
-if ($saveOrder)
-{
-	$saveOrderingUrl = 'index.php?option=com_tks_agenda&task=items.saveOrderAjax&tmpl=component';
-	JHtml::_('sortablelist.sortable', 'itemList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
-}
-
-$sortFields = $this->getSortFields();
 ?>
 <script type="text/javascript">
 	Joomla.orderTable = function () {
@@ -120,7 +106,7 @@ if (!empty($this->extra_sidebar))
 				</div>
 			</div>
 			<div class="clearfix"></div>
-			<table class="table table-striped" id="itemList">
+			<table class="table table-striped" id="downloadList">
 				<thead>
 				<tr>
 					<?php if (isset($this->items[0]->ordering)): ?>
@@ -134,43 +120,24 @@ if (!empty($this->extra_sidebar))
 					</th>
 					<?php if (isset($this->items[0]->state)): ?>
 						<th width="1%" class="nowrap center">
-	<?php echo JHtml::_('grid.sort', 'JSTATUS', 'a.`state`', $listDirn, $listOrder); ?>
-</th>
+						<?php echo JHtml::_('grid.sort', 'JSTATUS', 'a.`state`', $listDirn, $listOrder); ?>
+					</th>
 					<?php endif; ?>
 
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_ITEMS_ID', 'a.`id`', $listDirn, $listOrder); ?>
+									<th class='left'>
+				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_DOWNLOADS_ID', 'a.`id`', $listDirn, $listOrder); ?>
 				</th>
-				
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_ITEMS_RECURRING_ID', 'a.`recur_id`', $listDirn, $listOrder); ?>
+					<th class='left'>
+				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_DOWNLOADS_TITLE', 'a.`title`', $listDirn, $listOrder); ?>
 				</th>
-				
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_ITEMS_RECURRING_ID', 'a.`rstart`', $listDirn, $listOrder); ?>
-				</th>
-								
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_ITEMS_RECURRING_ID', 'a.`rend`', $listDirn, $listOrder); ?>
-				</th>
-								
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_ITEMS_CREATED_BY', 'a.`created_by`', $listDirn, $listOrder); ?>
-				</th>
-			 
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_ITEMS_START', 'a.`start`', $listDirn, $listOrder); ?>
-				</th>
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_ITEMS_END', 'a.`end`', $listDirn, $listOrder); ?>
-				</th>
-		 
 
 				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_RECUR_TYPE', 'a.`end`', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_DOWNLOADS_CREATED_BY', 'a.`created_by`', $listDirn, $listOrder); ?>
 				</th>
-		 
-
+				<th class='left'>
+				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_DOWNLOADS_FILE', 'a.`file`', $listDirn, $listOrder); ?>
+				</th>
+			
 					
 				</tr>
 				</thead>
@@ -219,44 +186,46 @@ if (!empty($this->extra_sidebar))
 						</td>
 						<?php if (isset($this->items[0]->state)): ?>
 							<td class="center">
-	<?php echo JHtml::_('jgrid.published', $item->state, $i, 'items.', $canChange, 'cb'); ?>
-</td>
+								<?php echo JHtml::_('jgrid.published', $item->state, $i, 'downloads.', $canChange, 'cb'); ?>
+							</td>
 						<?php endif; ?>
 
 										<td>
 
 					<?php echo $item->id; ?>
 				</td>
-										<td>
 
-					<?php echo $item->recur_id; ?>
-				</td>
-			 
-				<td>
+					<td>
 				<?php if (isset($item->checked_out) && $item->checked_out && ($canEdit || $canChange)) : ?>
-					<?php echo JHtml::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'items.', $canCheckin); ?>
+					<?php echo JHtml::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'downloads.', $canCheckin); ?>
 				<?php endif; ?>
 				<?php if ($canEdit) : ?>
-					<a href="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.edit&id='.(int) $item->id); ?>">
-					<?php echo $this->escape($item->created_by); ?></a>
+					<a href="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=download.edit&id='.(int) $item->id); ?>">
+					<?php echo $this->escape($item->title); ?></a>
 				<?php else : ?>
-					<?php echo $this->escape($item->created_by); ?>
+					<?php echo $this->escape($item->title); ?>
 				<?php endif; ?>
 				</td>
 				<td>
 
-					<?php echo $item->start; ?>
+					<?php echo $item->created_by; ?>
 				</td>
 				<td>
 
-					<?php echo $item->end; ?>
-				</td>
-			 
-			 	<td>
-
-					<?php echo $item->recur_type; ?>
-				</td>
-			 
+					<?php
+						if (!empty($item->file)) :
+							$fileArr = explode(',', $item->file);
+							foreach ($fileArr as $fileSingle) :
+								if (!is_array($fileSingle)) :
+									$uploadPath = 'downloads' .DIRECTORY_SEPARATOR . $fileSingle;
+									echo '<a href="' . JRoute::_(JUri::root() . $uploadPath, false) . '" target="_blank" title="See the file">' . $fileSingle . '</a> ';
+								endif;
+							endforeach;
+						else:
+							echo $item->file;
+						endif; ?>
+						</td>
+			
 
 
 					</tr>
@@ -270,4 +239,6 @@ if (!empty($this->extra_sidebar))
 			<input type="hidden" name="filter_order_Dir" value="<?php echo $listDirn; ?>"/>
 			<?php echo JHtml::_('form.token'); ?>
 		</div>
+
+	
 </form>        

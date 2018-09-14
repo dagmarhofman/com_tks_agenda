@@ -227,10 +227,6 @@ if (!empty($this->extra_sidebar))
 
 					<?php echo $item->id; ?>
 				</td>
-										<td>
-
-					<?php echo $item->recur_id; ?>
-				</td>
 			 
 				<td>
 				<?php if (isset($item->checked_out) && $item->checked_out && ($canEdit || $canChange)) : ?>
