@@ -123,19 +123,41 @@ if (!empty($this->extra_sidebar))
 			<table class="table table-striped" id="itemList">
 				<thead>
 				<tr>
-					<?php if (isset($this->items[0]->ordering)): ?>
-						<th width="1%" class="nowrap center hidden-phone">
-							<?php echo JHtml::_('grid.sort', '<i class="icon-menu-2"></i>', 'a.`ordering`', $listDirn, $listOrder, null, 'asc', 'JGRID_HEADING_ORDERING'); ?>
-						</th>
-					<?php endif; ?>
 					<th width="1%" class="hidden-phone">
 						<input type="checkbox" name="checkall-toggle" value=""
 							   title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)"/>
 					</th>
-					<?php if (isset($this->items[0]->state)): ?>
+					<?php if (isset($this->items[0]->aa)): ?>
 						<th width="1%" class="nowrap center">
-	<?php echo JHtml::_('grid.sort', 'JSTATUS', 'a.`state`', $listDirn, $listOrder); ?>
+	<?php echo JHtml::_('grid.sort', 'JSTATUS', 'aa', $listDirn, $listOrder); ?>
 </th>
+<?php
+var_export($listDirn);
+var_export($listOrder);
+
+?>
+
+<th>
+	<?php echo JHtml::_('grid.sort', 'COM_TKS_AGENDA_ITEMS_ID', 'bb', $listDirn, $listOrder); ?>
+</th>
+<th>
+	<?php echo JHtml::_('grid.sort', 'COM_TKS_AGENDA_ITEMS_RECURRING_ID', 'cc', $listDirn, $listOrder); ?>
+</th>
+<th>
+	<?php echo JHtml::_('grid.sort', 'COM_TKS_AGENDA_ITEMS_CREATED_BY', 'dd', $listDirn, $listOrder); ?>
+</th>
+<th>
+	<?php echo JHtml::_('grid.sort', 'COM_TKS_AGENDA_ITEMS_START', 'ee', $listDirn, $listOrder); ?>
+</th>
+<th>
+	<?php echo JHtml::_('grid.sort', 'COM_TKS_AGENDA_ITEMS_END', 'ff', $listDirn, $listOrder); ?>
+</th>
+<th>
+	<?php echo JHtml::_('grid.sort', 'COM_TKS_AGENDA_ITEMS_RECURRING_TYPE', 'recur_type', $listDirn, $listOrder); ?>
+</th>
+
+
+		
 					<?php endif; ?>
 
 					
@@ -158,45 +180,22 @@ if (!empty($this->extra_sidebar))
 					?>
 					<tr class="row<?php echo $i % 2; ?>">
 
-						<?php if (isset($this->items[0]->ordering)) : ?>
-							<td class="order nowrap center hidden-phone">
-								<?php if ($canChange) :
-									$disableClassName = '';
-									$disabledLabel    = '';
-
-									if (!$saveOrder) :
-										$disabledLabel    = JText::_('JORDERINGDISABLED');
-										$disableClassName = 'inactive tip-top';
-									endif; ?>
-									<span class="sortable-handler hasTooltip <?php echo $disableClassName ?>"
-										  title="<?php echo $disabledLabel ?>">
-							<i class="icon-menu"></i>
-						</span>
-									<input type="text" style="display:none" name="order[]" size="5"
-										   value="<?php echo $item->ordering; ?>" class="width-20 text-area-order "/>
-								<?php else : ?>
-									<span class="sortable-handler inactive">
-							<i class="icon-menu"></i>
-						</span>
-								<?php endif; ?>
-							</td>
-						<?php endif; ?>
 						<td class="hidden-phone">
-							<?php echo JHtml::_('grid.id', $i, $item->id); ?>
+							<?php echo JHtml::_('grid.id', $i, $item->bb); ?>
 						</td>
-						<?php if (isset($this->items[0]->state)): ?>
+						<?php if (isset($this->items[0]->aa)): ?>
 							<td class="center">
-	<?php echo JHtml::_('jgrid.published', $item->state, $i, 'items.', $canChange, 'cb'); ?>
+	<?php echo JHtml::_('jgrid.published', $item->aa, $i, 'items.', $canChange, 'cb'); ?>
 </td>
 						<?php endif; ?>
 
 										<td>
 
-					<?php echo $item->id; ?>
+					<?php echo $item->bb; ?>
 				</td>
 										<td>
 
-					<?php echo $item->recur_id; ?>
+					<?php echo $item->cc; ?>
 				</td>
 			 
 				<td>
@@ -205,9 +204,9 @@ if (!empty($this->extra_sidebar))
 				<?php endif; ?>
 				<?php if ($canEdit) : ?>
 					<a href="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.edit&id='.(int) $item->id); ?>">
-					<?php echo $this->escape($item->username); ?></a>
+					<?php echo $this->escape($item->dd); ?></a>
 				<?php else : ?>
-					<?php echo $this->escape($item->username); ?>
+					<?php echo $this->escape($item->dd); ?>
 				<?php endif; ?>
 				</td>
 
@@ -217,53 +216,57 @@ if (!empty($this->extra_sidebar))
 				
 				<td>
 				<b style="color: blue;">
-					<?php echo $item->start; ?>
+					<?php echo $item->ee; ?>
 				</b>
 				</td>
 				<td>
 				<b style="color: blue;">
-					<?php echo $item->end; ?>
+					<?php echo $item->ff; ?>
 				</b>
 				</td>
+
+				<?php
+					if( $item->recurring == "Yes"):
+				?>
 			 	<td>
-		<b style="color: blue;">		
+				<b style="color: blue;">		
+					<?php echo $item->recur_type; ?>
+				</b>
+				</td>
+				<?php
+				else:
+				?>
+			 	<td>
+				<b style="color: blue;">		
 					<?php echo "geen"; ?>
 				</b>
 				</td>
+				
+				<?php
+					endif;				
+				?>
 
 
-			    <?php
-					elseif( $item->recur_id == null) :			    
-			    ?>
-			 	<td>
-			 		<b style="color: blue;">
-					<?php echo $item->rstart; ?>
-					</b>
-				</td>
-				<td>
-					<b style="color: blue;">
-					<?php echo $item->rend; ?>
-					</b>				
-				</td>
-			 	<td>
-					<b style="color: blue;">
-					<?php echo $item->recur_type; ?>
-					</b>				
-				</td>
-			 
+
+
 				<?php else:
 				?>
 				
 							 
 			 	<td>
-					<?php echo $item->rstart; ?>
+					<?php echo $item->ee; ?>
 				</td>
 				<td>
-					<?php echo $item->rend; ?>
+					<?php echo $item->ff; ?>
 				</td>
+				
+				
 			 	<td>
 					<?php echo $item->recur_type; ?>
 				</td>
+
+
+
 			 
 			   <?php
 			   	endif;

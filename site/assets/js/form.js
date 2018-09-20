@@ -3,6 +3,7 @@
 
 	document.getElementById('jform_recurring0').onclick = function () { 
 	    document.getElementById('recurring_attrib').style.visibility = "visible";
+	    
 	};
 	document.getElementById('jform_recurring1').onclick = function () {
 	    document.getElementById('recurring_attrib').style.visibility = "hidden";

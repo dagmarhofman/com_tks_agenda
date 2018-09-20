@@ -203,7 +203,7 @@ if (empty($list['direction']))
 		$query
 			->select(
 				$this->getState(
-					'list.select', 'DISTINCT a.*, created_by.username, b.id as recur_id, b.rstart, b.rend'
+					'list.select', 'state as aa, a.id as bb, b.id as cc, created_by.username as dd, start as ee, end as ff, recurring, rstart, rend, recur_type, recurring '
 				)
 		);
 
@@ -218,7 +218,7 @@ if (empty($list['direction']))
 
 		// Join over the created by field 'created_by'
 		$query->join('LEFT', '#__users AS created_by ON created_by.id = a.created_by');
-		$query->join('LEFT', '#__tks_agenda_recurring b ON a.id = b.rid');
+		$query->join('INNER', '#__tks_agenda_recurring b ON a.id = b.rid');
 		
 		if (!JFactory::getUser()->authorise('core.edit', 'com_tks_agenda'))
 		{
@@ -239,18 +239,50 @@ if (empty($list['direction']))
 				$query->where('( a.title LIKE '.$search.' )');
 			}
 		}
-		// Add the list ordering clause.
+
+		//union de items tabel
+		//state as aa, a.id as bb, b.id as cc, created_by.username as dd, start as ee, end as ff, recurring, rstart, rend, recur_type
+
+		$query2 = $db->getQuery(true);
+
+
+		$query2
+			->select(
+				$this->getState(
+					'list.select', 'state as aa, a.id as bb, -1 as cc, created_by.username as dd, start as ee, end as ff, recurring, NULL as rstart, NULL as rend, recur_type, recurring '
+				)
+		);
+
+		$query2->from('`#__tks_agenda_items` AS a');
+		
+		// Join over the users for the checked out user.
+		$query2->select('uc.name AS editor');
+		$query2->join('LEFT', '#__users AS uc ON uc.id=a.checked_out');
+		// Join over the category 'catid'
+		$query2->select('catid.title AS catid_title');
+		$query2->join('LEFT', '#__categories AS catid ON catid.id = a.catid');
+
+		// Join over the created by field 'created_by'
+		$query2->join('LEFT', '#__users AS created_by ON created_by.id = a.created_by');
+
+
+
+
+			// Add the list ordering clause.
 		$orderCol  = $this->state->get('list.ordering');
 		$orderDirn = $this->state->get('list.direction');
 
-/*
 		if ($orderCol && $orderDirn)
 		{
 			$query->order($db->escape($orderCol . ' ' . $orderDirn));
 		}
-*/
-		return $query;
+		
+
+
+		
+		return $query->union($query2);
 	}
+
 
 	/**
 	 * Method to get an array of data items
@@ -259,6 +291,11 @@ if (empty($list['direction']))
 	 */
 	public function getItems()
 	{
+		// Add the list ordering clause.
+		$col  = $this->state->get('list.direction');
+		$order = $this->state->get('list.ordering');
+
+
 		$items = parent::getItems();
 		foreach ($items as $item)
 		{
@@ -270,14 +307,15 @@ if (empty($list['direction']))
 					$item->catid = !empty($title) ? $title : $item->catid;
 			}
 		}
-
+/*
 		$copy = array();
 		foreach( $items as $val )	 {
 			$cpy = clone $val;
 			if( $cpy->recurring == "Yes" && $cpy->rstart != null) {
-				$cpy->rstart = $cpy->start;
-				$cpy->rend = $cpy->end;
-				$cpy->recur_id = null;			
+				$cpy->rstart = $cpy->dd;
+				$cpy->rend = $cpy->ee;
+				$cpy->bb = null;	
+						
 			}
 			if( !in_array($cpy, $copy, false) && $cpy->rstart != null) {
 				$copy[] = $cpy;				
@@ -285,8 +323,9 @@ if (empty($list['direction']))
 		}
 	
 		$retval = array_merge( $copy, $items );
-	
-		return $retval;
+	*/
+
+		return $items;
 	}
 	/**
 	 * Overrides the default function to check Date fields format, identified by

@@ -3,9 +3,11 @@
 
 	document.getElementById('jform_recurring0').onclick = function () { 
 	    document.getElementById('recurring_attrib').style.visibility = "visible";
+	    
 	};
 	document.getElementById('jform_recurring1').onclick = function () {
 	    document.getElementById('recurring_attrib').style.visibility = "hidden";
+	    document.getElementById('jform[recur_type]').value = "geen";
 	};
 
         // Turn radios into btn-group
@@ -38,7 +40,6 @@
                 }
         });
 
-    document.getElementById('jform_recurring1').click();
     document.getElementById('jform_recurring1').click();
 
     })
