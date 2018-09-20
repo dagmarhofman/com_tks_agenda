@@ -203,7 +203,7 @@ if (empty($list['direction']))
 		$query
 			->select(
 				$this->getState(
-					'list.select', 'DISTINCT a.*, b.id, b.rstart, b.rend'
+					'list.select', 'DISTINCT a.*, created_by.username, b.id as recur_id, b.rstart, b.rend'
 				)
 		);
 
@@ -243,11 +243,12 @@ if (empty($list['direction']))
 		$orderCol  = $this->state->get('list.ordering');
 		$orderDirn = $this->state->get('list.direction');
 
+/*
 		if ($orderCol && $orderDirn)
 		{
 			$query->order($db->escape($orderCol . ' ' . $orderDirn));
 		}
-
+*/
 		return $query;
 	}
 
@@ -267,9 +268,25 @@ if (empty($list['direction']))
 					$title = tks_agendaFrontendHelper::getCategoryNameByCategoryId($item->catid);
 					// Finally replace the data object with proper information
 					$item->catid = !empty($title) ? $title : $item->catid;
-				}
+			}
 		}
-		return $items;
+
+		$copy = array();
+		foreach( $items as $val )	 {
+			$cpy = clone $val;
+			if( $cpy->recurring == "Yes" && $cpy->rstart != null) {
+				$cpy->rstart = $cpy->start;
+				$cpy->rend = $cpy->end;
+				$cpy->recur_id = null;			
+			}
+			if( !in_array($cpy, $copy, false) && $cpy->rstart != null) {
+				$copy[] = $cpy;				
+			}
+		}
+	
+		$retval = array_merge( $copy, $items );
+	
+		return $retval;
 	}
 	/**
 	 * Overrides the default function to check Date fields format, identified by

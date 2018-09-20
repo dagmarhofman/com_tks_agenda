@@ -138,39 +138,6 @@ if (!empty($this->extra_sidebar))
 </th>
 					<?php endif; ?>
 
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_ITEMS_ID', 'a.`id`', $listDirn, $listOrder); ?>
-				</th>
-				
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_ITEMS_RECURRING_ID', 'a.`recur_id`', $listDirn, $listOrder); ?>
-				</th>
-				
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_ITEMS_RECURRING_ID', 'a.`rstart`', $listDirn, $listOrder); ?>
-				</th>
-								
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_ITEMS_RECURRING_ID', 'a.`rend`', $listDirn, $listOrder); ?>
-				</th>
-								
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_ITEMS_CREATED_BY', 'a.`created_by`', $listDirn, $listOrder); ?>
-				</th>
-			 
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_ITEMS_START', 'a.`start`', $listDirn, $listOrder); ?>
-				</th>
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_ITEMS_END', 'a.`end`', $listDirn, $listOrder); ?>
-				</th>
-		 
-
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_TKS_AGENDA_RECUR_TYPE', 'a.`end`', $listDirn, $listOrder); ?>
-				</th>
-		 
-
 					
 				</tr>
 				</thead>
@@ -182,7 +149,7 @@ if (!empty($this->extra_sidebar))
 				</tr>
 				</tfoot>
 				<tbody>
-				<?php foreach ($this->items as $i => $item) :
+				<?php foreach ($this->items as $i => $item):
 					$ordering   = ($listOrder == 'a.ordering');
 					$canCreate  = $user->authorise('core.create', 'com_tks_agenda');
 					$canEdit    = $user->authorise('core.edit', 'com_tks_agenda');
@@ -227,6 +194,10 @@ if (!empty($this->extra_sidebar))
 
 					<?php echo $item->id; ?>
 				</td>
+										<td>
+
+					<?php echo $item->recur_id; ?>
+				</td>
 			 
 				<td>
 				<?php if (isset($item->checked_out) && $item->checked_out && ($canEdit || $canChange)) : ?>
@@ -234,25 +205,70 @@ if (!empty($this->extra_sidebar))
 				<?php endif; ?>
 				<?php if ($canEdit) : ?>
 					<a href="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.edit&id='.(int) $item->id); ?>">
-					<?php echo $this->escape($item->created_by); ?></a>
+					<?php echo $this->escape($item->username); ?></a>
 				<?php else : ?>
-					<?php echo $this->escape($item->created_by); ?>
+					<?php echo $this->escape($item->username); ?>
 				<?php endif; ?>
 				</td>
-				<td>
 
+				<?php
+					if( !isset($item->rstart) ):
+				?>
+				
+				<td>
+				<b style="color: blue;">
 					<?php echo $item->start; ?>
+				</b>
 				</td>
 				<td>
-
+				<b style="color: blue;">
 					<?php echo $item->end; ?>
+			<b style="color: blue;">
+					</td>
+			 	<td>
+					<b style="color: blue;">
+	
+					<?php echo "geen"; ?>
+					</b>
+				</td>
+
+
+			    <?php
+					elseif( $item->recur_id == null) :			    
+			    ?>
+			 	<td>
+			 		<b style="color: blue;">
+					<?php echo $item->rstart; ?>
+					</b>
+				</td>
+				<td>
+					<b style="color: blue;">
+					<?php echo $item->rend; ?>
+					</b>				
+				</td>
+			 	<td>
+					<b style="color: blue;">
+					<?php echo $item->recur_type; ?>
+					</b>				
 				</td>
 			 
+				<?php else:
+				?>
+				
+							 
 			 	<td>
-
+					<?php echo $item->rstart; ?>
+				</td>
+				<td>
+					<?php echo $item->rend; ?>
+				</td>
+			 	<td>
 					<?php echo $item->recur_type; ?>
 				</td>
 			 
+			   <?php
+			   	endif;
+			   ?>
 
 
 					</tr>
