@@ -107,7 +107,7 @@ class tks_agendaModelItem extends JModelAdmin
 			// Do any procesing on fields here if needed
 		}
 	
-		$item->recur_item_dagmar = JTable::getInstance('recurItem', 'tks_agendaTable' );
+		$item->recur_item_dagmar = JTable::getInstance('recurItem', 'tks_agendaTable' )->load(2473, true);
 
 
 		return $item;

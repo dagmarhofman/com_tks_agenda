@@ -195,7 +195,7 @@ if (empty($list['direction']))
 	 */
 	protected function getListQuery()
 	{
-		// Create a new query object.
+		// Create a new query object.	$db    = $this->getDbo();
 		$db    = $this->getDbo();
 		$query = $db->getQuery(true);
 
@@ -243,13 +243,14 @@ if (empty($list['direction']))
 		//union de items tabel
 		//state as aa, a.id as bb, b.id as cc, created_by.username as dd, start as ee, end as ff, recurring, rstart, rend, recur_type
 
+		$db2    = $this->getDbo();
 		$query2 = $db->getQuery(true);
 
 
 		$query2
 			->select(
 				$this->getState(
-					'list.select', 'state as aa, a.id as bb, -1 as cc, created_by.username as dd, start as ee, end as ff, recurring, NULL as rstart, NULL as rend, recur_type '
+					'list.select', 'state as aa, a.id as bb, -1 as cc, created_by.username as dd, start as ee, end as ff, recurring, NULL as rstart, NULL as rend, CASE  WHEN  recurring = "Yes"  THEN recur_type ELSE "geen" END AS recur_type '    
 				)
 		);
 
@@ -266,21 +267,23 @@ if (empty($list['direction']))
 		$query2->join('LEFT', '#__users AS created_by ON created_by.id = a.created_by');
 
 
-
-
 			// Add the list ordering clause.
 		$orderCol  = $this->state->get('list.ordering');
 		$orderDirn = $this->state->get('list.direction');
-
-		if ($orderCol && $orderDirn)
-		{
-			$query->order($db->escape($orderCol . ' ' . $orderDirn));
+	
+		$result = $query->union($query2);
+		
+		//test
+		if($orderCol == 'ordering' ) {
+			$orderCol = 'bb';		
 		}
 		
-
-
+		if ($orderCol && $orderDirn)
+		{
+			$result->order($db->escape($orderCol . ' ' . $orderDirn));
+		}
 		
-		return $query->union($query2);
+		return $result;
 	}
 
 
@@ -307,24 +310,7 @@ if (empty($list['direction']))
 					$item->catid = !empty($title) ? $title : $item->catid;
 			}
 		}
-/*
-		$copy = array();
-		foreach( $items as $val )	 {
-			$cpy = clone $val;
-			if( $cpy->recurring == "Yes" && $cpy->rstart != null) {
-				$cpy->rstart = $cpy->dd;
-				$cpy->rend = $cpy->ee;
-				$cpy->bb = null;	
-						
-			}
-			if( !in_array($cpy, $copy, false) && $cpy->rstart != null) {
-				$copy[] = $cpy;				
-			}
-		}
-	
-		$retval = array_merge( $copy, $items );
-	*/
-
+		
 		return $items;
 	}
 	/**

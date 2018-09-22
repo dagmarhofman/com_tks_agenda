@@ -224,15 +224,14 @@ var_export($listOrder);
 					<?php echo $item->ff; ?>
 				</b>
 				</td>
-			 	<td>
-		<b style="color: blue;">		
+
+				<td>
+				<b style="color: blue;">		
 					<?php echo $item->recur_type; ?>
 				</b>
 				</td>
+		
 
-				<?php else:
-				?>
-				
 							 
 			 	<td>
 					<?php echo $item->ee; ?>
@@ -240,9 +239,14 @@ var_export($listOrder);
 				<td>
 					<?php echo $item->ff; ?>
 				</td>
+				
+				
 			 	<td>
 					<?php echo $item->recur_type; ?>
 				</td>
+
+
+
 			 
 			   <?php
 			   	endif;

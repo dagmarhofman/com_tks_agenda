@@ -59,8 +59,8 @@
                     default="konijn"
                     label="COM_TKS_AGENDA_FORM_LBL_RECURRING_TITLE"
                     description="COM_TKS_AGENDA_FORM_DESC_RECURRING_TITLE">
-                    <option value="aap">aap</option>
-                    <option value="konijn">konijn</option>
+                    <option value="Yes">Ja</option>
+                    <option value="No">Nee</option>
                 </field>
 
 

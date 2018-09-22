@@ -225,33 +225,13 @@ var_export($listOrder);
 				</b>
 				</td>
 
-				<?php
-					if( $item->recurring == "Yes"):
-				?>
-			 	<td>
+				<td>
 				<b style="color: blue;">		
 					<?php echo $item->recur_type; ?>
 				</b>
 				</td>
-				<?php
-				else:
-				?>
-			 	<td>
-				<b style="color: blue;">		
-					<?php echo "geen"; ?>
-				</b>
-				</td>
-				
-				<?php
-					endif;				
-				?>
-
-
-
-
-				<?php else:
-				?>
-				
+		
+				<?php else: ?>
 							 
 			 	<td>
 					<?php echo $item->ee; ?>
