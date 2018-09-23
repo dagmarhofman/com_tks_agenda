@@ -237,14 +237,19 @@ if (!empty($this->extra_sidebar))
 				</b>
 				</td>
 
+<<<<<<< HEAD
 				<?php
 					if( $item->recurring == "Yes"):
 				?>
 			 	<td>
+=======
+				<td>
+>>>>>>> refs/remotes/origin/master
 				<b style="color: blue;">		
 					<?php echo $item->recur_type; ?>
 				</b>
 				</td>
+<<<<<<< HEAD
 				<?php
 				else:
 				?>
@@ -260,10 +265,10 @@ if (!empty($this->extra_sidebar))
 
 
 
+=======
+		
+>>>>>>> refs/remotes/origin/master
 
-				<?php else:
-				?>
-				
 							 
 			 	<td>
 					<?php echo $item->ee; ?>

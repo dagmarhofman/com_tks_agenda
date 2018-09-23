@@ -23,6 +23,7 @@ class tks_agendaTablerecuritem extends JTable
 
 
 	/**
+<<<<<<< HEAD
 	 * Overloaded bind function to pre-process the params.
 	 *
 	 * @param   array  $array   Named array
@@ -75,6 +76,14 @@ class tks_agendaTablerecuritem extends JTable
 		return parent::bind($array, $ignore);
 	}
 	*/
+=======
+	 * This function convert an array of JAccessRule objects into an rules array.
+	 *
+	 * @param   array  $jaccessrules  An array of JAccessRule objects.
+	 *
+	 * @return  array
+	 */
+>>>>>>> refs/remotes/origin/master
 	private function JAccessRulestoArray($jaccessrules)
 	{
 		$rules = array();
@@ -203,7 +212,11 @@ class tks_agendaTablerecuritem extends JTable
 	{
 		$k = $this->_tbl_key;
 
+<<<<<<< HEAD
 		return 'com_tks_agenda.recuritem.' . (int) $this->$k;
+=======
+		return 'com_tks_agenda.item.' . (int) $this->$k;
+>>>>>>> refs/remotes/origin/master
 	}
 
 	/**

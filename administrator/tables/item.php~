@@ -9,7 +9,7 @@ use Joomla\Utilities\ArrayHelper;
  *
  * @since  1.6
  */
-class tks_agendaTablerecuritem extends JTable
+class tks_agendaTableitem extends JTable
 {
 	/**
 	 * Constructor
@@ -18,16 +18,10 @@ class tks_agendaTablerecuritem extends JTable
 	 */
 	public function __construct(&$db)
 	{
-<<<<<<< HEAD
-		parent::__construct('#__tks_agenda_recurring', 'recur_id', $db);
-=======
-		parent::__construct('#__tks_agenda_recurring', 'id', $db);
->>>>>>> refs/remotes/origin/master
+		parent::__construct('#__tks_agenda_items a JOIN #__tks_agenda_recurring b on a.id = b.rid', 'id', $db);
 	}
 
-
 	/**
-<<<<<<< HEAD
 	 * Overloaded bind function to pre-process the params.
 	 *
 	 * @param   array  $array   Named array
@@ -38,12 +32,16 @@ class tks_agendaTablerecuritem extends JTable
 	 * @see     JTable:bind
 	 * @since   1.5
 	 */
-	 /*
 	public function bind($array, $ignore = '')
 	{
 		$input = JFactory::getApplication()->input;
 		$task = $input->getString('task', '');
 	 
+		if ($array['id'] == 0)
+		{
+			$array['created_by'] = JFactory::getUser()->id;
+		}
+
 		if (isset($array['params']) && is_array($array['params']))
 		{
 			$registry = new JRegistry;
@@ -58,7 +56,20 @@ class tks_agendaTablerecuritem extends JTable
 			$array['metadata'] = (string) $registry;
 		}
 
-		if (!JFactory::getUser()->authorise('core.admin', 'com_tks_agenda.recuritem.' . $array['id']))
+			// Support for alias field: alias
+			if (empty($array['alias']))
+			{
+				if (empty($array['title']))
+				{
+					$array['alias'] = JFilterOutput::stringURLSafe(date('Y-m-d H:i:s'));
+				}
+				else
+				{
+					$array['alias'] = JFilterOutput::stringURLSafe(trim($array['title']));
+				}
+			}
+
+		if (!JFactory::getUser()->authorise('core.admin', 'com_tks_agenda.item.' . $array['id']))
 		{
 			$actions = JAccess::getActionsFromFile(
 				JPATH_ADMINISTRATOR . '/components/com_tks_agenda/access.xml',
@@ -67,6 +78,10 @@ class tks_agendaTablerecuritem extends JTable
 			$default_actions = JAccess::getAssetRules('com_tks_agenda.item.' . $array['id'])->getData();
 			$array_jaccess   = array();
 
+			foreach ($actions as $action)
+			{
+			//	$array_jaccess[$action->name] = $default_actions[$action->name];
+			}
 
 			$array['rules'] = $this->JAccessRulestoArray($array_jaccess);
 		}
@@ -79,15 +94,14 @@ class tks_agendaTablerecuritem extends JTable
 
 		return parent::bind($array, $ignore);
 	}
-	*/
-=======
+
+	/**
 	 * This function convert an array of JAccessRule objects into an rules array.
 	 *
 	 * @param   array  $jaccessrules  An array of JAccessRule objects.
 	 *
 	 * @return  array
 	 */
->>>>>>> refs/remotes/origin/master
 	private function JAccessRulestoArray($jaccessrules)
 	{
 		$rules = array();
@@ -216,11 +230,7 @@ class tks_agendaTablerecuritem extends JTable
 	{
 		$k = $this->_tbl_key;
 
-<<<<<<< HEAD
-		return 'com_tks_agenda.recuritem.' . (int) $this->$k;
-=======
 		return 'com_tks_agenda.item.' . (int) $this->$k;
->>>>>>> refs/remotes/origin/master
 	}
 
 	/**

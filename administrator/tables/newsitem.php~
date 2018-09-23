@@ -1,16 +1,47 @@
 <?php
 
+/**
+ * @version    CVS: 1.0.0
+ * @package    Com_Gckloosterveen
+ * @author     Stephan Zuidberg <stephan@takties.nl>
+ * @copyright  2016 Takties
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
+ */
 // No direct access
 defined('_JEXEC') or die;
 
 use Joomla\Utilities\ArrayHelper;
 /**
- * item Table class
+ * newsitem Table class
  *
  * @since  1.6
  */
-class tks_agendaTablerecuritem extends JTable
+class tks_agendaTablenewsitem extends JTable
 {
+	/**
+	 * Check if a field is unique
+	 *
+	 * @param   string  $field  Name of the field
+	 *
+	 * @return bool True if unique
+	 */
+	private function isUnique ($field)
+	{
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+
+		$query
+			->select($db->quoteName($field))
+			->from($db->quoteName($this->_tbl))
+			->where($db->quoteName($field) . ' = ' . $db->quote($this->$field))
+			->where($db->quoteName('id') . ' <> ' . (int) $this->{$this->_tbl_key});
+
+		$db->setQuery($query);
+		$db->execute();
+
+		return ($db->getNumRows() == 0) ? true : false;
+	}
+
 	/**
 	 * Constructor
 	 *
@@ -18,16 +49,11 @@ class tks_agendaTablerecuritem extends JTable
 	 */
 	public function __construct(&$db)
 	{
-<<<<<<< HEAD
-		parent::__construct('#__tks_agenda_recurring', 'recur_id', $db);
-=======
-		parent::__construct('#__tks_agenda_recurring', 'id', $db);
->>>>>>> refs/remotes/origin/master
+		JObserverMapper::addObserverClassToClass('JTableObserverContenthistory', 'tks_agendaTablenewsitem', array('typeAlias' => 'com_tks_agenda.newsitem'));
+		parent::__construct('#__tks_agenda_newsitems', 'id', $db);
 	}
 
-
 	/**
-<<<<<<< HEAD
 	 * Overloaded bind function to pre-process the params.
 	 *
 	 * @param   array  $array   Named array
@@ -38,12 +64,32 @@ class tks_agendaTablerecuritem extends JTable
 	 * @see     JTable:bind
 	 * @since   1.5
 	 */
-	 /*
 	public function bind($array, $ignore = '')
 	{
 		$input = JFactory::getApplication()->input;
 		$task = $input->getString('task', '');
-	 
+
+		if ($array['id'] == 0)
+		{
+			$array['created_by'] = JFactory::getUser()->id;
+			$array['modified_by'] = JFactory::getUser()->id;
+			$array['time_created'] = JFactory::getDate()->toSql();
+		}
+
+			// Support for alias field: alias
+			if (empty($array['alias']))
+			{
+				if (empty($array['title']))
+				{
+					$array['alias'] = JFilterOutput::stringURLSafe(date('Y-m-d H:i:s'));
+				}
+				else
+				{
+					$array['alias'] = JFilterOutput::stringURLSafe(trim($array['title']));
+				}
+			}
+
+
 		if (isset($array['params']) && is_array($array['params']))
 		{
 			$registry = new JRegistry;
@@ -58,15 +104,23 @@ class tks_agendaTablerecuritem extends JTable
 			$array['metadata'] = (string) $registry;
 		}
 
-		if (!JFactory::getUser()->authorise('core.admin', 'com_tks_agenda.recuritem.' . $array['id']))
+		if (!JFactory::getUser()->authorise('core.admin', 'com_tks_agenda.newsitem.' . $array['id']))
 		{
-			$actions = JAccess::getActionsFromFile(
-				JPATH_ADMINISTRATOR . '/components/com_tks_agenda/access.xml',
-				"/access/section[@name='item']/"
+			$actions = JAccess::getActionsFromFile(JPATH_ADMINISTRATOR . '/components/com_tks_agenda/access.xml', "/access/section[@name='newsitem']/"
 			);
-			$default_actions = JAccess::getAssetRules('com_tks_agenda.item.' . $array['id'])->getData();
+			$default_actions = JAccess::getAssetRules('com_tks_agenda.newsitem.' . $array['id'])->getData();
 			$array_jaccess   = array();
 
+			foreach ($actions as $action)
+			{
+
+				/* 
+					TODO: check nieuws item acl
+				*/
+
+ 
+			//	$array_jaccess[$action->name] = $default_actions[$action->name];
+			}
 
 			$array['rules'] = $this->JAccessRulestoArray($array_jaccess);
 		}
@@ -79,15 +133,14 @@ class tks_agendaTablerecuritem extends JTable
 
 		return parent::bind($array, $ignore);
 	}
-	*/
-=======
+
+	/**
 	 * This function convert an array of JAccessRule objects into an rules array.
 	 *
 	 * @param   array  $jaccessrules  An array of JAccessRule objects.
 	 *
 	 * @return  array
 	 */
->>>>>>> refs/remotes/origin/master
 	private function JAccessRulestoArray($jaccessrules)
 	{
 		$rules = array();
@@ -118,6 +171,17 @@ class tks_agendaTablerecuritem extends JTable
 		if (property_exists($this, 'ordering') && $this->id == 0)
 		{
 			$this->ordering = self::getNextOrder();
+		}
+		
+		// Check if title is unique
+		if (!$this->isUnique('title'))
+		{
+			throw new Exception('Your <b>title</b> item "<b>' . $this->title . '</b>" already exists');
+		}
+		// Check if alias is unique
+		if (!$this->isUnique('alias'))
+		{
+			$this->alias .= '-' . JFilterOutput::stringURLSafe(date('Y-m-d-H:i:s'));
 		}
 		
 
@@ -216,11 +280,7 @@ class tks_agendaTablerecuritem extends JTable
 	{
 		$k = $this->_tbl_key;
 
-<<<<<<< HEAD
-		return 'com_tks_agenda.recuritem.' . (int) $this->$k;
-=======
-		return 'com_tks_agenda.item.' . (int) $this->$k;
->>>>>>> refs/remotes/origin/master
+		return 'com_tks_agenda.newsitem.' . (int) $this->$k;
 	}
 
 	/**
