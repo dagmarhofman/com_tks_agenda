@@ -20,7 +20,7 @@ class tks_agendaController extends JControllerLegacy
 	public function test() {
 		
 		$str = var_export($this, true);
-		JFactory::getApplication()->enqueueMessage( $str, 'notice'); 
+		$this->enqueueMessage( $str, 'notice'); 
 		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=items', false));
 	}
 }

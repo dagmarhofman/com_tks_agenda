@@ -70,9 +70,13 @@ class tks_agendaViewItems extends JViewLegacy
 
 			if ($canDo->get('core.edit') && isset($this->items[0]))
 			{
-				JToolBarHelper::editList('item.edit', 'JTOOLBAR_EDIT');
+								
+					JToolBarHelper::editList('item.edit', 'JTOOLBAR_EDIT' );
+			
 			}
 		}
+
+			
 
 		if ($canDo->get('core.edit.state'))
 		{
@@ -149,9 +153,9 @@ class tks_agendaViewItems extends JViewLegacy
 			'a.`created_by`' => JText::_('COM_TKS_AGENDA_ITEMS_CREATED_BY'),
  			'a.`start`' => JText::_('COM_TKS_AGENDA_ITEMS_START'),
 			'a.`end`' => JText::_('COM_TKS_AGENDA_ITEMS_END'),
-			'b.`recur_id`' => JText::_('JGRID_HEADING_RECUR_ID'),
-			'b.`rstart`' => JText::_('JGRID_HEADING_RECUR_RSTART'),
-			'b.`rend`' => JText::_('JGRID_HEADING_RECUR_REND'),
+			'a.`recur_id`' => JText::_('JGRID_HEADING_RECUR_ID'),
+			'a.`rstart`' => JText::_('JGRID_HEADING_RECUR_RSTART'),
+			'a.`rend`' => JText::_('JGRID_HEADING_RECUR_REND'),
  		);
 	}
 }

@@ -15,8 +15,9 @@ $user       = JFactory::getUser();
 $document = JFactory::getDocument();
 $document->addStyleSheet(JUri::root() . 'media/com_tks_agenda/css/edit.css');
 
-
 ?>
+<h5> RECURRING ITEM </h5>
+
 <script type="text/javascript">
 	js = jQuery.noConflict();
 	js(document).ready(function () {
@@ -40,40 +41,14 @@ $document->addStyleSheet(JUri::root() . 'media/com_tks_agenda/css/edit.css');
 	}
 </script>
 
-
 <form
-	action="<?php echo JRoute::_('index.php?option=com_tks_agenda&layout=edit&id=' . (int) $this->item->id . '&recur_id=' . (int) $this->item->cc . ', ' ); ?>"
+	action="<?php echo JRoute::_('index.php?option=com_tks_agenda&layout=edit&id=' . (int) $this->item->id . '&recur_id=' . 6666 ); ?>"
 	method="post" enctype="multipart/form-data" name="adminForm" id="item-form" class="form-validate">
  <div class="form-inline form-inline-header">
 	<div class="control-group">
 			<div class="control-label"><label id="jform_title-lbl" for="jform_title" class="">
 	Bedrijf</label>
 </div>
-		<div class="controls">
-
-		<?php if(empty($this->item->created_by)){ 
-
-			$profile = JUserHelper::getProfile($user->id);
-
-		$company = $profile->profile5['company'];
-
-
-?>
- 		<input type="text" value="<?php echo $company ?>" disabled/>
-
-				<?php } 
-				else{ 
-
-								$profile = JUserHelper::getProfile($this->item->created_by);
-		$company = $profile->profile5['company'];
-
-
-?>
-		<input class="input-large" type="text" value="<?php echo $company ?>" disabled/>
-
-				<?php } ?>
-
-				</div>
 
 </div>
 </div>
@@ -92,19 +67,6 @@ $document->addStyleSheet(JUri::root() . 'media/com_tks_agenda/css/edit.css');
 				<div class="control-label"><?php echo $this->form->getLabel('catid'); ?></div>
 				<div class="controls"><?php echo $this->form->getInput('catid'); ?></div>
 			</div>
-				<input type="hidden" name="jform[ordering]" value="<?php echo $this->item->ordering; ?>" />
-				<input type="hidden" name="jform[state]" value="<?php echo $this->item->state; ?>" />
-				<input type="hidden" name="jform[checked_out]" value="<?php echo $this->item->checked_out; ?>" />
-				<input type="hidden" name="jform[checked_out_time]" value="<?php echo $this->item->checked_out_time; ?>" />
-
-				<?php if(empty($this->item->created_by)){ ?>
-					<input type="hidden" name="jform[created_by]" value="<?php echo JFactory::getUser()->id; ?>" />
-
-				<?php } 
-				else{ ?>
-					<input type="hidden" name="jform[created_by]" value="<?php echo $this->item->created_by; ?>" />
-
-				<?php } ?>
 
 
 			<div class="control-group">
@@ -115,27 +77,13 @@ $document->addStyleSheet(JUri::root() . 'media/com_tks_agenda/css/edit.css');
 				<div class="control-label"><?php echo $this->form->getLabel('end'); ?></div>
 				<div class="controls"><?php echo $this->form->getInput('end'); ?></div>
 			</div>
-			<div class="control-group">
-				<div class="control-label"><?php echo $this->form->getLabel('recurring'); ?></div>
-				<div class="controls"><?php echo $this->form->getInput('recurring'); ?></div>
-			</div>
-				<div class="control-group">
-				<div class="control-label"><?php echo $this->form->getLabel('recur_type'); ?></div>
-				<div class="controls"><?php echo $this->form->getInput('recur_type'); ?></div>
-			</div>
 
-		<div class="control-group">
+			<div class="control-group">
 				<div class="control-label"><?php echo $this->form->getLabel('end_recur'); ?></div>
 				<div class="controls"><?php echo $this->form->getInput('end_recur'); ?></div>
 			</div>
 
-			
-			<div class="control-group">
-				<div class="control-label"><?php echo $this->form->getLabel('reason'); ?></div>
-				<div class="controls"><?php echo $this->form->getInput('reason'); ?></div>
-			</div>
-
-
+	
 				</fieldset>
 			</div>
 		</div>

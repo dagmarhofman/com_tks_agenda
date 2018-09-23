@@ -265,22 +265,25 @@ if (empty($list['direction']))
 		// Join over the created by field 'created_by'
 		$query2->join('LEFT', '#__users AS created_by ON created_by.id = a.created_by');
 
-
-
-
-			// Add the list ordering clause.
+		// Add the list ordering clause.
 		$orderCol  = $this->state->get('list.ordering');
 		$orderDirn = $this->state->get('list.direction');
-
+	
+		$result = $query->union($query2);
+		
+		//test
+		if($orderCol == 'ordering' ) {
+			$orderCol = 'bb';		
+		}
+		
 		if ($orderCol && $orderDirn)
 		{
-			$query->order($db->escape($orderCol . ' ' . $orderDirn));
+			$result->order($db->escape($orderCol . ' ' . $orderDirn));
 		}
 		
 
-
 		
-		return $query->union($query2);
+		return $result;
 	}
 
 

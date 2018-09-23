@@ -70,9 +70,13 @@ class tks_agendaViewItems extends JViewLegacy
 
 			if ($canDo->get('core.edit') && isset($this->items[0]))
 			{
-				JToolBarHelper::editList('item.edit', 'JTOOLBAR_EDIT');
+								
+					JToolBarHelper::editList('test', 'JTOOLBAR_EDIT' );
+			
 			}
 		}
+
+			
 
 		if ($canDo->get('core.edit.state'))
 		{

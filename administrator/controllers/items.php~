@@ -13,16 +13,18 @@ use Joomla\Utilities\ArrayHelper;
  * @since  1.6
  */
 class tks_agendaControllerItems extends JControllerAdmin
-{ /*
-	public function getState() {
-
-	}
-*/
+{
 	/**
 	 * Method to clone existing Items
 	 *
 	 * @return void
 	 */
+	public function editchoose()
+	{
+		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=recuritem'  , false));
+	}
+
+
 	public function duplicate()
 	{
 		// Check for request forgeries

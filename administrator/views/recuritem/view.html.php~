@@ -11,7 +11,7 @@ jimport('joomla.application.component.view');
  *
  * @since  1.6
  */
-class tks_agendaViewItem extends JViewLegacy
+class tks_agendaViewRecuritem extends JViewLegacy
 {
 	protected $state;
 
@@ -31,7 +31,7 @@ class tks_agendaViewItem extends JViewLegacy
 	public function display($tpl = null)
 	{
 		$this->state = $this->get('State');
-		$this->item  = $this->get('Item'); // 
+		$this->item  = $this->get('RecurItem');
 		$this->form  = $this->get('Form');
 
 		// Check for errors.

@@ -14,11 +14,8 @@ use Joomla\Utilities\ArrayHelper;
  */
 class tks_agendaControllerItems extends JControllerAdmin
 {
-	/**
-	 * Method to clone existing Items
-	 *
-	 * @return void
-	 */
+
+
 	public function duplicate()
 	{
 		// Check for request forgeries
