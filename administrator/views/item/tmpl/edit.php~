@@ -14,12 +14,8 @@ $user       = JFactory::getUser();
 // Import CSS
 $document = JFactory::getDocument();
 $document->addStyleSheet(JUri::root() . 'media/com_tks_agenda/css/edit.css');
-<<<<<<< HEAD
 
-var_export($this->item);
 
-=======
->>>>>>> refs/remotes/origin/master
 ?>
 <script type="text/javascript">
 	js = jQuery.noConflict();

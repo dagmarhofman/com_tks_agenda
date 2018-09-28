@@ -2,7 +2,7 @@
 
  $(document).ready(function() {
 
-
+ 
         $('.radio.btn-group label').addClass('btn');
         $(".btn-group label:not(.active)").click(function()
             {
@@ -39,7 +39,7 @@
  	var options = {
 		events_source: 'index.php?option=com_tks_agenda&view=items&format=json',
 		view: 'month',
-		tmpl_path: './components/com_tks_agenda/assets/tmpls/',
+		tmpl_path: '~dev/public_html/components/com_tks_agenda/assets/tmpls/',
 		tmpl_cache: false,
 		day: 'now',
 		language: 'nl-NL',

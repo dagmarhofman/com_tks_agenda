@@ -17,10 +17,21 @@ class tks_agendaController extends JControllerLegacy
 
 		return $this;
 	}
-	public function test() {
+	public function item_edit_redirect() {
+
+		$ids = $this->input->get( 'cid' );
 		
-		$str = var_export($this, true);
-		JFactory::getApplication()->enqueueMessage( $str, 'notice'); 
-		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=items', false));
+		if( count($ids) < 1 ) {
+			JFactory::getApplication()->enqueueMessage( 'Selecteer slechts een item om te wijzigen.', 'error'); 
+			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=items', false));
+			return;			
+		} else if (count($ids) > 1 ) {
+			JFactory::getApplication()->enqueueMessage( 'Selecteer slechts een item om te wijzigen.', 'error');
+			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=items', false));
+			return; 		
+		}	
+		
+		JFactory::getApplication()->enqueueMessage( 'Wijzig', 'notice'); 
+		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&layout=edit&view=item&id=' . $ids[0] , false));
 	}
 }

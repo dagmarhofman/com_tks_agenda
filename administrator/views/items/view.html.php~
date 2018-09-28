@@ -65,42 +65,26 @@ class tks_agendaViewItems extends JViewLegacy
 			if ($canDo->get('core.create'))
 			{
 				JToolBarHelper::addNew('item.add', 'JTOOLBAR_NEW');
-				//JToolbarHelper::custom('items.duplicate', 'copy.png', 'copy_f2.png', 'JTOOLBAR_DUPLICATE', true);
 			}
-
 			if ($canDo->get('core.edit') && isset($this->items[0]))
 			{
-								
-					JToolBarHelper::editList('item.edit', 'JTOOLBAR_EDIT' );
-			
+					JToolBarHelper::editList('item_edit_redirect', 'JTOOLBAR_EDIT' );
 			}
 		}
-
-			
-
 		if ($canDo->get('core.edit.state'))
 		{
 			if (isset($this->items[0]->state))
 			{
 				JToolBarHelper::divider();
-				//JToolBarHelper::custom('items.publish', 'publish.png', 'publish_f2.png', 'JTOOLBAR_PUBLISH', true);
-				//JToolBarHelper::custom('items.unpublish', 'unpublish.png', 'unpublish_f2.png', 'JTOOLBAR_UNPUBLISH', true);
 			}
 			elseif (isset($this->items[0]))
 			{
-				// If this component does not use state then show a direct delete button as we can not trash
 				JToolBarHelper::deleteList('', 'items.delete', 'JTOOLBAR_DELETE');
 			}
 
 			if (isset($this->items[0]->state))
 			{
 				JToolBarHelper::divider();
-			//	JToolBarHelper::archiveList('items.archive', 'JTOOLBAR_ARCHIVE');
-			}
-
-			if (isset($this->items[0]->checked_out))
-			{
-				//JToolBarHelper::custom('items.checkin', 'checkin.png', 'checkin_f2.png', 'JTOOLBAR_CHECKIN', true);
 			}
 		}
 

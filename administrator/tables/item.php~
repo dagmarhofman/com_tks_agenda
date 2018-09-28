@@ -18,7 +18,7 @@ class tks_agendaTableitem extends JTable
 	 */
 	public function __construct(&$db)
 	{
-		parent::__construct('#__tks_agenda_items a JOIN #__tks_agenda_recurring b on a.id = b.rid', 'id', $db);
+		parent::__construct('#__tks_agenda_items', 'id', $db);
 	}
 
 	/**
@@ -275,6 +275,8 @@ class tks_agendaTableitem extends JTable
 		$this->load($pk);
 		$result = parent::delete($pk);
 		
+		JFactory::getApplication()->enqueueMessage( ' PK -> ' . $pk , 'notice' );
+				
 		return $result;
 	}
 }

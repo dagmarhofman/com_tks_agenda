@@ -32,7 +32,7 @@ class tks_agendaViewItem extends JViewLegacy
 	{
 		$this->state = $this->get('State');
 <<<<<<< HEAD
-		$this->item  = $this->get('Item'); // 
+		$this->item  = $this->get('Item');  
 =======
 		$this->item  = $this->get('Item'); // ?????
 		$this->recur_item = $this->get('recurItem');

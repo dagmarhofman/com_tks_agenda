@@ -21,69 +21,6 @@ class tks_agendaTablerecuritem extends JTable
 		parent::__construct('#__tks_agenda_recurring', 'id', $db);
 	}
 
-
-	/**
-<<<<<<< HEAD
-	 * Overloaded bind function to pre-process the params.
-	 *
-	 * @param   array  $array   Named array
-	 * @param   mixed  $ignore  Optional array or list of parameters to ignore
-	 *
-	 * @return  null|string  null is operation was satisfactory, otherwise returns an error
-	 *
-	 * @see     JTable:bind
-	 * @since   1.5
-	 */
-	 /*
-	public function bind($array, $ignore = '')
-	{
-		$input = JFactory::getApplication()->input;
-		$task = $input->getString('task', '');
-	 
-		if (isset($array['params']) && is_array($array['params']))
-		{
-			$registry = new JRegistry;
-			$registry->loadArray($array['params']);
-			$array['params'] = (string) $registry;
-		}
-
-		if (isset($array['metadata']) && is_array($array['metadata']))
-		{
-			$registry = new JRegistry;
-			$registry->loadArray($array['metadata']);
-			$array['metadata'] = (string) $registry;
-		}
-
-		if (!JFactory::getUser()->authorise('core.admin', 'com_tks_agenda.recuritem.' . $array['id']))
-		{
-			$actions = JAccess::getActionsFromFile(
-				JPATH_ADMINISTRATOR . '/components/com_tks_agenda/access.xml',
-				"/access/section[@name='item']/"
-			);
-			$default_actions = JAccess::getAssetRules('com_tks_agenda.item.' . $array['id'])->getData();
-			$array_jaccess   = array();
-
-
-			$array['rules'] = $this->JAccessRulestoArray($array_jaccess);
-		}
-
-		// Bind the rules for ACL where supported.
-		if (isset($array['rules']) && is_array($array['rules']))
-		{
-			$this->setRules($array['rules']);
-		}
-
-		return parent::bind($array, $ignore);
-	}
-	*/
-=======
-	 * This function convert an array of JAccessRule objects into an rules array.
-	 *
-	 * @param   array  $jaccessrules  An array of JAccessRule objects.
-	 *
-	 * @return  array
-	 */
->>>>>>> refs/remotes/origin/master
 	private function JAccessRulestoArray($jaccessrules)
 	{
 		$rules = array();
@@ -212,12 +149,8 @@ class tks_agendaTablerecuritem extends JTable
 	{
 		$k = $this->_tbl_key;
 
-<<<<<<< HEAD
-		return 'com_tks_agenda.recuritem.' . (int) $this->$k;
-=======
 		return 'com_tks_agenda.item.' . (int) $this->$k;
->>>>>>> refs/remotes/origin/master
-	}
+ 	}
 
 	/**
 	 * Returns the parent asset's id. If you have a tree structure, retrieve the parent's id using the external key field

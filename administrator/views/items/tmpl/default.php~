@@ -190,7 +190,7 @@ if (!empty($this->extra_sidebar))
 					else:
 				?>
 						<td class="hidden-phone">
-							<?php echo JHtml::_('grid.id', $i, $item->cc); ?>
+							<?php echo JHtml::_('grid.recurid', $i, $item->cc); ?>
 						</td>
 				<?php
 					endif;
@@ -237,38 +237,13 @@ if (!empty($this->extra_sidebar))
 				</b>
 				</td>
 
-<<<<<<< HEAD
-				<?php
-					if( $item->recurring == "Yes"):
-				?>
-			 	<td>
-=======
 				<td>
->>>>>>> refs/remotes/origin/master
 				<b style="color: blue;">		
 					<?php echo $item->recur_type; ?>
 				</b>
 				</td>
-<<<<<<< HEAD
-				<?php
-				else:
-				?>
-			 	<td>
-				<b style="color: blue;">		
-					<?php echo "geen"; ?>
-				</b>
-				</td>
-				
-				<?php
-					endif;				
-				?>
-
-
-
-=======
 		
->>>>>>> refs/remotes/origin/master
-
+				<?php else: ?>
 							 
 			 	<td>
 					<?php echo $item->ee; ?>
