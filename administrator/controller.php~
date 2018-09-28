@@ -32,14 +32,20 @@ class tks_agendaController extends JControllerLegacy
 		}	
 		
 		JFactory::getApplication()->enqueueMessage( 'Wijzig', 'notice'); 
-		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&layout=edit&view=item&id=' . $ids[0] , false));
+		$id = $ids[0];
+		if( $id < 536870911 ) {
+			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&layout=edit&view=item&id=' . $ids[0] , false));
+		} else {
+			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&layout=edit&view=recuritem&id=' . $ids[0] , false));
+		}
+
+
 	}
 	
 	public function item_delete_redirect() {
 	
 		$ids = $this->input->get( 'cid' );
 
-		JFactory::getApplication()->enqueueMessage( 'Delete ' . implode( ' ' , $ids) , 'notice'); 
 		/*
 			de recurring ids beginnen op een hoog getal!
 			de kleine getallen in $ids zijn dan gewone afspraken.
@@ -68,6 +74,9 @@ class tks_agendaController extends JControllerLegacy
 		   $db->setQuery($query);
 		   $db->execute();
 		}
+
+		JFactory::getApplication()->enqueueMessage( 'Items deleted' , 'notice'); 
+		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&layout=edit&view=items', false));
 		
 		return;		
 	}

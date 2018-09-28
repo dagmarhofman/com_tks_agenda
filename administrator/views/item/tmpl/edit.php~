@@ -42,11 +42,7 @@ $document->addStyleSheet(JUri::root() . 'media/com_tks_agenda/css/edit.css');
 
 
 <form
-<<<<<<< HEAD
-	action="<?php echo JRoute::_('index.php?option=com_tks_agenda&layout=edit&id=' . (int) $this->item->id . '&recur_id=' . (int) $this->item->cc . ', ' ); ?>"
-=======
 	action="<?php echo JRoute::_('index.php?option=com_tks_agenda&layout=edit&id=' . (int) $this->item->id .  ', ' ); ?>"
->>>>>>> refs/remotes/origin/master
 	method="post" enctype="multipart/form-data" name="adminForm" id="item-form" class="form-validate">
  <div class="form-inline form-inline-header">
 	<div class="control-group">

@@ -190,7 +190,7 @@ if (!empty($this->extra_sidebar))
 					else:
 				?>
 						<td class="hidden-phone">
-							<?php echo JHtml::_('grid.recurid', $i, $item->cc); ?>
+							<?php echo JHtml::_('grid.id', $i, $item->cc); ?>
 						</td>
 				<?php
 					endif;

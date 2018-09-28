@@ -43,13 +43,11 @@ class tks_agendaControllerItem extends JControllerForm
 			$db->setQuery($query);
 			$rows = $db->loadObjectList();
 
-			if ($rows) {
- 
-			JFactory::getApplication()->enqueueMessage('Als de datum en tijd na het opslaan gewijzigd word.. Dient de boeking opnieuw te worden gemaakt verwijder dan deze boeking', 'warning');
-
-			} else {
-
-				
+			if ($rows) 
+			{
+				JFactory::getApplication()->enqueueMessage('Als de datum en tijd na het opslaan gewijzigd word.. Dient de boeking opnieuw te worden gemaakt verwijder dan deze boeking', 'warning');
+			} else 
+			{				
 					$startDate = new DateTime($item->start,new DateTimeZone("Europe/Amsterdam"));
 					$endDate = new DateTime($item->end,new DateTimeZone("Europe/Amsterdam"));
 					$endRecurring = new DateTime($item->end_recur,new DateTimeZone("Europe/Amsterdam"));
@@ -80,12 +78,12 @@ class tks_agendaControllerItem extends JControllerForm
 					}
 						$values[] = $db->quote($id).', '.$db->quote($startDate->format("Y-m-d H:i:s")).' , '.$db->quote($endDate->format("Y-m-d H:i:s"));
 					
-					} while ($startDate <= $endRecurring);
+				} while ($startDate <= $endRecurring);
 
-		 			$query->values(implode('), (', $values));
-		 			$db->setQuery($query);
-					$db->execute();
-
+		 		$query->values(implode('), (', $values));
+		 		$db->setQuery($query);
+				$db->execute();
 			}
+		}
 	}
 }

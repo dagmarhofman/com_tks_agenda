@@ -110,10 +110,8 @@ class tks_agendaModelRecuritem extends JModelAdmin
 		
 		if ($item = parent::getItem($pk))
 		{
-			// Do any procesing on fields here if needed
 		}
 
-		$item->digi =  var_export($app->input, true);
 		return $item;
 	}
 

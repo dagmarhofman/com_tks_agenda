@@ -76,7 +76,7 @@ class tks_agendaModelRecuritem extends JModelAdmin
 	protected function loadFormData()
 	{
 		// Check the session for previously entered form data.
-		$data = JFactory::getApplication()->getUserState('com_tks_agenda.edit.recuritem.data', array());
+		$data = JFactory::getApplication()->getUserState('com_tks_agenda.edit.item.data', array());
 
 		if (empty($data))
 		{
@@ -105,15 +105,13 @@ class tks_agendaModelRecuritem extends JModelAdmin
 	{
 
 		$app = JFactory::getApplication();
-		$recurring_id = $app->input->getInt('recur_id', -1);
+		$recurring_id = $app->input->getInt('id');
 			
 		
 		if ($item = parent::getItem($pk))
 		{
-			// Do any procesing on fields here if needed
 		}
 
-		$item->digi =  var_export($app->input, true);
 		return $item;
 	}
 

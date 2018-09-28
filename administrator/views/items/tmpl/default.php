@@ -246,10 +246,10 @@ if (!empty($this->extra_sidebar))
 				<?php else: ?>
 							 
 			 	<td>
-					<?php echo $item->ee; ?>
+					<?php echo $item->rstart; ?>
 				</td>
 				<td>
-					<?php echo $item->ff; ?>
+					<?php echo $item->rend; ?>
 				</td>
 				
 				

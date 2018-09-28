@@ -15,7 +15,6 @@ $user       = JFactory::getUser();
 $document = JFactory::getDocument();
 $document->addStyleSheet(JUri::root() . 'media/com_tks_agenda/css/edit.css');
 
-var_export($this->item);
 ?>
 <h5> RECURRING ITEM </h5>
 

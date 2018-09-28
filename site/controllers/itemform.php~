@@ -437,7 +437,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
  				$db->quoteName('id') . ' = ' . $db->quote( $recurring_id )
 			);
 
-			$query->update($db->quoteName('#__user_profiles'))->set($fields)->where($conditions);
+			$query->update($db->quoteName('#__tks_agenda_recurring'))->set($fields)->where($conditions);
 			
 			
 			

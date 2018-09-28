@@ -83,6 +83,7 @@ class tks_agendaControllerItem extends JControllerForm
 		 		$query->values(implode('), (', $values));
 		 		$db->setQuery($query);
 				$db->execute();
+				JFactory::getApplication()->enqueueMessage( 'Items -> ' . implode('), (', $values) , 'notice'); 
 			}
 		}
 	}

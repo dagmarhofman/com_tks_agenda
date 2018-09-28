@@ -32,7 +32,14 @@ class tks_agendaController extends JControllerLegacy
 		}	
 		
 		JFactory::getApplication()->enqueueMessage( 'Wijzig', 'notice'); 
-		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&layout=edit&view=item&id=' . $ids[0] , false));
+		$id = $ids[0];
+		if( $id < 536870911 ) {
+			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&layout=edit&view=item&id=' . $ids[0] , false));
+		} else {
+			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&layout=edit&view=recuritem&id=' . $ids[0] , false));
+		}
+
+
 	}
 	
 	public function item_delete_redirect() {
@@ -69,7 +76,7 @@ class tks_agendaController extends JControllerLegacy
 		}
 
 		JFactory::getApplication()->enqueueMessage( 'Items deleted' , 'notice'); 
-		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&layout=edit&view=item&id=' . $ids[0] , false));
+		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&layout=edit&view=items', false));
 		
 		return;		
 	}

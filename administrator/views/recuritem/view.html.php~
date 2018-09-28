@@ -31,7 +31,7 @@ class tks_agendaViewRecuritem extends JViewLegacy
 	public function display($tpl = null)
 	{
 		$this->state = $this->get('State');
-		$this->item  = $this->get('RecurItem');
+		$this->item  = $this->get('Item');
 		$this->form  = $this->get('Form');
 
 		// Check for errors.

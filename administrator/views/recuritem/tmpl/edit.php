@@ -78,11 +78,6 @@ $document->addStyleSheet(JUri::root() . 'media/com_tks_agenda/css/edit.css');
 				<div class="controls"><?php echo $this->form->getInput('end'); ?></div>
 			</div>
 
-			<div class="control-group">
-				<div class="control-label"><?php echo $this->form->getLabel('end_recur'); ?></div>
-				<div class="controls"><?php echo $this->form->getInput('end_recur'); ?></div>
-			</div>
-
 	
 				</fieldset>
 			</div>
