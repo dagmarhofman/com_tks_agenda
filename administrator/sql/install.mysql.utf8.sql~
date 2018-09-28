@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `#__tks_agenda_items` (
 
 
 CREATE TABLE IF NOT EXISTS `#__tks_agenda_recurring` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `rid` int(11) NOT NULL,
   `rstart` datetime NOT NULL,
   `rend` datetime NOT NULL,

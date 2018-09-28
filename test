@@ -1,1 +1,1 @@
-JFactory::getApplication()->enqueueMessage('Als de datum en tijd na het opslaan gewijzigd word.. Dient de boeking opnieuw te worden gemaakt verwijder dan deze boeking', 'warning');
+536870912

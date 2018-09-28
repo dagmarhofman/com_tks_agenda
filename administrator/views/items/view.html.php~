@@ -7,9 +7,7 @@ jimport('joomla.application.component.view');
 class tks_agendaViewItems extends JViewLegacy
 {
 	protected $items;
-
 	protected $pagination;
-
 	protected $state;
 
 	/**
@@ -79,7 +77,8 @@ class tks_agendaViewItems extends JViewLegacy
 			}
 			elseif (isset($this->items[0]))
 			{
-				JToolBarHelper::deleteList('', 'items.delete', 'JTOOLBAR_DELETE');
+				//JToolBarHelper::deleteList('', 'items.delete', 'JTOOLBAR_DELETE');
+				JToolBarHelper::deleteList('item_delete_redirect', 'JTOOLBAR_DELETE' );				
 			}
 
 			if (isset($this->items[0]->state))
