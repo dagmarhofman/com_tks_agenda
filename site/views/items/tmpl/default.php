@@ -71,7 +71,6 @@ $canDelete  = $user->authorise('core.delete', 'com_tks_agenda');
 
 <div class="modal hide fade" id="events-modal">
     <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h3>Reservering details</h3>
     </div>
     <div class="modal-body" style="height: 400px">

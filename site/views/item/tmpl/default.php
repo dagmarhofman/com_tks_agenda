@@ -93,7 +93,8 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
 
 ?>
 
-
+   <div class="modal-footer">
+ 
 		<a class="btn" href="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.edit&id='. $this->item->id . '&mode=update' . '&recur_id=' . $recurring_id   ); ?>"><?php echo JText::_("Bewerk"); ?></a>
 <?php 
 
@@ -122,7 +123,6 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
 ?>
 
    
-    <div class="modal-footer">
         <a class="btn sluit-button" href="#"> <?php echo JText::_("Sluit venster"); ?> </a>
     </div>
     
