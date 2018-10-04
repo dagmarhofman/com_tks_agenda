@@ -30,6 +30,13 @@ class tks_agendaControllerRecurItem extends JControllerForm
 		
 		$task = $this->getTask();
 		$item = $model->getItem();
+		
+		
+		// am i in edit layout ??
+		if( JFactory::getApplication()->input->get('layout') == 'edit' ) {
+			JFactory::getApplication()->enqueueMessage('DEBUG: edit RECURITEM called.', 'notice');			
+			return;		
+		
 
 		if($task == 'apply' || $task == 'save' && $item->recurring == true){
 
@@ -86,8 +93,7 @@ class tks_agendaControllerRecurItem extends JControllerForm
 		 			$query->values(implode('), (', $values));
 		 			$db->setQuery($query);
 					$db->execute();
-
-			}
+			} 
   		} 		 
 	}
 }

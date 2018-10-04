@@ -31,12 +31,11 @@ class tks_agendaController extends JControllerLegacy
 			return; 		
 		}	
 		
-		JFactory::getApplication()->enqueueMessage( 'Wijzig', 'notice'); 
 		$id = $ids[0];
 		if( $id < 536870911 ) {
 			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&layout=edit&view=item&id=' . $ids[0] , false));
 		} else {
-			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&layout=edit&view=recuritem&id=' . $ids[0] , false));
+			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&layout=recur_edit&view=item&id=' . $ids[0] , false));
 		}
 
 

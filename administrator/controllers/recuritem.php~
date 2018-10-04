@@ -35,14 +35,12 @@ class tks_agendaControllerRecurItem extends JControllerForm
 
 	 		$db = JFactory::getDbo();
 			$query = $db->getQuery(true);
-			
-			//DAGMAR
-			$id = $item->cc;
+			$id = $item->id;
 
  
 			$query->select('id,rid')
 			      ->from($db->quoteName('#__tks_agenda_recurring'))
-			      ->where($db->quoteName('id').'='.$id);
+			      ->where($db->quoteName('rid').'='.$id);
 			$db->setQuery($query);
 			$rows = $db->loadObjectList();
 
@@ -88,8 +86,7 @@ class tks_agendaControllerRecurItem extends JControllerForm
 		 			$query->values(implode('), (', $values));
 		 			$db->setQuery($query);
 					$db->execute();
-
-			}
+			} 
   		} 		 
 	}
 }
