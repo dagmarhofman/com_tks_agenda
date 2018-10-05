@@ -29,15 +29,56 @@ class tks_agendaControllerItem extends JControllerForm
 	{	
 		$task = $this->getTask();
 		$item = $model->getItem();
+		// uit item halen ?!
+		$session = &JFactory::getSession();
+		$id = $session->get("last_edit_redirect_id");		
 
-		// am i in edit layout ??
-		if( JFactory::getApplication()->input->get('layout') == 'edit' && JFactory::getApplication()->input->get('recur_edit') == 'false' ) {
-			JFactory::getApplication()->enqueueMessage('DEBUG: edit ITEM called.', 'notice');			
+		$start = $item->start; //,new DateTimeZone("Europe/Amsterdam"))->format('Y-m-d H:i:s');
+		$end = $item->end; //,new DateTimeZone("Europe/Amsterdam"))->format('Y-m-d H:i:s');
+		
+		
+		$layout = JFactory::getApplication()->input->get('layout');		
+
+		if( $layout == 'edit' && $id < 536870911 ) {
+			//JFactory::getApplication()->enqueueMessage('DEBUG: edit ITEM called.' . $id , 'notice');			
+
+			$db = JFactory::getDbo();
+			$query = $db->getQuery(true);
+			$fields = array(
+			    $db->quoteName('start') . ' = \'' . $start . '\'',
+			    $db->quoteName('end') . ' = \'' . $end . '\''
+			);
+			$conditions = array(
+			    $db->quoteName('id') . ' = ' . $id
+			);
+			$query->update($db->quoteName('#__tks_agenda_items'))->set($fields)->where($conditions);
+			$db->setQuery($query);
+			$result = $db->execute();
+
+
+			//redirect according to $task			
+			
+			$this->setRedirect( JRoute::_('index.php?option=com_tks_agenda'), false );
 			return;		
 		}
-		// am i in edit layout ??
-		if( JFactory::getApplication()->input->get('layout') == 'edit'  && JFactory::getApplication()->input->get('recur_edit') == 'true') {
-			JFactory::getApplication()->enqueueMessage('DEBUG: edit RECURITEM called.', 'notice');			
+		if( $layout == 'edit' && $id >= 536870911) {
+			//JFactory::getApplication()->enqueueMessage('DEBUG: edit RECURITEM called.' . $id , 'notice');			
+
+			$db = JFactory::getDbo();
+			$query = $db->getQuery(true);
+			$fields = array(
+			    $db->quoteName('rstart') . ' = \'' . $start . '\'') ,
+			    $db->quoteName('rend') . ' = \'' . $end . '\'' )
+			);
+			$conditions = array(
+			    $db->quoteName('id') . ' = ' . $id
+			);
+			$query->update($db->quoteName('#__tks_agenda_recurring'))->set($fields)->where($conditions);
+			$db->setQuery($query);
+			$result = $db->execute();
+
+
+			$this->setRedirect( JRoute::_('index.php?option=com_tks_agenda'), false );
 			return;		
 		}
 

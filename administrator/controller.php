@@ -31,13 +31,12 @@ class tks_agendaController extends JControllerLegacy
 			return; 		
 		}	
 		
-		$id = $ids[0];
-		if( $id < 536870911 ) {
-			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&layout=edit&recur_edit=false&view=item&id=' . $ids[0] , false));
-		} else {
-			$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&layout=edit&recur_edit=true&view=item&id=' . $ids[0] , false));
-		}
+		
 
+		$session = &JFactory::getSession();
+		$session->set("last_edit_redirect_id", $ids[0] );
+
+		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&layout=edit&view=item' , false));
 
 	}
 	
