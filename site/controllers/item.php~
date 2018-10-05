@@ -63,8 +63,11 @@ class tks_agendaControllerItem extends tks_agendaController
 
 		$recurring_id = $app->input->get('recur_id', -1); 
 		
+		
+		$app->setUserState( 'com_tks_agenda.edit.item.recurid', $recurring_id );
+
 		// Redirect to the edit screen.
-		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit' . '&recur_id=' . $recurring_id , false));
+		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit'  , false));
 	}
  
 	/**
@@ -114,7 +117,7 @@ class tks_agendaControllerItem extends tks_agendaController
 			if (!$item)
 			{
 				// If there isn't any menu item active, redirect to list view
-				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=items', false));
+				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda', false));
 			}
 			else
 			{
@@ -184,7 +187,7 @@ class tks_agendaControllerItem extends tks_agendaController
 			if (!$item)
 			{
 				// If there isn't any menu item active, redirect to list view
-				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=items', false));
+				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda', false));
 			}
 			else
 			{
