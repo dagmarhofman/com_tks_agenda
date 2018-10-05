@@ -132,8 +132,8 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
          });
 			function sluitItem() {
 	
+            window.location.href = '<?php echo JRoute::_('index.php?option=com_tks_agenda&view=items', false) ?>'; 		
 				window.location.reload(true);	
-//            window.location.href = '<?php echo JRoute::_('index.php?option=com_tks_agenda&view=items', false) ?>'; 		
      		}
 </script>
     
