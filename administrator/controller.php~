@@ -4,6 +4,14 @@ defined('_JEXEC') or die;
 
 jimport('joomla.application.component.controller');
 
+/**
+ * @version    1.0.1
+ * @package    com_tks_agenda
+ * @author     Stephan Zuidberg <stephan@takties.nl>
+ * @copyright  Copyright (C) 2018. Alle rechten voorbehouden.
+ * @license    GNU General Public License versie 2 of later; See LICENSE.txt
+ */
+
 class tks_agendaController extends JControllerLegacy
 {
 	public function display($cachable = false, $urlparams = false)
@@ -35,15 +43,6 @@ class tks_agendaController extends JControllerLegacy
 
 		$session = &JFactory::getSession();
 		$session->set("last_edit_redirect_id", $ids[0] );
-
-		$app   = JFactory::getApplication();		
-		$input = $app->input;
-		$jform = $input->get('jform', array(), 'ARRAY');
-
-		
-
-		$session->set("last_edit_redirect_start", $jform['start'] );
-		$session->set("last_edit_redirect_end", $jform['end'] );
 
 		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&layout=edit&view=item' , false));
 

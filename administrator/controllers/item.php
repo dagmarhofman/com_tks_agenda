@@ -23,12 +23,20 @@ class tks_agendaControllerItem extends JControllerForm
 		parent::__construct();
 	}
 
-	
+	/**
+	 *
+	 * PostSaveHook edits items or creates them.
+	 *
+	 * @param	JModelLegacy	$model 		The data model object.
+	 *	@param	array				$validData	The validated data.
+	 *
+	 */	
 
 	protected function postSaveHook(JModelLegacy $model, $validData = array())
 	{	
 		$task = $this->getTask();
 		$item = $model->getItem();
+
 		// uit item halen ?!
 		$session = &JFactory::getSession();
 		$id = $session->get("last_edit_redirect_id");		

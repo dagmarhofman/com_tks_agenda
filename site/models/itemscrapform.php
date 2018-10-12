@@ -1,4 +1,11 @@
 <?php
+/**
+ * @version    1.0.1
+ * @package    tks_agenda
+ * @author     Dagmar Hofman <stephan@takties.nl>
+ * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
+ * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
+ */
 
 // No direct access.
 defined('_JEXEC') or die;

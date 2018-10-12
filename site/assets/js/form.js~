@@ -7,7 +7,6 @@
 	};
 	document.getElementById('jform_recurring1').onclick = function () {
 	    document.getElementById('recurring_attrib').style.visibility = "hidden";
-	    document.getElementById('jform[recur_type]').value = "geen";
 	};
 
         // Turn radios into btn-group

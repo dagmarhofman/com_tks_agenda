@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `#__tks_agenda_items` (
   `end` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `recurring` varchar(255) NOT NULL,
   `recur_type` varchar(255) NOT NULL,
-  `end_recur` datetime NOT NULL,
+  `end_recur` date NOT NULL,
   `reason` varchar(1000) NOT NULL,
   `recurring_id` int NOT NULL,
   /*CONSTRAINT `fk_agenda_recur` FOREIGN KEY (recurring_id) REFERENCES `#__tks_agenda_recurring`(id),*/

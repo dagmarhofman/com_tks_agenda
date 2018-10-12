@@ -275,8 +275,6 @@ class tks_agendaTableitem extends JTable
 		$this->load($pk);
 		$result = parent::delete($pk);
 		
-		JFactory::getApplication()->enqueueMessage( ' PK -> ' . $pk , 'notice' );
-				
 		return $result;
 	}
 }

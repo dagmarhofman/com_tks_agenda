@@ -6,7 +6,10 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.controllerform');
 
 /**
- * Item controller class.
+ * Recuritem controller class.
+ *
+ * NOTE: recuritem transactions now will be done trough the ITEM controller.
+ * please check for obsoleteness.
  *
  * @since  1.6
  */
@@ -24,7 +27,15 @@ class tks_agendaControllerRecurItem extends JControllerForm
 	}
 
 	
-
+	/**
+	 *
+	 * PostSaveHook edits items or creates them.
+	 * CHECK if this function is obsolete.
+	 *
+	 * @param	JModelLegacy	$model 		The data model object.
+	 *	@param	array				$validData	The validated data.
+	 *
+	 */	
 	protected function postSaveHook(JModelLegacy $model, $validData = array())
 	{
 		

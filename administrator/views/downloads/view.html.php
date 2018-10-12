@@ -6,6 +6,11 @@ defined('_JEXEC') or die;
 
 jimport('joomla.application.component.view');
 
+/**
+ * Downloads view
+ *
+ * @since  1.6
+ */
 class tks_agendaViewDownloads extends JViewLegacy
 {
 	protected $items;

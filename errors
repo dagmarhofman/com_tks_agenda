@@ -1,0 +1,529 @@
+Collecting files .. OK
+Initializing parser .. OK
+Parsing files
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/models/recuritem.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/models/fields/custom_field.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/models/fields/filemultiple.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/models/fields/createdby.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/models/fields/timeupdated.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/models/fields/listfiles.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/models/fields/modifiedby.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/models/fields/foreignkey.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/models/fields/timecreated.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/models/download.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/models/items.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/models/newsitem.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/models/item.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/models/tks_agenda.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/models/downloads.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/models/newsitems.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/helpers/tks_agenda.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/views/items/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/views/items/tmpl/default.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/views/recuritem/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/views/recuritem/tmpl/edit.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/views/newsitems/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/views/newsitems/tmpl/default.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/views/download/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/views/download/tmpl/edit.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/views/item/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/views/item/tmpl/edit.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/views/newsitem/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/views/newsitem/tmpl/edit.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/views/downloads/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/views/downloads/tmpl/default.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/tables/recuritem.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/tables/download.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/tables/newsitem.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/tables/item.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/controller.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/controllers/recuritem.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/controllers/download.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/controllers/items.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/controllers/newsitem.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/controllers/item.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/controllers/downloads.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/controllers/newsitems.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/administrator/tks_agenda.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/newsitemform.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/fields/submit.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/fields/custom_field.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/fields/filemultiple.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/fields/datetime.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/fields/createdby.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/fields/timeupdated.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/fields/listfiles.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/fields/modifiedby.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/fields/foreignkey.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/fields/timecreated.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/download.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/items.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/newsitem.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/item.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/itemscrapform.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/downloads.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/newsitems.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/itemform.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/models/downloadform.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/helpers/tks_agenda.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/items/view.json.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/items/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/items/tmpl/default_filter.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/items/tmpl/default.old.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/items/tmpl/default.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/newsitems/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/newsitems/tmpl/default_filter.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/newsitems/tmpl/default.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/itemform/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/itemform/tmpl/default.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/download/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/download/tmpl/edit.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/newsitemform/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/newsitemform/tmpl/default.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/item/view.raw.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/item/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/item/tmpl/default.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/item/tmpl/edit.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/itemscrapform/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/itemscrapform/tmpl/default.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/newsitem/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/newsitem/tmpl/default.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/newsitem/tmpl/edit.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/tks_agenda/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/tks_agenda/tmpl/default.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/portal/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/portal/tmpl/default.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/downloads/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/downloads/tmpl/default_filter.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/downloads/tmpl/default.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/downloadform/view.html.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/views/downloadform/tmpl/default.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/tables/download.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/tables/newsitem.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/tables/item.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/controller.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/router.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/controllers/newsitemform.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/controllers/download.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/controllers/items.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/controllers/newsitem.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/controllers/item.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/controllers/itemscrapform.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/controllers/downloads.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/controllers/newsitems.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/controllers/itemform.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/controllers/downloadform.php[39m
+Parsing [32m/home/takties/develop/tks_agenda/com_tks_agenda/site/tks_agenda.php[39m
+Storing cache in "/home/takties/develop/tks_agenda/com_tks_agenda/output/build" .. OK
+Load cache                                                         ..    0.056s
+Preparing template "clean"                                         ..    0.017s
+Preparing 17 transformations                                       ..    0.000s
+Build "elements" index                                             ..    0.001s
+Replace textual FQCNs with object aliases                          ..    0.028s
+Resolve @link and @see tags in descriptions                        ..    0.001s
+Enriches inline example tags with their sources                    ..    0.001s
+Build "packages" index                                             ..    0.004s
+Build "namespaces" index and add namespaces to "elements"          ..    0.001s
+Collect all markers embedded in tags                               ..    0.000s
+Transform analyzed project into artifacts                          .. 
+Applying 17 transformations
+  Initialize writer "phpDocumentor\Plugin\Core\Transformer\Writer\FileIo"
+  Initialize writer "phpDocumentor\Plugin\Twig\Writer\Twig"
+  Initialize writer "phpDocumentor\Plugin\Graphs\Writer\Graph"
+  Execute transformation using writer "FileIo"
+  Execute transformation using writer "FileIo"
+  Execute transformation using writer "FileIo"
+  Execute transformation using writer "FileIo"
+  Execute transformation using writer "FileIo"
+  Execute transformation using writer "twig"
+  Execute transformation using writer "twig"
+  Execute transformation using writer "twig"
+[2018-10-11 14:41:02] phpDocumentor.ALERT: Fatal Error (E_ERROR): Uncaught TypeError: Argument 1 passed to Monolog\ErrorHandler::handleException() must be an instance of Exception, instance of Error given in /usr/share/php/phpDocumentor/vendor/monolog/monolog/src/Monolog/ErrorHandler.php:122 Stack trace: #0 [internal function]: Monolog\ErrorHandler->handleException(Object(Error)) #1 {main}   thrown {"file":"/usr/share/php/phpDocumentor/vendor/monolog/monolog/src/Monolog/ErrorHandler.php","line":122} []
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">503</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-2089113165"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-2089113165" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/JFormFieldCreatedby.html">JFormFieldCreatedby</a></li>
+                                                    <li class="class"><a href="../classes/JFormFieldCreatedby.html">JFormFieldCreatedby</a></li>
+                                                    <li class="class"><a href="../classes/JFormFieldCustomField.html">JFormFieldCustomField</a></li>
+                                                    <li class="class"><a href="../classes/JFormFieldCustomField.html">JFormFieldCustomField</a></li>
+                                                    <li class="class"><a href="../classes/JFormFieldDateTime.html">JFormFieldDateTime</a></li>
+                                                    <li class="class"><a href="../classes/JFormFieldFileMultiple.html">JFormFieldFileMultiple</a></li>
+                                                    <li class="class"><a href="../classes/JFormFieldFileMultiple.html">JFormFieldFileMultiple</a></li>
+                                                    <li class="class"><a href="../classes/JFormFieldForeignKey.html">JFormFieldForeignKey</a></li>
+                                                    <li class="class"><a href="../classes/JFormFieldForeignKey.html">JFormFieldForeignKey</a></li>
+                                                    <li class="class"><a href="../classes/JFormFieldListFiles.html">JFormFieldListFiles</a></li>
+                                                    <li class="class"><a href="../classes/JFormFieldListFiles.html">JFormFieldListFiles</a></li>
+                                                    <li class="class"><a href="../classes/JFormFieldModifiedby.html">JFormFieldModifiedby</a></li>
+                                                    <li class="class"><a href="../classes/JFormFieldModifiedby.html">JFormFieldModifiedby</a></li>
+                                                    <li class="class"><a href="../classes/JFormFieldSubmit.html">JFormFieldSubmit</a></li>
+                                                    <li class="class"><a href="../classes/JFormFieldTimecreated.html">JFormFieldTimecreated</a></li>
+                                                    <li class="class"><a href="../classes/JFormFieldTimecreated.html">JFormFieldTimecreated</a></li>
+                                                    <li class="class"><a href="../classes/JFormFieldTimeupdated.html">JFormFieldTimeupdated</a></li>
+                                                    <li class="class"><a href="../classes/JFormFieldTimeupdated.html">JFormFieldTimeupdated</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaController.html">tks_agendaController</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaController.html">tks_agendaController</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaControllerDownload.html">tks_agendaControllerDownload</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaControllerDownload.html">tks_agendaControllerDownload</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaControllerDownloadForm.html">tks_agendaControllerDownloadForm</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaControllerDownloads.html">tks_agendaControllerDownloads</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaControllerDownloads.html">tks_agendaControllerDownloads</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaControllerItem.html">tks_agendaControllerItem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaControllerItem.html">tks_agendaControllerItem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaControllerItemForm.html">tks_agendaControllerItemForm</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaControllerItems.html">tks_agendaControllerItems</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaControllerItems.html">tks_agendaControllerItems</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaControllerItemScrapForm.html">tks_agendaControllerItemScrapForm</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaControllerNewsitem.html">tks_agendaControllerNewsitem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaControllerNewsitem.html">tks_agendaControllerNewsitem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaControllerNewsitemForm.html">tks_agendaControllerNewsitemForm</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaControllerNewsitems.html">tks_agendaControllerNewsitems</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaControllerNewsitems.html">tks_agendaControllerNewsitems</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaFrontendHelper.html">tks_agendaFrontendHelper</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaHelper.html">tks_agendaHelper</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaHelper.html">tks_agendaHelper</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaModelDownload.html">tks_agendaModelDownload</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaModelDownload.html">tks_agendaModelDownload</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaModelDownloadForm.html">tks_agendaModelDownloadForm</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaModelDownloads.html">tks_agendaModelDownloads</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaModelDownloads.html">tks_agendaModelDownloads</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaModelItem.html">tks_agendaModelItem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaModelItem.html">tks_agendaModelItem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaModelItemForm.html">tks_agendaModelItemForm</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaModelItems.html">tks_agendaModelItems</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaModelItems.html">tks_agendaModelItems</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaModelItemScrapForm.html">tks_agendaModelItemScrapForm</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaModelNewsitem.html">tks_agendaModelNewsitem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaModelNewsitem.html">tks_agendaModelNewsitem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaModelNewsitemForm.html">tks_agendaModelNewsitemForm</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaModelNewsitems.html">tks_agendaModelNewsitems</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaModelNewsitems.html">tks_agendaModelNewsitems</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaModelRecuritem.html">tks_agendaModelRecuritem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaModeltks_agenda.html">tks_agendaModeltks_agenda</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaRouter.html">tks_agendaRouter</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaSiteFrontendHelper.html">tks_agendaSiteFrontendHelper</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaTabledownload.html">tks_agendaTabledownload</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaTabledownload.html">tks_agendaTabledownload</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaTableitem.html">tks_agendaTableitem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaTableitem.html">tks_agendaTableitem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaTablenewsitem.html">tks_agendaTablenewsitem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaTablenewsitem.html">tks_agendaTablenewsitem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaTablerecuritem.html">tks_agendaTablerecuritem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewDownload.html">tks_agendaViewDownload</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewDownload.html">tks_agendaViewDownload</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewDownloadform.html">tks_agendaViewDownloadform</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewDownloads.html">tks_agendaViewDownloads</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewDownloads.html">tks_agendaViewDownloads</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewItem.html">tks_agendaViewItem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewItem.html">tks_agendaViewItem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewItemform.html">tks_agendaViewItemform</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewitems.html">tks_agendaViewitems</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewitems.html">tks_agendaViewitems</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewItems.html">tks_agendaViewItems</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewItemScrapForm.html">tks_agendaViewItemScrapForm</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewNewsitem.html">tks_agendaViewNewsitem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewNewsitem.html">tks_agendaViewNewsitem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewNewsitemform.html">tks_agendaViewNewsitemform</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewNewsitems.html">tks_agendaViewNewsitems</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewNewsitems.html">tks_agendaViewNewsitems</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewPortal.html">tks_agendaViewPortal</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewRecuritem.html">tks_agendaViewRecuritem</a></li>
+                                                    <li class="class"><a href="../classes/tks_agendaViewtks_agenda.html">tks_agendaViewtks_agenda</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>tks_agendaControllerDownloads</h1>
+                    <p><em>Downloads list controller class.</em></p>
+                    
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/tks_agendaControllerDownloads.html#method_duplicate" class="">duplicate()</a><br />
+                                                                    <a href="../classes/tks_agendaControllerDownloads.html#method_getModel" class="">getModel()</a><br />
+                                                                    <a href="../classes/tks_agendaControllerDownloads.html#method_saveOrderAjax" class="">saveOrderAjax()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/administrator.controllers.downloads.html"><div class="path-wrapper">administrator/controllers/downloads.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                
+                                        <div class="namespace-wrapper">\JControllerAdmin</div>
+                                                                                                    <div class="namespace-wrapper">\tks_agendaControllerDownloads</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                since
+                            </th>
+                            <td>
+                                                                    
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                        
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_duplicate" name="method_duplicate" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">duplicate()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">duplicate() : void</pre>
+                <p><em>Method to clone existing Downloads</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getModel" name="method_getModel" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getModel()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getModel(string  <span class="argument">$name = &#039;download&#039;</span>, string  <span class="argument">$prefix = &#039;tks_agendaModel&#039;</span>, array  <span class="argument">$config = array()</span>) : object</pre>
+                <p><em>Proxy for getModel.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$name </td>
+                                <td>

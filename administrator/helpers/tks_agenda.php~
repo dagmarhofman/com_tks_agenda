@@ -4,20 +4,27 @@
 // No direct access
 defined('_JEXEC') or die;
 
+/**
+ *
+ *	Helper class for tks_agenda
+ *
+ */
+
 class tks_agendaHelper
 {
+	/**
+	 * Adds entries to the HTML sidebar.
+	 *
+	 * @param 	string	$vName	name of the side menu item.
+	 *
+	 * $return void
+	 */
 	public static function addSubmenu($vName = '')
 	{
 		JHtmlSidebar::addEntry(
 			JText::_('COM_TKS_AGENDA_TITLE_ITEMS'),
 			'index.php?option=com_tks_agenda&view=items',
 			$vName == 'items'
-		);
-
-		JHtmlSidebar::addEntry(
-			JText::_('COM_TKS_AGENDA_TITLE_ITEMS'),
-			'index.php?option=com_tks_agenda&view=recurringitems',
-			$vName == 'recurringitems'
 		);
 
 		JHtmlSidebar::addEntry(
@@ -48,11 +55,14 @@ class tks_agendaHelper
 		if ($vName=='categories') {
 			JToolBarHelper::title('Takties - agenda: JCATEGORIES (COM_TKS_AGENDA_TITLE_NEWSITEMS)');
 		}
-
-	 
-
 	}
 
+	/**
+	 * Get list of authorized user actions
+	 *
+	 *
+	 * $return 	array		Set of actions that are authorized 
+	 */
 	public static function getActions()
 	{
 		$user   = JFactory::getUser();
@@ -74,10 +84,20 @@ class tks_agendaHelper
 }
 
 
+	/**
+	 * Front end helper class
+	 *
+	 */
 
 class tks_agendaFrontendHelper
 {
-
+		/**
+		 *  Turn hexadecimal brightness into decimal
+		 *
+		 *  @param	string	HTML Style hexadeximal color value
+		 *
+		 *  @return	integer	brightness
+		 */
 
 		public static function get_brightness($hex) {
 
@@ -96,7 +116,7 @@ class tks_agendaFrontendHelper
             if($breakpoint < strlen($string) - 1) { 
                 $string = substr($string, 0, $breakpoint) . $pad; } 
             } return $string; 
-}
+		}
 
 	public static function getCategoryNameByCategoryId($category_id) {
 		$db = JFactory::getDbo();

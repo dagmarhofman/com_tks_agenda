@@ -1,12 +1,13 @@
 <?php
 
 /**
- * @version    CVS: 1.0.0
- * @package    Com_Gckloosterveen
- * @author     Stephan Zuidberg <stephan@takties.nl>
+ * @version    1.0.1
+ * @package    tks_agenda
+ * @author     Dagmar Hofman <stephan@takties.nl>
  * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
  * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
  */
+ 
 // No direct access
 defined('_JEXEC') or die;
 
@@ -20,8 +21,19 @@ require_once JPATH_COMPONENT . '/controller.php';
 class tks_agendaControllerItemForm extends tks_agendaController
 {
 	
+	/**
+ 	 * @var	object	$jform			The form object.
+ 	 * @var	array		$uitval			The dates that cannot be requested.
+ 	 * @var	date		$startDate		The starting date of the item.
+ 	 * @var	object	$endDate			The end date of the item.
+ 	 * @var	object	$endRecurring	The end date of the recurring items.
+ 	 * @var	object	$model			The model.
+ 	 * @var	object	$db				The database object.
+ 	 * @var	array		$data				The form data.
+ 	 * @var	string	$last_error		Error notice.
+ 	 */
 	var $jform = NULL;
-	//array voor herhaalafspraken die uitvallen
+
 	var $uitval = NULL;	
 	var $startDate = NULL;
 	var $endDate = NULL;
@@ -181,6 +193,15 @@ class tks_agendaControllerItemForm extends tks_agendaController
 				
 		return true;
 	}
+	
+
+	/**
+	 * Function that checks for date errors
+	 * Also sets the error message
+	 *
+	 * @return  boolean	True for date error	
+	 */	
+	
 	public function check_for_date_errors()
 	{
 			$firstDate = $this->startDate->format('Y-m-d');
@@ -213,7 +234,12 @@ class tks_agendaControllerItemForm extends tks_agendaController
 			return false;
 	}
 
-
+	/**
+	 *	
+	 * Calculates array of recurring items.
+	 * 
+	 * @return	array		Array of recurring dates.
+	 */
 	public function get_recur_array() 
 	{
 		$app   = JFactory::getApplication();
@@ -257,6 +283,13 @@ class tks_agendaControllerItemForm extends tks_agendaController
  	}
 
 	
+	/**
+	 *	
+	 * Save all recurring dates in database.
+	 * 
+	 * @param	integer	$id	id of item to save
+	 * @return	array		Array of recurring dates.
+	 */
 	public function save_recurring_items( $id ) 
 	{
 			$datesArray = $this->get_recur_array();
@@ -275,7 +308,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
 			$query->values(implode('), (', $datesArrayFlat));
 		   $this->db->setQuery($query);
 		   $this->db->execute();
-			//DAGMAR (check hier voor fouten ?	
+			//DAGMAR (check hier voor fouten) ?	
 	}
 	
 	

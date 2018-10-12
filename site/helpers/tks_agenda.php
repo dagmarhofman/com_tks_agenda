@@ -1,12 +1,29 @@
 <?php
-
+/**
+ * @version    1.0.1
+ * @package    tks_agenda
+ * @author     Dagmar Hofman <stephan@takties.nl>
+ * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
+ * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
+ */
+ 
 
 // No direct access
 defined('_JEXEC') or die;
 
-
+/**
+ * tks_agenda helper class
+ *
+ */
 class tks_agendaHelper
 {
+	/**
+	 * Add sub menu
+	 *
+	 * @param 	$vName 	view name
+	 * 
+	 * @return	void 
+	 */
 	public static function addSubmenu($vName = '')
 	{
 		JHtmlSidebar::addEntry(
@@ -48,6 +65,12 @@ class tks_agendaHelper
 
 	}
 
+	/**
+	 * Get authorization actions
+	 *
+	 * 
+	 * @return	array	Array of actions 
+	 */
 	public static function getActions()
 	{
 		$user   = JFactory::getUser();
@@ -69,11 +92,22 @@ class tks_agendaHelper
 }
 
 
+/**
+ * tks_agenda front end helper class
+ *
+ */
 
 class tks_agendaSiteFrontendHelper
 {
 
-
+		/**
+		 *
+		 * Get decimal brightness value
+		 * 
+		 * @param string	$hex	HTML style color value
+		 *
+		 * @return integer	brightness
+		 */
 		public static function get_brightness($hex) {
 
 		 $hex = str_replace('#', '', $hex);
@@ -85,6 +119,17 @@ class tks_agendaSiteFrontendHelper
 		 return (($c_r * 299) + ($c_g * 587) + ($c_b * 114)) / 1000;
 		}
 
+
+
+		/**
+		 *  Truncate (and pad) a string
+		 *
+		 *  @param	string	$string	The string to truncate
+		 *  @param	string	$limit	The delimiter
+		 *  @param	string	$pad		The padding.
+		 *
+		 *  @return	string	The result string
+		 */
 		public static function truncate($string, $limit, $break=".", $pad="...") {
         if(strlen($string) <= $limit) return $string; 
         if(false !== ($breakpoint = strpos($string, $break, $limit))) { 
@@ -93,6 +138,14 @@ class tks_agendaSiteFrontendHelper
             } return $string; 
 }
 
+
+		/**
+		 *  Query the category name by using the id
+		 *
+		 *  @param	integer	$category_id	The category id
+		 *
+		 *  @return	string	The category name.
+		 */
 	public static function getCategoryNameByCategoryId($category_id) {
 		$db = JFactory::getDbo();
 		$query = $db->getQuery(true);
@@ -105,6 +158,13 @@ class tks_agendaSiteFrontendHelper
 		$db->setQuery($query);
 		return $db->loadResult();
 	}
+		/**
+		 *  Get model by name
+		 *
+		 *  @param	integer	$name	The model name
+		 *
+		 *  @return	object	The model.
+		 */
 	public static function getModel($name)
 	{
 		$model = null;
@@ -119,6 +179,15 @@ class tks_agendaSiteFrontendHelper
 		return $model;
 	}
 
+		/**
+		 *  Get files from table
+		 *
+		 *  @param	integer	$pk		The primary key
+		 *  @param	string	$table	The table name
+		 *  @param	string	$field	The field name
+		 *
+		 *  @return	array		The results.
+		 */
 	public static function getFiles($pk, $table, $field)
 	{
 		$db = JFactory::getDbo();
@@ -133,7 +202,13 @@ class tks_agendaSiteFrontendHelper
 
 		return explode(',', $db->loadResult());
 	}
-
+		/**
+		 *  Get user edit state
+		 *
+		 *  @param	object	$item		The item
+		 *
+		 *  @return	boolean	The permission.
+		 */
     public static function canUserEdit($item)
     {
         $permission = false;

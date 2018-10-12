@@ -14,7 +14,13 @@ use Joomla\Utilities\ArrayHelper;
  */
 class tks_agendaControllerItems extends JControllerAdmin
 {
-
+	
+	/**
+	 *	The duplicate function for items. This routine may no longer be used eversince the duplicate button is no longer part of the design.
+	 * Redericts back to the ITEMS view.
+	 *
+	 * @return	void
+	 */
 
 	public function duplicate()
 	{

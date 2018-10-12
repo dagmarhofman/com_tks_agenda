@@ -1,17 +1,17 @@
 <?php
 /**
- * @package     Joomla.Administrator
- * @subpackage  com_helloworld
- *
- * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ * @version    1.0.1
+ * @package    tks_agenda
+ * @author     Dagmar Hofman <stephan@takties.nl>
+ * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
+ * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
  */
 
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * HelloWorld Model
+ * HelloWorld Model, OBSOLETE
  *
  * @since  0.0.1
  */

@@ -6,7 +6,7 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.controller');
 
 /**
- * main Controller class
+ * Main Controller class
  *	Displays the items view at first
  *
  */

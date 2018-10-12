@@ -1,12 +1,13 @@
 <?php
 
 /**
- * @version    CVS: 1.0.0
- * @package    Com_Gckloosterveen
- * @author     Stephan Zuidberg <stephan@takties.nl>
+ * @version    1.0.1
+ * @package    tks_agenda
+ * @author     Dagmar Hofman <stephan@takties.nl>
  * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
  * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
  */
+ 
 // No direct access
 defined('_JEXEC') or die;
 
@@ -117,7 +118,7 @@ class tks_agendaControllerItem extends tks_agendaController
 			if (!$item)
 			{
 				// If there isn't any menu item active, redirect to list view
-				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda', false));
+				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=items', false));
 			}
 			else
 			{
@@ -187,7 +188,7 @@ class tks_agendaControllerItem extends tks_agendaController
 			if (!$item)
 			{
 				// If there isn't any menu item active, redirect to list view
-				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda', false));
+				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=items', false));
 			}
 			else
 			{

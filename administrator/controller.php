@@ -4,8 +4,30 @@ defined('_JEXEC') or die;
 
 jimport('joomla.application.component.controller');
 
+/**
+ * @version    1.0.1
+ * @package    com_tks_agenda
+ * @author     Dagmar Hofman <stephan@takties.nl>
+ * @copyright  Copyright (C) 2018. Alle rechten voorbehouden.
+ * @license    GNU General Public License versie 2 of later; See LICENSE.txt
+ */
+
+
+/**
+ * The tks_agendaController is the main comtroller for the administrator view.
+ */
 class tks_agendaController extends JControllerLegacy
 {
+	/**
+	 *
+	 * The display routine. By default the main controller routes to the ITEMS view.
+	 *
+	 * @param 	boolean	$cachable	If true, the view output will be cached
+	 *
+	 * @param	array		$urlparams	An array of safe URL parameters and their variable types.
+	 *
+	 *	@return	object	A \JControllerLegacy object to support chaining.	
+	*/
 	public function display($cachable = false, $urlparams = false)
 	{
 		require_once JPATH_COMPONENT . '/helpers/tks_agenda.php';
@@ -17,6 +39,14 @@ class tks_agendaController extends JControllerLegacy
 
 		return $this;
 	}
+		
+	/**
+	 *
+	 * The item edit redirect routine. This routine checks if only one item is selected.
+	 * It then redirects to the ITEM view or else, it redirects back to the ITEMS view.
+	 *
+	 *	@return	void 	
+	*/
 	public function item_edit_redirect() {
 
 		$ids = $this->input->get( 'cid' );
@@ -31,8 +61,6 @@ class tks_agendaController extends JControllerLegacy
 			return; 		
 		}	
 		
-		
-
 		$session = &JFactory::getSession();
 		$session->set("last_edit_redirect_id", $ids[0] );
 
@@ -40,6 +68,14 @@ class tks_agendaController extends JControllerLegacy
 
 	}
 	
+	/**
+	 *
+	 * The item delete redirect routine. This routine deletes all selected items.
+	 * It constructs and runs the query per result. Perhaps we should do it all in one query?
+	 * It then redirects to the ITEMS view.
+	 *
+	 *	@return	void 	
+	*/
 	public function item_delete_redirect() {
 	
 		$ids = $this->input->get( 'cid' );

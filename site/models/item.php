@@ -1,12 +1,13 @@
 <?php
 
 /**
- * @version    CVS: 1.0.0
- * @package    Com_Gckloosterveen
- * @author     Stephan Zuidberg <stephan@takties.nl>
+ * @version    1.0.1
+ * @package    tks_agenda
+ * @author     Dagmar Hofman <stephan@takties.nl>
  * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
  * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
  */
+
 // No direct access.
 defined('_JEXEC') or die;
 
@@ -293,6 +294,13 @@ class tks_agendaModelItem extends JModelItem
 		return $table->delete($id);
 	}
 
+	/**
+	 * Method to delete a recurring item
+	 *
+	 * @param   int  $id  Element id
+	 *
+	 * @return  bool
+	 */
 	public function deleterecur($id)
 	{
 		$db = JFactory::getDbo();
@@ -306,6 +314,5 @@ class tks_agendaModelItem extends JModelItem
 		$db->execute();
 
 	}
-
 	
 }

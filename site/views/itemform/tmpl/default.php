@@ -119,8 +119,6 @@ endif;
 				</div>
 			</div>
 
-
-
 			<div class="g-block size-60">
 				<div class="control-group">
 					<div class="control-label"><?php echo $this->form->getLabel('end_recur'); ?></div>

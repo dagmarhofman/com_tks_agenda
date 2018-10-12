@@ -6,6 +6,10 @@ defined('_JEXEC') or die;
 
 jimport('joomla.application.component.view');
 
+/**
+ * newsitem view class
+ */
+
 class tks_agendaViewNewsitem extends JViewLegacy
 {
 	protected $state;

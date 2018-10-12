@@ -86,7 +86,7 @@ class tks_agendaViewitems extends JViewLegacy
 		       	'end' => strtotime($end_date) .'000',
 		       	'start_time' => $start_time,
 		      	'end_time' => $end_time,
-					"url" => "index.php?option=com_tks_agenda&view=item&id=".$row->id."&format=raw?start_stamp=" . $start_stamp . "?end_stamp=" . $end_stamp,
+					"url" => "index.php?option=com_tks_agenda&view=item&id=".$row->id."&format=raw&start_stamp=" . $start_stamp . "&end_stamp=" . $end_stamp,
 		    		);
 		    	
 		    	if( $row->recurring == 'Yes') {
@@ -108,7 +108,7 @@ class tks_agendaViewitems extends JViewLegacy
 				       	'end' => strtotime($end_date) .'000',
 			        		'start_time' => $start_time,
 			        		'end_time' => $end_time,
-							"url" => "index.php?option=com_tks_agenda&view=item&id=".$row->id."&format=raw?start_stamp=" . $start_stamp . "?end_stamp=" . $end_stamp,
+							"url" => "index.php?option=com_tks_agenda&view=item&id=".$row->id."&format=raw&start_stamp=" . $start_stamp . "&end_stamp=" . $end_stamp,
 				    			);
 		    		}
 		    	} // $row->recurring == 'Yes'

@@ -1,12 +1,13 @@
 <?php
 
 /**
- * @version    CVS: 1.0.0
- * @package    com_tks_agenda
- * @author     Dagmar Hofman, Stephan Zuidberg
- * @copyright  2018 Takties
- * @license    GNU General Public License version 2 or later; see LICENSE.txt
+ * @version    1.0.1
+ * @package    tks_agenda
+ * @author     Dagmar Hofman <stephan@takties.nl>
+ * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
+ * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
  */
+
 // No direct access
 defined('_JEXEC') or die;
 

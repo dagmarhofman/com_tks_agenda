@@ -1,12 +1,13 @@
 <?php
 
 /**
- * @version    CVS: 1.0.0
- * @package    Com_Gckloosterveen
- * @author     Stephan Zuidberg <stephan@takties.nl>
+ * @version    1.0.1
+ * @package    tks_agenda
+ * @author     Dagmar Hofman <stephan@takties.nl>
  * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
  * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
  */
+
 // No direct access.
 defined('_JEXEC') or die;
 
@@ -124,8 +125,17 @@ class tks_agendaModelItem extends JModelItem
 
 		//JFactory::getApplication()->input->get('id');
 
-		$s['start_stamp'] = date('Y-m-d H:i:s',  JFactory::getApplication()->input->get('start_stamp') );
-		$s['end_stamp'] = date('Y-m-d H:i:s',  JFactory::getApplication()->input->get('end_stamp') );
+	$start =JFactory::getApplication()->input->get('start_stamp');
+	$end = JFactory::getApplication()->input->get('end_stamp');
+		$s['start_stamp'] = date('Y-m-d H:i:s',  $start );
+		$s['end_stamp'] = date('Y-m-d H:i:s',  $end );
+
+		
+		foreach( $items as $val ) {
+			if( $val->rstart == $start && $val->rend == $end ) {
+				$s['recur_id'] = $val->id;			
+			}	
+		}		
 
 		$this->_item->stamp = $s ;
 
@@ -284,6 +294,13 @@ class tks_agendaModelItem extends JModelItem
 		return $table->delete($id);
 	}
 
+	/**
+	 * Method to delete a recurring item
+	 *
+	 * @param   int  $id  Element id
+	 *
+	 * @return  bool
+	 */
 	public function deleterecur($id)
 	{
 		$db = JFactory::getDbo();

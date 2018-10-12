@@ -1,5 +1,6 @@
 <?php
 
+
 // No direct access.
 defined('_JEXEC') or die;
 
@@ -115,6 +116,15 @@ class tks_agendaModelRecuritem extends JModelAdmin
 		return $item;
 	}
 
+	/**
+	 * Method to prepare table, sets ordering to the last item.
+	 *
+	 * @param   object  $table  The table.
+	 *
+	 * @return  void  
+	 *
+	 * @since    1.6
+	 */
 	protected function prepareTable($table)
 	{
 		jimport('joomla.filter.output');

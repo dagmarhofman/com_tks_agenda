@@ -1,12 +1,13 @@
 <?php
 
 /**
- * @version    CVS: 1.0.0
- * @package    Com_Gckloosterveen
- * @author     Stephan Zuidberg <stephan@takties.nl>
+ * @version    1.0.1
+ * @package    tks_agenda
+ * @author     Dagmar Hofman <stephan@takties.nl>
  * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
  * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
  */
+
 defined('_JEXEC') or die;
 
 jimport('joomla.application.component.modellist');
@@ -266,12 +267,6 @@ if (empty($list['direction']))
 		// Join over the created by field 'created_by'
 		$query2->join('LEFT', '#__users AS created_by ON created_by.id = a.created_by');
 
-<<<<<<< HEAD
-		// Add the list ordering clause.
-=======
-
-			// Add the list ordering clause.
->>>>>>> refs/remotes/origin/master
 		$orderCol  = $this->state->get('list.ordering');
 		$orderDirn = $this->state->get('list.direction');
 	
@@ -286,12 +281,8 @@ if (empty($list['direction']))
 		{
 			$result->order($db->escape($orderCol . ' ' . $orderDirn));
 		}
-		
-<<<<<<< HEAD
 
 		
-=======
->>>>>>> refs/remotes/origin/master
 		return $result;
 	}
 

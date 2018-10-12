@@ -1,12 +1,32 @@
 <?php
-
+/**
+ * @version    1.0.1
+ * @package    tks_agenda
+ * @author     Dagmar Hofman <stephan@takties.nl>
+ * @copyright  Copyright (C) 2016. Alle rechten voorbehouden.
+ * @license    GNU General Public License versie 2 of hoger; Zie LICENSE.txt
+ */
 
 // No direct access
 defined('_JEXEC') or die;
 
+/**
+ * Item Scrap Form Controller
+ *
+ */
+
 class tks_agendaControllerItemScrapForm extends JControllerForm
 {
 
+	/**
+	 * Function that checks if dates a and b are in overlap_array 
+	 *
+	 * @param 	string	$a	first date
+	 * @param	string	$b	second date
+	 *	@param	array		$c	date array
+	 *
+	 * @return	bool	not in overlap array?
+	 */
 
 	public function not_in_overlap_array( $a, $b, $c ) 
 	{
@@ -19,6 +39,13 @@ class tks_agendaControllerItemScrapForm extends JControllerForm
 		}
 	}
 	
+	/**
+	 * Save recurring items 
+	 *
+	 * @param 	integer	$id	id of recurring item
+	 *
+	 * @return	void	
+	 */
 	public function save_recurring_items( $id ) 
 	{
 			$app   = JFactory::getApplication();
@@ -56,7 +83,13 @@ class tks_agendaControllerItemScrapForm extends JControllerForm
 		   
 	}
 	
-
+	/**
+	 * submit form data
+	 *
+	 * @param 	integer 	$key 	key, not used
+	 *
+	 * @return	void 
+	 */
 	public function submit($key = NULL)
 	{
 
@@ -104,6 +137,14 @@ class tks_agendaControllerItemScrapForm extends JControllerForm
 		$url  = (empty($item->link) ? 'index.php?option=com_tks_agenda&view=items' : $item->link);
 		$this->setRedirect(JRoute::_($url, false));
 	}
+	
+	/**
+	 * cancel form data
+	 *
+	 * @param 	integer 	$key 	key, not used
+	 *
+	 * @return	void 
+	 */
 	public function cancel($key = NULL)
 	{
 				// Get the model.
