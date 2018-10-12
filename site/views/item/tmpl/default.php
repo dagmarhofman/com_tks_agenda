@@ -47,6 +47,7 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
 				$start_date = strtotime($this->item->start);
 				$end_date =	strtotime($this->item->end);		    		
 ?>
+
 <div class="start-tijd">
 <strong style="color:blue;"><?php echo $start_date_out;?> - <?php echo $end_date_out;?></strong>
 </div>
@@ -71,6 +72,10 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
 	<div class="start-tijd">
 	<strong><?php echo $start_date_out;?> - <?php echo $end_date_out;?></strong>
 	</div>
+<h2> Reden </h2>
+<?php
+	echo $this->item->reason;
+?>
 
 <?php			
 			
