@@ -72,16 +72,14 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
 	<div class="start-tijd">
 	<strong><?php echo $start_date_out;?> - <?php echo $end_date_out;?></strong>
 	</div>
-<h2> Reden </h2>
-<?php
-	echo $this->item->reason;
-?>
 
 <?php			
 			
 			}
-
-			
+?>
+<h2> Reden </h2>
+<?php
+	echo $this->item->reason;
 			echo '<br/>';
 			foreach( $this->item->recur_events as $event ) {
 				if( $event[1] == $this->item->id ) {

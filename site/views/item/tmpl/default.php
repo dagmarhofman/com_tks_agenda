@@ -46,12 +46,7 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
 			echo "<h1> Afspraak: </h1>";
 				$start_date = strtotime($this->item->start);
 				$end_date =	strtotime($this->item->end);		    		
-?>
 
-<div class="start-tijd">
-<strong style="color:blue;"><?php echo $start_date_out;?> - <?php echo $end_date_out;?></strong>
-</div>
-<?php		
 }		
 		if($userId == $this->item->created_by):	
 
