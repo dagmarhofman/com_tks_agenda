@@ -452,7 +452,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
 			$app->setUserState('com_tks_agenda.edit.item.id', null);
 		} 
 		else if( $mode == 'update' && $recurring_id != -1 ) {
-
+			/* UPDATE HIER OOK de item reason, als deze gewijzigd wordt! */
 			$db = JFactory::getDbo();			
 			
 			$query = $db->getQuery(true);
