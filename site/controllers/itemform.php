@@ -255,8 +255,10 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		$startDateIt = $this->startDate;
 		$endDateIt = $this->endDate;
 		$endRecurringIt = $this->endRecurring;
-		
 
+		// kludge
+		if( $endDateIt > $endRecurringIt ) { 		
+		
 		while ($endDateIt <= $endRecurringIt ) {
 
 			switch ($this->jform['recur_type']) {
@@ -276,7 +278,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
  				$datesArray[0][$i] = $startDateIt->format("Y-m-d H:i:s");	
  				$datesArray[1][$i] = $endDateIt->format("Y-m-d H:i:s");	
 			$i++;
-		};
+		} } ;
 		
 		
 		return $datesArray;

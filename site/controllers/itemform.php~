@@ -114,9 +114,9 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		
 		/* misschien de  ( (int) $row->id !=  (int) $id  ) in de WHERE clausile afvlaggen? */
 		foreach( $result_a as $row ) {
-			if( ( $this->startDate->format("Y-m-d H:i:s") > $row->start &&  $this->startDate->format("Y-m-d H:i:s") < $row->end  ) 
-				|| ( $this->endDate->format("Y-m-d H:i:s") > $row->start  &&  $this->endDate->format("Y-m-d H:i:s") < $row->end ) 
-				|| ( $this->startDate->format("Y-m-d H:i:s") <= $row->start  &&  $this->endDate->format("Y-m-d H:i:s") >= $row->end ) ) {
+			if( ( $this->startDate->format("Y-m-d H:i") > $row->start &&  $this->startDate->format("Y-m-d H:i") < $row->end  ) 
+				|| ( $this->endDate->format("Y-m-d H:i") > $row->start  &&  $this->endDate->format("Y-m-d H:i") < $row->end ) 
+				|| ( $this->startDate->format("Y-m-d H:i") <= $row->start  &&  $this->endDate->format("Y-m-d H:i") >= $row->end ) ) {
 					$this->setMessage(JText::sprintf( 'Deze vergaderruimte is al geboekt.', $this->model->getError()), 'error');								
 					$this->overlapfail = true;
 					return false;			
@@ -133,9 +133,9 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		$result_b = $this->db->loadObjectList();
 		
 		foreach( $result_b as $row ) {
-			if( ( $this->startDate->format("Y-m-d H:i:s") > $row->rstart &&  $this->startDate->format("Y-m-d H:i:s") < $row->rend  ) 
-				|| ( $this->endDate->format("Y-m-d H:i:s") > $row->rstart  &&  $this->endDate->format("Y-m-d H:i:s") < $row->rend ) 
-				|| ( $this->startDate->format("Y-m-d H:i:s") <= $row->rstart  &&  $this->endDate->format("Y-m-d H:i:s") >= $row->rend ) ) {
+			if( ( $this->startDate->format("Y-m-d H:i") > $row->rstart &&  $this->startDate->format("Y-m-d H:i") < $row->rend  ) 
+				|| ( $this->endDate->format("Y-m-d H:i") > $row->rstart  &&  $this->endDate->format("Y-m-d H:i") < $row->rend ) 
+				|| ( $this->startDate->format("Y-m-d H:i") <= $row->rstart  &&  $this->endDate->format("Y-m-d H:i") >= $row->rend ) ) {
 					$this->overlapfail = true;
 					$this->setMessage(JText::sprintf( 'Deze vergaderruimte is al geboekt.', $this->model->getError()), 'error');								
 					return false;			
@@ -256,7 +256,6 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		$endDateIt = $this->endDate;
 		$endRecurringIt = $this->endRecurring;
 		
-
 		while ($endDateIt <= $endRecurringIt ) {
 
 			switch ($this->jform['recur_type']) {
