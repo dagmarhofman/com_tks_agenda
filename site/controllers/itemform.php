@@ -105,21 +105,32 @@ class tks_agendaControllerItemForm extends tks_agendaController
 	
 		$query->select($this->db->quoteName(array('a.id','a.start', 'a.end')));
 		$query->from($this->db->quoteName('#__tks_agenda_items','a'));
-		if( $is_update ) {
+		//if( $id != 0  ) {
 			$query->where( $this->db->quotename('a.id') . ' != ' . (int)$id );
-		}		
+		//}		
 		$this->db->setQuery($query);
 		$this->db->execute();
 		$result_a = $this->db->loadObjectList();
 		
 		/* misschien de  ( (int) $row->id !=  (int) $id  ) in de WHERE clausile afvlaggen? */
 		foreach( $result_a as $row ) {
+<<<<<<< HEAD
 			if( ( $this->startDate->format("Y-m-d H:i") > $row->start &&  $this->startDate->format("Y-m-d H:i") < $row->end  ) 
 				|| ( $this->endDate->format("Y-m-d H:i") > $row->start  &&  $this->endDate->format("Y-m-d H:i") < $row->end ) 
 				|| ( $this->startDate->format("Y-m-d H:i") <= $row->start  &&  $this->endDate->format("Y-m-d H:i") >= $row->end ) ) {
 					$this->setMessage(JText::sprintf( 'Deze vergaderruimte is al geboekt.', $this->model->getError()), 'error');								
 					$this->overlapfail = true;
 					return false;			
+=======
+			if( ( $this->startDate->format("Y-m-d H:i:s") > $row->start &&  $this->startDate->format("Y-m-d H:i:s") < $row->end  ) 
+				|| ( $this->endDate->format("Y-m-d H:i:s") > $row->start  &&  $this->endDate->format("Y-m-d H:i:s") < $row->end ) 
+				|| ( $this->startDate->format("Y-m-d H:i:s") <= $row->start  &&  $this->endDate->format("Y-m-d H:i:s") >= $row->end ) ) {
+					if( $id != 0 ) {
+						$this->setMessage(JText::sprintf( 'Deze vergaderruimte is al geboekt. ' , $this->model->getError()), 'error');								
+						$this->overlapfail = true;
+						return false;	
+					}		
+>>>>>>> overlappen van eigen afspraak kan nu wel
 				} 			
 		}
 
