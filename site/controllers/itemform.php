@@ -114,14 +114,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		
 		/* misschien de  ( (int) $row->id !=  (int) $id  ) in de WHERE clausile afvlaggen? */
 		foreach( $result_a as $row ) {
-<<<<<<< HEAD
-			if( ( $this->startDate->format("Y-m-d H:i") > $row->start &&  $this->startDate->format("Y-m-d H:i") < $row->end  ) 
-				|| ( $this->endDate->format("Y-m-d H:i") > $row->start  &&  $this->endDate->format("Y-m-d H:i") < $row->end ) 
-				|| ( $this->startDate->format("Y-m-d H:i") <= $row->start  &&  $this->endDate->format("Y-m-d H:i") >= $row->end ) ) {
-					$this->setMessage(JText::sprintf( 'Deze vergaderruimte is al geboekt.', $this->model->getError()), 'error');								
-					$this->overlapfail = true;
-					return false;			
-=======
+
 			if( ( $this->startDate->format("Y-m-d H:i:s") > $row->start &&  $this->startDate->format("Y-m-d H:i:s") < $row->end  ) 
 				|| ( $this->endDate->format("Y-m-d H:i:s") > $row->start  &&  $this->endDate->format("Y-m-d H:i:s") < $row->end ) 
 				|| ( $this->startDate->format("Y-m-d H:i:s") <= $row->start  &&  $this->endDate->format("Y-m-d H:i:s") >= $row->end ) ) {
@@ -130,7 +123,6 @@ class tks_agendaControllerItemForm extends tks_agendaController
 						$this->overlapfail = true;
 						return false;	
 					}		
->>>>>>> overlappen van eigen afspraak kan nu wel
 				} 			
 		}
 
@@ -267,8 +259,6 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		$endDateIt = $this->endDate;
 		$endRecurringIt = $this->endRecurring;
 
-		// kludge
-		if( $endDateIt > $endRecurringIt ) { 		
 		
 		while ($endDateIt <= $endRecurringIt ) {
 
@@ -289,7 +279,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
  				$datesArray[0][$i] = $startDateIt->format("Y-m-d H:i:s");	
  				$datesArray[1][$i] = $endDateIt->format("Y-m-d H:i:s");	
 			$i++;
-		} } ;
+		} ;
 		
 		
 		return $datesArray;

@@ -114,20 +114,15 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		
 		/* misschien de  ( (int) $row->id !=  (int) $id  ) in de WHERE clausile afvlaggen? */
 		foreach( $result_a as $row ) {
-<<<<<<< HEAD
-			if( ( $this->startDate->format("Y-m-d H:i") > $row->start &&  $this->startDate->format("Y-m-d H:i") < $row->end  ) 
-				|| ( $this->endDate->format("Y-m-d H:i") > $row->start  &&  $this->endDate->format("Y-m-d H:i") < $row->end ) 
-				|| ( $this->startDate->format("Y-m-d H:i") <= $row->start  &&  $this->endDate->format("Y-m-d H:i") >= $row->end ) ) {
-					$this->setMessage(JText::sprintf( 'Deze vergaderruimte is al geboekt.', $this->model->getError()), 'error');								
-=======
+
 			if( ( $this->startDate->format("Y-m-d H:i:s") > $row->start &&  $this->startDate->format("Y-m-d H:i:s") < $row->end  ) 
 				|| ( $this->endDate->format("Y-m-d H:i:s") > $row->start  &&  $this->endDate->format("Y-m-d H:i:s") < $row->end ) 
 				|| ( $this->startDate->format("Y-m-d H:i:s") <= $row->start  &&  $this->endDate->format("Y-m-d H:i:s") >= $row->end ) ) {
-					
-					$this->setMessage(JText::sprintf( 'Deze vergaderruimte is al geboekt. ' . $row->id . ' ' . $id , $this->model->getError()), 'error');								
->>>>>>> overlappen van eigen afspraak kan nu wel
-					$this->overlapfail = true;
-					return false;			
+					if( $id != 0 ) {
+						$this->setMessage(JText::sprintf( 'Deze vergaderruimte is al geboekt. ' , $this->model->getError()), 'error');								
+						$this->overlapfail = true;
+						return false;	
+					}		
 				} 			
 		}
 
@@ -135,12 +130,6 @@ class tks_agendaControllerItemForm extends tks_agendaController
 
 		$query->select($this->db->quoteName(array('b.id', 'b.rid','b.rstart', 'b.rend')));
 		$query->from($this->db->quoteName('#__tks_agenda_recurring','b'));
-<<<<<<< HEAD
-=======
-	//	if( $is_update ) {
-			$query->where( $this->db->quotename('b.id') . ' != ' . (int)$recur_id );
-	//	}		
->>>>>>> overlappen van eigen afspraak kan nu wel
 	
 		$this->db->setQuery($query);
 		$this->db->execute();
@@ -269,6 +258,9 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		$startDateIt = $this->startDate;
 		$endDateIt = $this->endDate;
 		$endRecurringIt = $this->endRecurring;
+
+		// kludge
+		if( $endDateIt > $endRecurringIt ) { 		
 		
 		while ($endDateIt <= $endRecurringIt ) {
 
@@ -289,7 +281,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
  				$datesArray[0][$i] = $startDateIt->format("Y-m-d H:i:s");	
  				$datesArray[1][$i] = $endDateIt->format("Y-m-d H:i:s");	
 			$i++;
-		};
+		} } ;
 		
 		
 		return $datesArray;
