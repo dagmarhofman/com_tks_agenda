@@ -13,13 +13,7 @@ JHtml::_('behavior.keepalive');
 JHtml::_('behavior.tooltip');
 JHtml::_('behavior.formvalidation');
 JHtml::_('formbehavior.chosen', 'select'); 
-
-if( $this->item->recurring == "No" ) {
-	$is_top_item = true;
-} else {
-	$is_top_item = false;
-}		
-		 
+		
 // Load admin language file
 $lang = JFactory::getLanguage();
 $user = JFactory::getUser();
@@ -40,7 +34,15 @@ else :
 
 endif;
 
-var_export($this->item);
+$app   = JFactory::getApplication();
+$recur_id = $app->getUserState( 'com_tks_agenda.edit.item.recurid' );		 
+
+if( $recur_id  > 0 )
+	$is_top_item = false;
+else 
+$is_top_item = true;
+
+//var_export($this->item);
 //  echo '<pre>';var_dump($profile);'</pre>';
 /**/
 ?>
@@ -58,8 +60,7 @@ var_export($this->item);
 		});
 	}
 
-
-	
+			
 
 </script>
 
@@ -69,9 +70,11 @@ var_export($this->item);
 	<?php else: ?>
 		<h1>Huur vergaderruimte</h1>
 	<?php endif; ?>
-
-	
-	
+	<?php
+	if(!$is_top_item ) {
+		echo "<strong style=\"color:red;\"> U bewerkt een herhaalafspraak </strong> "; 	
+	}
+	?>
 	<form id="form-item" action="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.save'); ?>" method="post" class="form-validate" enctype="multipart/form-data">
 		
 	<div class="g-grid">

@@ -46,8 +46,9 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
 			echo "<h1> Afspraak: </h1>";
 				$start_date = strtotime($this->item->start);
 				$end_date =	strtotime($this->item->end);		    		
-
-}		
+?>
+<?php
+		}		
 		if($userId == $this->item->created_by):	
 
 			$start_date_out = date('j F Y H:i', $start_date );
@@ -59,7 +60,9 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_tks_agenda
 			if( $start_date_outf == $s['start_stamp'] && $end_date_outf == $s['end_stamp'] ) {
 ?>
 	<div class="start-tijd">
-	<strong style="color:blue;"><?php echo $start_date_out;?> - <?php echo $end_date_out;?></strong>
+	<strong style="color:blue;"><?php echo $start_date_out;?> - <?php echo $end_date_out;?></strong> <br/>
+		<strong style="color:red;"> Als u deze afspraak verwijderd, worden ook alle vervolgafspraken verwijdered! </strong>
+
 	</div>
 <?php
 			} else {
