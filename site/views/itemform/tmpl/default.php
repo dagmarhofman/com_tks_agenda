@@ -14,7 +14,12 @@ JHtml::_('behavior.tooltip');
 JHtml::_('behavior.formvalidation');
 JHtml::_('formbehavior.chosen', 'select'); 
 
- 
+if( $this->item->recurring == "No" ) {
+	$is_top_item = true;
+} else {
+	$is_top_item = false;
+}		
+		 
 // Load admin language file
 $lang = JFactory::getLanguage();
 $user = JFactory::getUser();
@@ -35,6 +40,7 @@ else :
 
 endif;
 
+var_export($this->item);
 //  echo '<pre>';var_dump($profile);'</pre>';
 /**/
 ?>
@@ -100,7 +106,7 @@ endif;
 
 <?php
 		
-		if (empty($this->item->id)):
+		if (empty($this->item->id) || $is_top_item  ):
 ?>			
 			
 			<div class="g-block size-15">
