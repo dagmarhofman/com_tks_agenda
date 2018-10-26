@@ -60,20 +60,19 @@ $is_top_item = true;
 		});
 	}
 
-			
-
+	
 </script>
 
 <div class="item-edit front-end-edit">
 	<?php if (!empty($this->item->id)): ?>
 		<h1>Bewerk huur vergaderruimte</h1>
+		<?php if(!$is_top_item ) {
+			echo "<strong style=\"color:red;\"> U bewerkt een herhaalafspraak </strong> "; 	
+		} ?>
 	<?php else: ?>
 		<h1>Huur vergaderruimte</h1>
 	<?php endif; ?>
 	<?php
-	if(!$is_top_item ) {
-		echo "<strong style=\"color:red;\"> U bewerkt een herhaalafspraak </strong> "; 	
-	}
 	?>
 	<form id="form-item" action="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.save'); ?>" method="post" class="form-validate" enctype="multipart/form-data">
 		
@@ -118,8 +117,8 @@ $is_top_item = true;
 					<div class="controls"><?php echo $this->form->getInput('recurring'); ?></div>
 				</div>
 			</div>
-
-			<div id="recurring_attrib">			
+    
+			<div id="recurring_attrib" style="visibility:hidden">			
 						
 			<div class="g-block size-25">
 				<div class="control-group">

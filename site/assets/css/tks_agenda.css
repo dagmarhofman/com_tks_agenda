@@ -9,8 +9,12 @@
 }
 
 
-.other-filters{
+.other-filters {
     padding: 0 14px;
 }
 
 .footer {}
+
+#recurring_attrib {
+	visibility = hidden;
+}

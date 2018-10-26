@@ -15,7 +15,7 @@ jimport('joomla.event.dispatcher');
 
 use Joomla\Utilities\ArrayHelper;
 /**
- * Gckloosterveen model.
+ * tks_agenda model.
  *
  * @since  1.6
  */

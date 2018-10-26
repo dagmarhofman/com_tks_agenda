@@ -1,6 +1,5 @@
 ;(function($) {
-    $(document).ready(function() {
-
+    $(document).ready( function() {
 	document.getElementById('jform_recurring0').onclick = function () { 
 	    document.getElementById('recurring_attrib').style.visibility = "visible";
 	    
@@ -38,12 +37,9 @@
                     $("label[for=" + $(this).attr('id') + "]").addClass('active btn-success');
                 }
         });
-
-    document.getElementById('jform_recurring1').click();
-
+			
     })
 
 
 })(jQuery);
-
 
