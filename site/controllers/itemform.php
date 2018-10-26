@@ -487,9 +487,10 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		$this->setMessage(JText::_('COM_TKS_AGENDA_SAVE_SUCCESS ' . $str ));
 		$menu = JFactory::getApplication()->getMenu();
 		$item = $menu->getActive();
-		$url  = (empty($item->link) ? 'index.php?option=com_tks_agenda&view=items' : $item->link);
-		$this->setRedirect(JRoute::_($url, false));
-
+		// $url  = (empty($item->link) ? 'index.php?option=com_tks_agenda' : $item->link);
+		
+		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda', false));
+		
 		// Flush the data and mode from the session.
 		$app->setUserState('com_tks_agenda.edit.item.data', null);
 		$app->setUserState('com_tks_agenda.edit.item.mode', null);
@@ -523,8 +524,11 @@ class tks_agendaControllerItemForm extends tks_agendaController
 
 		$menu = JFactory::getApplication()->getMenu();
 		$item = $menu->getActive();
-		$url  = (empty($item->link) ? 'index.php?option=com_tks_agenda&view=items' : $item->link);
-		$this->setRedirect(JRoute::_($url, false));
+		// $url  = (empty($item->link) ? 'index.php?option=com_tks_agenda' : $item->link);
+
+		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda', false));
+		
+		
 	}
 
 	/**
@@ -599,7 +603,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		$this->setMessage(JText::_('COM_TKS_AGENDA_ITEM_DELETED_SUCCESSFULLY'));
 		$menu = JFactory::getApplication()->getMenu();
 		$item = $menu->getActive();
-		$url  = (empty($item->link) ? 'index.php?option=com_tks_agenda&view=items' : $item->link);
+		$url  = (empty($item->link) ? 'index.php?option=com_tks_agenda' : $item->link);
 		$this->setRedirect(JRoute::_($url, false));
 
 		// Flush the data from the session.

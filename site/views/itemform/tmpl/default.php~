@@ -118,7 +118,7 @@ $is_top_item = true;
 				</div>
 			</div>
     
-			<div id="recurring_attrib">			
+			<div id="recurring_attrib" style="visibility:hidden">			
 						
 			<div class="g-block size-25">
 				<div class="control-group">

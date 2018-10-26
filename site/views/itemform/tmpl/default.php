@@ -64,7 +64,7 @@ $is_top_item = true;
 </script>
 
 <div class="item-edit front-end-edit">
-	<?php if (!empty($this->item->id)): ?>
+	<?php if (!empty($this->item->id) || $this->item->id == 0): ?>
 		<h1>Bewerk huur vergaderruimte</h1>
 		<?php if(!$is_top_item ) {
 			echo "<strong style=\"color:red;\"> U bewerkt een herhaalafspraak </strong> "; 	
