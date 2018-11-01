@@ -19,7 +19,7 @@ use Joomla\Utilities\ArrayHelper;
  *
  * @since  1.6
  */
-class tks_agendaModelItemForm extends JModelForm
+class tks_agendaModelItemEditForm extends JModelForm
 {
 	private $item = null;
 
@@ -107,7 +107,12 @@ class tks_agendaModelItemForm extends JModelForm
 				{
 					$canEdit = $user->id == $table->created_by;
 				}
-				
+/* DAGMAR
+				if (!$canEdit)
+				{
+					throw new Exception(JText::_('JERROR_ALERTNOAUTHOR'), 500);
+				}
+*/
 				// Check published state.
 				if ($published = $this->getState('filter.published'))
 				{

@@ -37,14 +37,6 @@ endif;
 $app   = JFactory::getApplication();
 $recur_id = $app->getUserState( 'com_tks_agenda.edit.item.recurid' );		 
 
-if( $recur_id  > 0 )
-	$is_top_item = false;
-else 
-$is_top_item = true;
-
-//var_export($this->item);
-//  echo '<pre>';var_dump($profile);'</pre>';
-/**/
 ?>
 <script type="text/javascript">
 	if (jQuery === 'undefined') {
@@ -63,17 +55,8 @@ $is_top_item = true;
 	
 </script>
 
-<div class="item-edit front-end-edit">
-	<?php if (!empty($this->item->id) || $this->item->id == 0): ?>
-		<h1>Bewerk huur vergaderruimte</h1>
-		<?php if(!$is_top_item ) {
-			echo "<strong style=\"color:red;\"> U bewerkt een herhaalafspraak </strong> "; 	
-		} ?>
-	<?php else: ?>
 		<h1>Huur vergaderruimte</h1>
-	<?php endif; ?>
-	<?php
-	?>
+
 	<form id="form-item" action="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.save'); ?>" method="post" class="form-validate" enctype="multipart/form-data">
 		
 	<div class="g-grid">
@@ -105,11 +88,6 @@ $is_top_item = true;
 			<div class="g-block size-33">
 				 
 			</div>
-
-<?php
-		
-		if (empty($this->item->id) || $is_top_item  ):
-?>			
 			
 			<div class="g-block size-15">
 					<div class="control-group">
@@ -135,10 +113,6 @@ $is_top_item = true;
 			</div>
 
 			</div>
-			
-<?php		
-	endif;
-?>			
 	 		<div class="g-block size-100">
 	 		<div class="control-group">
 					<div class="control-label"><?php echo $this->form->getLabel('reason'); ?></div>
