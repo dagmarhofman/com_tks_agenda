@@ -25,6 +25,7 @@ class tks_agendaViewitems extends JViewLegacy
 	protected $state;
 
 	protected $params;
+	
 
 	/**
 	 * Display the view
@@ -39,13 +40,10 @@ class tks_agendaViewitems extends JViewLegacy
 	{
 		$app = JFactory::getApplication();
 
-		$this->state      = $this->get('State');
+		$this->state = $this->get('State');
 		$this->items = $this->get('Items');	
 		
 		$this->pagination = $this->get('Pagination');
-		
-		
-		//$params = JComponentHelper::getParams(JRequest::getVar('option')); // Get parameter helper (corrected 'JRquest' spelling)
 		$this->params     = $app->getParams('com_tks_agenda');
 
 		JHtml::_('jquery.framework');	
@@ -55,20 +53,17 @@ class tks_agendaViewitems extends JViewLegacy
 		$doc = JFactory::getDocument();
  		$doc->addStylesheet(JURI::root().'components/com_tks_agenda/assets/css/calendar.css');
 		$doc->addScript(JURI::root().'components/com_tks_agenda/assets/js/language/nl-NL.js');
-
 		$doc->addScript(JURI::root().'components/com_tks_agenda/assets/js/vendor/underscore-min.js');
 		$doc->addScript(JURI::root().'components/com_tks_agenda/assets/js/vendor/jstz.min.js');
 		$doc->addScript(JURI::root().'components/com_tks_agenda/assets/js/calendar.js');
 		$doc->addScript(JURI::root().'components/com_tks_agenda/assets/js/app.js');
+		
  				
 		$dispatcher = JEventDispatcher::getInstance();
 		JPluginHelper::importPlugin('content');
-		
-		
-		
+				
 		$dispatcher->trigger('onContentPrepareAgenda', array ('com_tks_agenda.item', &$this->item, &$this->params, ''));
-
-	 
+		
 	   $errors = $this->get('Errors');
 
 		// Check for errors.

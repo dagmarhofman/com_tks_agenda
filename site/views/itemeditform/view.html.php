@@ -20,6 +20,8 @@ jimport('joomla.application.component.view');
 class tks_agendaViewItemeditform extends JViewLegacy
 {
 
+	protected $item;
+
 	/**
 	 * Display the view
 	 *
@@ -31,7 +33,8 @@ class tks_agendaViewItemeditform extends JViewLegacy
 	 */
 	public function display($tpl = null)
 	{
-
+		$this->item    = $this->get('Data');
+			
 		$this->_prepareDocument();
 
 		parent::display($tpl);
@@ -46,5 +49,6 @@ class tks_agendaViewItemeditform extends JViewLegacy
 	 */
 	protected function _prepareDocument()
 	{
+		
 	}
 }

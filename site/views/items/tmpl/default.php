@@ -14,6 +14,7 @@ JHtml::_('bootstrap.tooltip');
 JHtml::_('behavior.multiselect');
 JHtml::_('formbehavior.chosen', 'select');
 
+
 $user       = JFactory::getUser();
 $userId     = $user->get('id');
 $listOrder  = $this->state->get('list.ordering');
@@ -55,7 +56,10 @@ $canDelete  = $user->authorise('core.delete', 'com_tks_agenda');
 	</div>
 	<div class="g-grid">
 	 	<div class="g-block  size-100">
-  			<div id="calendar"></div>
+  			<div id="calendar">
+  			
+  			
+  			</div>
 	    </div>	
 	</div>
 </div>
@@ -85,6 +89,7 @@ $canDelete  = $user->authorise('core.delete', 'com_tks_agenda');
 </form>
 
 <script type="text/javascript">
+
 
 	jQuery(document).ready(function () {
 		jQuery('.delete-button').click(deleteItem);

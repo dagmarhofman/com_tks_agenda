@@ -1,8 +1,13 @@
 (function($) {
 
+  // $( window ).on( "load", function() {
+  //      console.log( " DAGMAR -> window loaded" );
+ //   }); 
+ 
  $(document).ready(function() {
-
-
+         //console.log( " DAGMAR -> document loaded" );
+ 
+ 
         $('.radio.btn-group label').addClass('btn');
         $(".btn-group label:not(.active)").click(function()
             {
@@ -31,7 +36,9 @@
                     $("label[for=" + $(this).attr('id') + "]").addClass('active btn-success');
                 }
         });
- 	var d = new Date();
+
+ 
+	var d = new Date();
 	var year = d.getFullYear();
 	var month = ("0" + (d.getMonth() + 1)).slice(-2);
 	var day = ("0" + d.getDate()).slice(-2)
@@ -124,7 +131,6 @@
 		e.preventDefault();
  
 	});
-
 		$(".hasPopover").on({
 		  mouseenter: function(){
 		 	$(this).popover('show');
@@ -134,5 +140,9 @@
 		  }
 		}, "i");   
  });
-	
+  
+ 
+	  
+ 		  
 }(jQuery)); 
+
