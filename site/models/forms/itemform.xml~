@@ -62,8 +62,8 @@
                     default="No"
                     label="COM_TKS_AGENDA_FORM_LBL_RECURRING_TITLE"
                     description="COM_TKS_AGENDA_FORM_DESC_RECURRING_TITLE">
-                    <option value="No" id="rec_no">No</option>
                     <option value="Yes" id="rec_yes">Yes</option>
+                    <option value="No" id="rec_no">No</option>
                 </field>
 
 				</fieldset>

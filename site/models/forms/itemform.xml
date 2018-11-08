@@ -80,6 +80,18 @@
                     <option value="week">Week</option>
                     <option value="maand">Maand</option>
                 </field>
+                 <field
+                    name="bewerk_type"
+                    type="radio"
+                    class="btn-group"
+                    default="deze"
+                    label="COM_TKS_AGENDA_FORM_LBL_BEWERKTYPE_TITLE"
+                    description="COM_TKS_AGENDA_FORM_DESC_LBL_BEWERKTYPE_TITLE">
+                    
+                    <option value="deze">Alleen deze</option>
+                    <option value="vanaf">Vanaf deze</option>
+                    <option value="alle">Allemaal</option>
+                </field>
 
 
 
