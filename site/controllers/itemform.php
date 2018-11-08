@@ -314,7 +314,11 @@ class tks_agendaControllerItemForm extends tks_agendaController
 			//DAGMAR (check hier voor fouten) ?	
 	}
 	
-	
+	public function bewerk()
+	{
+		$this->setMessage('Bewerk functie aangeroepen' , 'notice');
+		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda', false));	
+	}
 	/**
 	 * Method to save a user's profile data.
 	 *

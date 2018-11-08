@@ -57,7 +57,7 @@ $recur_id = $app->getUserState( 'com_tks_agenda.edit.item.recurid' );
 
 		<h1>Bewerk huur vergaderruimte</h1>
 
-	<form id="form-item" action="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.save'); ?>" method="post" class="form-validate" enctype="multipart/form-data">
+	<form id="form-item" action="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.bewerk'); ?>" method="post" class="form-validate" enctype="multipart/form-data">
 		
 	<div class="g-grid">
 			<div class="g-block size-50">
@@ -182,7 +182,7 @@ $recur_id = $app->getUserState( 'com_tks_agenda.edit.item.recurid' );
 	<input type="hidden" name="jform[checked_out]" value="<?php echo $this->item->checked_out; ?>" />
 	<input type="hidden" name="jform[checked_out_time]" value="<?php echo $this->item->checked_out_time; ?>" />
 		<input type="hidden" name="option" value="com_tks_agenda"/>
-		<input type="hidden" name="task" value="itemform.save"/>
+		<input type="hidden" name="task" value="itemform.bewerk"/>
 		<?php echo JHtml::_('form.token'); ?>
 	</form>
 </div>
