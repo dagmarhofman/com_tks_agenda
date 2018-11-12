@@ -323,18 +323,13 @@ class tks_agendaControllerItemForm extends tks_agendaController
 			$subQuery = $db->getQuery(true);
 
 			// Create the base subQuery select statement.
-			$subQuery->select('id')
+			$subQuery->select('id, rstart, rend')
     		->from($db->quoteName('#__tks_agenda_recurring'))
-    		->where($db->quoteName('rstart') . ' > ' . $db->quote($this->jform['start'] ));
+    		->where($db->quoteName('rstart') . ' >= ' . $db->quote($this->jform['start'] ));
 			$db->setQuery( $subQuery );
 			$db->execute();
 			$result = $this->db->loadObjectList();
-			$str = "( ";			
-			foreach( $result as $row ) {
-				$str = $str . $row->id . ", ";			
-			}			
-			$str = $str . $recurring_id . ")";
-			
+						
 			$fields = array(
     			$db->quoteName('rstart') . ' = ' . $db->quote( $this->jform['start'] ),
     			$db->quoteName('rend') . ' = ' . $db->quote($this->jform['end']  )
@@ -353,12 +348,31 @@ class tks_agendaControllerItemForm extends tks_agendaController
 				$query->update($db->quoteName('#__tks_agenda_recurring'))->set($fields)->where($conditions);
 	
 		   } else if( $this->jform['bewerk_type'] == 'vanaf') {
+				$startDate =  new DateTime ( $this->jform['start'] ,new DateTimeZone("Europe/Amsterdam") );
+				$endDate =  new DateTime ( $this->jform['end'],new DateTimeZone("Europe/Amsterdam") );
+		
+				foreach( $result as $row ) {
+					$query = $db->getQuery(true);
+					$startRow =  new DateTime ( $row->rstart , new DateTimeZone("Europe/Amsterdam") );
+					$endRow =  new DateTime ( $row->rend , new DateTimeZone("Europe/Amsterdam") );
+					$editStartDate = date_time_set ( $startRow , $startDate->format("H"), $startDate->format("m") );
+					$editEndDate = date_time_set ( $endRow , $endDate->format("H"), $endDate->format("m") );
 
-				$query->update( $db->quoteName('#__tks_agenda_recurring'))
-				->set($fields)
-				->where($db->quoteName('id') . ' IN ' . $str );
+					$fields = array(
+    					$db->quoteName('rstart') . ' =  ' . $db->quote( $editStartDate->format("Y-m-d H:i:s" ) ),
+    					$db->quoteName('rend') . ' = ' . $db->quote( $editEndDate->format("Y-m-d H:i:s" ) )
+					);					
+					
+					$query->update( $db->quoteName('#__tks_agenda_recurring'))
+					->set( $fields )
+					->where($db->quoteName('id') . ' = ' . $row->id );
+		   		$db->setQuery($query);	   		
+		   		$db->execute();
+				}			
+
+				
 			   } else { //this should not happen
-		  		}
+		  	}
 					
 		   $db->setQuery($query);
 		   $db->execute();
