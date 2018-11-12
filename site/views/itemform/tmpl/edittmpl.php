@@ -55,7 +55,14 @@ $recur_id = $app->getUserState( 'com_tks_agenda.edit.item.recurid' );
 	
 </script>
 
-		<h1>Bewerk huur vergaderruimte</h1>
+	<h1>Bewerk huur vergaderruimte</h1>
+<?php
+	if( $recur_id != -1 ) {
+?>
+	<strong style="color:red;"> U bewerkt een herhaalafspraak </strong>
+<?php
+	}
+?>
 
 	<form id="form-item" action="<?php echo JRoute::_('index.php?option=com_tks_agenda&task=item.bewerk'); ?>" method="post" class="form-validate" enctype="multipart/form-data">
 		
@@ -98,19 +105,6 @@ $recur_id = $app->getUserState( 'com_tks_agenda.edit.item.recurid' );
     
 			<div id="recurring_attrib" style="visibility:hidden">			
 						
-			<div class="g-block size-25">
-				<div class="control-group">
-					<div class="control-label"><?php echo $this->form->getLabel('recur_type'); ?></div>
-					<div class="controls"><?php echo $this->form->getInput('recur_type'); ?></div>
-				</div>
-			</div>
-
-			<div class="g-block size-60">
-				<div class="control-group">
-					<div class="control-label"><?php echo $this->form->getLabel('end_recur'); ?></div>
-					<div class="controls"><?php echo $this->form->getInput('end_recur'); ?></div>
-				</div>
-			</div>
 
 			</div>
 	 		<div class="g-block size-100">

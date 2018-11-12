@@ -314,7 +314,138 @@ class tks_agendaControllerItemForm extends tks_agendaController
 			//DAGMAR (check hier voor fouten) ?	
 	}
 	
+	public function bewerk_recur( $recurring_id, $id )
+	{
+			$db = JFactory::getDbo();			
+
+			
+			$query = $db->getQuery(true);
+			$subQuery = $db->getQuery(true);
+
+			// Create the base subQuery select statement.
+			$subQuery->select('id')
+    		->from($db->quoteName('#__tks_agenda_recurring'))
+    		->where($db->quoteName('rstart') . ' > ' . $db->quote($this->jform['start'] ));
+			$db->setQuery( $subQuery );
+			$db->execute();
+			$result = $this->db->loadObjectList();
+			$tr = "( ";			
+			foreach( $result as $row ) {
+				$str = $str . $row->id . ", ";			
+			}			
+			$str = $str . $row->id . ")";
+			
+			$fields = array(
+    			$db->quoteName('rstart') . ' = ' . $db->quote( $this->jform['start'] ),
+    			$db->quoteName('rend') . ' = ' . $db->quote($this->jform['end']  )
+			);
+
+			if( $this->jform['bewerk_type'] == 'deze' ) {
+				$conditions = array(
+ 					$db->quoteName('id') . ' = ' . $db->quote( $recurring_id )
+				);
+				$query->update($db->quoteName('#__tks_agenda_recurring'))->set($fields)->where($conditions);
+
+		   } else if( $this->jform['bewerk_type'] == 'alle' ) {
+				$conditions = array(
+ 					$db->quoteName('rid') . ' = ' . $db->quote( $id )
+				);						   	
+				$query->update($db->quoteName('#__tks_agenda_recurring'))->set($fields)->where($conditions);
 	
+		   } else if( $this->jform['bewerk_type'] == 'vanaf') {
+
+				$query->update( $db->quoteName('#__tks_agenda_recurring'))
+				->set($fields)
+				->where($db->quoteName('id') . ' IN ' . $str );
+			   } else { //this should not happen
+		  		}
+					
+		   $db->setQuery($query);
+		   $db->execute();
+		
+	}	
+	
+	public function bewerk()
+	{
+		// Check for request forgeries.
+		JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
+
+		$this->setMessage('Bewerk functie aangeroepen' , 'notice');
+		
+				// Initialise variables.
+		$app   = JFactory::getApplication();
+		$this->db = JFactory::getDBO();
+
+		$this->model = $this->getModel('ItemForm', 'tks_agendaModel');
+ 		
+ 		// Get the user data.
+		$this->data = JFactory::getApplication()->input->get('jform', array(), 'array');
+		
+		// Validate the posted data.
+		$form = $this->model->getForm();
+
+		if (!$form)
+		{
+			throw new Exception($this->model->getError(), 500);
+		}
+
+		$this->data = $this->model->validate($form, $this->data);
+		$input = $app->input;
+		$this->jform = $input->get('jform', array(), 'ARRAY');
+		
+			// Check for errors.
+			if ($this->data === false)
+			{
+				// Get the validation messages.
+				$errors = $this->model->getErrors();
+
+				// Push up to three validation messages out to the user.
+				for ($i = 0, $n = count($errors); $i < $n && $i < 3; $i++)
+				{
+					if ($errors[$i] instanceof Exception)
+					{
+						$app->enqueueMessage($errors[$i]->getMessage(), 'error');
+					}
+					else
+					{
+						$app->enqueueMessage($errors[$i], 'error');
+					}
+				}
+				// Save the data in the session.
+				$app->setUserState('com_tks_agenda.edit.item.data', $this->jform);
+				// Redirect back to the edit screen.
+				$id = (int) $app->getUserState('com_tks_agenda.edit.item.id');
+				$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda&view=itemform&layout=edit&id=' . $id, false));
+			}
+			
+		$this->startDate = new DateTime($this->data['start'],new DateTimeZone("Europe/Amsterdam"));
+		$this->endDate = new DateTime($this->data['end'],new DateTimeZone("Europe/Amsterdam"));
+		$this->endRecurring = new DateTime($this->data['end_recur'],new DateTimeZone("Europe/Amsterdam"));
+
+
+		$mode = $app->getUserState('com_tks_agenda.edit.item.mode');
+		$id = (int) $app->getUserState('com_tks_agenda.edit.item.id');
+		$recurring_id = $app->getUserState( 'com_tks_agenda.edit.item.recurid' );
+
+		if( $recurring_id != -1 ) {
+			$this->bewerk_recur( $recurring_id, $id );		
+		} else {
+			// TODO 		
+		}
+		
+		// Redirect to the list screen.
+		$this->setMessage(JText::_('COM_TKS_AGENDA_SAVE_SUCCESS ' . $str ));
+		$menu = JFactory::getApplication()->getMenu();
+		$item = $menu->getActive();
+		// $url  = (empty($item->link) ? 'index.php?option=com_tks_agenda' : $item->link);
+		
+		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda', false));
+		
+		// Flush the data and mode from the session.
+		$app->setUserState('com_tks_agenda.edit.item.data', null);
+		$app->setUserState('com_tks_agenda.edit.item.mode', null);
+		
+	}
 	/**
 	 * Method to save a user's profile data.
 	 *
@@ -352,8 +483,7 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		$this->jform = $input->get('jform', array(), 'ARRAY');
 
   		
-
-		// Check for errors.
+			// Check for errors.
 			if ($this->data === false)
 			{
 				// Get the validation messages.
@@ -481,7 +611,6 @@ class tks_agendaControllerItemForm extends tks_agendaController
 
 
 		}
-		
 		
 		// Redirect to the list screen.
 		$this->setMessage(JText::_('COM_TKS_AGENDA_SAVE_SUCCESS ' . $str ));
