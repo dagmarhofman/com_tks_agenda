@@ -1,0 +1,132 @@
+\section{tks\+\_\+agenda\+Site\+Frontend\+Helper Class Reference}
+\label{classtks__agenda_site_frontend_helper}\index{tks\+\_\+agenda\+Site\+Frontend\+Helper@{tks\+\_\+agenda\+Site\+Frontend\+Helper}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ get\+\_\+brightness} (\$hex)
+\item 
+static \textbf{ truncate} (\$string, \$limit, \$break=\char`\"{}.\char`\"{}, \$pad=\char`\"{}...\char`\"{})
+\item 
+static \textbf{ get\+Category\+Name\+By\+Category\+Id} (\$category\+\_\+id)
+\item 
+static \textbf{ get\+Model} (\$name)
+\item 
+static \textbf{ get\+Files} (\$pk, \$table, \$field)
+\item 
+static \textbf{ can\+User\+Edit} (\$item)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{tks\+\_\+agenda}{p.}{namespacetks__agenda} front end helper class 
+
+\subsection{Member Function Documentation}
+\mbox{\label{classtks__agenda_site_frontend_helper_ab4dfb05f0946b8e09ec4738efcc804fa}} 
+\index{tks\+\_\+agenda\+Site\+Frontend\+Helper@{tks\+\_\+agenda\+Site\+Frontend\+Helper}!can\+User\+Edit@{can\+User\+Edit}}
+\index{can\+User\+Edit@{can\+User\+Edit}!tks\+\_\+agenda\+Site\+Frontend\+Helper@{tks\+\_\+agenda\+Site\+Frontend\+Helper}}
+\subsubsection{can\+User\+Edit()}
+{\footnotesize\ttfamily static can\+User\+Edit (\begin{DoxyParamCaption}\item[{}]{\$item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get user edit state
+
+
+\begin{DoxyParams}[1]{Parameters}
+object & {\em \$item} & The item\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean The permission. 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_site_frontend_helper_aba764f0477d87b02a0e639730b6fa88e}} 
+\index{tks\+\_\+agenda\+Site\+Frontend\+Helper@{tks\+\_\+agenda\+Site\+Frontend\+Helper}!get\+\_\+brightness@{get\+\_\+brightness}}
+\index{get\+\_\+brightness@{get\+\_\+brightness}!tks\+\_\+agenda\+Site\+Frontend\+Helper@{tks\+\_\+agenda\+Site\+Frontend\+Helper}}
+\subsubsection{get\+\_\+brightness()}
+{\footnotesize\ttfamily static get\+\_\+brightness (\begin{DoxyParamCaption}\item[{}]{\$hex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get decimal brightness value
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$hex} & H\+T\+ML style color value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer brightness 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_site_frontend_helper_ad3f58eb3d2461a0e06545e11ae5256a9}} 
+\index{tks\+\_\+agenda\+Site\+Frontend\+Helper@{tks\+\_\+agenda\+Site\+Frontend\+Helper}!get\+Category\+Name\+By\+Category\+Id@{get\+Category\+Name\+By\+Category\+Id}}
+\index{get\+Category\+Name\+By\+Category\+Id@{get\+Category\+Name\+By\+Category\+Id}!tks\+\_\+agenda\+Site\+Frontend\+Helper@{tks\+\_\+agenda\+Site\+Frontend\+Helper}}
+\subsubsection{get\+Category\+Name\+By\+Category\+Id()}
+{\footnotesize\ttfamily static get\+Category\+Name\+By\+Category\+Id (\begin{DoxyParamCaption}\item[{}]{\$category\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Query the category name by using the id
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$category\+\_\+id} & The category id\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The category name. 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_site_frontend_helper_a117b0a892d8af3e18b95f63a2fb28819}} 
+\index{tks\+\_\+agenda\+Site\+Frontend\+Helper@{tks\+\_\+agenda\+Site\+Frontend\+Helper}!get\+Files@{get\+Files}}
+\index{get\+Files@{get\+Files}!tks\+\_\+agenda\+Site\+Frontend\+Helper@{tks\+\_\+agenda\+Site\+Frontend\+Helper}}
+\subsubsection{get\+Files()}
+{\footnotesize\ttfamily static get\+Files (\begin{DoxyParamCaption}\item[{}]{\$pk,  }\item[{}]{\$table,  }\item[{}]{\$field }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get files from table
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$pk} & The primary key \\
+\hline
+string & {\em \$table} & The table name \\
+\hline
+string & {\em \$field} & The field name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array The results. 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_site_frontend_helper_a2b41d045f7a12506f43cd6b1cb5494ef}} 
+\index{tks\+\_\+agenda\+Site\+Frontend\+Helper@{tks\+\_\+agenda\+Site\+Frontend\+Helper}!get\+Model@{get\+Model}}
+\index{get\+Model@{get\+Model}!tks\+\_\+agenda\+Site\+Frontend\+Helper@{tks\+\_\+agenda\+Site\+Frontend\+Helper}}
+\subsubsection{get\+Model()}
+{\footnotesize\ttfamily static get\+Model (\begin{DoxyParamCaption}\item[{}]{\$name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get model by name
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$name} & The model name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object The model. 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_site_frontend_helper_aeade72eab779f6693d0db81c291f03f1}} 
+\index{tks\+\_\+agenda\+Site\+Frontend\+Helper@{tks\+\_\+agenda\+Site\+Frontend\+Helper}!truncate@{truncate}}
+\index{truncate@{truncate}!tks\+\_\+agenda\+Site\+Frontend\+Helper@{tks\+\_\+agenda\+Site\+Frontend\+Helper}}
+\subsubsection{truncate()}
+{\footnotesize\ttfamily static truncate (\begin{DoxyParamCaption}\item[{}]{\$string,  }\item[{}]{\$limit,  }\item[{}]{\$break = {\ttfamily \char`\"{}.\char`\"{}},  }\item[{}]{\$pad = {\ttfamily \char`\"{}...\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Truncate (and pad) a string
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$string} & The string to truncate \\
+\hline
+string & {\em \$limit} & The delimiter \\
+\hline
+string & {\em \$pad} & The padding.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The result string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+site/helpers/\textbf{ tks\+\_\+agenda.\+php}\end{DoxyCompactItemize}

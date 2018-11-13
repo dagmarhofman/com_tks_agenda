@@ -1,0 +1,148 @@
+\section{tks\+\_\+agenda\+Tablerecuritem Class Reference}
+\label{classtks__agenda_tablerecuritem}\index{tks\+\_\+agenda\+Tablerecuritem@{tks\+\_\+agenda\+Tablerecuritem}}
+Inheritance diagram for tks\+\_\+agenda\+Tablerecuritem\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtks__agenda_tablerecuritem}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \+\_\+\+\_\+construct} (\&\$db)
+\item 
+\textbf{ check} ()
+\item 
+\textbf{ publish} (\$pks=null, \$state=1, \$user\+Id=0)
+\item 
+\textbf{ delete} (\$pk=null)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \+\_\+get\+Asset\+Name} ()
+\item 
+\textbf{ \+\_\+get\+Asset\+Parent\+Id} (J\+Table \$table=null, \$\textbf{ id}=null)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+recuritem Table class O\+B\+S\+O\+L\+E\+TE
+
+\begin{DoxySince}{Since}
+1.\+6 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classtks__agenda_tablerecuritem_aaf2ef772755ec6f361d44e16cc9ffd69}} 
+\index{tks\+\_\+agenda\+Tablerecuritem@{tks\+\_\+agenda\+Tablerecuritem}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!tks\+\_\+agenda\+Tablerecuritem@{tks\+\_\+agenda\+Tablerecuritem}}
+\subsubsection{\+\_\+\+\_\+construct()}
+{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{\&}]{\$db }\end{DoxyParamCaption})}
+
+Constructor
+
+
+\begin{DoxyParams}[1]{Parameters}
+J\+Database & {\em \&\$db} & A database connector object \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classtks__agenda_tablerecuritem_a6ebc41fa07c98f2a90c155ea1a2b200d}} 
+\index{tks\+\_\+agenda\+Tablerecuritem@{tks\+\_\+agenda\+Tablerecuritem}!\+\_\+get\+Asset\+Name@{\+\_\+get\+Asset\+Name}}
+\index{\+\_\+get\+Asset\+Name@{\+\_\+get\+Asset\+Name}!tks\+\_\+agenda\+Tablerecuritem@{tks\+\_\+agenda\+Tablerecuritem}}
+\subsubsection{\+\_\+get\+Asset\+Name()}
+{\footnotesize\ttfamily \+\_\+get\+Asset\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Define a namespaced asset name for inclusion in the \#\+\_\+\+\_\+assets table
+
+\begin{DoxyReturn}{Returns}
+string The asset name
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+J\+Table\+::\+\_\+get\+Asset\+Name 
+\end{DoxySeeAlso}
+\mbox{\label{classtks__agenda_tablerecuritem_a82fd9fcd31dd6df6df45bd0a0146e832}} 
+\index{tks\+\_\+agenda\+Tablerecuritem@{tks\+\_\+agenda\+Tablerecuritem}!\+\_\+get\+Asset\+Parent\+Id@{\+\_\+get\+Asset\+Parent\+Id}}
+\index{\+\_\+get\+Asset\+Parent\+Id@{\+\_\+get\+Asset\+Parent\+Id}!tks\+\_\+agenda\+Tablerecuritem@{tks\+\_\+agenda\+Tablerecuritem}}
+\subsubsection{\+\_\+get\+Asset\+Parent\+Id()}
+{\footnotesize\ttfamily \+\_\+get\+Asset\+Parent\+Id (\begin{DoxyParamCaption}\item[{J\+Table}]{\$table = {\ttfamily null},  }\item[{}]{\$id = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Returns the parent asset\textquotesingle{}s id. If you have a tree structure, retrieve the parent\textquotesingle{}s id using the external key field
+
+
+\begin{DoxyParams}[1]{Parameters}
+J\+Table & {\em \$table} & Table name \\
+\hline
+integer & {\em \$id} & Id\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+J\+Table\+::\+\_\+get\+Asset\+Parent\+Id
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+mixed The id on success, false on failure. 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_tablerecuritem_a5fb1933974ac9aae8c7ac4d3344caca6}} 
+\index{tks\+\_\+agenda\+Tablerecuritem@{tks\+\_\+agenda\+Tablerecuritem}!check@{check}}
+\index{check@{check}!tks\+\_\+agenda\+Tablerecuritem@{tks\+\_\+agenda\+Tablerecuritem}}
+\subsubsection{check()}
+{\footnotesize\ttfamily check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Overloaded check function
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_tablerecuritem_abb272d7d70167c4e481f347952c0b60c}} 
+\index{tks\+\_\+agenda\+Tablerecuritem@{tks\+\_\+agenda\+Tablerecuritem}!delete@{delete}}
+\index{delete@{delete}!tks\+\_\+agenda\+Tablerecuritem@{tks\+\_\+agenda\+Tablerecuritem}}
+\subsubsection{delete()}
+{\footnotesize\ttfamily delete (\begin{DoxyParamCaption}\item[{}]{\$pk = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Delete a record by id
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$pk} & Primary key value to delete. Optional\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_tablerecuritem_a11ca84b0de3affddaf47e3b3259d173d}} 
+\index{tks\+\_\+agenda\+Tablerecuritem@{tks\+\_\+agenda\+Tablerecuritem}!publish@{publish}}
+\index{publish@{publish}!tks\+\_\+agenda\+Tablerecuritem@{tks\+\_\+agenda\+Tablerecuritem}}
+\subsubsection{publish()}
+{\footnotesize\ttfamily publish (\begin{DoxyParamCaption}\item[{}]{\$pks = {\ttfamily null},  }\item[{}]{\$state = {\ttfamily 1},  }\item[{}]{\$user\+Id = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Method to set the publishing state for a row or list of rows in the database table. The method respects checked out rows by other users and will attempt to checkin rows that it can after adjustments are made.
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$pks} & An optional array of primary key values to update. If not set the instance property value is used. \\
+\hline
+integer & {\em \$state} & The publishing state. eg. [0 = unpublished, 1 = published] \\
+\hline
+integer & {\em \$user\+Id} & The user id of the user performing the operation.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean True on success.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0.\+4
+\end{DoxySince}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+administrator/tables/\textbf{ recuritem.\+php}\end{DoxyCompactItemize}

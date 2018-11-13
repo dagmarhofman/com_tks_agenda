@@ -1,0 +1,267 @@
+\section{tks\+\_\+agenda\+Controller\+Item\+Form Class Reference}
+\label{classtks__agenda_controller_item_form}\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+Inheritance diagram for tks\+\_\+agenda\+Controller\+Item\+Form\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classtks__agenda_controller_item_form}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ edit} ()
+\item 
+\textbf{ overlap\+\_\+check} ( \$is\+\_\+update=N\+U\+LL, \$\textbf{ id})
+\item 
+\textbf{ check\+\_\+for\+\_\+date\+\_\+errors} ()
+\item 
+\textbf{ get\+\_\+recur\+\_\+array} ()
+\item 
+\textbf{ save\+\_\+recurring\+\_\+items} ( \$\textbf{ id})
+\item 
+\textbf{ bewerk\+\_\+recur} ( \$recurring\+\_\+id, \$\textbf{ id})
+\item 
+\textbf{ bewerk} ()
+\item 
+\textbf{ save} (\$key=N\+U\+LL, \$url\+Var=N\+U\+LL)
+\item 
+\textbf{ cancel} ()
+\item 
+\textbf{ remove} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \$jform} = N\+U\+LL
+\item 
+\textbf{ \$uitval} = N\+U\+LL
+\item 
+\textbf{ \$start\+Date} = N\+U\+LL
+\item 
+\textbf{ \$end\+Date} = N\+U\+LL
+\item 
+\textbf{ \$end\+Recurring} = N\+U\+LL
+\item 
+\textbf{ \$model} = N\+U\+LL
+\item 
+\textbf{ \$db} = N\+U\+LL
+\item 
+\textbf{ \$data} = N\+U\+LL
+\item 
+\textbf{ \$last\+\_\+error} = N\+U\+LL
+\item 
+\textbf{ \$overlapfail} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Item controller class.
+
+\begin{DoxySince}{Since}
+1.\+6 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classtks__agenda_controller_item_form_acc46206cb29eafebd89e0716acc54916}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!bewerk@{bewerk}}
+\index{bewerk@{bewerk}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{bewerk()}
+{\footnotesize\ttfamily bewerk (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{classtks__agenda_controller_item_form_a321844ee5340dbae104c397b285b5e7d}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!bewerk\+\_\+recur@{bewerk\+\_\+recur}}
+\index{bewerk\+\_\+recur@{bewerk\+\_\+recur}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{bewerk\+\_\+recur()}
+{\footnotesize\ttfamily bewerk\+\_\+recur (\begin{DoxyParamCaption}\item[{}]{\$recurring\+\_\+id,  }\item[{}]{\$id }\end{DoxyParamCaption})}
+
+\mbox{\label{classtks__agenda_controller_item_form_a649b2b3005c687ae78c9d1d65e973493}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!cancel@{cancel}}
+\index{cancel@{cancel}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{cancel()}
+{\footnotesize\ttfamily cancel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Method to abort current operation
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\label{classtks__agenda_controller_item_form_a1fe2368f6e752f506a5b6f293fd58737}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!check\+\_\+for\+\_\+date\+\_\+errors@{check\+\_\+for\+\_\+date\+\_\+errors}}
+\index{check\+\_\+for\+\_\+date\+\_\+errors@{check\+\_\+for\+\_\+date\+\_\+errors}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{check\+\_\+for\+\_\+date\+\_\+errors()}
+{\footnotesize\ttfamily check\+\_\+for\+\_\+date\+\_\+errors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function that checks for date errors Also sets the error message
+
+\begin{DoxyReturn}{Returns}
+boolean True for date error 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_controller_item_form_a5cb75cbb16467eb1768837d126dc535b}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!edit@{edit}}
+\index{edit@{edit}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{edit()}
+{\footnotesize\ttfamily edit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Method to check out an item for editing and redirect to the edit form.
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+6 
+\end{DoxySince}
+\mbox{\label{classtks__agenda_controller_item_form_ac086a8828032c61e6c139c4a79d47b9b}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!get\+\_\+recur\+\_\+array@{get\+\_\+recur\+\_\+array}}
+\index{get\+\_\+recur\+\_\+array@{get\+\_\+recur\+\_\+array}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{get\+\_\+recur\+\_\+array()}
+{\footnotesize\ttfamily get\+\_\+recur\+\_\+array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Calculates array of recurring items.
+
+\begin{DoxyReturn}{Returns}
+array Array of recurring dates. 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_controller_item_form_a807b8804650cdfcf25c1b7d03bdd530f}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!overlap\+\_\+check@{overlap\+\_\+check}}
+\index{overlap\+\_\+check@{overlap\+\_\+check}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{overlap\+\_\+check()}
+{\footnotesize\ttfamily overlap\+\_\+check (\begin{DoxyParamCaption}\item[{}]{\$is\+\_\+update = {\ttfamily NULL},  }\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Method to save a user\textquotesingle{}s profile data.
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySince}{Since}
+1.\+6 
+\end{DoxySince}
+\mbox{\label{classtks__agenda_controller_item_form_aff9a1fb07dca963c2c9a8ffe66b45ded}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!remove@{remove}}
+\index{remove@{remove}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{remove()}
+{\footnotesize\ttfamily remove (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Method to remove data
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\label{classtks__agenda_controller_item_form_ac00855ace03b6824b4e1bdc9060ebab0}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!save@{save}}
+\index{save@{save}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{save()}
+{\footnotesize\ttfamily save (\begin{DoxyParamCaption}\item[{}]{\$key = {\ttfamily NULL},  }\item[{}]{\$url\+Var = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Method to save a user\textquotesingle{}s profile data.
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySince}{Since}
+1.\+6 
+\end{DoxySince}
+\mbox{\label{classtks__agenda_controller_item_form_a1a05579800021a72a6d6e94e1c0ffbbc}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!save\+\_\+recurring\+\_\+items@{save\+\_\+recurring\+\_\+items}}
+\index{save\+\_\+recurring\+\_\+items@{save\+\_\+recurring\+\_\+items}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{save\+\_\+recurring\+\_\+items()}
+{\footnotesize\ttfamily save\+\_\+recurring\+\_\+items (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Save all recurring dates in database.
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$id} & id of item to save \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Array of recurring dates. 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\mbox{\label{classtks__agenda_controller_item_form_a6efc15b5a2314dd4b5aaa556a375c6d6}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!\$data@{\$data}}
+\index{\$data@{\$data}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{\$data}
+{\footnotesize\ttfamily \$data = N\+U\+LL}
+
+\mbox{\label{classtks__agenda_controller_item_form_a1fa3127fc82f96b1436d871ef02be319}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!\$db@{\$db}}
+\index{\$db@{\$db}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{\$db}
+{\footnotesize\ttfamily \$db = N\+U\+LL}
+
+\mbox{\label{classtks__agenda_controller_item_form_a398d961fce9d555095d8e8251c060465}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!\$end\+Date@{\$end\+Date}}
+\index{\$end\+Date@{\$end\+Date}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{\$end\+Date}
+{\footnotesize\ttfamily \$end\+Date = N\+U\+LL}
+
+\mbox{\label{classtks__agenda_controller_item_form_a895b3e896be6457f8e66ad3d5ff74383}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!\$end\+Recurring@{\$end\+Recurring}}
+\index{\$end\+Recurring@{\$end\+Recurring}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{\$end\+Recurring}
+{\footnotesize\ttfamily \$end\+Recurring = N\+U\+LL}
+
+\mbox{\label{classtks__agenda_controller_item_form_a74bcc1d432cd227c7596dc09851b48e4}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!\$jform@{\$jform}}
+\index{\$jform@{\$jform}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{\$jform}
+{\footnotesize\ttfamily \$jform = N\+U\+LL}
+
+\mbox{\label{classtks__agenda_controller_item_form_a60375900d6ade93e662c348772867d64}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!\$last\+\_\+error@{\$last\+\_\+error}}
+\index{\$last\+\_\+error@{\$last\+\_\+error}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{\$last\+\_\+error}
+{\footnotesize\ttfamily \$last\+\_\+error = N\+U\+LL}
+
+\mbox{\label{classtks__agenda_controller_item_form_a08fdd91bde255dbe3e2d15a22d9663e8}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!\$model@{\$model}}
+\index{\$model@{\$model}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{\$model}
+{\footnotesize\ttfamily \$model = N\+U\+LL}
+
+\mbox{\label{classtks__agenda_controller_item_form_a15fbcb617b7828084e1187bbf284ad52}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!\$overlapfail@{\$overlapfail}}
+\index{\$overlapfail@{\$overlapfail}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{\$overlapfail}
+{\footnotesize\ttfamily \$overlapfail = false}
+
+\mbox{\label{classtks__agenda_controller_item_form_a288a4b22573d5731fe3f52c55263c5f3}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!\$start\+Date@{\$start\+Date}}
+\index{\$start\+Date@{\$start\+Date}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{\$start\+Date}
+{\footnotesize\ttfamily \$start\+Date = N\+U\+LL}
+
+\mbox{\label{classtks__agenda_controller_item_form_a39fcc2a49b9f4460315014fa1f54a126}} 
+\index{tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}!\$uitval@{\$uitval}}
+\index{\$uitval@{\$uitval}!tks\+\_\+agenda\+Controller\+Item\+Form@{tks\+\_\+agenda\+Controller\+Item\+Form}}
+\subsubsection{\$uitval}
+{\footnotesize\ttfamily \$uitval = N\+U\+LL}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+site/controllers/\textbf{ itemform.\+php}\end{DoxyCompactItemize}

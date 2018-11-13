@@ -1,0 +1,138 @@
+\section{site/views/item/tmpl/default.php File Reference}
+\label{site_2views_2item_2tmpl_2default_8php}\index{site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ Com\+\_\+\+Gckloosterveen}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \$user} = J\+Factory\+::get\+User()
+\item 
+\textbf{ \$user\+Id} = \$user-\/$>$get(\textquotesingle{}\textbf{ id}\textquotesingle{})
+\item 
+\textbf{ \$superadmin} = \$user-\/$>$authorise(\textquotesingle{}core.\+admin\textquotesingle{})
+\item 
+\textbf{ \$can\+Create} = \$user-\/$>$authorise(\textquotesingle{}core.\+create\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})
+\item 
+\textbf{ \$can\+Edit} = \$user-\/$>$authorise(\textquotesingle{}core.\+edit\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})
+\item 
+\textbf{ \$can\+Checkin} = \$user-\/$>$authorise(\textquotesingle{}core.\+manage\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})
+\item 
+\textbf{ \$can\+Change} = \$user-\/$>$authorise(\textquotesingle{}core.\+edit.\+state\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})
+\item 
+\textbf{ \$can\+Delete} = \$user-\/$>$authorise(\textquotesingle{}core.\+delete\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})
+\item 
+\textbf{ \$can\+Edit\+Own} = \$user-\/$>$authorise(\textquotesingle{}core.\+edit.\+own\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda.\+item.\textquotesingle{}.\$this-\/$>$item-\/$>$\textbf{ id})
+\item 
+\textbf{ \$can\+Delete\+Medewerker} = \$user-\/$>$authorise(\textquotesingle{}core.\+delete.\+medewerker\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda.\+item.\textquotesingle{}.\$this-\/$>$item-\/$>$\textbf{ id})
+\item 
+\textbf{ \$can\+Edit\+Medewerker} = \$user-\/$>$authorise(\textquotesingle{}core.\+edit.\+medewerker\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda.\+item.\textquotesingle{}.\$this-\/$>$item-\/$>$\textbf{ id})
+\item 
+\textbf{ \$can\+Edit\+Own\+Medewerker} = \$user-\/$>$authorise(\textquotesingle{}core.\+edit.\+own.\+medewerker\textquotesingle{},\textquotesingle{}com\+\_\+tks\+\_\+agenda.\+item.\textquotesingle{}.\$this-\/$>$item-\/$>$\textbf{ id})
+\item 
+\textbf{ \$recurring\+\_\+id} = -\/1
+\item 
+\textbf{ if}(! \$can\+Edit \&\&J\+Factory\+::get\+User() -\/$>$authorise(\textquotesingle{}core.\+edit.\+own\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{} . \$this-\/$>$item-\/$>$\textbf{ id})) \textbf{ \$s} = \$this-\/$>$item-\/$>$stamp
+\item 
+\textbf{ if}( \$this-\/$>$item) \textbf{ else}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\label{site_2views_2item_2tmpl_2default_8php_a5baed5c5102e35aea5e62f18b474dc3f}} 
+\index{site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}!\$can\+Change@{\$can\+Change}}
+\index{\$can\+Change@{\$can\+Change}!site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}}
+\subsubsection{\$can\+Change}
+{\footnotesize\ttfamily \$can\+Change = \$user-\/$>$authorise(\textquotesingle{}core.\+edit.\+state\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})}
+
+\mbox{\label{site_2views_2item_2tmpl_2default_8php_ad261c913946b4e234d7ed6a972e27823}} 
+\index{site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}!\$can\+Checkin@{\$can\+Checkin}}
+\index{\$can\+Checkin@{\$can\+Checkin}!site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}}
+\subsubsection{\$can\+Checkin}
+{\footnotesize\ttfamily \$can\+Checkin = \$user-\/$>$authorise(\textquotesingle{}core.\+manage\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})}
+
+\mbox{\label{site_2views_2item_2tmpl_2default_8php_ad7ffa3a9d1e59837f8395dafff741f66}} 
+\index{site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}!\$can\+Create@{\$can\+Create}}
+\index{\$can\+Create@{\$can\+Create}!site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}}
+\subsubsection{\$can\+Create}
+{\footnotesize\ttfamily \$can\+Create = \$user-\/$>$authorise(\textquotesingle{}core.\+create\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})}
+
+\mbox{\label{site_2views_2item_2tmpl_2default_8php_a0eb7f586f7f075d40e8b56b1e9711bec}} 
+\index{site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}!\$can\+Delete@{\$can\+Delete}}
+\index{\$can\+Delete@{\$can\+Delete}!site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}}
+\subsubsection{\$can\+Delete}
+{\footnotesize\ttfamily \$can\+Delete = \$user-\/$>$authorise(\textquotesingle{}core.\+delete\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})}
+
+\mbox{\label{site_2views_2item_2tmpl_2default_8php_a33e7562c6eef68e9843f497fc44c9d44}} 
+\index{site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}!\$can\+Delete\+Medewerker@{\$can\+Delete\+Medewerker}}
+\index{\$can\+Delete\+Medewerker@{\$can\+Delete\+Medewerker}!site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}}
+\subsubsection{\$can\+Delete\+Medewerker}
+{\footnotesize\ttfamily \$can\+Delete\+Medewerker = \$user-\/$>$authorise(\textquotesingle{}core.\+delete.\+medewerker\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda.\+item.\textquotesingle{}.\$this-\/$>$item-\/$>$\textbf{ id})}
+
+\mbox{\label{site_2views_2item_2tmpl_2default_8php_aef00045e9850358b978b3a9e9075b34c}} 
+\index{site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}!\$can\+Edit@{\$can\+Edit}}
+\index{\$can\+Edit@{\$can\+Edit}!site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}}
+\subsubsection{\$can\+Edit}
+{\footnotesize\ttfamily \$can\+Edit = \$user-\/$>$authorise(\textquotesingle{}core.\+edit\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})}
+
+\mbox{\label{site_2views_2item_2tmpl_2default_8php_a0351208291b0bfd78c4368a4bab29ce4}} 
+\index{site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}!\$can\+Edit\+Medewerker@{\$can\+Edit\+Medewerker}}
+\index{\$can\+Edit\+Medewerker@{\$can\+Edit\+Medewerker}!site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}}
+\subsubsection{\$can\+Edit\+Medewerker}
+{\footnotesize\ttfamily \$can\+Edit\+Medewerker = \$user-\/$>$authorise(\textquotesingle{}core.\+edit.\+medewerker\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda.\+item.\textquotesingle{}.\$this-\/$>$item-\/$>$\textbf{ id})}
+
+\mbox{\label{site_2views_2item_2tmpl_2default_8php_ae3dc02fe0f25bbd3c9243be44c20ed6e}} 
+\index{site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}!\$can\+Edit\+Own@{\$can\+Edit\+Own}}
+\index{\$can\+Edit\+Own@{\$can\+Edit\+Own}!site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}}
+\subsubsection{\$can\+Edit\+Own}
+{\footnotesize\ttfamily \$can\+Edit\+Own = \$user-\/$>$authorise(\textquotesingle{}core.\+edit.\+own\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda.\+item.\textquotesingle{}.\$this-\/$>$item-\/$>$\textbf{ id})}
+
+\mbox{\label{site_2views_2item_2tmpl_2default_8php_a3263f4d9065efe9b48bedf40e85f5ed9}} 
+\index{site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}!\$can\+Edit\+Own\+Medewerker@{\$can\+Edit\+Own\+Medewerker}}
+\index{\$can\+Edit\+Own\+Medewerker@{\$can\+Edit\+Own\+Medewerker}!site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}}
+\subsubsection{\$can\+Edit\+Own\+Medewerker}
+{\footnotesize\ttfamily \$can\+Edit\+Own\+Medewerker = \$user-\/$>$authorise(\textquotesingle{}core.\+edit.\+own.\+medewerker\textquotesingle{},\textquotesingle{}com\+\_\+tks\+\_\+agenda.\+item.\textquotesingle{}.\$this-\/$>$item-\/$>$\textbf{ id})}
+
+\mbox{\label{site_2views_2item_2tmpl_2default_8php_a34aea1d1caf3d4294a3f2e440b9aef18}} 
+\index{site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}!\$recurring\+\_\+id@{\$recurring\+\_\+id}}
+\index{\$recurring\+\_\+id@{\$recurring\+\_\+id}!site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}}
+\subsubsection{\$recurring\+\_\+id}
+{\footnotesize\ttfamily \$recurring\+\_\+id = -\/1}
+
+\mbox{\label{site_2views_2item_2tmpl_2default_8php_a067c41ae4f89fbe077ef76533520836c}} 
+\index{site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}!\$s@{\$s}}
+\index{\$s@{\$s}!site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}}
+\subsubsection{\$s}
+{\footnotesize\ttfamily \textbf{ if} (! \$can\+Edit \&\&J\+Factory\+::get\+User() -\/$>$authorise( \textquotesingle{}core.\+edit.\+own\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{} . \$this-\/$>$item-\/$>$\textbf{ id})) \$s = \$this-\/$>$item-\/$>$stamp}
+
+\mbox{\label{site_2views_2item_2tmpl_2default_8php_a0014147e6d9f9f59de65142c65ea7a9f}} 
+\index{site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}!\$superadmin@{\$superadmin}}
+\index{\$superadmin@{\$superadmin}!site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}}
+\subsubsection{\$superadmin}
+{\footnotesize\ttfamily \$superadmin = \$user-\/$>$authorise(\textquotesingle{}core.\+admin\textquotesingle{})}
+
+\mbox{\label{site_2views_2item_2tmpl_2default_8php_a598ca4e71b15a1313ec95f0df1027ca5}} 
+\index{site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}!\$user@{\$user}}
+\index{\$user@{\$user}!site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}}
+\subsubsection{\$user}
+{\footnotesize\ttfamily \$user = J\+Factory\+::get\+User()}
+
+\mbox{\label{site_2views_2item_2tmpl_2default_8php_a84651f4070d04080f6c5fd3c98cc9104}} 
+\index{site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}!\$user\+Id@{\$user\+Id}}
+\index{\$user\+Id@{\$user\+Id}!site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}}
+\subsubsection{\$user\+Id}
+{\footnotesize\ttfamily \$user\+Id = \$user-\/$>$get(\textquotesingle{}\textbf{ id}\textquotesingle{})}
+
+\mbox{\label{site_2views_2item_2tmpl_2default_8php_a75286dec21affe82abfdb11506811987}} 
+\index{site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}!else@{else}}
+\index{else@{else}!site/views/item/tmpl/default.\+php@{site/views/item/tmpl/default.\+php}}
+\subsubsection{else}
+{\footnotesize\ttfamily \textbf{ if} (\$this-\/$>$item) else}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{
+        echo JText::\_(\textcolor{stringliteral}{'COM\_TKS\_AGENDA\_ITEM\_NOT\_LOADED'})
+\end{DoxyCode}

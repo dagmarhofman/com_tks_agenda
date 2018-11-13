@@ -357,10 +357,14 @@ class tks_agendaControllerItemForm extends tks_agendaController
 					$endRow =  new DateTime ( $row->rend , new DateTimeZone("Europe/Amsterdam") );
 					$editStartDate = date_time_set ( $startRow , $startDate->format("H"), $startDate->format("m") );
 					$editEndDate = date_time_set ( $endRow , $endDate->format("H"), $endDate->format("m") );
+
+					$fields = array(
+    					$db->quoteName('rstart') . ' =  ' . $db->quote( $editStartDate->format("Y-m-d H:i:s" ) ),
+    					$db->quoteName('rend') . ' = ' . $db->quote( $editEndDate->format("Y-m-d H:i:s" ) )
+					);					
 					
 					$query->update( $db->quoteName('#__tks_agenda_recurring'))
-					->set( 	$db->quoteName('rstart') . ' =  ' . $db->quote( $editStartDate->format("Y-m-d H:i:s" ) ) . '  ' ,
-								$db->quoteName('rend') . ' = ' . $db->quote( $editEndDate->format("Y-m-d H:i:s" ) ) )
+					->set( $fields )
 					->where($db->quoteName('id') . ' = ' . $row->id );
 		   		$db->setQuery($query);	   		
 		   		$db->execute();
@@ -380,7 +384,6 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		// Check for request forgeries.
 		JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
 
-		$this->setMessage('Bewerk functie aangeroepen' , 'notice');
 		
 				// Initialise variables.
 		$app   = JFactory::getApplication();
@@ -448,13 +451,13 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		$menu = JFactory::getApplication()->getMenu();
 		$item = $menu->getActive();
 		// $url  = (empty($item->link) ? 'index.php?option=com_tks_agenda' : $item->link);
-		
+	
+					
 		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda', false));
-		
+		$app->redirect( 'index.php?option=com_tks_agenda' );
 		// Flush the data and mode from the session.
 		$app->setUserState('com_tks_agenda.edit.item.data', null);
-		$app->setUserState('com_tks_agenda.edit.item.mode', null);
-		
+		$app->setUserState('com_tks_agenda.edit.item.mode', null);		
 	}
 	/**
 	 * Method to save a user's profile data.

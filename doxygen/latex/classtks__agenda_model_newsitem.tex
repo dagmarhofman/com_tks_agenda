@@ -1,0 +1,378 @@
+\section{tks\+\_\+agenda\+Model\+Newsitem Class Reference}
+\label{classtks__agenda_model_newsitem}\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+Inheritance diagram for tks\+\_\+agenda\+Model\+Newsitem\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtks__agenda_model_newsitem}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ get\+Table} (\$type=\textquotesingle{}Newsitem\textquotesingle{}, \$prefix=\textquotesingle{}tks\+\_\+agenda\+Table\textquotesingle{}, \$config=array())
+\item 
+\textbf{ get\+Form} (\$data=array(), \$load\+Data=true)
+\item 
+\textbf{ get\+Item} (\$pk=null)
+\item 
+\textbf{ duplicate} (\&\$pks)
+\item 
+\& \textbf{ get\+Data} (\$\textbf{ id}=null)
+\item 
+\textbf{ get\+Table} (\$type=\textquotesingle{}Newsitem\textquotesingle{}, \$prefix=\textquotesingle{}tks\+\_\+agenda\+Table\textquotesingle{}, \$config=array())
+\item 
+\textbf{ get\+Item\+Id\+By\+Alias} (\$alias)
+\item 
+\textbf{ checkin} (\$\textbf{ id}=null)
+\item 
+\textbf{ checkout} (\$\textbf{ id}=null)
+\item 
+\textbf{ get\+Category\+Name} (\$\textbf{ id})
+\item 
+\textbf{ publish} (\$\textbf{ id}, \$state)
+\item 
+\textbf{ delete} (\$\textbf{ id})
+\item 
+\textbf{ get\+Alias\+Field\+Name\+By\+View} (\$view)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \$type\+Alias} = \textquotesingle{}com\+\_\+tks\+\_\+agenda.\+newsitem\textquotesingle{}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ load\+Form\+Data} ()
+\item 
+\textbf{ prepare\+Table} (\$table)
+\item 
+\textbf{ populate\+State} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \$text\+\_\+prefix} = \textquotesingle{}C\+O\+M\+\_\+\+T\+K\+S\+\_\+\+A\+G\+E\+N\+DA\textquotesingle{}
+\item 
+\textbf{ \$item} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{tks\+\_\+agenda}{p.}{namespacetks__agenda} news item model.
+
+\begin{DoxySince}{Since}
+1.\+6 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classtks__agenda_model_newsitem_aed5730af2828b3d6971569156f6cdacc}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!checkin@{checkin}}
+\index{checkin@{checkin}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{checkin()}
+{\footnotesize\ttfamily checkin (\begin{DoxyParamCaption}\item[{}]{\$id = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Method to check in an item.
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$id} & The id of the row to check out.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean True on success, false on failure.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+6 
+\end{DoxySince}
+\mbox{\label{classtks__agenda_model_newsitem_a1194b08214f96a9c55ec99f461664883}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!checkout@{checkout}}
+\index{checkout@{checkout}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{checkout()}
+{\footnotesize\ttfamily checkout (\begin{DoxyParamCaption}\item[{}]{\$id = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Method to check out an item for editing.
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$id} & The id of the row to check out.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean True on success, false on failure. 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_model_newsitem_a2f8258add505482d7f00ea26493a5723}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!delete@{delete}}
+\index{delete@{delete}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{delete()}
+{\footnotesize\ttfamily delete (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Method to delete an item
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & Element id\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_model_newsitem_ae0d3b30df680564dfd460c1df57a7fbc}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!duplicate@{duplicate}}
+\index{duplicate@{duplicate}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{duplicate()}
+{\footnotesize\ttfamily duplicate (\begin{DoxyParamCaption}\item[{\&}]{\$pks }\end{DoxyParamCaption})}
+
+Method to duplicate an Newsitem
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \&\$pks} & An array of primary key I\+Ds.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean True if successful.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\label{classtks__agenda_model_newsitem_a30524f1aaf78b3d006272b08d2211729}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!get\+Alias\+Field\+Name\+By\+View@{get\+Alias\+Field\+Name\+By\+View}}
+\index{get\+Alias\+Field\+Name\+By\+View@{get\+Alias\+Field\+Name\+By\+View}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{get\+Alias\+Field\+Name\+By\+View()}
+{\footnotesize\ttfamily get\+Alias\+Field\+Name\+By\+View (\begin{DoxyParamCaption}\item[{}]{\$view }\end{DoxyParamCaption})}
+
+Method to determine alias field, by view
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$view} & viewname\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_model_newsitem_ab5034ae4b8071b9dca7bc0c7c357759e}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!get\+Category\+Name@{get\+Category\+Name}}
+\index{get\+Category\+Name@{get\+Category\+Name}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{get\+Category\+Name()}
+{\footnotesize\ttfamily get\+Category\+Name (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Get the name of a category by id
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & Category id\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Object$\vert$null Object if success, null in case of failure 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_model_newsitem_a9d73f97f45946febb1e2793c4c050b2b}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!get\+Data@{get\+Data}}
+\index{get\+Data@{get\+Data}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{get\+Data()}
+{\footnotesize\ttfamily \& get\+Data (\begin{DoxyParamCaption}\item[{}]{\$id = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Method to get an object.
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$id} & The id of the object to get.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed Object on success, false on failure. 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_model_newsitem_ae50fce4605eb3feff9a6de663e1dd70c}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!get\+Form@{get\+Form}}
+\index{get\+Form@{get\+Form}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{get\+Form()}
+{\footnotesize\ttfamily get\+Form (\begin{DoxyParamCaption}\item[{}]{\$data = {\ttfamily array()},  }\item[{}]{\$load\+Data = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Method to get the record form.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$data} & An optional array of data for the form to interogate. \\
+\hline
+boolean & {\em \$load\+Data} & True if the form is to load its own data (default case), false if not.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J\+Form A J\+Form object on success, false on failure
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+6 
+\end{DoxySince}
+\mbox{\label{classtks__agenda_model_newsitem_a35153b47ed2364e6ff4fdecd1c0c5ccc}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!get\+Item@{get\+Item}}
+\index{get\+Item@{get\+Item}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{get\+Item()}
+{\footnotesize\ttfamily get\+Item (\begin{DoxyParamCaption}\item[{}]{\$pk = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Method to get a single record.
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$pk} & The id of the primary key.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed Object on success, false on failure.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+6 
+\end{DoxySince}
+\mbox{\label{classtks__agenda_model_newsitem_ab309a2be5e111f353db0fe7b3b4ec4d9}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!get\+Item\+Id\+By\+Alias@{get\+Item\+Id\+By\+Alias}}
+\index{get\+Item\+Id\+By\+Alias@{get\+Item\+Id\+By\+Alias}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{get\+Item\+Id\+By\+Alias()}
+{\footnotesize\ttfamily get\+Item\+Id\+By\+Alias (\begin{DoxyParamCaption}\item[{}]{\$alias }\end{DoxyParamCaption})}
+
+Get the id of an item by alias
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$alias} & Item alias\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_model_newsitem_acf8d33a4a3ddd8d728d606605ace494f}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!get\+Table@{get\+Table}}
+\index{get\+Table@{get\+Table}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{get\+Table()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily get\+Table (\begin{DoxyParamCaption}\item[{}]{\$type = {\ttfamily \textquotesingle{}Newsitem\textquotesingle{}},  }\item[{}]{\$prefix = {\ttfamily \textquotesingle{}tks\+\_\+agendaTable\textquotesingle{}},  }\item[{}]{\$config = {\ttfamily array()} }\end{DoxyParamCaption})}
+
+Returns a reference to the a Table object, always creating it.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$type} & The table type to instantiate \\
+\hline
+string & {\em \$prefix} & A prefix for the table class name. Optional. \\
+\hline
+array & {\em \$config} & Configuration array for model. Optional.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J\+Table A database object
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+6 
+\end{DoxySince}
+\mbox{\label{classtks__agenda_model_newsitem_acf8d33a4a3ddd8d728d606605ace494f}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!get\+Table@{get\+Table}}
+\index{get\+Table@{get\+Table}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{get\+Table()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily get\+Table (\begin{DoxyParamCaption}\item[{}]{\$type = {\ttfamily \textquotesingle{}Newsitem\textquotesingle{}},  }\item[{}]{\$prefix = {\ttfamily \textquotesingle{}tks\+\_\+agendaTable\textquotesingle{}},  }\item[{}]{\$config = {\ttfamily array()} }\end{DoxyParamCaption})}
+
+Get an instance of J\+Table class
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$type} & Name of the J\+Table class to get an instance of. \\
+\hline
+string & {\em \$prefix} & Prefix for the table class name. Optional. \\
+\hline
+array & {\em \$config} & Array of configuration values for the J\+Table object. Optional.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J\+Table$\vert$bool J\+Table if success, false on failure. 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_model_newsitem_a44f1cd069ac168e4c2f8cb5e9266cc2d}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!load\+Form\+Data@{load\+Form\+Data}}
+\index{load\+Form\+Data@{load\+Form\+Data}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{load\+Form\+Data()}
+{\footnotesize\ttfamily load\+Form\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Method to get the data that should be injected in the form.
+
+\begin{DoxyReturn}{Returns}
+mixed The data for the form.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+6 
+\end{DoxySince}
+\mbox{\label{classtks__agenda_model_newsitem_a27b9842357535d8b4451234ff61d99a2}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!populate\+State@{populate\+State}}
+\index{populate\+State@{populate\+State}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{populate\+State()}
+{\footnotesize\ttfamily populate\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Method to auto-\/populate the model state.
+
+Note. Calling get\+State in this method will result in recursion.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_model_newsitem_a2ea87ee03f5fa9e722ef459c93d69874}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!prepare\+Table@{prepare\+Table}}
+\index{prepare\+Table@{prepare\+Table}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{prepare\+Table()}
+{\footnotesize\ttfamily prepare\+Table (\begin{DoxyParamCaption}\item[{}]{\$table }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Prepare and sanitise the table prior to saving.
+
+
+\begin{DoxyParams}[1]{Parameters}
+J\+Table & {\em \$table} & Table Object\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+6 
+\end{DoxySince}
+\mbox{\label{classtks__agenda_model_newsitem_ac0d8a31e4ef5e96ca5029fd798e00d84}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!publish@{publish}}
+\index{publish@{publish}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{publish()}
+{\footnotesize\ttfamily publish (\begin{DoxyParamCaption}\item[{}]{\$id,  }\item[{}]{\$state }\end{DoxyParamCaption})}
+
+Publish the element
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & Item id \\
+\hline
+int & {\em \$state} & Publish state\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\mbox{\label{classtks__agenda_model_newsitem_aa61b415cee119a7511e05c405ecd0b32}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!\$item@{\$item}}
+\index{\$item@{\$item}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{\$item}
+{\footnotesize\ttfamily \$item = null\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classtks__agenda_model_newsitem_a5c29c349be0f67f1ca4f94809be602a7}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!\$text\+\_\+prefix@{\$text\+\_\+prefix}}
+\index{\$text\+\_\+prefix@{\$text\+\_\+prefix}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{\$text\+\_\+prefix}
+{\footnotesize\ttfamily \$text\+\_\+prefix = \textquotesingle{}C\+O\+M\+\_\+\+T\+K\+S\+\_\+\+A\+G\+E\+N\+DA\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classtks__agenda_model_newsitem_aee4e64a4c602b1ec08961e7e02d18b5a}} 
+\index{tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}!\$type\+Alias@{\$type\+Alias}}
+\index{\$type\+Alias@{\$type\+Alias}!tks\+\_\+agenda\+Model\+Newsitem@{tks\+\_\+agenda\+Model\+Newsitem}}
+\subsubsection{\$type\+Alias}
+{\footnotesize\ttfamily \$type\+Alias = \textquotesingle{}com\+\_\+tks\+\_\+agenda.\+newsitem\textquotesingle{}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+administrator/models/\textbf{ newsitem.\+php}\end{DoxyCompactItemize}

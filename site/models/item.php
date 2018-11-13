@@ -132,9 +132,11 @@ class tks_agendaModelItem extends JModelItem
 
 		
 		foreach( $items as $val ) {
-			if( $val->rstart == $start && $val->rend == $end ) {
-				$s['recur_id'] = $val->id;			
-			}	
+			if( isset($val->rstart) && isset($val->rend) ) {
+				if( $val->rstart == $start && $val->rend == $end ) {
+					$s['recur_id'] = $val->id;			
+				}	
+			}
 		}		
 
 		$this->_item->stamp = $s ;

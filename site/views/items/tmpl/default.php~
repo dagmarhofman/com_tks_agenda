@@ -56,10 +56,15 @@ $canDelete  = $user->authorise('core.delete', 'com_tks_agenda');
 	</div>
 	<div class="g-grid">
 	 	<div class="g-block  size-100">
+	 	<?php
+			$arr = get_defined_vars();
+			var_export($arr);
+	 	?>
   			<div id="calendar">
   			
   			
   			</div>
+  			
 	    </div>	
 	</div>
 </div>
@@ -89,6 +94,7 @@ $canDelete  = $user->authorise('core.delete', 'com_tks_agenda');
 </form>
 
 <script type="text/javascript">
+
 
 	jQuery(document).ready(function () {
 		jQuery('.delete-button').click(deleteItem);

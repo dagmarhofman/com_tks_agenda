@@ -1,0 +1,58 @@
+\section{tks\+\_\+agenda\+Router Class Reference}
+\label{classtks__agenda_router}\index{tks\+\_\+agenda\+Router@{tks\+\_\+agenda\+Router}}
+Inheritance diagram for tks\+\_\+agenda\+Router\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtks__agenda_router}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ build} (\&\$query)
+\item 
+\textbf{ parse} (\&\$segments)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+router Table class 
+
+\subsection{Member Function Documentation}
+\mbox{\label{classtks__agenda_router_a43dc8d89160d658bba57c6253329a987}} 
+\index{tks\+\_\+agenda\+Router@{tks\+\_\+agenda\+Router}!build@{build}}
+\index{build@{build}!tks\+\_\+agenda\+Router@{tks\+\_\+agenda\+Router}}
+\subsubsection{build()}
+{\footnotesize\ttfamily build (\begin{DoxyParamCaption}\item[{\&}]{\$query }\end{DoxyParamCaption})}
+
+Build method for queries
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&\$segments} & The query\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array The query segments 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_router_a8ebc2c3e3e69793ecdd51bbcfcd0f3a7}} 
+\index{tks\+\_\+agenda\+Router@{tks\+\_\+agenda\+Router}!parse@{parse}}
+\index{parse@{parse}!tks\+\_\+agenda\+Router@{tks\+\_\+agenda\+Router}}
+\subsubsection{parse()}
+{\footnotesize\ttfamily parse (\begin{DoxyParamCaption}\item[{\&}]{\$segments }\end{DoxyParamCaption})}
+
+Parse method for U\+R\+Ls This method is meant to transform the human readable U\+RL back into query parameters. It is only executed when S\+EF mode is switched on.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \&\$segments} & The segments of the U\+RL to parse.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array The U\+RL attributes to be used by the application. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+site/\textbf{ router.\+php}\end{DoxyCompactItemize}

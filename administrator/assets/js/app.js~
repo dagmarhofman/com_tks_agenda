@@ -31,6 +31,8 @@
                     $("label[for=" + $(this).attr('id') + "]").addClass('active btn-success');
                 }
         });
+        
+        
  	var d = new Date();
 	var year = d.getFullYear();
 	var month = ("0" + (d.getMonth() + 1)).slice(-2);

@@ -384,7 +384,6 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		// Check for request forgeries.
 		JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
 
-		$this->setMessage('Bewerk functie aangeroepen' , 'notice');
 		
 				// Initialise variables.
 		$app   = JFactory::getApplication();
@@ -452,13 +451,13 @@ class tks_agendaControllerItemForm extends tks_agendaController
 		$menu = JFactory::getApplication()->getMenu();
 		$item = $menu->getActive();
 		// $url  = (empty($item->link) ? 'index.php?option=com_tks_agenda' : $item->link);
-		
+	
+					
 		$this->setRedirect(JRoute::_('index.php?option=com_tks_agenda', false));
-		
+		$app->redirect( 'index.php?option=com_tks_agenda' );
 		// Flush the data and mode from the session.
 		$app->setUserState('com_tks_agenda.edit.item.data', null);
-		$app->setUserState('com_tks_agenda.edit.item.mode', null);
-		
+		$app->setUserState('com_tks_agenda.edit.item.mode', null);		
 	}
 	/**
 	 * Method to save a user's profile data.

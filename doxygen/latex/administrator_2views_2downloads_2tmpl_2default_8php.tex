@@ -1,0 +1,184 @@
+\section{administrator/views/downloads/tmpl/default.php File Reference}
+\label{administrator_2views_2downloads_2tmpl_2default_8php}\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \$document} = J\+Factory\+::get\+Document()
+\item 
+\textbf{ \$user} = J\+Factory\+::get\+User()
+\item 
+\textbf{ \$user\+Id} = \$user-\/$>$get(\textquotesingle{}\textbf{ id}\textquotesingle{})
+\item 
+\textbf{ \$list\+Order} = \$this-\/$>$state-\/$>$get(\textquotesingle{}list.\+ordering\textquotesingle{})
+\item 
+\textbf{ \$list\+Dirn} = \$this-\/$>$state-\/$>$get(\textquotesingle{}list.\+direction\textquotesingle{})
+\item 
+\textbf{ \$can\+Order} = \$user-\/$>$authorise(\textquotesingle{}core.\+edit.\+state\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})
+\item 
+\textbf{ \$save\+Order} = \$list\+Order == \textquotesingle{}a.`ordering`\textquotesingle{}
+\item 
+\textbf{ if}(\$save\+Order) \textbf{ \$sort\+Fields} = \$this-\/$>$get\+Sort\+Fields()
+\item 
+\textbf{ if} (!empty( \$this-\/$>$extra\+\_\+sidebar)) \{
+\item 
+\textbf{ if}(!empty(\$this-\/$>$sidebar)) \textbf{ else}
+\item 
+\textbf{ endif}
+\item 
+\textbf{ \$can\+Create} = \$user-\/$>$authorise(\textquotesingle{}core.\+create\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})
+\item 
+\textbf{ \$can\+Edit} = \$user-\/$>$authorise(\textquotesingle{}core.\+edit\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})
+\item 
+\textbf{ \$can\+Checkin} = \$user-\/$>$authorise(\textquotesingle{}core.\+manage\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})
+\item 
+\textbf{ \$can\+Change} = \$user-\/$>$authorise(\textquotesingle{}core.\+edit.\+state\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})
+\item 
+\textbf{ if}(isset( \$this-\/$>$items[0]-\/$>$ordering))(\$can\+Change) \textbf{ \$disabled\+Label} = \textquotesingle{}\textquotesingle{}
+\item 
+\textbf{ \$disable\+Class\+Name} = \textquotesingle{}inactive tip-\/top\textquotesingle{}
+\item 
+\textbf{ else} \textbf{ \+\_\+\+\_\+pad0\+\_\+\+\_\+}
+\item 
+\textbf{ else} \textbf{ \+\_\+\+\_\+pad1\+\_\+\+\_\+}
+\item 
+foreach \textbf{ (\$file\+Arr as \$file\+Single)} (!is\+\_\+array( \$file\+Single))
+\item 
+\textbf{ endforeach}
+\item 
+\textbf{ else} \textbf{ \+\_\+\+\_\+pad2\+\_\+\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_a5baed5c5102e35aea5e62f18b474dc3f}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!\$can\+Change@{\$can\+Change}}
+\index{\$can\+Change@{\$can\+Change}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{\$can\+Change}
+{\footnotesize\ttfamily \$can\+Change = \$user-\/$>$authorise(\textquotesingle{}core.\+edit.\+state\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_ad261c913946b4e234d7ed6a972e27823}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!\$can\+Checkin@{\$can\+Checkin}}
+\index{\$can\+Checkin@{\$can\+Checkin}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{\$can\+Checkin}
+{\footnotesize\ttfamily \$can\+Checkin = \$user-\/$>$authorise(\textquotesingle{}core.\+manage\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_ad7ffa3a9d1e59837f8395dafff741f66}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!\$can\+Create@{\$can\+Create}}
+\index{\$can\+Create@{\$can\+Create}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{\$can\+Create}
+{\footnotesize\ttfamily \$can\+Create = \$user-\/$>$authorise(\textquotesingle{}core.\+create\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_aef00045e9850358b978b3a9e9075b34c}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!\$can\+Edit@{\$can\+Edit}}
+\index{\$can\+Edit@{\$can\+Edit}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{\$can\+Edit}
+{\footnotesize\ttfamily \$can\+Edit = \$user-\/$>$authorise(\textquotesingle{}core.\+edit\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_a634e96df0bd7b4fac411a861f1c44bc8}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!\$can\+Order@{\$can\+Order}}
+\index{\$can\+Order@{\$can\+Order}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{\$can\+Order}
+{\footnotesize\ttfamily \$can\+Order = \$user-\/$>$authorise(\textquotesingle{}core.\+edit.\+state\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_a0dc704194a02d5cf4c40addfae5f1d3b}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!\$disable\+Class\+Name@{\$disable\+Class\+Name}}
+\index{\$disable\+Class\+Name@{\$disable\+Class\+Name}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{\$disable\+Class\+Name}
+{\footnotesize\ttfamily \$disable\+Class\+Name = \textquotesingle{}inactive tip-\/top\textquotesingle{}}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_a13eac118eee6d0e2355c83dfb3e2ca31}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!\$disabled\+Label@{\$disabled\+Label}}
+\index{\$disabled\+Label@{\$disabled\+Label}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{\$disabled\+Label}
+{\footnotesize\ttfamily \textbf{ if} (isset(\$this-\/$>$items[0]-\/$>$ordering)) ( \$can\+Change) \$disabled\+Label = \textquotesingle{}\textquotesingle{}}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_ac5a31edb787609a3143dec9bfa8063ea}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!\$document@{\$document}}
+\index{\$document@{\$document}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{\$document}
+{\footnotesize\ttfamily \$document = J\+Factory\+::get\+Document()}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_acf52a5c6d7f43d0170825ee4236e6552}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!\$list\+Dirn@{\$list\+Dirn}}
+\index{\$list\+Dirn@{\$list\+Dirn}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{\$list\+Dirn}
+{\footnotesize\ttfamily \$list\+Dirn = \$this-\/$>$state-\/$>$get(\textquotesingle{}list.\+direction\textquotesingle{})}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_a7ac57271be9c4fc1ac1ee6f42e6ac415}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!\$list\+Order@{\$list\+Order}}
+\index{\$list\+Order@{\$list\+Order}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{\$list\+Order}
+{\footnotesize\ttfamily \$list\+Order = \$this-\/$>$state-\/$>$get(\textquotesingle{}list.\+ordering\textquotesingle{})}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_a98c8688da2f41c9f1e224881675afd5a}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!\$save\+Order@{\$save\+Order}}
+\index{\$save\+Order@{\$save\+Order}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{\$save\+Order}
+{\footnotesize\ttfamily \$save\+Order = \$list\+Order == \textquotesingle{}a.`ordering`\textquotesingle{}}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_a0592f29165e638c4ec4420948f9b53e0}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!\$sort\+Fields@{\$sort\+Fields}}
+\index{\$sort\+Fields@{\$sort\+Fields}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{\$sort\+Fields}
+{\footnotesize\ttfamily \textbf{ if} ( \$save\+Order) \$sort\+Fields = \$this-\/$>$get\+Sort\+Fields()}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_a598ca4e71b15a1313ec95f0df1027ca5}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!\$user@{\$user}}
+\index{\$user@{\$user}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{\$user}
+{\footnotesize\ttfamily \$user = J\+Factory\+::get\+User()}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_a84651f4070d04080f6c5fd3c98cc9104}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!\$user\+Id@{\$user\+Id}}
+\index{\$user\+Id@{\$user\+Id}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{\$user\+Id}
+{\footnotesize\ttfamily \$user\+Id = \$user-\/$>$get(\textquotesingle{}\textbf{ id}\textquotesingle{})}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_a5a7bb822b7cd877ef92e397d46eb0cc3}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!(\$file\+Arr as \$file\+Single)@{(\$file\+Arr as \$file\+Single)}}
+\index{(\$file\+Arr as \$file\+Single)@{(\$file\+Arr as \$file\+Single)}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{(\$file\+Arr as \$file\+Single)}
+{\footnotesize\ttfamily foreach ( \$file\+Arr as \$file\+Single)(!is\+\_\+array(\$file\+Single))}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_a8e01dcc96c43199448ee66f7c2ae8ea6}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!\+\_\+\+\_\+pad0\+\_\+\+\_\+@{\+\_\+\+\_\+pad0\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+pad0\+\_\+\+\_\+@{\+\_\+\+\_\+pad0\+\_\+\+\_\+}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{\+\_\+\+\_\+pad0\+\_\+\+\_\+}
+{\footnotesize\ttfamily \textbf{ else} \+\_\+\+\_\+pad0\+\_\+\+\_\+}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_ae8b4bb1441c6ab4dcb28a37bc46c8ead}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!\+\_\+\+\_\+pad1\+\_\+\+\_\+@{\+\_\+\+\_\+pad1\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+pad1\+\_\+\+\_\+@{\+\_\+\+\_\+pad1\+\_\+\+\_\+}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{\+\_\+\+\_\+pad1\+\_\+\+\_\+}
+{\footnotesize\ttfamily \textbf{ else} \+\_\+\+\_\+pad1\+\_\+\+\_\+}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_aed2d37b4e8da3f52103ae96ce9d26d82}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!\+\_\+\+\_\+pad2\+\_\+\+\_\+@{\+\_\+\+\_\+pad2\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+pad2\+\_\+\+\_\+@{\+\_\+\+\_\+pad2\+\_\+\+\_\+}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{\+\_\+\+\_\+pad2\+\_\+\+\_\+}
+{\footnotesize\ttfamily \textbf{ else} \+\_\+\+\_\+pad2\+\_\+\+\_\+}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_a910216680d8bf6d075f88c19e08d9a75}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!else@{else}}
+\index{else@{else}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{else}
+{\footnotesize\ttfamily \textbf{ if} (!empty( \$this-\/$>$sidebar)) else}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_a672d9707ef91db026c210f98cc601123}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!endforeach@{endforeach}}
+\index{endforeach@{endforeach}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{endforeach}
+{\footnotesize\ttfamily endforeach}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_a82cd33ca97ff99f2fcc5e9c81d65251b}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!endif@{endif}}
+\index{endif@{endif}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{endif}
+{\footnotesize\ttfamily endif}
+
+\mbox{\label{administrator_2views_2downloads_2tmpl_2default_8php_adb6089428494019a8d96ed2c2c3e76bf}} 
+\index{administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}!if@{if}}
+\index{if@{if}!administrator/views/downloads/tmpl/default.\+php@{administrator/views/downloads/tmpl/default.\+php}}
+\subsubsection{if}
+{\footnotesize\ttfamily if (\begin{DoxyParamCaption}\item[{!}]{empty\$this-\/$>$extra\+\_\+sidebar }\end{DoxyParamCaption}) \{}
+

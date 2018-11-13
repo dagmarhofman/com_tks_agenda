@@ -1,0 +1,150 @@
+\section{tks\+\_\+agenda\+Model\+Recuritem Class Reference}
+\label{classtks__agenda_model_recuritem}\index{tks\+\_\+agenda\+Model\+Recuritem@{tks\+\_\+agenda\+Model\+Recuritem}}
+Inheritance diagram for tks\+\_\+agenda\+Model\+Recuritem\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtks__agenda_model_recuritem}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ get\+Table} (\$type=\textquotesingle{}Recuritem\textquotesingle{}, \$prefix=\textquotesingle{}tks\+\_\+agenda\+Table\textquotesingle{}, \$config=array())
+\item 
+\textbf{ get\+Form} (\$data=array(), \$load\+Data=true)
+\item 
+\textbf{ get\+Item} (\$pk=null)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ load\+Form\+Data} ()
+\item 
+\textbf{ prepare\+Table} (\$table)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \$text\+\_\+prefix} = \textquotesingle{}C\+O\+M\+\_\+\+T\+K\+S\+\_\+\+A\+G\+E\+N\+DA\textquotesingle{}
+\item 
+\textbf{ \$item} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classtks__agenda_model_recuritem_ae50fce4605eb3feff9a6de663e1dd70c}} 
+\index{tks\+\_\+agenda\+Model\+Recuritem@{tks\+\_\+agenda\+Model\+Recuritem}!get\+Form@{get\+Form}}
+\index{get\+Form@{get\+Form}!tks\+\_\+agenda\+Model\+Recuritem@{tks\+\_\+agenda\+Model\+Recuritem}}
+\subsubsection{get\+Form()}
+{\footnotesize\ttfamily get\+Form (\begin{DoxyParamCaption}\item[{}]{\$data = {\ttfamily array()},  }\item[{}]{\$load\+Data = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Method to get the record form.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$data} & An optional array of data for the form to interogate. \\
+\hline
+boolean & {\em \$load\+Data} & True if the form is to load its own data (default case), false if not.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J\+Form A J\+Form object on success, false on failure
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+6 
+\end{DoxySince}
+\mbox{\label{classtks__agenda_model_recuritem_a35153b47ed2364e6ff4fdecd1c0c5ccc}} 
+\index{tks\+\_\+agenda\+Model\+Recuritem@{tks\+\_\+agenda\+Model\+Recuritem}!get\+Item@{get\+Item}}
+\index{get\+Item@{get\+Item}!tks\+\_\+agenda\+Model\+Recuritem@{tks\+\_\+agenda\+Model\+Recuritem}}
+\subsubsection{get\+Item()}
+{\footnotesize\ttfamily get\+Item (\begin{DoxyParamCaption}\item[{}]{\$pk = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Method to get a single record.
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$pk} & The id of the primary key.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed Object on success, false on failure.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+6 
+\end{DoxySince}
+\mbox{\label{classtks__agenda_model_recuritem_af91dd6005f4a33d739087511bcda6f4b}} 
+\index{tks\+\_\+agenda\+Model\+Recuritem@{tks\+\_\+agenda\+Model\+Recuritem}!get\+Table@{get\+Table}}
+\index{get\+Table@{get\+Table}!tks\+\_\+agenda\+Model\+Recuritem@{tks\+\_\+agenda\+Model\+Recuritem}}
+\subsubsection{get\+Table()}
+{\footnotesize\ttfamily get\+Table (\begin{DoxyParamCaption}\item[{}]{\$type = {\ttfamily \textquotesingle{}Recuritem\textquotesingle{}},  }\item[{}]{\$prefix = {\ttfamily \textquotesingle{}tks\+\_\+agendaTable\textquotesingle{}},  }\item[{}]{\$config = {\ttfamily array()} }\end{DoxyParamCaption})}
+
+Returns a reference to the a Table object, always creating it.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$type} & The table type to instantiate \\
+\hline
+string & {\em \$prefix} & A prefix for the table class name. Optional. \\
+\hline
+array & {\em \$config} & Configuration array for model. Optional.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J\+Table A database object
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+6 
+\end{DoxySince}
+\mbox{\label{classtks__agenda_model_recuritem_a44f1cd069ac168e4c2f8cb5e9266cc2d}} 
+\index{tks\+\_\+agenda\+Model\+Recuritem@{tks\+\_\+agenda\+Model\+Recuritem}!load\+Form\+Data@{load\+Form\+Data}}
+\index{load\+Form\+Data@{load\+Form\+Data}!tks\+\_\+agenda\+Model\+Recuritem@{tks\+\_\+agenda\+Model\+Recuritem}}
+\subsubsection{load\+Form\+Data()}
+{\footnotesize\ttfamily load\+Form\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Method to get the data that should be injected in the form.
+
+\begin{DoxyReturn}{Returns}
+mixed The data for the form.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+6 
+\end{DoxySince}
+\mbox{\label{classtks__agenda_model_recuritem_a2ea87ee03f5fa9e722ef459c93d69874}} 
+\index{tks\+\_\+agenda\+Model\+Recuritem@{tks\+\_\+agenda\+Model\+Recuritem}!prepare\+Table@{prepare\+Table}}
+\index{prepare\+Table@{prepare\+Table}!tks\+\_\+agenda\+Model\+Recuritem@{tks\+\_\+agenda\+Model\+Recuritem}}
+\subsubsection{prepare\+Table()}
+{\footnotesize\ttfamily prepare\+Table (\begin{DoxyParamCaption}\item[{}]{\$table }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Method to prepare table, sets ordering to the last item.
+
+
+\begin{DoxyParams}[1]{Parameters}
+object & {\em \$table} & The table.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+6 
+\end{DoxySince}
+
+
+\subsection{Field Documentation}
+\mbox{\label{classtks__agenda_model_recuritem_aa61b415cee119a7511e05c405ecd0b32}} 
+\index{tks\+\_\+agenda\+Model\+Recuritem@{tks\+\_\+agenda\+Model\+Recuritem}!\$item@{\$item}}
+\index{\$item@{\$item}!tks\+\_\+agenda\+Model\+Recuritem@{tks\+\_\+agenda\+Model\+Recuritem}}
+\subsubsection{\$item}
+{\footnotesize\ttfamily \$item = null\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{classtks__agenda_model_recuritem_a5c29c349be0f67f1ca4f94809be602a7}} 
+\index{tks\+\_\+agenda\+Model\+Recuritem@{tks\+\_\+agenda\+Model\+Recuritem}!\$text\+\_\+prefix@{\$text\+\_\+prefix}}
+\index{\$text\+\_\+prefix@{\$text\+\_\+prefix}!tks\+\_\+agenda\+Model\+Recuritem@{tks\+\_\+agenda\+Model\+Recuritem}}
+\subsubsection{\$text\+\_\+prefix}
+{\footnotesize\ttfamily \$text\+\_\+prefix = \textquotesingle{}C\+O\+M\+\_\+\+T\+K\+S\+\_\+\+A\+G\+E\+N\+DA\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+administrator/models/\textbf{ recuritem.\+php}\end{DoxyCompactItemize}

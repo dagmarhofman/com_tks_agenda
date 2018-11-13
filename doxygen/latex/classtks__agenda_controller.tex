@@ -1,0 +1,93 @@
+\section{tks\+\_\+agenda\+Controller Class Reference}
+\label{classtks__agenda_controller}\index{tks\+\_\+agenda\+Controller@{tks\+\_\+agenda\+Controller}}
+Inheritance diagram for tks\+\_\+agenda\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.320755cm]{classtks__agenda_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ display} (\$cachable=false, \$urlparams=false)
+\item 
+\textbf{ item\+\_\+edit\+\_\+redirect} ()
+\item 
+\textbf{ item\+\_\+delete\+\_\+redirect} ()
+\item 
+\textbf{ display} (\$cachable=false, \$urlparams=false)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \doxyref{tks\+\_\+agenda\+Controller}{p.}{classtks__agenda_controller} is the main comtroller for the administrator view.
+
+Main Controller class Displays the items view at first 
+
+\subsection{Member Function Documentation}
+\mbox{\label{classtks__agenda_controller_ac880f45155648784b8ad51c907a1343a}} 
+\index{tks\+\_\+agenda\+Controller@{tks\+\_\+agenda\+Controller}!display@{display}}
+\index{display@{display}!tks\+\_\+agenda\+Controller@{tks\+\_\+agenda\+Controller}}
+\subsubsection{display()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily display (\begin{DoxyParamCaption}\item[{}]{\$cachable = {\ttfamily false},  }\item[{}]{\$urlparams = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Display method
+
+
+\begin{DoxyParams}[1]{Parameters}
+boolean & {\em \$cachable} & \\
+\hline
+boolean & {\em \$urlparams} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+J\+Table\+::\+\_\+get\+Asset\+Parent\+Id
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+mixed The id on success, false on failure. 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_controller_ac880f45155648784b8ad51c907a1343a}} 
+\index{tks\+\_\+agenda\+Controller@{tks\+\_\+agenda\+Controller}!display@{display}}
+\index{display@{display}!tks\+\_\+agenda\+Controller@{tks\+\_\+agenda\+Controller}}
+\subsubsection{display()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily display (\begin{DoxyParamCaption}\item[{}]{\$cachable = {\ttfamily false},  }\item[{}]{\$urlparams = {\ttfamily false} }\end{DoxyParamCaption})}
+
+The display routine. By default the main controller routes to the I\+T\+E\+MS view.
+
+
+\begin{DoxyParams}[1]{Parameters}
+boolean & {\em \$cachable} & If true, the view output will be cached\\
+\hline
+array & {\em \$urlparams} & An array of safe U\+RL parameters and their variable types.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object A  object to support chaining. 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_controller_a13dae23abd1c4a85f00b3c6b01614420}} 
+\index{tks\+\_\+agenda\+Controller@{tks\+\_\+agenda\+Controller}!item\+\_\+delete\+\_\+redirect@{item\+\_\+delete\+\_\+redirect}}
+\index{item\+\_\+delete\+\_\+redirect@{item\+\_\+delete\+\_\+redirect}!tks\+\_\+agenda\+Controller@{tks\+\_\+agenda\+Controller}}
+\subsubsection{item\+\_\+delete\+\_\+redirect()}
+{\footnotesize\ttfamily item\+\_\+delete\+\_\+redirect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The item delete redirect routine. This routine deletes all selected items. It constructs and runs the query per result. Perhaps we should do it all in one query? It then redirects to the I\+T\+E\+MS view.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\label{classtks__agenda_controller_ad898a5e4c0aa625366e229b123a30e26}} 
+\index{tks\+\_\+agenda\+Controller@{tks\+\_\+agenda\+Controller}!item\+\_\+edit\+\_\+redirect@{item\+\_\+edit\+\_\+redirect}}
+\index{item\+\_\+edit\+\_\+redirect@{item\+\_\+edit\+\_\+redirect}!tks\+\_\+agenda\+Controller@{tks\+\_\+agenda\+Controller}}
+\subsubsection{item\+\_\+edit\+\_\+redirect()}
+{\footnotesize\ttfamily item\+\_\+edit\+\_\+redirect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The item edit redirect routine. This routine checks if only one item is selected. It then redirects to the I\+T\+EM view or else, it redirects back to the I\+T\+E\+MS view.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+administrator/\textbf{ controller.\+php}\end{DoxyCompactItemize}

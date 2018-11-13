@@ -1,0 +1,1601 @@
+\begin{theindex}
+
+  \item {(\$can\+Delete)}
+    \subitem {site/views/newsitems/tmpl/default.\+php}, 249
+  \item {(\$file\+Arr as \$file\+Single)}
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 225
+  \item {(\$this-\/$>$items as \$i=$>$ \$item)}
+    \subitem {site/views/downloads/tmpl/default.\+php}, 236
+  \item {\$app}
+    \subitem {addtmpl.\+php}, 261
+    \subitem {edittmpl.\+php}, 263
+    \subitem {site/views/itemform/tmpl/default.\+php}, 240
+    \subitem {site/views/itemscrapform/tmpl/default.\+php}, 242
+  \item {\$avatar}
+    \subitem {addtmpl.\+php}, 261
+    \subitem {edittmpl.\+php}, 263
+    \subitem {site/views/portal/tmpl/default.\+php}, 250
+  \item {\$can\+Change}
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 224
+    \subitem {administrator/views/items/tmpl/default.\+php}, 227
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 230
+    \subitem {default.\+old.\+php}, 265
+    \subitem {site/views/downloads/tmpl/default.\+php}, 235
+    \subitem {site/views/item/tmpl/default.\+php}, 237
+    \subitem {site/views/items/tmpl/default.\+php}, 240
+    \subitem {site/views/newsitem/tmpl/default.\+php}, 244
+    \subitem {site/views/newsitems/tmpl/default.\+php}, 247
+    \subitem {site/views/portal/tmpl/default.\+php}, 250
+  \item {\$can\+Checkin}
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 224
+    \subitem {administrator/views/items/tmpl/default.\+php}, 227
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 230
+    \subitem {default.\+old.\+php}, 265
+    \subitem {site/views/downloads/tmpl/default.\+php}, 235
+    \subitem {site/views/item/tmpl/default.\+php}, 237
+    \subitem {site/views/items/tmpl/default.\+php}, 241
+    \subitem {site/views/newsitem/tmpl/default.\+php}, 244
+    \subitem {site/views/newsitems/tmpl/default.\+php}, 247
+    \subitem {site/views/portal/tmpl/default.\+php}, 250
+  \item {\$can\+Create}
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 224
+    \subitem {administrator/views/items/tmpl/default.\+php}, 227
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 231
+    \subitem {default.\+old.\+php}, 265
+    \subitem {site/views/downloads/tmpl/default.\+php}, 235
+    \subitem {site/views/item/tmpl/default.\+php}, 237
+    \subitem {site/views/items/tmpl/default.\+php}, 241
+    \subitem {site/views/newsitem/tmpl/default.\+php}, 244
+    \subitem {site/views/newsitems/tmpl/default.\+php}, 247
+    \subitem {site/views/portal/tmpl/default.\+php}, 250
+  \item {\$can\+Delete}
+    \subitem {default.\+old.\+php}, 266
+    \subitem {site/views/downloads/tmpl/default.\+php}, 235
+    \subitem {site/views/item/tmpl/default.\+php}, 237
+    \subitem {site/views/items/tmpl/default.\+php}, 241
+    \subitem {site/views/newsitem/tmpl/default.\+php}, 244
+    \subitem {site/views/newsitems/tmpl/default.\+php}, 248
+    \subitem {site/views/portal/tmpl/default.\+php}, 250
+  \item {\$can\+Delete\+Medewerker}
+    \subitem {site/views/item/tmpl/default.\+php}, 238
+    \subitem {site/views/portal/tmpl/default.\+php}, 250
+  \item {\$can\+Edit}
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 224
+    \subitem {administrator/views/items/tmpl/default.\+php}, 227
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 231
+    \subitem {default.\+old.\+php}, 266
+    \subitem {site/views/downloadform/tmpl/default.\+php}, 233
+    \subitem {site/views/downloads/tmpl/default.\+php}, 235
+    \subitem {site/views/item/tmpl/default.\+php}, 238
+    \subitem {site/views/items/tmpl/default.\+php}, 241
+    \subitem {site/views/itemscrapform/tmpl/default.\+php}, 242
+    \subitem {site/views/newsitem/tmpl/default.\+php}, 244
+    \subitem {site/views/newsitems/tmpl/default.\+php}, 248
+    \subitem {site/views/portal/tmpl/default.\+php}, 250
+  \item {\$can\+Edit\+Medewerker}
+    \subitem {site/views/item/tmpl/default.\+php}, 238
+    \subitem {site/views/portal/tmpl/default.\+php}, 250
+  \item {\$can\+Edit\+Own}
+    \subitem {site/views/item/tmpl/default.\+php}, 238
+  \item {\$can\+Edit\+Own\+Medewerker}
+    \subitem {site/views/item/tmpl/default.\+php}, 238
+    \subitem {site/views/portal/tmpl/default.\+php}, 251
+  \item {\$can\+Order}
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 224
+    \subitem {administrator/views/items/tmpl/default.\+php}, 228
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 231
+  \item {\$can\+Save}
+    \subitem {tks\+\_\+agenda\+View\+Downloadform}, 166
+    \subitem {tks\+\_\+agenda\+View\+Item\+Scrap\+Form}, 186
+    \subitem {tks\+\_\+agenda\+View\+Itemform}, 178
+    \subitem {tks\+\_\+agenda\+View\+Newsitemform}, 191
+  \item {\$company}
+    \subitem {addtmpl.\+php}, 261
+    \subitem {administrator/views/item/tmpl/edit.\+php}, 215
+    \subitem {edittmpl.\+php}, 263
+    \subitem {site/views/item/tmpl/edit.\+php}, 218
+    \subitem {site/views/portal/tmpl/default.\+php}, 251
+  \item {\$controller}
+    \subitem {administrator/tks\+\_\+agenda.\+php}, 211
+    \subitem {site/tks\+\_\+agenda.\+php}, 211
+  \item {\$created\+\_\+by\+\_\+name}
+    \subitem {site/views/newsitems/tmpl/default.\+php}, 248
+  \item {\$custom\+Options}
+    \subitem {downloads/tmpl/default\+\_\+filter.\+php}, 255
+    \subitem {items/tmpl/default\+\_\+filter.\+php}, 257
+    \subitem {newsitems/tmpl/default\+\_\+filter.\+php}, 259
+  \item {\$data}
+    \subitem {downloads/tmpl/default\+\_\+filter.\+php}, 255
+    \subitem {items/tmpl/default\+\_\+filter.\+php}, 257
+    \subitem {newsitems/tmpl/default\+\_\+filter.\+php}, 259
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 49
+  \item {\$db}
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 49
+  \item {\$disable\+Class\+Name}
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 224
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 231
+  \item {\$disabled\+Label}
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 224
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 231
+  \item {\$doc}
+    \subitem {addtmpl.\+php}, 261
+    \subitem {edittmpl.\+php}, 263
+    \subitem {site/views/downloadform/tmpl/default.\+php}, 233
+    \subitem {site/views/itemscrapform/tmpl/default.\+php}, 242
+    \subitem {site/views/newsitemform/tmpl/default.\+php}, 246
+  \item {\$document}
+    \subitem {administrator/views/download/tmpl/edit.\+php}, 215
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 224
+    \subitem {administrator/views/item/tmpl/edit.\+php}, 215
+    \subitem {administrator/views/items/tmpl/default.\+php}, 228
+    \subitem {administrator/views/newsitem/tmpl/edit.\+php}, 216
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 231
+    \subitem {administrator/views/recuritem/tmpl/edit.\+php}, 217
+    \subitem {site/views/download/tmpl/edit.\+php}, 217
+    \subitem {site/views/item/tmpl/edit.\+php}, 218
+    \subitem {site/views/newsitem/tmpl/edit.\+php}, 219
+  \item {\$end\+Date}
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 49
+  \item {\$end\+Recurring}
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 49
+  \item {\$filtered}
+    \subitem {downloads/tmpl/default\+\_\+filter.\+php}, 256
+    \subitem {items/tmpl/default\+\_\+filter.\+php}, 258
+    \subitem {newsitems/tmpl/default\+\_\+filter.\+php}, 259
+  \item {\$filters}
+    \subitem {downloads/tmpl/default\+\_\+filter.\+php}, 256
+    \subitem {items/tmpl/default\+\_\+filter.\+php}, 258
+    \subitem {newsitems/tmpl/default\+\_\+filter.\+php}, 260
+  \item {\$for}
+    \subitem {J\+Form\+Field\+Submit}, 29
+  \item {\$form}
+    \subitem {tks\+\_\+agenda\+View\+Download}, 164
+    \subitem {tks\+\_\+agenda\+View\+Downloadform}, 166
+    \subitem {tks\+\_\+agenda\+View\+Item}, 174
+    \subitem {tks\+\_\+agenda\+View\+Item\+Scrap\+Form}, 186
+    \subitem {tks\+\_\+agenda\+View\+Itemform}, 178
+    \subitem {tks\+\_\+agenda\+View\+Newsitem}, 189
+    \subitem {tks\+\_\+agenda\+View\+Newsitemform}, 192
+    \subitem {tks\+\_\+agenda\+View\+Portal}, 197
+    \subitem {tks\+\_\+agenda\+View\+Recuritem}, 200
+  \item {\$form\+Selector}
+    \subitem {downloads/tmpl/default\+\_\+filter.\+php}, 256
+    \subitem {items/tmpl/default\+\_\+filter.\+php}, 258
+    \subitem {newsitems/tmpl/default\+\_\+filter.\+php}, 260
+  \item {\$i}
+    \subitem {administrator/views/items/tmpl/default.\+php}, 228
+    \subitem {site/views/itemscrapform/tmpl/default.\+php}, 242
+  \item {\$isroot}
+    \subitem {site/views/newsitems/tmpl/default.\+php}, 248
+  \item {\$item}
+    \subitem {tks\+\_\+agenda\+Model\+Download}, 73
+    \subitem {tks\+\_\+agenda\+Model\+Item}, 92
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem}, 119
+    \subitem {tks\+\_\+agenda\+Model\+Recuritem}, 132
+    \subitem {tks\+\_\+agenda\+View\+Download}, 164
+    \subitem {tks\+\_\+agenda\+View\+Downloadform}, 166
+    \subitem {tks\+\_\+agenda\+View\+Item}, 174
+    \subitem {tks\+\_\+agenda\+View\+Item\+Scrap\+Form}, 186
+    \subitem {tks\+\_\+agenda\+View\+Itemeditform}, 176
+    \subitem {tks\+\_\+agenda\+View\+Itemform}, 178
+    \subitem {tks\+\_\+agenda\+View\+Newsitem}, 189
+    \subitem {tks\+\_\+agenda\+View\+Newsitemform}, 192
+    \subitem {tks\+\_\+agenda\+View\+Portal}, 198
+    \subitem {tks\+\_\+agenda\+View\+Recuritem}, 200
+  \item {\$items}
+    \subitem {tks\+\_\+agenda\+View\+Downloads}, 170
+    \subitem {tks\+\_\+agenda\+View\+Items}, 184
+    \subitem {tks\+\_\+agenda\+View\+Newsitems}, 195
+    \subitem {tks\+\_\+agenda\+Viewitems}, 181
+  \item {\$jform}
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 49
+  \item {\$lang}
+    \subitem {addtmpl.\+php}, 262
+    \subitem {edittmpl.\+php}, 264
+    \subitem {site/views/downloadform/tmpl/default.\+php}, 233
+    \subitem {site/views/itemscrapform/tmpl/default.\+php}, 243
+    \subitem {site/views/newsitemform/tmpl/default.\+php}, 246
+  \item {\$last\+\_\+error}
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 49
+  \item {\$list\+Dirn}
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 225
+    \subitem {administrator/views/items/tmpl/default.\+php}, 228
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 231
+    \subitem {default.\+old.\+php}, 266
+    \subitem {site/views/downloads/tmpl/default.\+php}, 236
+    \subitem {site/views/items/tmpl/default.\+php}, 241
+    \subitem {site/views/newsitems/tmpl/default.\+php}, 248
+  \item {\$list\+Order}
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 225
+    \subitem {administrator/views/items/tmpl/default.\+php}, 228
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 231
+    \subitem {default.\+old.\+php}, 266
+    \subitem {site/views/downloads/tmpl/default.\+php}, 236
+    \subitem {site/views/items/tmpl/default.\+php}, 241
+    \subitem {site/views/newsitems/tmpl/default.\+php}, 248
+  \item {\$messages}
+    \subitem {tks\+\_\+agenda\+Modeltks\+\_\+agenda}, 134
+  \item {\$mode}
+    \subitem {site/views/itemform/tmpl/default.\+php}, 240
+    \subitem {site/views/itemscrapform/tmpl/default.\+php}, 243
+  \item {\$model}
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 50
+  \item {\$options}
+    \subitem {downloads/tmpl/default\+\_\+filter.\+php}, 256
+    \subitem {items/tmpl/default\+\_\+filter.\+php}, 258
+    \subitem {newsitems/tmpl/default\+\_\+filter.\+php}, 260
+  \item {\$overlap}
+    \subitem {site/views/itemscrapform/tmpl/default.\+php}, 243
+  \item {\$overlapfail}
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 50
+  \item {\$pagination}
+    \subitem {tks\+\_\+agenda\+View\+Downloads}, 170
+    \subitem {tks\+\_\+agenda\+View\+Items}, 184
+    \subitem {tks\+\_\+agenda\+View\+Newsitems}, 195
+    \subitem {tks\+\_\+agenda\+Viewitems}, 181
+  \item {\$params}
+    \subitem {tks\+\_\+agenda\+View\+Downloadform}, 166
+    \subitem {tks\+\_\+agenda\+View\+Downloads}, 170
+    \subitem {tks\+\_\+agenda\+View\+Item}, 174
+    \subitem {tks\+\_\+agenda\+View\+Item\+Scrap\+Form}, 186
+    \subitem {tks\+\_\+agenda\+View\+Itemform}, 178
+    \subitem {tks\+\_\+agenda\+View\+Newsitem}, 189
+    \subitem {tks\+\_\+agenda\+View\+Newsitemform}, 192
+    \subitem {tks\+\_\+agenda\+View\+Newsitems}, 195
+    \subitem {tks\+\_\+agenda\+View\+Portal}, 198
+    \subitem {tks\+\_\+agenda\+Viewitems}, 182
+  \item {\$profile}
+    \subitem {site/views/portal/tmpl/default.\+php}, 251
+  \item {\$recur\+\_\+id}
+    \subitem {addtmpl.\+php}, 262
+    \subitem {edittmpl.\+php}, 264
+  \item {\$recurring\+\_\+id}
+    \subitem {site/views/item/tmpl/default.\+php}, 238
+  \item {\$s}
+    \subitem {site/views/item/tmpl/default.\+php}, 238
+  \item {\$save\+Order}
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 225
+    \subitem {administrator/views/items/tmpl/default.\+php}, 228
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 232
+  \item {\$search\+\_\+filter}
+    \subitem {downloads/tmpl/default\+\_\+filter.\+php}, 256
+    \subitem {newsitems/tmpl/default\+\_\+filter.\+php}, 260
+  \item {\$sort\+Fields}
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 225
+    \subitem {administrator/views/items/tmpl/default.\+php}, 228
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 232
+  \item {\$start\+Date}
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 50
+  \item {\$state}
+    \subitem {tks\+\_\+agenda\+View\+Download}, 164
+    \subitem {tks\+\_\+agenda\+View\+Downloadform}, 167
+    \subitem {tks\+\_\+agenda\+View\+Downloads}, 170
+    \subitem {tks\+\_\+agenda\+View\+Item}, 175
+    \subitem {tks\+\_\+agenda\+View\+Item\+Scrap\+Form}, 186
+    \subitem {tks\+\_\+agenda\+View\+Itemform}, 179
+    \subitem {tks\+\_\+agenda\+View\+Items}, 184
+    \subitem {tks\+\_\+agenda\+View\+Newsitem}, 190
+    \subitem {tks\+\_\+agenda\+View\+Newsitemform}, 192
+    \subitem {tks\+\_\+agenda\+View\+Newsitems}, 196
+    \subitem {tks\+\_\+agenda\+View\+Portal}, 198
+    \subitem {tks\+\_\+agenda\+View\+Recuritem}, 200
+    \subitem {tks\+\_\+agenda\+Viewitems}, 182
+  \item {\$suer}
+    \subitem {site/views/newsitem/tmpl/default.\+php}, 244
+  \item {\$superadmin}
+    \subitem {site/views/downloads/tmpl/default.\+php}, 236
+    \subitem {site/views/item/tmpl/default.\+php}, 239
+  \item {\$text\+\_\+prefix}
+    \subitem {tks\+\_\+agenda\+Model\+Download}, 73
+    \subitem {tks\+\_\+agenda\+Model\+Item}, 92
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem}, 119
+    \subitem {tks\+\_\+agenda\+Model\+Recuritem}, 132
+  \item {\$type}
+    \subitem {J\+Form\+Field\+Createdby}, 18
+    \subitem {J\+Form\+Field\+Custom\+Field}, 20
+    \subitem {J\+Form\+Field\+Date\+Time}, 21
+    \subitem {J\+Form\+Field\+File\+Multiple}, 22
+    \subitem {J\+Form\+Field\+Foreign\+Key}, 25
+    \subitem {J\+Form\+Field\+List\+Files}, 26
+    \subitem {J\+Form\+Field\+Modifiedby}, 28
+    \subitem {J\+Form\+Field\+Submit}, 29
+    \subitem {J\+Form\+Field\+Timecreated}, 31
+    \subitem {J\+Form\+Field\+Timeupdated}, 32
+  \item {\$type\+Alias}
+    \subitem {tks\+\_\+agenda\+Model\+Download}, 73
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem}, 119
+  \item {\$uitval}
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 50
+  \item {\$user}
+    \subitem {addtmpl.\+php}, 262
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 225
+    \subitem {administrator/views/item/tmpl/edit.\+php}, 215
+    \subitem {administrator/views/items/tmpl/default.\+php}, 228
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 232
+    \subitem {administrator/views/recuritem/tmpl/edit.\+php}, 217
+    \subitem {default.\+old.\+php}, 266
+    \subitem {edittmpl.\+php}, 264
+    \subitem {site/views/downloadform/tmpl/default.\+php}, 234
+    \subitem {site/views/downloads/tmpl/default.\+php}, 236
+    \subitem {site/views/item/tmpl/default.\+php}, 239
+    \subitem {site/views/item/tmpl/edit.\+php}, 218
+    \subitem {site/views/items/tmpl/default.\+php}, 241
+    \subitem {site/views/itemscrapform/tmpl/default.\+php}, 243
+    \subitem {site/views/newsitem/tmpl/default.\+php}, 245
+    \subitem {site/views/newsitems/tmpl/default.\+php}, 248
+    \subitem {site/views/portal/tmpl/default.\+php}, 251
+  \item {\$user\+Id}
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 225
+    \subitem {administrator/views/items/tmpl/default.\+php}, 229
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 232
+    \subitem {default.\+old.\+php}, 266
+    \subitem {site/views/downloads/tmpl/default.\+php}, 236
+    \subitem {site/views/item/tmpl/default.\+php}, 239
+    \subitem {site/views/items/tmpl/default.\+php}, 241
+    \subitem {site/views/newsitems/tmpl/default.\+php}, 248
+    \subitem {site/views/portal/tmpl/default.\+php}, 251
+  \item {\$username}
+    \subitem {addtmpl.\+php}, 262
+    \subitem {edittmpl.\+php}, 264
+    \subitem {site/views/newsitems/tmpl/default.\+php}, 249
+  \item {\$value}
+    \subitem {J\+Form\+Field\+Submit}, 29
+  \item {\+\_\+\+\_\+construct}
+    \subitem {tks\+\_\+agenda\+Controller\+Download}, 35
+    \subitem {tks\+\_\+agenda\+Controller\+Item}, 41
+    \subitem {tks\+\_\+agenda\+Controller\+Newsitem}, 55
+    \subitem {tks\+\_\+agenda\+Model\+Downloads}, 80
+    \subitem {tks\+\_\+agenda\+Model\+Items}, 103, 104
+    \subitem {tks\+\_\+agenda\+Model\+Newsitems}, 126
+    \subitem {tks\+\_\+agenda\+Tabledownload}, 140
+    \subitem {tks\+\_\+agenda\+Tableitem}, 147
+    \subitem {tks\+\_\+agenda\+Tablenewsitem}, 153
+    \subitem {tks\+\_\+agenda\+Tablerecuritem}, 159
+  \item {\+\_\+\+\_\+pad0\+\_\+\+\_\+}
+    \subitem {addtmpl.\+php}, 262
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 225
+    \subitem {administrator/views/items/tmpl/default.\+php}, 229
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 232
+    \subitem {site/views/downloadform/tmpl/default.\+php}, 234
+    \subitem {site/views/newsitem/tmpl/default.\+php}, 245
+    \subitem {site/views/newsitemform/tmpl/default.\+php}, 246
+  \item {\+\_\+\+\_\+pad1\+\_\+\+\_\+}
+    \subitem {addtmpl.\+php}, 262
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 226
+    \subitem {administrator/views/items/tmpl/default.\+php}, 229
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 232
+    \subitem {site/views/downloadform/tmpl/default.\+php}, 234
+    \subitem {site/views/newsitemform/tmpl/default.\+php}, 246
+  \item {\+\_\+\+\_\+pad2\+\_\+\+\_\+}
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 226
+    \subitem {administrator/views/items/tmpl/default.\+php}, 229
+    \subitem {edittmpl.\+php}, 264
+  \item {\+\_\+\+\_\+pad3\+\_\+\+\_\+}
+    \subitem {edittmpl.\+php}, 264
+  \item {\+\_\+get\+Asset\+Name}
+    \subitem {tks\+\_\+agenda\+Tabledownload}, 141
+    \subitem {tks\+\_\+agenda\+Tableitem}, 147
+    \subitem {tks\+\_\+agenda\+Tablenewsitem}, 154
+    \subitem {tks\+\_\+agenda\+Tablerecuritem}, 160
+  \item {\+\_\+get\+Asset\+Parent\+Id}
+    \subitem {tks\+\_\+agenda\+Tabledownload}, 141, 142
+    \subitem {tks\+\_\+agenda\+Tableitem}, 148
+    \subitem {tks\+\_\+agenda\+Tablenewsitem}, 154, 155
+    \subitem {tks\+\_\+agenda\+Tablerecuritem}, 160
+  \item {\+\_\+prepare\+Document}
+    \subitem {tks\+\_\+agenda\+View\+Downloadform}, 165
+    \subitem {tks\+\_\+agenda\+View\+Downloads}, 168
+    \subitem {tks\+\_\+agenda\+View\+Item}, 171, 172
+    \subitem {tks\+\_\+agenda\+View\+Item\+Scrap\+Form}, 185
+    \subitem {tks\+\_\+agenda\+View\+Itemeditform}, 176
+    \subitem {tks\+\_\+agenda\+View\+Itemform}, 177
+    \subitem {tks\+\_\+agenda\+View\+Newsitem}, 188
+    \subitem {tks\+\_\+agenda\+View\+Newsitemform}, 191
+    \subitem {tks\+\_\+agenda\+View\+Newsitems}, 193
+    \subitem {tks\+\_\+agenda\+View\+Portal}, 197
+    \subitem {tks\+\_\+agenda\+Viewitems}, 180
+
+  \indexspace
+
+  \item {add\+Submenu}
+    \subitem {tks\+\_\+agenda\+Helper}, 64
+  \item {add\+Toolbar}
+    \subitem {tks\+\_\+agenda\+View\+Download}, 163
+    \subitem {tks\+\_\+agenda\+View\+Downloads}, 168
+    \subitem {tks\+\_\+agenda\+View\+Item}, 172
+    \subitem {tks\+\_\+agenda\+View\+Items}, 183
+    \subitem {tks\+\_\+agenda\+View\+Newsitem}, 188
+    \subitem {tks\+\_\+agenda\+View\+Newsitems}, 193
+    \subitem {tks\+\_\+agenda\+View\+Recuritem}, 199
+  \item {addtmpl.\+php}
+    \subitem {\$app}, 261
+    \subitem {\$avatar}, 261
+    \subitem {\$company}, 261
+    \subitem {\$doc}, 261
+    \subitem {\$lang}, 262
+    \subitem {\$recur\+\_\+id}, 262
+    \subitem {\$user}, 262
+    \subitem {\$username}, 262
+    \subitem {\+\_\+\+\_\+pad0\+\_\+\+\_\+}, 262
+    \subitem {\+\_\+\+\_\+pad1\+\_\+\+\_\+}, 262
+    \subitem {endif}, 262
+    \subitem {j\+Query}, 262
+  \item {administrator/controller.\+php}, 203
+  \item {administrator/controllers/download.\+php}, 203
+  \item {administrator/controllers/downloads.\+php}, 204
+  \item {administrator/controllers/item.\+php}, 205
+  \item {administrator/controllers/items.\+php}, 206
+  \item {administrator/controllers/newsitem.\+php}, 207
+  \item {administrator/controllers/newsitems.\+php}, 209
+  \item {administrator/controllers/recuritem.\+php}, 210
+  \item {administrator/helpers/tks\+\_\+agenda.\+php}, 210
+  \item {administrator/models/download.\+php}, 203
+  \item {administrator/models/downloads.\+php}, 205
+  \item {administrator/models/fields/createdby.\+php}, 211
+  \item {administrator/models/fields/custom\+\_\+field.\+php}, 212
+  \item {administrator/models/fields/filemultiple.\+php}, 212
+  \item {administrator/models/fields/foreignkey.\+php}, 213
+  \item {administrator/models/fields/listfiles.\+php}, 213
+  \item {administrator/models/fields/modifiedby.\+php}, 213
+  \item {administrator/models/fields/timecreated.\+php}, 214
+  \item {administrator/models/fields/timeupdated.\+php}, 214
+  \item {administrator/models/item.\+php}, 205
+  \item {administrator/models/items.\+php}, 207
+  \item {administrator/models/newsitem.\+php}, 207
+  \item {administrator/models/newsitems.\+php}, 209
+  \item {administrator/models/recuritem.\+php}, 210
+  \item {administrator/models/tks\+\_\+agenda.\+php}, 210
+  \item {administrator/tables/download.\+php}, 204
+  \item {administrator/tables/item.\+php}, 206
+  \item {administrator/tables/newsitem.\+php}, 208
+  \item {administrator/tables/recuritem.\+php}, 210
+  \item {administrator/tks\+\_\+agenda.\+php}, 210
+    \subitem {\$controller}, 211
+  \item {administrator/views/download/tmpl/edit.\+php}, 214
+    \subitem {\$document}, 215
+    \subitem {endif}, 215
+  \item {administrator/views/download/view.\+html.\+php}, 220
+  \item {administrator/views/downloads/tmpl/default.\+php}, 223
+    \subitem {(\$file\+Arr as \$file\+Single)}, 225
+    \subitem {\$can\+Change}, 224
+    \subitem {\$can\+Checkin}, 224
+    \subitem {\$can\+Create}, 224
+    \subitem {\$can\+Edit}, 224
+    \subitem {\$can\+Order}, 224
+    \subitem {\$disable\+Class\+Name}, 224
+    \subitem {\$disabled\+Label}, 224
+    \subitem {\$document}, 224
+    \subitem {\$list\+Dirn}, 225
+    \subitem {\$list\+Order}, 225
+    \subitem {\$save\+Order}, 225
+    \subitem {\$sort\+Fields}, 225
+    \subitem {\$user}, 225
+    \subitem {\$user\+Id}, 225
+    \subitem {\+\_\+\+\_\+pad0\+\_\+\+\_\+}, 225
+    \subitem {\+\_\+\+\_\+pad1\+\_\+\+\_\+}, 226
+    \subitem {\+\_\+\+\_\+pad2\+\_\+\+\_\+}, 226
+    \subitem {else}, 226
+    \subitem {endforeach}, 226
+    \subitem {endif}, 226
+    \subitem {if}, 226
+  \item {administrator/views/downloads/view.\+html.\+php}, 220
+  \item {administrator/views/item/tmpl/edit.\+php}, 215
+    \subitem {\$company}, 215
+    \subitem {\$document}, 215
+    \subitem {\$user}, 215
+    \subitem {else}, 215
+    \subitem {endif}, 216
+  \item {administrator/views/item/view.\+html.\+php}, 220
+  \item {administrator/views/items/tmpl/default.\+php}, 227
+    \subitem {\$can\+Change}, 227
+    \subitem {\$can\+Checkin}, 227
+    \subitem {\$can\+Create}, 227
+    \subitem {\$can\+Edit}, 227
+    \subitem {\$can\+Order}, 228
+    \subitem {\$document}, 228
+    \subitem {\$i}, 228
+    \subitem {\$list\+Dirn}, 228
+    \subitem {\$list\+Order}, 228
+    \subitem {\$save\+Order}, 228
+    \subitem {\$sort\+Fields}, 228
+    \subitem {\$user}, 228
+    \subitem {\$user\+Id}, 229
+    \subitem {\+\_\+\+\_\+pad0\+\_\+\+\_\+}, 229
+    \subitem {\+\_\+\+\_\+pad1\+\_\+\+\_\+}, 229
+    \subitem {\+\_\+\+\_\+pad2\+\_\+\+\_\+}, 229
+    \subitem {cc}, 229
+    \subitem {else}, 229
+    \subitem {endforeach}, 229
+    \subitem {endif}, 229
+    \subitem {if}, 230
+  \item {administrator/views/items/view.\+html.\+php}, 220
+  \item {administrator/views/newsitem/tmpl/edit.\+php}, 216
+    \subitem {\$document}, 216
+    \subitem {else}, 216
+    \subitem {endif}, 216
+  \item {administrator/views/newsitem/view.\+html.\+php}, 220
+  \item {administrator/views/newsitems/tmpl/default.\+php}, 230
+    \subitem {\$can\+Change}, 230
+    \subitem {\$can\+Checkin}, 230
+    \subitem {\$can\+Create}, 231
+    \subitem {\$can\+Edit}, 231
+    \subitem {\$can\+Order}, 231
+    \subitem {\$disable\+Class\+Name}, 231
+    \subitem {\$disabled\+Label}, 231
+    \subitem {\$document}, 231
+    \subitem {\$list\+Dirn}, 231
+    \subitem {\$list\+Order}, 231
+    \subitem {\$save\+Order}, 232
+    \subitem {\$sort\+Fields}, 232
+    \subitem {\$user}, 232
+    \subitem {\$user\+Id}, 232
+    \subitem {\+\_\+\+\_\+pad0\+\_\+\+\_\+}, 232
+    \subitem {\+\_\+\+\_\+pad1\+\_\+\+\_\+}, 232
+    \subitem {else}, 232
+    \subitem {endforeach}, 232
+    \subitem {endif}, 233
+    \subitem {if}, 233
+  \item {administrator/views/newsitems/view.\+html.\+php}, 220
+  \item {administrator/views/recuritem/tmpl/edit.\+php}, 217
+    \subitem {\$document}, 217
+    \subitem {\$user}, 217
+    \subitem {endif}, 217
+  \item {administrator/views/recuritem/view.\+html.\+php}, 221
+
+  \indexspace
+
+  \item {bewerk}
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 46
+  \item {bewerk\+\_\+recur}
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 46
+  \item {bind}
+    \subitem {tks\+\_\+agenda\+Tabledownload}, 142, 143
+    \subitem {tks\+\_\+agenda\+Tableitem}, 149
+    \subitem {tks\+\_\+agenda\+Tablenewsitem}, 155, 156
+  \item {build}
+    \subitem {tks\+\_\+agenda\+Router}, 135
+
+  \indexspace
+
+  \item {can\+User\+Edit}
+    \subitem {tks\+\_\+agenda\+Frontend\+Helper}, 61
+    \subitem {tks\+\_\+agenda\+Site\+Frontend\+Helper}, 137
+  \item {cancel}
+    \subitem {tks\+\_\+agenda\+Controller\+Download\+Form}, 37
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Edit\+Form}, 44
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 46
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Scrap\+Form}, 53
+    \subitem {tks\+\_\+agenda\+Controller\+Newsitem\+Form}, 57
+  \item {cc}
+    \subitem {administrator/views/items/tmpl/default.\+php}, 229
+  \item {check}
+    \subitem {tks\+\_\+agenda\+Tabledownload}, 143
+    \subitem {tks\+\_\+agenda\+Tableitem}, 150
+    \subitem {tks\+\_\+agenda\+Tablenewsitem}, 156
+    \subitem {tks\+\_\+agenda\+Tablerecuritem}, 160
+  \item {check\+\_\+for\+\_\+date\+\_\+errors}
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 47
+  \item {checkin}
+    \subitem {tks\+\_\+agenda\+Model\+Download}, 66
+    \subitem {tks\+\_\+agenda\+Model\+Download\+Form}, 74
+    \subitem {tks\+\_\+agenda\+Model\+Item}, 85
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Edit\+Form}, 93
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Form}, 98
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Scrap\+Form}, 107
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem}, 113
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem\+Form}, 120
+  \item {checkout}
+    \subitem {tks\+\_\+agenda\+Model\+Download}, 67
+    \subitem {tks\+\_\+agenda\+Model\+Download\+Form}, 74
+    \subitem {tks\+\_\+agenda\+Model\+Item}, 86
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Edit\+Form}, 94
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Form}, 98
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Scrap\+Form}, 108
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem}, 113
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem\+Form}, 121
+  \item {Com\+\_\+\+Gckloosterveen}, 13
+  \item {com\+\_\+tks\+\_\+agenda}, 14
+
+  \indexspace
+
+  \item {default.\+old.\+php}
+    \subitem {\$can\+Change}, 265
+    \subitem {\$can\+Checkin}, 265
+    \subitem {\$can\+Create}, 265
+    \subitem {\$can\+Delete}, 266
+    \subitem {\$can\+Edit}, 266
+    \subitem {\$list\+Dirn}, 266
+    \subitem {\$list\+Order}, 266
+    \subitem {\$user}, 266
+    \subitem {\$user\+Id}, 266
+    \subitem {endif}, 266
+  \item {delete}
+    \subitem {tks\+\_\+agenda\+Model\+Download}, 67
+    \subitem {tks\+\_\+agenda\+Model\+Download\+Form}, 75
+    \subitem {tks\+\_\+agenda\+Model\+Item}, 86
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Form}, 99
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Scrap\+Form}, 108
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem}, 114
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem\+Form}, 121
+    \subitem {tks\+\_\+agenda\+Tabledownload}, 144
+    \subitem {tks\+\_\+agenda\+Tableitem}, 150, 151
+    \subitem {tks\+\_\+agenda\+Tablenewsitem}, 157
+    \subitem {tks\+\_\+agenda\+Tablerecuritem}, 161
+  \item {delete\+Item}
+    \subitem {site/views/newsitems/tmpl/default.\+php}, 247
+  \item {deleterecur}
+    \subitem {tks\+\_\+agenda\+Model\+Item}, 86
+  \item {display}
+    \subitem {tks\+\_\+agenda\+Controller}, 33
+    \subitem {tks\+\_\+agenda\+View\+Download}, 163, 164
+    \subitem {tks\+\_\+agenda\+View\+Downloadform}, 166
+    \subitem {tks\+\_\+agenda\+View\+Downloads}, 168, 169
+    \subitem {tks\+\_\+agenda\+View\+Item}, 172--174
+    \subitem {tks\+\_\+agenda\+View\+Item\+Scrap\+Form}, 185
+    \subitem {tks\+\_\+agenda\+View\+Itemeditform}, 176
+    \subitem {tks\+\_\+agenda\+View\+Itemform}, 178
+    \subitem {tks\+\_\+agenda\+View\+Items}, 183
+    \subitem {tks\+\_\+agenda\+View\+Newsitem}, 188, 189
+    \subitem {tks\+\_\+agenda\+View\+Newsitemform}, 191
+    \subitem {tks\+\_\+agenda\+View\+Newsitems}, 194
+    \subitem {tks\+\_\+agenda\+View\+Portal}, 197
+    \subitem {tks\+\_\+agenda\+View\+Recuritem}, 199
+    \subitem {tks\+\_\+agenda\+Viewitems}, 180
+    \subitem {tks\+\_\+agenda\+Viewtks\+\_\+agenda}, 200
+  \item {downloads/tmpl/default\+\_\+filter.\+php}
+    \subitem {\$custom\+Options}, 255
+    \subitem {\$data}, 255
+    \subitem {\$filtered}, 256
+    \subitem {\$filters}, 256
+    \subitem {\$form\+Selector}, 256
+    \subitem {\$options}, 256
+    \subitem {\$search\+\_\+filter}, 256
+    \subitem {endforeach}, 256
+    \subitem {endif}, 256
+  \item {duplicate}
+    \subitem {tks\+\_\+agenda\+Controller\+Downloads}, 39
+    \subitem {tks\+\_\+agenda\+Controller\+Items}, 51
+    \subitem {tks\+\_\+agenda\+Controller\+Newsitems}, 59
+    \subitem {tks\+\_\+agenda\+Model\+Download}, 68
+    \subitem {tks\+\_\+agenda\+Model\+Item}, 88
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem}, 114
+
+  \indexspace
+
+  \item {edit}
+    \subitem {tks\+\_\+agenda\+Controller\+Download}, 35
+    \subitem {tks\+\_\+agenda\+Controller\+Download\+Form}, 37
+    \subitem {tks\+\_\+agenda\+Controller\+Item}, 42
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Edit\+Form}, 44
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 47
+    \subitem {tks\+\_\+agenda\+Controller\+Newsitem}, 56
+    \subitem {tks\+\_\+agenda\+Controller\+Newsitem\+Form}, 58
+  \item {edittmpl.\+php}
+    \subitem {\$app}, 263
+    \subitem {\$avatar}, 263
+    \subitem {\$company}, 263
+    \subitem {\$doc}, 263
+    \subitem {\$lang}, 264
+    \subitem {\$recur\+\_\+id}, 264
+    \subitem {\$user}, 264
+    \subitem {\$username}, 264
+    \subitem {\+\_\+\+\_\+pad2\+\_\+\+\_\+}, 264
+    \subitem {\+\_\+\+\_\+pad3\+\_\+\+\_\+}, 264
+    \subitem {endif}, 264
+    \subitem {if}, 264
+    \subitem {j\+Query}, 265
+  \item {else}
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 226
+    \subitem {administrator/views/item/tmpl/edit.\+php}, 215
+    \subitem {administrator/views/items/tmpl/default.\+php}, 229
+    \subitem {administrator/views/newsitem/tmpl/edit.\+php}, 216
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 232
+    \subitem {site/views/downloads/tmpl/default.\+php}, 236
+    \subitem {site/views/item/tmpl/default.\+php}, 239
+    \subitem {site/views/item/tmpl/edit.\+php}, 218
+    \subitem {site/views/itemform/tmpl/default.\+php}, 240
+    \subitem {site/views/newsitem/tmpl/edit.\+php}, 219
+    \subitem {site/views/newsitemform/tmpl/default.\+php}, 246
+  \item {endforeach}
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 226
+    \subitem {administrator/views/items/tmpl/default.\+php}, 229
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 232
+    \subitem {downloads/tmpl/default\+\_\+filter.\+php}, 256
+    \subitem {items/tmpl/default\+\_\+filter.\+php}, 258
+    \subitem {newsitems/tmpl/default\+\_\+filter.\+php}, 260
+    \subitem {site/views/downloadform/tmpl/default.\+php}, 234
+    \subitem {site/views/newsitems/tmpl/default.\+php}, 249
+  \item {endif}
+    \subitem {addtmpl.\+php}, 262
+    \subitem {administrator/views/download/tmpl/edit.\+php}, 215
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 226
+    \subitem {administrator/views/item/tmpl/edit.\+php}, 216
+    \subitem {administrator/views/items/tmpl/default.\+php}, 229
+    \subitem {administrator/views/newsitem/tmpl/edit.\+php}, 216
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 233
+    \subitem {administrator/views/recuritem/tmpl/edit.\+php}, 217
+    \subitem {default.\+old.\+php}, 266
+    \subitem {downloads/tmpl/default\+\_\+filter.\+php}, 256
+    \subitem {edittmpl.\+php}, 264
+    \subitem {items/tmpl/default\+\_\+filter.\+php}, 258
+    \subitem {newsitems/tmpl/default\+\_\+filter.\+php}, 260
+    \subitem {site/views/download/tmpl/edit.\+php}, 217
+    \subitem {site/views/downloadform/tmpl/default.\+php}, 234
+    \subitem {site/views/item/tmpl/edit.\+php}, 219
+    \subitem {site/views/items/tmpl/default.\+php}, 242
+    \subitem {site/views/newsitem/tmpl/default.\+php}, 245
+    \subitem {site/views/newsitem/tmpl/edit.\+php}, 219
+    \subitem {site/views/newsitemform/tmpl/default.\+php}, 246
+    \subitem {site/views/newsitems/tmpl/default.\+php}, 249
+
+  \indexspace
+
+  \item {flatten}
+    \subitem {tks\+\_\+agenda\+Viewitems}, 181
+
+  \indexspace
+
+  \item {get\+\_\+brightness}
+    \subitem {tks\+\_\+agenda\+Frontend\+Helper}, 62
+    \subitem {tks\+\_\+agenda\+Site\+Frontend\+Helper}, 137
+  \item {get\+\_\+recur\+\_\+array}
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 47
+  \item {get\+Actions}
+    \subitem {tks\+\_\+agenda\+Helper}, 65
+  \item {get\+Alias\+Field\+Name\+By\+View}
+    \subitem {tks\+\_\+agenda\+Model\+Download}, 68
+    \subitem {tks\+\_\+agenda\+Model\+Download\+Form}, 75
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem}, 114
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem\+Form}, 122
+  \item {get\+Attribute}
+    \subitem {J\+Form\+Field\+Foreign\+Key}, 23
+  \item {get\+Can\+Save}
+    \subitem {tks\+\_\+agenda\+Model\+Download\+Form}, 76
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Form}, 99
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Scrap\+Form}, 108
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem\+Form}, 122
+  \item {get\+Category\+Name}
+    \subitem {tks\+\_\+agenda\+Model\+Download}, 68
+    \subitem {tks\+\_\+agenda\+Model\+Item}, 88
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem}, 115
+  \item {get\+Category\+Name\+By\+Category\+Id}
+    \subitem {tks\+\_\+agenda\+Frontend\+Helper}, 62
+    \subitem {tks\+\_\+agenda\+Site\+Frontend\+Helper}, 137
+  \item {get\+Data}
+    \subitem {tks\+\_\+agenda\+Model\+Download}, 69
+    \subitem {tks\+\_\+agenda\+Model\+Download\+Form}, 76
+    \subitem {tks\+\_\+agenda\+Model\+Item}, 88
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Edit\+Form}, 94
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Form}, 99
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Scrap\+Form}, 109
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem}, 115
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem\+Form}, 122
+  \item {get\+Files}
+    \subitem {tks\+\_\+agenda\+Frontend\+Helper}, 62
+    \subitem {tks\+\_\+agenda\+Site\+Frontend\+Helper}, 138
+  \item {get\+Form}
+    \subitem {tks\+\_\+agenda\+Model\+Download}, 69
+    \subitem {tks\+\_\+agenda\+Model\+Download\+Form}, 76
+    \subitem {tks\+\_\+agenda\+Model\+Item}, 89
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Edit\+Form}, 95
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Form}, 100
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Scrap\+Form}, 109
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem}, 116
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem\+Form}, 123
+    \subitem {tks\+\_\+agenda\+Model\+Recuritem}, 130
+  \item {get\+Input}
+    \subitem {J\+Form\+Field\+Createdby}, 17, 18
+    \subitem {J\+Form\+Field\+Custom\+Field}, 19
+    \subitem {J\+Form\+Field\+Date\+Time}, 20
+    \subitem {J\+Form\+Field\+File\+Multiple}, 21, 22
+    \subitem {J\+Form\+Field\+Foreign\+Key}, 24
+    \subitem {J\+Form\+Field\+List\+Files}, 25, 26
+    \subitem {J\+Form\+Field\+Modifiedby}, 27
+    \subitem {J\+Form\+Field\+Submit}, 28
+    \subitem {J\+Form\+Field\+Timecreated}, 30
+    \subitem {J\+Form\+Field\+Timeupdated}, 31, 32
+  \item {get\+Item}
+    \subitem {tks\+\_\+agenda\+Model\+Download}, 69
+    \subitem {tks\+\_\+agenda\+Model\+Item}, 89
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem}, 116
+    \subitem {tks\+\_\+agenda\+Model\+Recuritem}, 130
+  \item {get\+Item\+Id\+By\+Alias}
+    \subitem {tks\+\_\+agenda\+Model\+Download}, 70
+    \subitem {tks\+\_\+agenda\+Model\+Download\+Form}, 77
+    \subitem {tks\+\_\+agenda\+Model\+Item}, 90
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Edit\+Form}, 95
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Form}, 100
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Scrap\+Form}, 110
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem}, 116
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem\+Form}, 123
+  \item {get\+Items}
+    \subitem {tks\+\_\+agenda\+Model\+Downloads}, 81
+    \subitem {tks\+\_\+agenda\+Model\+Items}, 104
+    \subitem {tks\+\_\+agenda\+Model\+Newsitems}, 126, 127
+  \item {get\+List\+Query}
+    \subitem {tks\+\_\+agenda\+Model\+Downloads}, 81
+    \subitem {tks\+\_\+agenda\+Model\+Items}, 104, 105
+    \subitem {tks\+\_\+agenda\+Model\+Newsitems}, 127
+  \item {get\+Model}
+    \subitem {tks\+\_\+agenda\+Controller\+Downloads}, 39, 40
+    \subitem {tks\+\_\+agenda\+Controller\+Items}, 51, 52
+    \subitem {tks\+\_\+agenda\+Controller\+Newsitems}, 60
+    \subitem {tks\+\_\+agenda\+Frontend\+Helper}, 63
+    \subitem {tks\+\_\+agenda\+Site\+Frontend\+Helper}, 138
+  \item {get\+Msg}
+    \subitem {tks\+\_\+agenda\+Modeltks\+\_\+agenda}, 133
+  \item {get\+Sort\+Fields}
+    \subitem {tks\+\_\+agenda\+View\+Downloads}, 169
+    \subitem {tks\+\_\+agenda\+View\+Items}, 183
+    \subitem {tks\+\_\+agenda\+View\+Newsitems}, 195
+  \item {get\+State}
+    \subitem {tks\+\_\+agenda\+View\+Downloads}, 169
+    \subitem {tks\+\_\+agenda\+View\+Newsitems}, 195
+    \subitem {tks\+\_\+agenda\+Viewitems}, 181
+  \item {get\+Store\+Id}
+    \subitem {tks\+\_\+agenda\+Model\+Downloads}, 82
+    \subitem {tks\+\_\+agenda\+Model\+Newsitems}, 127
+  \item {get\+Table}
+    \subitem {tks\+\_\+agenda\+Model\+Download}, 70, 71
+    \subitem {tks\+\_\+agenda\+Model\+Download\+Form}, 77
+    \subitem {tks\+\_\+agenda\+Model\+Item}, 90
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Edit\+Form}, 95
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Form}, 101
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Scrap\+Form}, 110
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem}, 117
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem\+Form}, 123
+    \subitem {tks\+\_\+agenda\+Model\+Recuritem}, 131
+    \subitem {tks\+\_\+agenda\+Modeltks\+\_\+agenda}, 133
+
+  \indexspace
+
+  \item {id}
+    \subitem {site/views/downloadform/tmpl/default.\+php}, 234
+  \item {if}
+    \subitem {administrator/views/downloads/tmpl/default.\+php}, 226
+    \subitem {administrator/views/items/tmpl/default.\+php}, 230
+    \subitem {administrator/views/newsitems/tmpl/default.\+php}, 233
+    \subitem {edittmpl.\+php}, 264
+    \subitem {site/views/newsitem/tmpl/default.\+php}, 245
+  \item {item\+\_\+delete\+\_\+redirect}
+    \subitem {tks\+\_\+agenda\+Controller}, 34
+  \item {item\+\_\+edit\+\_\+redirect}
+    \subitem {tks\+\_\+agenda\+Controller}, 34
+  \item {items/tmpl/default\+\_\+filter.\+php}
+    \subitem {\$custom\+Options}, 257
+    \subitem {\$data}, 257
+    \subitem {\$filtered}, 258
+    \subitem {\$filters}, 258
+    \subitem {\$form\+Selector}, 258
+    \subitem {\$options}, 258
+    \subitem {endforeach}, 258
+    \subitem {endif}, 258
+
+  \indexspace
+
+  \item {J\+Form\+Field\+Createdby}, 17
+    \subitem {\$type}, 18
+    \subitem {get\+Input}, 17, 18
+  \item {J\+Form\+Field\+Custom\+Field}, 18
+    \subitem {\$type}, 20
+    \subitem {get\+Input}, 19
+  \item {J\+Form\+Field\+Date\+Time}, 20
+    \subitem {\$type}, 21
+    \subitem {get\+Input}, 20
+  \item {J\+Form\+Field\+File\+Multiple}, 21
+    \subitem {\$type}, 22
+    \subitem {get\+Input}, 21, 22
+  \item {J\+Form\+Field\+Foreign\+Key}, 22
+    \subitem {\$type}, 25
+    \subitem {get\+Attribute}, 23
+    \subitem {get\+Input}, 24
+  \item {J\+Form\+Field\+List\+Files}, 25
+    \subitem {\$type}, 26
+    \subitem {get\+Input}, 25, 26
+  \item {J\+Form\+Field\+Modifiedby}, 26
+    \subitem {\$type}, 28
+    \subitem {get\+Input}, 27
+  \item {J\+Form\+Field\+Submit}, 28
+    \subitem {\$for}, 29
+    \subitem {\$type}, 29
+    \subitem {\$value}, 29
+    \subitem {get\+Input}, 28
+  \item {J\+Form\+Field\+Timecreated}, 29
+    \subitem {\$type}, 31
+    \subitem {get\+Input}, 30
+  \item {J\+Form\+Field\+Timeupdated}, 31
+    \subitem {\$type}, 32
+    \subitem {get\+Input}, 31, 32
+  \item {j\+Query}
+    \subitem {addtmpl.\+php}, 262
+    \subitem {edittmpl.\+php}, 265
+    \subitem {site/views/newsitemform/tmpl/default.\+php}, 246
+  \item {Joomla}, 15
+  \item {Joomla\textbackslash{}\+Administrator}, 15
+
+  \indexspace
+
+  \item {load\+Form\+Data}
+    \subitem {tks\+\_\+agenda\+Model\+Download}, 71
+    \subitem {tks\+\_\+agenda\+Model\+Download\+Form}, 78
+    \subitem {tks\+\_\+agenda\+Model\+Downloads}, 82
+    \subitem {tks\+\_\+agenda\+Model\+Item}, 91
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Edit\+Form}, 96
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Form}, 101
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Scrap\+Form}, 110
+    \subitem {tks\+\_\+agenda\+Model\+Items}, 105
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem}, 118
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem\+Form}, 124
+    \subitem {tks\+\_\+agenda\+Model\+Newsitems}, 128
+    \subitem {tks\+\_\+agenda\+Model\+Recuritem}, 131
+
+  \indexspace
+
+  \item {newsitems/tmpl/default\+\_\+filter.\+php}
+    \subitem {\$custom\+Options}, 259
+    \subitem {\$data}, 259
+    \subitem {\$filtered}, 259
+    \subitem {\$filters}, 260
+    \subitem {\$form\+Selector}, 260
+    \subitem {\$options}, 260
+    \subitem {\$search\+\_\+filter}, 260
+    \subitem {endforeach}, 260
+    \subitem {endif}, 260
+  \item {not\+\_\+in\+\_\+overlap\+\_\+array}
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Scrap\+Form}, 53
+
+  \indexspace
+
+  \item {overlap\+\_\+check}
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 47
+
+  \indexspace
+
+  \item {parse}
+    \subitem {tks\+\_\+agenda\+Router}, 136
+  \item {populate\+State}
+    \subitem {tks\+\_\+agenda\+Model\+Download}, 71
+    \subitem {tks\+\_\+agenda\+Model\+Download\+Form}, 78
+    \subitem {tks\+\_\+agenda\+Model\+Downloads}, 82, 83
+    \subitem {tks\+\_\+agenda\+Model\+Item}, 91
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Edit\+Form}, 96
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Form}, 101
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Scrap\+Form}, 111
+    \subitem {tks\+\_\+agenda\+Model\+Items}, 105, 106
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem}, 118
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem\+Form}, 124
+    \subitem {tks\+\_\+agenda\+Model\+Newsitems}, 128, 129
+  \item {post\+Save\+Hook}
+    \subitem {tks\+\_\+agenda\+Controller\+Item}, 42
+  \item {prepare\+Table}
+    \subitem {tks\+\_\+agenda\+Model\+Download}, 72
+    \subitem {tks\+\_\+agenda\+Model\+Item}, 91
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem}, 118
+    \subitem {tks\+\_\+agenda\+Model\+Recuritem}, 131
+  \item {publish}
+    \subitem {tks\+\_\+agenda\+Controller\+Download}, 35
+    \subitem {tks\+\_\+agenda\+Controller\+Item}, 42
+    \subitem {tks\+\_\+agenda\+Controller\+Newsitem}, 56
+    \subitem {tks\+\_\+agenda\+Model\+Download}, 72
+    \subitem {tks\+\_\+agenda\+Model\+Item}, 92
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem}, 119
+    \subitem {tks\+\_\+agenda\+Tabledownload}, 144, 145
+    \subitem {tks\+\_\+agenda\+Tableitem}, 151, 152
+    \subitem {tks\+\_\+agenda\+Tablenewsitem}, 157, 158
+    \subitem {tks\+\_\+agenda\+Tablerecuritem}, 161
+
+  \indexspace
+
+  \item {remove}
+    \subitem {tks\+\_\+agenda\+Controller\+Download}, 36
+    \subitem {tks\+\_\+agenda\+Controller\+Download\+Form}, 38
+    \subitem {tks\+\_\+agenda\+Controller\+Item}, 43
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 48
+    \subitem {tks\+\_\+agenda\+Controller\+Newsitem}, 56
+    \subitem {tks\+\_\+agenda\+Controller\+Newsitem\+Form}, 58
+
+  \indexspace
+
+  \item {save}
+    \subitem {tks\+\_\+agenda\+Controller\+Download\+Form}, 38
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Edit\+Form}, 44
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 48
+    \subitem {tks\+\_\+agenda\+Controller\+Newsitem\+Form}, 58
+    \subitem {tks\+\_\+agenda\+Model\+Download\+Form}, 78
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Edit\+Form}, 96
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Form}, 102
+    \subitem {tks\+\_\+agenda\+Model\+Item\+Scrap\+Form}, 111
+    \subitem {tks\+\_\+agenda\+Model\+Newsitem\+Form}, 124
+  \item {save\+\_\+recurring\+\_\+items}
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Form}, 48
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Scrap\+Form}, 54
+  \item {save\+Order\+Ajax}
+    \subitem {tks\+\_\+agenda\+Controller\+Downloads}, 40
+    \subitem {tks\+\_\+agenda\+Controller\+Items}, 52
+    \subitem {tks\+\_\+agenda\+Controller\+Newsitems}, 61
+  \item {site/controller.\+php}, 203
+  \item {site/controllers/download.\+php}, 204
+  \item {site/controllers/downloadform.\+php}, 251
+  \item {site/controllers/downloads.\+php}, 205
+  \item {site/controllers/item.\+php}, 206
+  \item {site/controllers/itemeditform.\+php}, 252
+  \item {site/controllers/itemform.\+php}, 252
+  \item {site/controllers/items.\+php}, 207
+  \item {site/controllers/itemscrapform.\+php}, 253
+  \item {site/controllers/newsitem.\+php}, 208
+  \item {site/controllers/newsitemform.\+php}, 253
+  \item {site/controllers/newsitems.\+php}, 209
+  \item {site/helpers/tks\+\_\+agenda.\+php}, 211
+  \item {site/models/download.\+php}, 204
+  \item {site/models/downloadform.\+php}, 252
+  \item {site/models/downloads.\+php}, 205
+  \item {site/models/fields/createdby.\+php}, 212
+  \item {site/models/fields/custom\+\_\+field.\+php}, 212
+  \item {site/models/fields/datetime.\+php}, 254
+  \item {site/models/fields/filemultiple.\+php}, 212
+  \item {site/models/fields/foreignkey.\+php}, 213
+  \item {site/models/fields/listfiles.\+php}, 213
+  \item {site/models/fields/modifiedby.\+php}, 213
+  \item {site/models/fields/submit.\+php}, 254
+  \item {site/models/fields/timecreated.\+php}, 214
+  \item {site/models/fields/timeupdated.\+php}, 214
+  \item {site/models/item.\+php}, 206
+  \item {site/models/itemeditform.\+php}, 252
+  \item {site/models/itemform.\+php}, 253
+  \item {site/models/items.\+php}, 207
+  \item {site/models/itemscrapform.\+php}, 253
+  \item {site/models/newsitem.\+php}, 208
+  \item {site/models/newsitemform.\+php}, 254
+  \item {site/models/newsitems.\+php}, 209
+  \item {site/router.\+php}, 254
+  \item {site/tables/download.\+php}, 204
+  \item {site/tables/item.\+php}, 206
+  \item {site/tables/newsitem.\+php}, 208
+  \item {site/tks\+\_\+agenda.\+php}, 211
+    \subitem {\$controller}, 211
+  \item {site/views/download/tmpl/edit.\+php}, 217
+    \subitem {\$document}, 217
+    \subitem {endif}, 217
+  \item {site/views/download/view.\+html.\+php}, 221
+  \item {site/views/downloadform/tmpl/default.\+php}, 233
+    \subitem {\$can\+Edit}, 233
+    \subitem {\$doc}, 233
+    \subitem {\$lang}, 233
+    \subitem {\$user}, 234
+    \subitem {\+\_\+\+\_\+pad0\+\_\+\+\_\+}, 234
+    \subitem {\+\_\+\+\_\+pad1\+\_\+\+\_\+}, 234
+    \subitem {endforeach}, 234
+    \subitem {endif}, 234
+    \subitem {id}, 234
+  \item {site/views/downloadform/view.\+html.\+php}, 221
+  \item {site/views/downloads/tmpl/default.\+php}, 235
+    \subitem {(\$this-\/$>$items as \$i=$>$ \$item)}, 236
+    \subitem {\$can\+Change}, 235
+    \subitem {\$can\+Checkin}, 235
+    \subitem {\$can\+Create}, 235
+    \subitem {\$can\+Delete}, 235
+    \subitem {\$can\+Edit}, 235
+    \subitem {\$list\+Dirn}, 236
+    \subitem {\$list\+Order}, 236
+    \subitem {\$superadmin}, 236
+    \subitem {\$user}, 236
+    \subitem {\$user\+Id}, 236
+    \subitem {else}, 236
+  \item {site/views/downloads/tmpl/default\+\_\+filter.\+php}, 255
+  \item {site/views/downloads/view.\+html.\+php}, 221
+  \item {site/views/item/tmpl/default.\+php}, 237
+    \subitem {\$can\+Change}, 237
+    \subitem {\$can\+Checkin}, 237
+    \subitem {\$can\+Create}, 237
+    \subitem {\$can\+Delete}, 237
+    \subitem {\$can\+Delete\+Medewerker}, 238
+    \subitem {\$can\+Edit}, 238
+    \subitem {\$can\+Edit\+Medewerker}, 238
+    \subitem {\$can\+Edit\+Own}, 238
+    \subitem {\$can\+Edit\+Own\+Medewerker}, 238
+    \subitem {\$recurring\+\_\+id}, 238
+    \subitem {\$s}, 238
+    \subitem {\$superadmin}, 239
+    \subitem {\$user}, 239
+    \subitem {\$user\+Id}, 239
+    \subitem {else}, 239
+  \item {site/views/item/tmpl/edit.\+php}, 218
+    \subitem {\$company}, 218
+    \subitem {\$document}, 218
+    \subitem {\$user}, 218
+    \subitem {else}, 218
+    \subitem {endif}, 219
+  \item {site/views/item/view.\+html.\+php}, 221
+  \item {site/views/item/view.\+raw.\+php}, 260
+  \item {site/views/itemeditform/tmpl/default.\+php}, 239
+  \item {site/views/itemeditform/view.\+html.\+php}, 221
+  \item {site/views/itemform/tmpl/addtmpl.\+php}, 261
+  \item {site/views/itemform/tmpl/default.\+php}, 239
+    \subitem {\$app}, 240
+    \subitem {\$mode}, 240
+    \subitem {else}, 240
+  \item {site/views/itemform/tmpl/edittmpl.\+php}, 263
+  \item {site/views/itemform/view.\+html.\+php}, 222
+  \item {site/views/items/tmpl/default.\+old.\+php}, 265
+  \item {site/views/items/tmpl/default.\+php}, 240
+    \subitem {\$can\+Change}, 240
+    \subitem {\$can\+Checkin}, 241
+    \subitem {\$can\+Create}, 241
+    \subitem {\$can\+Delete}, 241
+    \subitem {\$can\+Edit}, 241
+    \subitem {\$list\+Dirn}, 241
+    \subitem {\$list\+Order}, 241
+    \subitem {\$user}, 241
+    \subitem {\$user\+Id}, 241
+    \subitem {endif}, 242
+  \item {site/views/items/tmpl/default\+\_\+filter.\+php}, 257
+  \item {site/views/items/view.\+html.\+php}, 222
+  \item {site/views/items/view.\+json.\+php}, 266
+  \item {site/views/itemscrapform/tmpl/default.\+php}, 242
+    \subitem {\$app}, 242
+    \subitem {\$can\+Edit}, 242
+    \subitem {\$doc}, 242
+    \subitem {\$i}, 242
+    \subitem {\$lang}, 243
+    \subitem {\$mode}, 243
+    \subitem {\$overlap}, 243
+    \subitem {\$user}, 243
+    \subitem {while}, 243
+  \item {site/views/itemscrapform/view.\+html.\+php}, 222
+  \item {site/views/newsitem/tmpl/default.\+php}, 243
+    \subitem {\$can\+Change}, 244
+    \subitem {\$can\+Checkin}, 244
+    \subitem {\$can\+Create}, 244
+    \subitem {\$can\+Delete}, 244
+    \subitem {\$can\+Edit}, 244
+    \subitem {\$suer}, 244
+    \subitem {\$user}, 245
+    \subitem {\+\_\+\+\_\+pad0\+\_\+\+\_\+}, 245
+    \subitem {endif}, 245
+    \subitem {if}, 245
+  \item {site/views/newsitem/tmpl/edit.\+php}, 219
+    \subitem {\$document}, 219
+    \subitem {else}, 219
+    \subitem {endif}, 219
+  \item {site/views/newsitem/view.\+html.\+php}, 222
+  \item {site/views/newsitemform/tmpl/default.\+php}, 245
+    \subitem {\$doc}, 246
+    \subitem {\$lang}, 246
+    \subitem {\+\_\+\+\_\+pad0\+\_\+\+\_\+}, 246
+    \subitem {\+\_\+\+\_\+pad1\+\_\+\+\_\+}, 246
+    \subitem {else}, 246
+    \subitem {endif}, 246
+    \subitem {j\+Query}, 246
+  \item {site/views/newsitemform/view.\+html.\+php}, 222
+  \item {site/views/newsitems/tmpl/default.\+php}, 247
+    \subitem {(\$can\+Delete)}, 249
+    \subitem {\$can\+Change}, 247
+    \subitem {\$can\+Checkin}, 247
+    \subitem {\$can\+Create}, 247
+    \subitem {\$can\+Delete}, 248
+    \subitem {\$can\+Edit}, 248
+    \subitem {\$created\+\_\+by\+\_\+name}, 248
+    \subitem {\$isroot}, 248
+    \subitem {\$list\+Dirn}, 248
+    \subitem {\$list\+Order}, 248
+    \subitem {\$user}, 248
+    \subitem {\$user\+Id}, 248
+    \subitem {\$username}, 249
+    \subitem {delete\+Item}, 247
+    \subitem {endforeach}, 249
+    \subitem {endif}, 249
+  \item {site/views/newsitems/tmpl/default\+\_\+filter.\+php}, 258
+  \item {site/views/newsitems/view.\+html.\+php}, 223
+  \item {site/views/portal/tmpl/default.\+php}, 249
+    \subitem {\$avatar}, 250
+    \subitem {\$can\+Change}, 250
+    \subitem {\$can\+Checkin}, 250
+    \subitem {\$can\+Create}, 250
+    \subitem {\$can\+Delete}, 250
+    \subitem {\$can\+Delete\+Medewerker}, 250
+    \subitem {\$can\+Edit}, 250
+    \subitem {\$can\+Edit\+Medewerker}, 250
+    \subitem {\$can\+Edit\+Own\+Medewerker}, 251
+    \subitem {\$company}, 251
+    \subitem {\$profile}, 251
+    \subitem {\$user}, 251
+    \subitem {\$user\+Id}, 251
+  \item {site/views/portal/view.\+html.\+php}, 223
+  \item {site/views/tks\+\_\+agenda/tmpl/default.\+php}, 251
+  \item {site/views/tks\+\_\+agenda/view.\+html.\+php}, 223
+  \item {submit}
+    \subitem {tks\+\_\+agenda\+Controller\+Item\+Scrap\+Form}, 54
+
+  \indexspace
+
+  \item {tks\+\_\+agenda}, 16
+  \item {tks\+\_\+agenda\+Controller}, 32
+    \subitem {display}, 33
+    \subitem {item\+\_\+delete\+\_\+redirect}, 34
+    \subitem {item\+\_\+edit\+\_\+redirect}, 34
+  \item {tks\+\_\+agenda\+Controller\+Download}, 34
+    \subitem {\+\_\+\+\_\+construct}, 35
+    \subitem {edit}, 35
+    \subitem {publish}, 35
+    \subitem {remove}, 36
+  \item {tks\+\_\+agenda\+Controller\+Download\+Form}, 36
+    \subitem {cancel}, 37
+    \subitem {edit}, 37
+    \subitem {remove}, 38
+    \subitem {save}, 38
+  \item {tks\+\_\+agenda\+Controller\+Downloads}, 39
+    \subitem {duplicate}, 39
+    \subitem {get\+Model}, 39, 40
+    \subitem {save\+Order\+Ajax}, 40
+  \item {tks\+\_\+agenda\+Controller\+Item}, 41
+    \subitem {\+\_\+\+\_\+construct}, 41
+    \subitem {edit}, 42
+    \subitem {post\+Save\+Hook}, 42
+    \subitem {publish}, 42
+    \subitem {remove}, 43
+  \item {tks\+\_\+agenda\+Controller\+Item\+Edit\+Form}, 43
+    \subitem {cancel}, 44
+    \subitem {edit}, 44
+    \subitem {save}, 44
+  \item {tks\+\_\+agenda\+Controller\+Item\+Form}, 45
+    \subitem {\$data}, 49
+    \subitem {\$db}, 49
+    \subitem {\$end\+Date}, 49
+    \subitem {\$end\+Recurring}, 49
+    \subitem {\$jform}, 49
+    \subitem {\$last\+\_\+error}, 49
+    \subitem {\$model}, 50
+    \subitem {\$overlapfail}, 50
+    \subitem {\$start\+Date}, 50
+    \subitem {\$uitval}, 50
+    \subitem {bewerk}, 46
+    \subitem {bewerk\+\_\+recur}, 46
+    \subitem {cancel}, 46
+    \subitem {check\+\_\+for\+\_\+date\+\_\+errors}, 47
+    \subitem {edit}, 47
+    \subitem {get\+\_\+recur\+\_\+array}, 47
+    \subitem {overlap\+\_\+check}, 47
+    \subitem {remove}, 48
+    \subitem {save}, 48
+    \subitem {save\+\_\+recurring\+\_\+items}, 48
+  \item {tks\+\_\+agenda\+Controller\+Item\+Scrap\+Form}, 53
+    \subitem {cancel}, 53
+    \subitem {not\+\_\+in\+\_\+overlap\+\_\+array}, 53
+    \subitem {save\+\_\+recurring\+\_\+items}, 54
+    \subitem {submit}, 54
+  \item {tks\+\_\+agenda\+Controller\+Items}, 50
+    \subitem {duplicate}, 51
+    \subitem {get\+Model}, 51, 52
+    \subitem {save\+Order\+Ajax}, 52
+  \item {tks\+\_\+agenda\+Controller\+Newsitem}, 55
+    \subitem {\+\_\+\+\_\+construct}, 55
+    \subitem {edit}, 56
+    \subitem {publish}, 56
+    \subitem {remove}, 56
+  \item {tks\+\_\+agenda\+Controller\+Newsitem\+Form}, 57
+    \subitem {cancel}, 57
+    \subitem {edit}, 58
+    \subitem {remove}, 58
+    \subitem {save}, 58
+  \item {tks\+\_\+agenda\+Controller\+Newsitems}, 59
+    \subitem {duplicate}, 59
+    \subitem {get\+Model}, 60
+    \subitem {save\+Order\+Ajax}, 61
+  \item {tks\+\_\+agenda\+Frontend\+Helper}, 61
+    \subitem {can\+User\+Edit}, 61
+    \subitem {get\+\_\+brightness}, 62
+    \subitem {get\+Category\+Name\+By\+Category\+Id}, 62
+    \subitem {get\+Files}, 62
+    \subitem {get\+Model}, 63
+    \subitem {truncate}, 63
+  \item {tks\+\_\+agenda\+Helper}, 64
+    \subitem {add\+Submenu}, 64
+    \subitem {get\+Actions}, 65
+  \item {tks\+\_\+agenda\+Model\+Download}, 65
+    \subitem {\$item}, 73
+    \subitem {\$text\+\_\+prefix}, 73
+    \subitem {\$type\+Alias}, 73
+    \subitem {checkin}, 66
+    \subitem {checkout}, 67
+    \subitem {delete}, 67
+    \subitem {duplicate}, 68
+    \subitem {get\+Alias\+Field\+Name\+By\+View}, 68
+    \subitem {get\+Category\+Name}, 68
+    \subitem {get\+Data}, 69
+    \subitem {get\+Form}, 69
+    \subitem {get\+Item}, 69
+    \subitem {get\+Item\+Id\+By\+Alias}, 70
+    \subitem {get\+Table}, 70, 71
+    \subitem {load\+Form\+Data}, 71
+    \subitem {populate\+State}, 71
+    \subitem {prepare\+Table}, 72
+    \subitem {publish}, 72
+  \item {tks\+\_\+agenda\+Model\+Download\+Form}, 73
+    \subitem {checkin}, 74
+    \subitem {checkout}, 74
+    \subitem {delete}, 75
+    \subitem {get\+Alias\+Field\+Name\+By\+View}, 75
+    \subitem {get\+Can\+Save}, 76
+    \subitem {get\+Data}, 76
+    \subitem {get\+Form}, 76
+    \subitem {get\+Item\+Id\+By\+Alias}, 77
+    \subitem {get\+Table}, 77
+    \subitem {load\+Form\+Data}, 78
+    \subitem {populate\+State}, 78
+    \subitem {save}, 78
+  \item {tks\+\_\+agenda\+Model\+Downloads}, 79
+    \subitem {\+\_\+\+\_\+construct}, 80
+    \subitem {get\+Items}, 81
+    \subitem {get\+List\+Query}, 81
+    \subitem {get\+Store\+Id}, 82
+    \subitem {load\+Form\+Data}, 82
+    \subitem {populate\+State}, 82, 83
+  \item {tks\+\_\+agenda\+Model\+Item}, 84
+    \subitem {\$item}, 92
+    \subitem {\$text\+\_\+prefix}, 92
+    \subitem {checkin}, 85
+    \subitem {checkout}, 86
+    \subitem {delete}, 86
+    \subitem {deleterecur}, 86
+    \subitem {duplicate}, 88
+    \subitem {get\+Category\+Name}, 88
+    \subitem {get\+Data}, 88
+    \subitem {get\+Form}, 89
+    \subitem {get\+Item}, 89
+    \subitem {get\+Item\+Id\+By\+Alias}, 90
+    \subitem {get\+Table}, 90
+    \subitem {load\+Form\+Data}, 91
+    \subitem {populate\+State}, 91
+    \subitem {prepare\+Table}, 91
+    \subitem {publish}, 92
+  \item {tks\+\_\+agenda\+Model\+Item\+Edit\+Form}, 93
+    \subitem {checkin}, 93
+    \subitem {checkout}, 94
+    \subitem {get\+Data}, 94
+    \subitem {get\+Form}, 95
+    \subitem {get\+Item\+Id\+By\+Alias}, 95
+    \subitem {get\+Table}, 95
+    \subitem {load\+Form\+Data}, 96
+    \subitem {populate\+State}, 96
+    \subitem {save}, 96
+  \item {tks\+\_\+agenda\+Model\+Item\+Form}, 97
+    \subitem {checkin}, 98
+    \subitem {checkout}, 98
+    \subitem {delete}, 99
+    \subitem {get\+Can\+Save}, 99
+    \subitem {get\+Data}, 99
+    \subitem {get\+Form}, 100
+    \subitem {get\+Item\+Id\+By\+Alias}, 100
+    \subitem {get\+Table}, 101
+    \subitem {load\+Form\+Data}, 101
+    \subitem {populate\+State}, 101
+    \subitem {save}, 102
+  \item {tks\+\_\+agenda\+Model\+Item\+Scrap\+Form}, 107
+    \subitem {checkin}, 107
+    \subitem {checkout}, 108
+    \subitem {delete}, 108
+    \subitem {get\+Can\+Save}, 108
+    \subitem {get\+Data}, 109
+    \subitem {get\+Form}, 109
+    \subitem {get\+Item\+Id\+By\+Alias}, 110
+    \subitem {get\+Table}, 110
+    \subitem {load\+Form\+Data}, 110
+    \subitem {populate\+State}, 111
+    \subitem {save}, 111
+  \item {tks\+\_\+agenda\+Model\+Items}, 102
+    \subitem {\+\_\+\+\_\+construct}, 103, 104
+    \subitem {get\+Items}, 104
+    \subitem {get\+List\+Query}, 104, 105
+    \subitem {load\+Form\+Data}, 105
+    \subitem {populate\+State}, 105, 106
+  \item {tks\+\_\+agenda\+Model\+Newsitem}, 112
+    \subitem {\$item}, 119
+    \subitem {\$text\+\_\+prefix}, 119
+    \subitem {\$type\+Alias}, 119
+    \subitem {checkin}, 113
+    \subitem {checkout}, 113
+    \subitem {delete}, 114
+    \subitem {duplicate}, 114
+    \subitem {get\+Alias\+Field\+Name\+By\+View}, 114
+    \subitem {get\+Category\+Name}, 115
+    \subitem {get\+Data}, 115
+    \subitem {get\+Form}, 116
+    \subitem {get\+Item}, 116
+    \subitem {get\+Item\+Id\+By\+Alias}, 116
+    \subitem {get\+Table}, 117
+    \subitem {load\+Form\+Data}, 118
+    \subitem {populate\+State}, 118
+    \subitem {prepare\+Table}, 118
+    \subitem {publish}, 119
+  \item {tks\+\_\+agenda\+Model\+Newsitem\+Form}, 120
+    \subitem {checkin}, 120
+    \subitem {checkout}, 121
+    \subitem {delete}, 121
+    \subitem {get\+Alias\+Field\+Name\+By\+View}, 122
+    \subitem {get\+Can\+Save}, 122
+    \subitem {get\+Data}, 122
+    \subitem {get\+Form}, 123
+    \subitem {get\+Item\+Id\+By\+Alias}, 123
+    \subitem {get\+Table}, 123
+    \subitem {load\+Form\+Data}, 124
+    \subitem {populate\+State}, 124
+    \subitem {save}, 124
+  \item {tks\+\_\+agenda\+Model\+Newsitems}, 125
+    \subitem {\+\_\+\+\_\+construct}, 126
+    \subitem {get\+Items}, 126, 127
+    \subitem {get\+List\+Query}, 127
+    \subitem {get\+Store\+Id}, 127
+    \subitem {load\+Form\+Data}, 128
+    \subitem {populate\+State}, 128, 129
+  \item {tks\+\_\+agenda\+Model\+Recuritem}, 129
+    \subitem {\$item}, 132
+    \subitem {\$text\+\_\+prefix}, 132
+    \subitem {get\+Form}, 130
+    \subitem {get\+Item}, 130
+    \subitem {get\+Table}, 131
+    \subitem {load\+Form\+Data}, 131
+    \subitem {prepare\+Table}, 131
+  \item {tks\+\_\+agenda\+Modeltks\+\_\+agenda}, 132
+    \subitem {\$messages}, 134
+    \subitem {get\+Msg}, 133
+    \subitem {get\+Table}, 133
+  \item {tks\+\_\+agenda\+Router}, 134
+    \subitem {build}, 135
+    \subitem {parse}, 136
+  \item {tks\+\_\+agenda\+Site\+Frontend\+Helper}, 136
+    \subitem {can\+User\+Edit}, 137
+    \subitem {get\+\_\+brightness}, 137
+    \subitem {get\+Category\+Name\+By\+Category\+Id}, 137
+    \subitem {get\+Files}, 138
+    \subitem {get\+Model}, 138
+    \subitem {truncate}, 138
+  \item {tks\+\_\+agenda\+Tabledownload}, 139
+    \subitem {\+\_\+\+\_\+construct}, 140
+    \subitem {\+\_\+get\+Asset\+Name}, 141
+    \subitem {\+\_\+get\+Asset\+Parent\+Id}, 141, 142
+    \subitem {bind}, 142, 143
+    \subitem {check}, 143
+    \subitem {delete}, 144
+    \subitem {publish}, 144, 145
+  \item {tks\+\_\+agenda\+Tableitem}, 146
+    \subitem {\+\_\+\+\_\+construct}, 147
+    \subitem {\+\_\+get\+Asset\+Name}, 147
+    \subitem {\+\_\+get\+Asset\+Parent\+Id}, 148
+    \subitem {bind}, 149
+    \subitem {check}, 150
+    \subitem {delete}, 150, 151
+    \subitem {publish}, 151, 152
+  \item {tks\+\_\+agenda\+Tablenewsitem}, 152
+    \subitem {\+\_\+\+\_\+construct}, 153
+    \subitem {\+\_\+get\+Asset\+Name}, 154
+    \subitem {\+\_\+get\+Asset\+Parent\+Id}, 154, 155
+    \subitem {bind}, 155, 156
+    \subitem {check}, 156
+    \subitem {delete}, 157
+    \subitem {publish}, 157, 158
+  \item {tks\+\_\+agenda\+Tablerecuritem}, 159
+    \subitem {\+\_\+\+\_\+construct}, 159
+    \subitem {\+\_\+get\+Asset\+Name}, 160
+    \subitem {\+\_\+get\+Asset\+Parent\+Id}, 160
+    \subitem {check}, 160
+    \subitem {delete}, 161
+    \subitem {publish}, 161
+  \item {tks\+\_\+agenda\+View\+Download}, 162
+    \subitem {\$form}, 164
+    \subitem {\$item}, 164
+    \subitem {\$state}, 164
+    \subitem {add\+Toolbar}, 163
+    \subitem {display}, 163, 164
+  \item {tks\+\_\+agenda\+View\+Downloadform}, 165
+    \subitem {\$can\+Save}, 166
+    \subitem {\$form}, 166
+    \subitem {\$item}, 166
+    \subitem {\$params}, 166
+    \subitem {\$state}, 167
+    \subitem {\+\_\+prepare\+Document}, 165
+    \subitem {display}, 166
+  \item {tks\+\_\+agenda\+View\+Downloads}, 167
+    \subitem {\$items}, 170
+    \subitem {\$pagination}, 170
+    \subitem {\$params}, 170
+    \subitem {\$state}, 170
+    \subitem {\+\_\+prepare\+Document}, 168
+    \subitem {add\+Toolbar}, 168
+    \subitem {display}, 168, 169
+    \subitem {get\+Sort\+Fields}, 169
+    \subitem {get\+State}, 169
+  \item {tks\+\_\+agenda\+View\+Item}, 171
+    \subitem {\$form}, 174
+    \subitem {\$item}, 174
+    \subitem {\$params}, 174
+    \subitem {\$state}, 175
+    \subitem {\+\_\+prepare\+Document}, 171, 172
+    \subitem {add\+Toolbar}, 172
+    \subitem {display}, 172--174
+  \item {tks\+\_\+agenda\+View\+Item\+Scrap\+Form}, 184
+    \subitem {\$can\+Save}, 186
+    \subitem {\$form}, 186
+    \subitem {\$item}, 186
+    \subitem {\$params}, 186
+    \subitem {\$state}, 186
+    \subitem {\+\_\+prepare\+Document}, 185
+    \subitem {display}, 185
+  \item {tks\+\_\+agenda\+View\+Itemeditform}, 175
+    \subitem {\$item}, 176
+    \subitem {\+\_\+prepare\+Document}, 176
+    \subitem {display}, 176
+  \item {tks\+\_\+agenda\+View\+Itemform}, 177
+    \subitem {\$can\+Save}, 178
+    \subitem {\$form}, 178
+    \subitem {\$item}, 178
+    \subitem {\$params}, 178
+    \subitem {\$state}, 179
+    \subitem {\+\_\+prepare\+Document}, 177
+    \subitem {display}, 178
+  \item {tks\+\_\+agenda\+View\+Items}, 182
+    \subitem {\$items}, 184
+    \subitem {\$pagination}, 184
+    \subitem {\$state}, 184
+    \subitem {add\+Toolbar}, 183
+    \subitem {display}, 183
+    \subitem {get\+Sort\+Fields}, 183
+  \item {tks\+\_\+agenda\+View\+Newsitem}, 187
+    \subitem {\$form}, 189
+    \subitem {\$item}, 189
+    \subitem {\$params}, 189
+    \subitem {\$state}, 190
+    \subitem {\+\_\+prepare\+Document}, 188
+    \subitem {add\+Toolbar}, 188
+    \subitem {display}, 188, 189
+  \item {tks\+\_\+agenda\+View\+Newsitemform}, 190
+    \subitem {\$can\+Save}, 191
+    \subitem {\$form}, 192
+    \subitem {\$item}, 192
+    \subitem {\$params}, 192
+    \subitem {\$state}, 192
+    \subitem {\+\_\+prepare\+Document}, 191
+    \subitem {display}, 191
+  \item {tks\+\_\+agenda\+View\+Newsitems}, 192
+    \subitem {\$items}, 195
+    \subitem {\$pagination}, 195
+    \subitem {\$params}, 195
+    \subitem {\$state}, 196
+    \subitem {\+\_\+prepare\+Document}, 193
+    \subitem {add\+Toolbar}, 193
+    \subitem {display}, 194
+    \subitem {get\+Sort\+Fields}, 195
+    \subitem {get\+State}, 195
+  \item {tks\+\_\+agenda\+View\+Portal}, 196
+    \subitem {\$form}, 197
+    \subitem {\$item}, 198
+    \subitem {\$params}, 198
+    \subitem {\$state}, 198
+    \subitem {\+\_\+prepare\+Document}, 197
+    \subitem {display}, 197
+  \item {tks\+\_\+agenda\+View\+Recuritem}, 198
+    \subitem {\$form}, 200
+    \subitem {\$item}, 200
+    \subitem {\$state}, 200
+    \subitem {add\+Toolbar}, 199
+    \subitem {display}, 199
+  \item {tks\+\_\+agenda\+Viewitems}, 179
+    \subitem {\$items}, 181
+    \subitem {\$pagination}, 181
+    \subitem {\$params}, 182
+    \subitem {\$state}, 182
+    \subitem {\+\_\+prepare\+Document}, 180
+    \subitem {display}, 180
+    \subitem {flatten}, 181
+    \subitem {get\+State}, 181
+  \item {tks\+\_\+agenda\+Viewtks\+\_\+agenda}, 200
+    \subitem {display}, 200
+  \item {truncate}
+    \subitem {tks\+\_\+agenda\+Frontend\+Helper}, 63
+    \subitem {tks\+\_\+agenda\+Site\+Frontend\+Helper}, 138
+
+  \indexspace
+
+  \item {while}
+    \subitem {site/views/itemscrapform/tmpl/default.\+php}, 243
+
+\end{theindex}

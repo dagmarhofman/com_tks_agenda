@@ -1,0 +1,93 @@
+\section{site/views/newsitem/tmpl/default.php File Reference}
+\label{site_2views_2newsitem_2tmpl_2default_8php}\index{site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ Com\+\_\+\+Gckloosterveen}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \$user} = J\+Factory\+::get\+User()
+\item 
+\textbf{ \$suer} = J\+Factory\+::get\+User(\$this-\/$>$item-\/$>$created\+\_\+by)
+\item 
+\textbf{ \$can\+Create} = \$user-\/$>$authorise(\textquotesingle{}core.\+create\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})
+\item 
+\textbf{ \$can\+Checkin} = \$user-\/$>$authorise(\textquotesingle{}core.\+manage\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})
+\item 
+\textbf{ \$can\+Change} = \$user-\/$>$authorise(\textquotesingle{}core.\+edit.\+state\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})
+\item 
+\textbf{ \$can\+Delete} = \$user-\/$>$authorise(\textquotesingle{}core.\+delete\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})
+\item 
+\textbf{ \$can\+Edit} = J\+Factory\+::get\+User()-\/$>$authorise(\textquotesingle{}core.\+edit\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda.\textquotesingle{} . \$this-\/$>$item-\/$>$\textbf{ id})
+\item 
+if(! \$can\+Edit \&\&J\+Factory\+::get\+User() -\/$>$authorise(\textquotesingle{}core.\+edit.\+own\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{} . \$this-\/$>$item-\/$>$\textbf{ id})) \textbf{ if} ( \$this-\/$>$item)
+\item 
+\textbf{ endif}
+\item 
+\textbf{ else} \textbf{ \+\_\+\+\_\+pad0\+\_\+\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\label{site_2views_2newsitem_2tmpl_2default_8php_a5baed5c5102e35aea5e62f18b474dc3f}} 
+\index{site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}!\$can\+Change@{\$can\+Change}}
+\index{\$can\+Change@{\$can\+Change}!site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}}
+\subsubsection{\$can\+Change}
+{\footnotesize\ttfamily \$can\+Change = \$user-\/$>$authorise(\textquotesingle{}core.\+edit.\+state\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})}
+
+\mbox{\label{site_2views_2newsitem_2tmpl_2default_8php_ad261c913946b4e234d7ed6a972e27823}} 
+\index{site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}!\$can\+Checkin@{\$can\+Checkin}}
+\index{\$can\+Checkin@{\$can\+Checkin}!site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}}
+\subsubsection{\$can\+Checkin}
+{\footnotesize\ttfamily \$can\+Checkin = \$user-\/$>$authorise(\textquotesingle{}core.\+manage\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})}
+
+\mbox{\label{site_2views_2newsitem_2tmpl_2default_8php_ad7ffa3a9d1e59837f8395dafff741f66}} 
+\index{site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}!\$can\+Create@{\$can\+Create}}
+\index{\$can\+Create@{\$can\+Create}!site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}}
+\subsubsection{\$can\+Create}
+{\footnotesize\ttfamily \$can\+Create = \$user-\/$>$authorise(\textquotesingle{}core.\+create\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})}
+
+\mbox{\label{site_2views_2newsitem_2tmpl_2default_8php_a0eb7f586f7f075d40e8b56b1e9711bec}} 
+\index{site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}!\$can\+Delete@{\$can\+Delete}}
+\index{\$can\+Delete@{\$can\+Delete}!site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}}
+\subsubsection{\$can\+Delete}
+{\footnotesize\ttfamily \$can\+Delete = \$user-\/$>$authorise(\textquotesingle{}core.\+delete\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{})}
+
+\mbox{\label{site_2views_2newsitem_2tmpl_2default_8php_aef00045e9850358b978b3a9e9075b34c}} 
+\index{site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}!\$can\+Edit@{\$can\+Edit}}
+\index{\$can\+Edit@{\$can\+Edit}!site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}}
+\subsubsection{\$can\+Edit}
+{\footnotesize\ttfamily \$can\+Edit = J\+Factory\+::get\+User()-\/$>$authorise(\textquotesingle{}core.\+edit\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda.\textquotesingle{} . \$this-\/$>$item-\/$>$\textbf{ id})}
+
+\mbox{\label{site_2views_2newsitem_2tmpl_2default_8php_ab05b6a95ebf6e6c271632bc829ab2eab}} 
+\index{site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}!\$suer@{\$suer}}
+\index{\$suer@{\$suer}!site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}}
+\subsubsection{\$suer}
+{\footnotesize\ttfamily \$suer = J\+Factory\+::get\+User(\$this-\/$>$item-\/$>$created\+\_\+by)}
+
+\mbox{\label{site_2views_2newsitem_2tmpl_2default_8php_a598ca4e71b15a1313ec95f0df1027ca5}} 
+\index{site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}!\$user@{\$user}}
+\index{\$user@{\$user}!site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}}
+\subsubsection{\$user}
+{\footnotesize\ttfamily \$user = J\+Factory\+::get\+User()}
+
+\mbox{\label{site_2views_2newsitem_2tmpl_2default_8php_a8e01dcc96c43199448ee66f7c2ae8ea6}} 
+\index{site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}!\+\_\+\+\_\+pad0\+\_\+\+\_\+@{\+\_\+\+\_\+pad0\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+pad0\+\_\+\+\_\+@{\+\_\+\+\_\+pad0\+\_\+\+\_\+}!site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}}
+\subsubsection{\+\_\+\+\_\+pad0\+\_\+\+\_\+}
+{\footnotesize\ttfamily \textbf{ else} \+\_\+\+\_\+pad0\+\_\+\+\_\+}
+
+\mbox{\label{site_2views_2newsitem_2tmpl_2default_8php_a82cd33ca97ff99f2fcc5e9c81d65251b}} 
+\index{site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}!endif@{endif}}
+\index{endif@{endif}!site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}}
+\subsubsection{endif}
+{\footnotesize\ttfamily endif}
+
+\mbox{\label{site_2views_2newsitem_2tmpl_2default_8php_a2b7aaf5dd94948cc8d605d2adb245496}} 
+\index{site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}!if@{if}}
+\index{if@{if}!site/views/newsitem/tmpl/default.\+php@{site/views/newsitem/tmpl/default.\+php}}
+\subsubsection{if}
+{\footnotesize\ttfamily if (! \$can\+Edit \&\&J\+Factory\+::get\+User() -\/$>$authorise( \textquotesingle{}core.\+edit.\+own\textquotesingle{}, \textquotesingle{}com\+\_\+tks\+\_\+agenda\textquotesingle{} . \$this-\/$>$item-\/$>$\textbf{ id})) if(\$this-\/$>$item)}
+

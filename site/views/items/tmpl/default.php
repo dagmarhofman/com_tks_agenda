@@ -56,10 +56,12 @@ $canDelete  = $user->authorise('core.delete', 'com_tks_agenda');
 	</div>
 	<div class="g-grid">
 	 	<div class="g-block  size-100">
+
   			<div id="calendar">
   			
   			
   			</div>
+  			
 	    </div>	
 	</div>
 </div>

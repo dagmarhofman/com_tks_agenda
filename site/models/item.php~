@@ -314,6 +314,5 @@ class tks_agendaModelItem extends JModelItem
 		$db->execute();
 
 	}
-
 	
 }

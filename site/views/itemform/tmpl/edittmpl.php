@@ -95,13 +95,7 @@ $recur_id = $app->getUserState( 'com_tks_agenda.edit.item.recurid' );
 			<div class="g-block size-33">
 				 
 			</div>
-			
-			<div class="g-block size-15">
-					<div class="control-group">
-					<div class="control-label"><?php echo $this->form->getLabel('recurring'); ?></div>
-					<div class="controls"><?php echo $this->form->getInput('recurring'); ?></div>
-				</div>
-			</div>
+
     
 			<div id="recurring_attrib" style="visibility:hidden">			
 						
